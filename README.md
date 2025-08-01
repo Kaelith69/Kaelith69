@@ -16,10 +16,6 @@
 
 ---
 
-## 📜 [Download the Codex (Resume)](https://github.com/sayanth-t-m/resume-updated-google-placed/blob/main/myresumeupdate.pdf)
-
----
-
 ## 🌐 Sigils of Presence:
 
 [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/sayanth_t_m_)  
@@ -40,8 +36,8 @@
 
 ## 📊 GitHub Stats:
 
-![](https://github-readme-streak-stats.herokuapp.com/?user=sayanth-t-m&theme=tokyonight&hide_border=false)<br/>
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=sayanth-t-m&theme=tokyonight&hide_border=false&include_all_commits=true&count_private=true&layout=compact)
+![](https://github-readme-streak-stats.herokuapp.com/?user=Asynktra&theme=tokyonight&hide_border=false)<br/>
+![](https://github-readme-stats.vercel.app/api/top-langs/?username=Asynktra&theme=tokyonight&hide_border=false&include_all_commits=true&count_private=true&layout=compact)
 
 ## 🏆 GitHub Trophies
 
