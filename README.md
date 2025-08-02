@@ -1,295 +1,133 @@
-# README.md
-
 <div align="center">
 
-```
- █████╗ ███████╗██╗   ██╗███╗   ██╗██╗  ██╗████████╗██████╗  █████╗ 
-██╔══██╗██╔════╝╚██╗ ██╔╝████╗  ██║██║ ██╔╝╚══██╔══╝██╔══██╗██╔══██╗
-███████║███████╗ ╚████╔╝ ██╔██╗ ██║█████╔╝    ██║   ██████╔╝███████║
-██╔══██║╚════██║  ╚██╔╝  ██║╚██╗██║██╔═██╗    ██║   ██╔══██╗██╔══██║
-██║  ██║███████║   ██║   ██║ ╚████║██║  ██╗   ██║   ██║  ██║██║  ██║
-╚═╝  ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═══╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝
-```
+<img src="https://capsule-render.vercel.app/api?type=waving&color=7c3aed&height=80&section=header">
 
-<img src="https://readme-typing-svg.herokuapp.com/?lines=Full-Stack+Developer;Code+Architect;Terminal+Enthusiast;Open+Source+Contributor;Summer+Coding+Vibes+🌞&font=Fira%20Code&center=true&width=380&height=50&duration=4000&pause=1000&color=00FF41&background=0d1117">
+<br>
 
-<img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px">
+# Asynktra <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="28px">
 
----
+<br>
 
-```
-░░▒▒▓▓██ SEASONAL SUMMER CODING SETUP ██▓▓▒▒░░
-  
-     ☀️             💻              🌊
-   /     \         ╔═══╗           /~~~\
-  |       |        ║███║          /~~~~~\
-   \     /         ║███║         /~~~~~~~\
-    \___/          ╚═══╝        /~~~~~~~~~\
-   SUNSHINE        CODING      COOL VIBES
-```
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?lines=print%28%22Hello%2C+world.%22%29;class+CuriousCat%3A;def+__init__%28self%29%3A;self.mind+%3D+%22open%22;self.eyes+%3D+%22everywhere%22;def+explore%28self%29%3A;while+not+self.understands%28%29%3A;self.learn%28%29;self.break_things%28%29;self.build%28%29;print%28%22It+all+makes+sense.%22%29&font=Fira+Code&center=true&width=950&height=50&color=00FF00&size=20&pause=400&duration=2000&vCenter=true&repeat=true&background=000000&cursor=%7C" />
+</p>
 
----
 
-```
-╔═══════════════════════════════════════╗
-║              SYSTEM STATUS            ║
-╚═══════════════════════════════════════╝
-```
 
-<img align="right" alt="Coding" width="400" src="https://raw.githubusercontent.com/devSouvik/devSouvik/master/gif3.gif">
 
-<img width="400" src="https://github-readme-stats.vercel.app/api?username=Asynktra&show_icons=true&theme=hacker&hide_border=true&bg_color=0d1117&title_color=00ff41&icon_color=00ff41&text_color=ffffff&count_private=true" />
+<br>
 
-<img width="400" src="https://github-readme-streak-stats.herokuapp.com/?user=Asynktra&theme=hacker&hide_border=true&background=0d1117&stroke=00ff41&ring=00ff41&fire=00ff41&currStreakLabel=ffffff" />
+<img src="https://media.giphy.com/media/SWoSkN6DxTszqIKEqv/giphy.gif" width="300" alt="Coding">
 
----
+<br>
 
-```
-╔═══════════════════════════════════════╗
-║         CODING ACTIVITY TRACKER       ║
-╚═══════════════════════════════════════╝
-```
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-<img align="left" alt="WakaTime" width="300" src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif">
+<br>
 
-<img src="https://github-readme-stats.vercel.app/api/wakatime?username=Asynktra&theme=hacker&hide_border=true&bg_color=0d1117&title_color=00ff41&text_color=ffffff&icon_color=00ff41" />
+## 📊 GitHub Analytics <img src="https://media.giphy.com/media/iY8CRBdQXODJSCERIr/giphy.gif" width="26px">
 
-```
-████████████████████████████████████████ 100% Debugging Life
-████████████████████████████████████░░░░  95% Writing Code  
-████████████████████████████████░░░░░░░░  85% Learning New Tech
-████████████████████████████░░░░░░░░░░░░  80% Coffee Breaks ☕
-████████████████████████░░░░░░░░░░░░░░░░  75% Stack Overflow
-```
+<br>
 
-<br clear="both"/>
+<img src="https://media.giphy.com/media/3oKIPEqDGUULpEU0aQ/giphy.gif" width="150" alt="Analytics">
 
----
+<br>
 
-```
-╔═══════════════════════════════════════╗
-║            CODE ANALYTICS             ║
-╚═══════════════════════════════════════╝
-```
+<table align="center">
+<tr>
+<td align="center" width="50%">
+<img width="100%" src="https://github-readme-stats.vercel.app/api?username=Asynktra&show_icons=true&theme=radical&hide_border=true&bg_color=0d1117&title_color=7c3aed&icon_color=7c3aed&text_color=e2e8f0&count_private=true&border_radius=8" />
+</td>
+<td align="center" width="50%">
+<img width="100%" src="https://github-readme-streak-stats.herokuapp.com/?user=Asynktra&theme=radical&hide_border=true&background=0d1117&stroke=7c3aed&ring=7c3aed&fire=ff6b6b&currStreakLabel=e2e8f0&sideLabels=e2e8f0&border_radius=8" />
+</td>
+</tr>
+</table>
 
-<img align="right" alt="Matrix Code" width="400" src="https://media.giphy.com/media/26tn33aiTi1jkl6H6/giphy.gif">
+<br>
 
-<img width="400" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Asynktra&layout=compact&theme=hacker&hide_border=true&bg_color=0d1117&title_color=00ff41&text_color=ffffff" />
+<p align="center">
+<img width="60%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Asynktra&layout=compact&theme=radical&hide_border=true&bg_color=0d1117&title_color=7c3aed&text_color=e2e8f0&langs_count=8&border_radius=8" />
+</p>
 
-```
-    ╭─────────────────────────────────────╮
-    │  📊 Language Distribution Analysis  │
-    ├─────────────────────────────────────┤
-    │  JavaScript  ████████████████░░░░   │
-    │  Python      ██████████████░░░░░░   │
-    │  TypeScript  ████████████░░░░░░░░   │ 
-    │  Go          ██████████░░░░░░░░░░   │
-    │  Rust        ████████░░░░░░░░░░░░   │
-    ╰─────────────────────────────────────╯
-```
+<br>
 
-<br clear="both"/>
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
----
+<br>
 
-```
-╔═══════════════════════════════════════╗
-║         3D CONTRIBUTION GALAXY        ║
-╚═══════════════════════════════════════╝
-```
+## 🏆 GitHub Trophies <img src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="26px">
 
-<img src="https://media.giphy.com/media/3oKIPEqDGUULpEU0aQ/giphy.gif" width="100">
+<br>
 
-<img src="https://github-profile-3d-contrib.vercel.app/api?username=Asynktra&theme=green_nur&background=0d1117&hide_border=true" />
+<img src="https://media.giphy.com/media/26tPnAAJxXTvpLwJy/giphy.gif" width="140" alt="Achievement">
 
-```
-       🌟 COMMIT CONSTELLATION 🌟
-    
-    ⭐         ✨         🌟         ⭐
-      \       /           \       /
-       \     /             \     /
-        \   /               \   /
-         \ /                 \ /
-          🚀    CODE ROCKET   🚀
-         / \                 / \
-        /   \               /   \
-       /     \             /     \
-      /       \           /       \
-    ✨         🌟         ⭐         ✨
-```
+<br>
 
----
+<p align="center">
+<img src="https://github-profile-trophy.vercel.app/?username=Asynktra&theme=radical&no-frame=true&no-bg=true&margin-w=4&margin-h=1&column=4&row=2" />
+</p>
 
-```
-╔═══════════════════════════════════════╗
-║          CONTRIBUTION SNAKE           ║
-╚═══════════════════════════════════════╝
-```
+<br>
 
-<img src="https://media.giphy.com/media/l0HlQoLBGh3XwE3gA/giphy.gif" width="100">
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-<img src="https://raw.githubusercontent.com/Asynktra/Asynktra/output/github-contribution-grid-snake-dark.svg" />
+<br>
 
-```
-    🐍 SNAKE EATING MY CONTRIBUTIONS 🐍
-    
-      ╔══════════════════════════════╗
-      ║ ░░░░░▓▓▓▓████████▓▓▓▓░░░░░░ ║
-      ║ Snake Progress: [████████░░] ║
-      ║ Contributions Eaten: 1337   ║
-      ║ Current Streak: ON FIRE 🔥  ║
-      ╚══════════════════════════════╝
-```
+## 📈 Activity Graph <img src="https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif" width="26px">
 
----
+<br>
 
-```
-╔═══════════════════════════════════════╗
-║          ACHIEVEMENTS UNLOCKED        ║
-╚═══════════════════════════════════════╝
-```
+<img src="https://media.giphy.com/media/l46Cy1rHbQ92uuLXa/giphy.gif" width="160" alt="Growth">
 
-<img src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="100">
+<br>
 
-<img src="https://github-profile-trophy.vercel.app/?username=Asynktra&theme=onestar&no-frame=true&no-bg=true&margin-w=4&column=7" />
+<p align="center">
+<img width="88%" src="https://github-readme-activity-graph.vercel.app/graph?username=Asynktra&bg_color=0d1117&color=7c3aed&line=7c3aed&point=ff6b6b&area=true&hide_border=true&custom_title=Contribution%20Activity&area_color=7c3aed&title_color=e2e8f0&radius=6" />
+</p>
 
-```
-    🏆 ACHIEVEMENT SHOWCASE 🏆
-    
-    ┌─────────────────────────────────────┐
-    │  🥇 Commit Champion                 │
-    │  🥈 Code Quality Master             │ 
-    │  🥉 Open Source Contributor         │
-    │  🏅 Bug Squasher Supreme            │
-    │  🎯 Perfect Streak Warrior          │
-    │  ⚡ Lightning Fast Debugger         │
-    │  🧠 Algorithm Architect             │
-    │  🔥 Productivity Powerhouse         │
-    └─────────────────────────────────────┘
-```
+<br>
 
----
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-```
-╔═══════════════════════════════════════╗
-║            RANDOM WISDOM              ║
-╚═══════════════════════════════════════╝
-```
+<br>
 
-<img align="right" alt="Thinking" width="200" src="https://media.giphy.com/media/l46Cy1rHbQ92uuLXa/giphy.gif">
+## 🔗 Connect <img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="26px">
 
-<img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark&border=true" />
+<br>
 
-```
-    💭 THOUGHT OF THE DAY 💭
-    
-    ╭─────────────────────────────────────╮
-    │  "Code is poetry written for        │
-    │   machines to understand and        │
-    │   humans to maintain."              │
-    │                                     │
-    │           - Anonymous Dev           │
-    ╰─────────────────────────────────────╯
-```
+<p align="center">
+  <a href="https://discord.com/users/YOUR_DISCORD_ID">
+    <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" />
+  </a>
+</p>
 
----
 
-```
-╔═══════════════════════════════════════╗
-║           NETWORK CONNECTIONS         ║
-╚═══════════════════════════════════════╝
-```
+<br>
 
-<img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="60"> <img src="https://media.giphy.com/media/mGcNjsfWAjY5AEZNw6/giphy.gif" width="50"> <img src="https://media.giphy.com/media/KzJkzjggfGN5Py6nkT/giphy.gif" width="50">
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-<img src="https://img.shields.io/badge/Terminal-000000?style=for-the-badge&logo=gnometerminal&logoColor=white"> <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"> <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white"> <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white">
+<br>
 
----
+<p align="center">
+<img src="https://komarev.com/ghpvc/?username=Asynktra&label=Profile%20Views&color=7c3aed&style=for-the-badge" />
+</p>
 
-```
-╔═══════════════════════════════════════╗
-║          ACTIVITY MONITOR             ║
-╚═══════════════════════════════════════╝
-```
+<br>
 
-<img src="https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif" width="100">
+<p align="center">
+<img src="https://readme-typing-svg.herokuapp.com/?lines=Thanks+for+visiting!+✨;Happy+coding!+🚀&font=Fira%20Code&center=true&width=360&height=40&duration=3000&pause=1000&color=7c3aed&size=18&weight=500">
+</p>
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=Asynktra&bg_color=0d1117&color=00ff41&line=00ff41&point=ffffff&area=true&hide_border=true" />
+<br>
 
-```
-    📈 ACTIVITY PULSE 📈
-    
-    ┌─────────────────────────────────────┐
-    │  Current Status: 🟢 ONLINE          │
-    │  Last Commit: 🕐 2 hours ago        │
-    │  Active Streak: 🔥 42 days          │  
-    │  Repositories: 📚 25 public         │
-    │  Total Stars: ⭐ 150+ earned        │
-    │  Total Forks: 🍴 75+ created        │
-    └─────────────────────────────────────┘
-```
+<p align="center">
+<img src="https://media.giphy.com/media/L8K62iTDkzGX6/giphy.gif" width="120" alt="Code">
 
----
+</p>
 
-```
-╔═══════════════════════════════════════╗
-║         GLOBAL VISITOR MAP            ║
-╚═══════════════════════════════════════╝
-```
+<br>
 
-<img src="https://media.giphy.com/media/3o7qDVHln5s9aZqs2k/giphy.gif" width="100">
-
-<img src="https://profile-counter.glitch.me/Asynktra/count.svg" />
-
-```
-    🌍 WORLDWIDE VISITORS 🌍
-    
-    ╔══════════════════════════════════════╗
-    ║  🌎 Americas:     ████████████░░░░   ║
-    ║  🌍 Europe:       ██████████░░░░░░   ║ 
-    ║  🌏 Asia:         ████████░░░░░░░░   ║
-    ║  🌍 Africa:       ██████░░░░░░░░░░   ║
-    ║  🌏 Oceania:      ████░░░░░░░░░░░░   ║
-    ║                                      ║
-    ║  Total Unique Visitors: 🔢 1,337+   ║
-    ╚══════════════════════════════════════╝
-```
-
-<img src="https://komarev.com/ghpvc/?username=Asynktra&label=VISITORS&color=00ff41&style=for-the-badge" />
-
----
-
-```
-╔═══════════════════════════════════════╗
-║            SUMMER VIBES 2025          ║
-╚═══════════════════════════════════════╝
-```
-
-<img src="https://readme-typing-svg.herokuapp.com/?lines=Thanks+for+visiting!;Star+some+repos+if+you+like+them!;Happy+Summer+coding!+☀️;Made+with+💚+and+lots+of+☕;Enjoy+the+coding+journey!&font=Fira%20Code&center=true&width=400&height=50&duration=3000&pause=1000&color=00FF41&background=0d1117">
-
-```
-      ☀️ SUMMER CODING SEASON ☀️
-      
-    🌞────────────────────────────────🌞
-    │                                  │
-    │  "Summer code vibes hitting      │
-    │   different when the commits     │
-    │   are flowing like ocean waves"  │
-    │                                  │
-    │     🏖️ Code → Coffee → Repeat    │
-    │                                  │
-    🌊────────────────────────────────🌊
-```
-
-```
-   ██████╗  ██████╗  ██████╗ ██████╗     ██╗   ██╗██╗██████╗ ███████╗███████╗
-  ██╔════╝ ██╔═══██╗██╔═══██╗██╔══██╗    ██║   ██║██║██╔══██╗██╔════╝██╔════╝
-  ██║  ███╗██║   ██║██║   ██║██║  ██║    ██║   ██║██║██████╔╝█████╗  ███████╗
-  ██║   ██║██║   ██║██║   ██║██║  ██║    ╚██╗ ██╔╝██║██╔══██╗██╔══╝  ╚════██║
-  ╚██████╔╝╚██████╔╝╚██████╔╝██████╔╝     ╚████╔╝ ██║██████╔╝███████╗███████║
-   ╚═════╝  ╚═════╝  ╚═════╝ ╚═════╝       ╚═══╝  ╚═╝╚═════╝ ╚══════╝╚══════╝
-```
-
-<img src="https://media.giphy.com/media/26u4lOMA8JKSnL9Uk/giphy.gif" width="100">
+<img src="https://capsule-render.vercel.app/api?type=waving&color=7c3aed&height=80&section=footer">
 
 </div>
