@@ -2,7 +2,7 @@
 <!-- header -->
 <img src="https://capsule-render.vercel.app/api?type=waving&color=4c1d95&height=80&section=header" />
 
-# 🚀 Asynktra  
+# 🚀 Kaelith69  
 <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="28px" />
 <img src="https://media.giphy.com/media/bcKmIWkUMCjVm/giphy.gif" width="40" alt="anime wave" />
 
@@ -16,9 +16,9 @@
 ---
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=asynktra&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=dracula&locale=en&hide_border=false" height="150" alt="stats graph" />
+  <img src="https://github-readme-stats.vercel.app/api?username=Kaelith69&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=dracula&locale=en&hide_border=false" height="150" alt="stats graph" />
   &nbsp;
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=asynktra&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=5&theme=dracula&hide_border=false" height="150" alt="languages graph" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=Kaelith69&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=5&theme=dracula&hide_border=false" height="150" alt="languages graph" />
 </div>
 
 ---
@@ -45,7 +45,7 @@
 
 ---
 
-<img src="https://raw.githubusercontent.com/asynktra/asynktra/output/snake.svg" alt="snake animation" />
+<img src="https://raw.githubusercontent.com/Kaelith69/Kaelith69/output/snake.svg" alt="snake animation" />
 
 <div align="center">
   <img src="https://media.giphy.com/media/xT9C25UNTwfZuk85WP/giphy.gif" width="120" alt="anime computer" />
@@ -55,7 +55,7 @@
 ---
 
 <div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Asynktra&theme=onestar&no-frame=true&no-bg=true&margin-w=4&margin-h=1&column=4&row=2" alt="trophies" />
+  <img src="https://github-profile-trophy.vercel.app/?username=Kaelith69&theme=onestar&no-frame=true&no-bg=true&margin-w=4&margin-h=1&column=4&row=2" alt="trophies" />
   <img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" width="72" alt="confetti" />
 </div>
 
@@ -66,7 +66,7 @@
 ---
 
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Asynktra&bg_color=000000&color=8b5cf6&line=8b5cf6&point=ff6b6b&area=true&hide_border=true&custom_title=Starship%20Activity&area_color=8b5cf6&title_color=cbd5e1&radius=6" width="88%" alt="activity graph" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Kaelith69&bg_color=000000&color=8b5cf6&line=8b5cf6&point=ff6b6b&area=true&hide_border=true&custom_title=Starship%20Activity&area_color=8b5cf6&title_color=cbd5e1&radius=6" width="88%" alt="activity graph" />
 </div>
 
 <div align="center">
@@ -77,7 +77,7 @@
 ---
 
 <div align="center">
-  <img src="https://komarev.com/ghpvc/?username=Asynktra&label=Visitors&color=8b5cf6&style=for-the-badge" />
+  <img src="https://komarev.com/ghpvc/?username=Kaelith69&label=Visitors&color=8b5cf6&style=for-the-badge" />
   <img src="https://media.giphy.com/media/3o7TKtnuHOHHUjR38Y/giphy.gif" width="36" alt="star" />
 </div>
 
