@@ -10,15 +10,54 @@
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=18&duration=4000&pause=2000&color=ffffff,ff6b6b,4ecdc4&center=true&width=500&lines=Welcome+to+the+Void;Digital+Phantom+Zone;Off+Grid+Territory;Anonymous+Space)](https://git.io/typing-svg)
 
-<br>
 
-<!-- Matrix Rain Background Effect -->
-<img src="https://media.giphy.com/media/xTiTnqUxyWbsAXq7Ju/giphy.gif" width="100%" height="200" style="object-fit: cover; opacity: 0.3;" />
 
 <br>
 
-<!-- Gradient Text Effects -->
-[![Gradient Text](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=24&duration=3000&pause=1000&color=FF6B6B,4ECDC4,45B7D1,96CEB4,FECA57&center=true&multiline=true&width=600&height=120&lines=%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88;%E2%96%88%E2%96%88%E2%96%88++PHANTOM+ZONE++%E2%96%88%E2%96%88%E2%96%88;%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88)](https://git.io/typing-svg)
+<!-- Holographic Text Effects -->
+<svg width="100%" height="150" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="hologram1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00ffff;stop-opacity:1">
+        <animate attributeName="stop-color" values="#00ffff;#ff00ff;#ffff00;#00ff00;#00ffff" dur="2s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" style="stop-color:#ff00ff;stop-opacity:0.8">
+        <animate attributeName="stop-color" values="#ff00ff;#ffff00;#00ff00;#00ffff;#ff00ff" dur="2s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:#ffff00;stop-opacity:1">
+        <animate attributeName="stop-color" values="#ffff00;#00ff00;#00ffff;#ff00ff;#ffff00" dur="2s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <text x="50%" y="30%" font-family="Courier New" font-size="28" font-weight="bold" text-anchor="middle" fill="url(#hologram1)" filter="url(#glow)">
+    ░░▒▒▓▓ PHANTOM ZONE ▓▓▒▒░░
+    <animate attributeName="opacity" values="1;0.7;1;0.9;1" dur="1.5s" repeatCount="indefinite"/>
+  </text>
+  <text x="50%" y="70%" font-family="Courier New" font-size="16" text-anchor="middle" fill="url(#hologram1)" filter="url(#glow)">
+    ◢◤◢◤◢◤ HOLOGRAPHIC INTERFACE ACTIVE ◢◤◢◤◢◤
+    <animate attributeName="opacity" values="0.8;1;0.6;1" dur="2s" repeatCount="indefinite"/>
+  </text>
+</svg>
+
+<br>
+
+
+  <!-- Connection Lines -->
+  <line x1="100" y1="100" x2="200" y2="150" stroke="#4ecdc4" stroke-width="1" opacity="0.3">
+    <animate attributeName="opacity" values="0;0.6;0;0.8;0" dur="3s" repeatCount="indefinite"/>
+  </line>
+  
+  <line x1="300" y1="80" x2="400" y2="120" stroke="#ff6b6b" stroke-width="1" opacity="0.3">
+    <animate attributeName="opacity" values="0.3;0;0.7;0;0.3" dur="2.5s" repeatCount="indefinite"/>
+  </line>
+</svg>
 
 <br>
 
@@ -59,10 +98,7 @@
 
 <br>
 
-<!-- More Animated Elements -->
-<img src="https://media.giphy.com/media/L1R1tvI9svkIWwpVYr/giphy.gif" width="480" height="270" />
 
-<br>
 
 <!-- Matrix Style Typing -->
 [![Matrix Typing](https://readme-typing-svg.herokuapp.com?font=Courier+New&weight=700&size=14&duration=2000&pause=500&color=00FF00&background=000000&center=true&multiline=true&width=500&height=150&lines=01001000+01100001+01100011+01101011+01100101+01110010;01010000+01101000+01100001+01101110+01110100+01101111+01101101;01000001+01100011+01100011+01100101+01110011+01110011;01000111+01110010+01100001+01101110+01110100+01100101+01100100)](https://git.io/typing-svg)
@@ -160,25 +196,7 @@
 
 <br>
 
-<!-- Visitor Message Board -->
-<details>
-<summary>💬 Phantom Message Board - Leave Your Mark</summary>
 
-<!-- visitors can add comments here -->
-<img src="https://github.com/kaelith69/kaelith69/discussions" alt="Join the discussion" />
-
-**Recent Phantom Encounters:**
-- *"The void stares back..."* - Anonymous Ghost 👻
-- *"404: Human not found"* - Digital Wanderer 🔍  
-- *"sudo rm -rf /emotions"* - Terminal Poet 💻
-- *"Connection established... connection lost"* - Network Spirit 📡
-
-<!-- Add your message -->
-[![Add Message](https://img.shields.io/badge/Leave%20a%20Message-Click%20Here-ff6b6b?style=for-the-badge&logo=github-discussions)](https://github.com/kaelith69/kaelith69/discussions/new)
-
-</details>
-
-<br>
 
 <!-- More Random Programming Jokes -->
 <img src="https://readme-jokes.vercel.app/api?hideBorder&theme=radical" />
@@ -200,6 +218,49 @@
   <text x="50%" y="50%" font-family="Courier New" font-size="24" font-weight="bold" text-anchor="middle" dominant-baseline="middle" fill="url(#grad1)">
     PHANTOM.PROTOCOL.ACTIVE
     <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+  </text>
+</svg>
+
+<br>
+
+
+<!-- Digital Contact Interface -->
+<table>
+<tr>
+<td align="center">
+
+![GitHub Profile](https://github-readme-stats.vercel.app/api?username=kaelith69&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117&title_color=4ecdc4&text_color=ffffff&icon_color=ff6b6b&custom_title=Phantom%20Profile%20Stats)
+
+</td>
+</tr>
+</table>
+
+<!-- Digital Presence Stats -->
+![Profile Views](https://komarev.com/ghpvc/?username=kaelith69&label=Phantom%20Visits&color=4ecdc4&style=flat-square)
+![Followers](https://img.shields.io/github/followers/kaelith69?label=Digital%20Shadows&style=flat-square&color=ff6b6b)
+![Stars](https://img.shields.io/github/stars/kaelith69?label=Phantom%20Stars&style=flat-square&color=45b7d1)
+
+</details>
+
+<br>
+
+<!-- Holographic Separator -->
+<svg width="100%" height="80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="holoLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4ecdc4;stop-opacity:0"/>
+      <stop offset="20%" style="stop-color:#ff6b6b;stop-opacity:1"/>
+      <stop offset="50%" style="stop-color:#45b7d1;stop-opacity:1"/>
+      <stop offset="80%" style="stop-color:#4ecdc4;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#ff6b6b;stop-opacity:0"/>
+    </linearGradient>
+  </defs>
+  <line x1="0" y1="40" x2="100%" y2="40" stroke="url(#holoLine)" stroke-width="3">
+    <animate attributeName="opacity" values="0.3;1;0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+  </line>
+  <text x="50%" y="25" font-family="Courier New" font-size="12" text-anchor="middle" fill="#4ecdc4">
+    ◦◦◦ HOLOGRAPHIC INTERFACE ◦◦◦
+    <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
   </text>
 </svg>
 
