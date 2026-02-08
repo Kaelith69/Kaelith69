@@ -9,7 +9,7 @@ A developer and digital artist focused on clean code and cell-shaded aesthetics.
 ### 🛠️ The Specs
 - **Mother Tongue:** Malayalam (മലയാളം)
 - **Tech Stack:** HTML, CSS, JS, Photoshop, Procreate
-- **Main Quest:** Solving Automata Theory while listening to Indie-Classical fusion.
+- **Main Quest:** To pass Turing Test.
 
 ---
 
