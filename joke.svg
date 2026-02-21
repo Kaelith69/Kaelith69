@@ -1,0 +1,261 @@
+<svg viewBox="0 0 680 110" xmlns="http://www.w3.org/2000/svg" width="680" height="110">
+  <defs>
+    <style>
+      @keyframes j0 {
+        0%        { opacity: 1; }
+        4.25% { opacity: 1; }
+        4.75% { opacity: 0; }
+        100%      { opacity: 0; }
+      }
+      @keyframes j1 {
+        0%        { opacity: 0; }
+        5.00%  { opacity: 0; }
+        5.50%  { opacity: 1; }
+        9.25% { opacity: 1; }
+        9.75% { opacity: 0; }
+        100%      { opacity: 0; }
+      }
+      @keyframes j2 {
+        0%        { opacity: 0; }
+        10.00%  { opacity: 0; }
+        10.50%  { opacity: 1; }
+        14.25% { opacity: 1; }
+        14.75% { opacity: 0; }
+        100%      { opacity: 0; }
+      }
+      @keyframes j3 {
+        0%        { opacity: 0; }
+        15.00%  { opacity: 0; }
+        15.50%  { opacity: 1; }
+        19.25% { opacity: 1; }
+        19.75% { opacity: 0; }
+        100%      { opacity: 0; }
+      }
+      @keyframes j4 {
+        0%        { opacity: 0; }
+        20.00%  { opacity: 0; }
+        20.50%  { opacity: 1; }
+        24.25% { opacity: 1; }
+        24.75% { opacity: 0; }
+        100%      { opacity: 0; }
+      }
+      @keyframes j5 {
+        0%        { opacity: 0; }
+        25.00%  { opacity: 0; }
+        25.50%  { opacity: 1; }
+        29.25% { opacity: 1; }
+        29.75% { opacity: 0; }
+        100%      { opacity: 0; }
+      }
+      @keyframes j6 {
+        0%        { opacity: 0; }
+        30.00%  { opacity: 0; }
+        30.50%  { opacity: 1; }
+        34.25% { opacity: 1; }
+        34.75% { opacity: 0; }
+        100%      { opacity: 0; }
+      }
+      @keyframes j7 {
+        0%        { opacity: 0; }
+        35.00%  { opacity: 0; }
+        35.50%  { opacity: 1; }
+        39.25% { opacity: 1; }
+        39.75% { opacity: 0; }
+        100%      { opacity: 0; }
+      }
+      @keyframes j8 {
+        0%        { opacity: 0; }
+        40.00%  { opacity: 0; }
+        40.50%  { opacity: 1; }
+        44.25% { opacity: 1; }
+        44.75% { opacity: 0; }
+        100%      { opacity: 0; }
+      }
+      @keyframes j9 {
+        0%        { opacity: 0; }
+        45.00%  { opacity: 0; }
+        45.50%  { opacity: 1; }
+        49.25% { opacity: 1; }
+        49.75% { opacity: 0; }
+        100%      { opacity: 0; }
+      }
+      @keyframes j10 {
+        0%        { opacity: 0; }
+        50.00%  { opacity: 0; }
+        50.50%  { opacity: 1; }
+        54.25% { opacity: 1; }
+        54.75% { opacity: 0; }
+        100%      { opacity: 0; }
+      }
+      @keyframes j11 {
+        0%        { opacity: 0; }
+        55.00%  { opacity: 0; }
+        55.50%  { opacity: 1; }
+        59.25% { opacity: 1; }
+        59.75% { opacity: 0; }
+        100%      { opacity: 0; }
+      }
+      @keyframes j12 {
+        0%        { opacity: 0; }
+        60.00%  { opacity: 0; }
+        60.50%  { opacity: 1; }
+        64.25% { opacity: 1; }
+        64.75% { opacity: 0; }
+        100%      { opacity: 0; }
+      }
+      @keyframes j13 {
+        0%        { opacity: 0; }
+        65.00%  { opacity: 0; }
+        65.50%  { opacity: 1; }
+        69.25% { opacity: 1; }
+        69.75% { opacity: 0; }
+        100%      { opacity: 0; }
+      }
+      @keyframes j14 {
+        0%        { opacity: 0; }
+        70.00%  { opacity: 0; }
+        70.50%  { opacity: 1; }
+        74.25% { opacity: 1; }
+        74.75% { opacity: 0; }
+        100%      { opacity: 0; }
+      }
+      @keyframes j15 {
+        0%        { opacity: 0; }
+        75.00%  { opacity: 0; }
+        75.50%  { opacity: 1; }
+        79.25% { opacity: 1; }
+        79.75% { opacity: 0; }
+        100%      { opacity: 0; }
+      }
+      @keyframes j16 {
+        0%        { opacity: 0; }
+        80.00%  { opacity: 0; }
+        80.50%  { opacity: 1; }
+        84.25% { opacity: 1; }
+        84.75% { opacity: 0; }
+        100%      { opacity: 0; }
+      }
+      @keyframes j17 {
+        0%        { opacity: 0; }
+        85.00%  { opacity: 0; }
+        85.50%  { opacity: 1; }
+        89.25% { opacity: 1; }
+        89.75% { opacity: 0; }
+        100%      { opacity: 0; }
+      }
+      @keyframes j18 {
+        0%        { opacity: 0; }
+        90.00%  { opacity: 0; }
+        90.50%  { opacity: 1; }
+        94.25% { opacity: 1; }
+        94.75% { opacity: 0; }
+        100%      { opacity: 0; }
+      }
+      @keyframes j19 {
+        0%        { opacity: 0; }
+        95.00%  { opacity: 0; }
+        95.50%  { opacity: 1; }
+        99.25% { opacity: 1; }
+        99.75% { opacity: 0; }
+        100%      { opacity: 0; }
+      }
+    </style>
+  </defs>
+
+  <!-- bg -->
+  <rect width="680" height="110" rx="10" fill="#0d1117"/>
+  <rect x="1" y="1" width="678" height="108" rx="9" fill="none" stroke="#21262d" stroke-width="1"/>
+
+  <!-- header -->
+  <rect width="680" height="26" rx="10" fill="#161b22"/>
+  <rect y="16" width="680" height="10" fill="#161b22"/>
+  <circle cx="12" cy="13" r="3.5" fill="#ff5f57"/>
+  <circle cx="22" cy="13" r="3.5" fill="#febc2e"/>
+  <circle cx="32" cy="13" r="3.5" fill="#28c840"/>
+  <text x="340" y="17" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#484f58">joke_of_the_visit.exe — running since forever</text>
+
+  <!-- jokes -->
+    <g style="animation: j0 120s linear infinite; opacity: 1;">
+      <text x="340" y="60" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" fill="#8b949e">Why can't you trust atoms?</text>
+      <text x="340" y="82" text-anchor="middle" font-family="'Courier New', monospace" font-size="13" fill="#e6edf3" font-weight="bold">They make up everything.</text>
+    </g>
+    <g style="animation: j1 120s linear infinite; opacity: 0;">
+      <text x="340" y="60" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" fill="#8b949e">I sold my vacuum cleaner.</text>
+      <text x="340" y="82" text-anchor="middle" font-family="'Courier New', monospace" font-size="13" fill="#e6edf3" font-weight="bold">It was just gathering dust.</text>
+    </g>
+    <g style="animation: j2 120s linear infinite; opacity: 0;">
+      <text x="340" y="60" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" fill="#8b949e">Someone stole my mood ring.</text>
+      <text x="340" y="82" text-anchor="middle" font-family="'Courier New', monospace" font-size="13" fill="#e6edf3" font-weight="bold">I don't know how I feel about that.</text>
+    </g>
+    <g style="animation: j3 120s linear infinite; opacity: 0;">
+      <text x="340" y="60" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" fill="#8b949e">Why is 6 afraid of 7?</text>
+      <text x="340" y="82" text-anchor="middle" font-family="'Courier New', monospace" font-size="13" fill="#e6edf3" font-weight="bold">Because 7 8 9.</text>
+    </g>
+    <g style="animation: j4 120s linear infinite; opacity: 0;">
+      <text x="340" y="60" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" fill="#8b949e">I'm on a seafood diet.</text>
+      <text x="340" y="82" text-anchor="middle" font-family="'Courier New', monospace" font-size="13" fill="#e6edf3" font-weight="bold">I see food and I eat it.</text>
+    </g>
+    <g style="animation: j5 120s linear infinite; opacity: 0;">
+      <text x="340" y="60" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" fill="#8b949e">Did you hear about the Italian chef who died?</text>
+      <text x="340" y="82" text-anchor="middle" font-family="'Courier New', monospace" font-size="13" fill="#e6edf3" font-weight="bold">He pasta way.</text>
+    </g>
+    <g style="animation: j6 120s linear infinite; opacity: 0;">
+      <text x="340" y="60" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" fill="#8b949e">The future, the present and the past walked into a bar.</text>
+      <text x="340" y="82" text-anchor="middle" font-family="'Courier New', monospace" font-size="13" fill="#e6edf3" font-weight="bold">Things got a little tense.</text>
+    </g>
+    <g style="animation: j7 120s linear infinite; opacity: 0;">
+      <text x="340" y="60" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" fill="#8b949e">I don't trust stairs.</text>
+      <text x="340" y="82" text-anchor="middle" font-family="'Courier New', monospace" font-size="13" fill="#e6edf3" font-weight="bold">They're always up to something.</text>
+    </g>
+    <g style="animation: j8 120s linear infinite; opacity: 0;">
+      <text x="340" y="60" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" fill="#8b949e">What do you call a fake noodle?</text>
+      <text x="340" y="82" text-anchor="middle" font-family="'Courier New', monospace" font-size="13" fill="#e6edf3" font-weight="bold">An impasta.</text>
+    </g>
+    <g style="animation: j9 120s linear infinite; opacity: 0;">
+      <text x="340" y="60" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" fill="#8b949e">Why did the scarecrow win an award?</text>
+      <text x="340" y="82" text-anchor="middle" font-family="'Courier New', monospace" font-size="13" fill="#e6edf3" font-weight="bold">Outstanding in his field.</text>
+    </g>
+    <g style="animation: j10 120s linear infinite; opacity: 0;">
+      <text x="340" y="60" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" fill="#8b949e">I told a chemistry joke.</text>
+      <text x="340" y="82" text-anchor="middle" font-family="'Courier New', monospace" font-size="13" fill="#e6edf3" font-weight="bold">There was no reaction.</text>
+    </g>
+    <g style="animation: j11 120s linear infinite; opacity: 0;">
+      <text x="340" y="60" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" fill="#8b949e">What do you call a sad cup of coffee?</text>
+      <text x="340" y="82" text-anchor="middle" font-family="'Courier New', monospace" font-size="13" fill="#e6edf3" font-weight="bold">Depresso.</text>
+    </g>
+    <g style="animation: j12 120s linear infinite; opacity: 0;">
+      <text x="340" y="60" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" fill="#8b949e">I used to be a banker.</text>
+      <text x="340" y="82" text-anchor="middle" font-family="'Courier New', monospace" font-size="13" fill="#e6edf3" font-weight="bold">But I lost interest.</text>
+    </g>
+    <g style="animation: j13 120s linear infinite; opacity: 0;">
+      <text x="340" y="60" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" fill="#8b949e">Two goldfish in a tank.</text>
+      <text x="340" y="82" text-anchor="middle" font-family="'Courier New', monospace" font-size="13" fill="#e6edf3" font-weight="bold">One says: do you know how to drive this thing?</text>
+    </g>
+    <g style="animation: j14 120s linear infinite; opacity: 0;">
+      <text x="340" y="60" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" fill="#8b949e">What kind of tea is hard to swallow?</text>
+      <text x="340" y="82" text-anchor="middle" font-family="'Courier New', monospace" font-size="13" fill="#e6edf3" font-weight="bold">Reality.</text>
+    </g>
+    <g style="animation: j15 120s linear infinite; opacity: 0;">
+      <text x="340" y="60" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" fill="#8b949e">Did you hear about the guy who invented knock-knock jokes?</text>
+      <text x="340" y="82" text-anchor="middle" font-family="'Courier New', monospace" font-size="13" fill="#e6edf3" font-weight="bold">He won the no-bell prize.</text>
+    </g>
+    <g style="animation: j16 120s linear infinite; opacity: 0;">
+      <text x="340" y="60" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" fill="#8b949e">I threw a boomerang a few years ago.</text>
+      <text x="340" y="82" text-anchor="middle" font-family="'Courier New', monospace" font-size="13" fill="#e6edf3" font-weight="bold">I now live in constant fear.</text>
+    </g>
+    <g style="animation: j17 120s linear infinite; opacity: 0;">
+      <text x="340" y="60" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" fill="#8b949e">What do you call a bear with no teeth?</text>
+      <text x="340" y="82" text-anchor="middle" font-family="'Courier New', monospace" font-size="13" fill="#e6edf3" font-weight="bold">A gummy bear.</text>
+    </g>
+    <g style="animation: j18 120s linear infinite; opacity: 0;">
+      <text x="340" y="60" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" fill="#8b949e">I entered ten puns in a contest.</text>
+      <text x="340" y="82" text-anchor="middle" font-family="'Courier New', monospace" font-size="13" fill="#e6edf3" font-weight="bold">No pun in ten did.</text>
+    </g>
+    <g style="animation: j19 120s linear infinite; opacity: 0;">
+      <text x="340" y="60" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" fill="#8b949e">Why did the bicycle fall over?</text>
+      <text x="340" y="82" text-anchor="middle" font-family="'Courier New', monospace" font-size="13" fill="#e6edf3" font-weight="bold">Because it was two-tired.</text>
+    </g>
+
+  <!-- footer -->
+  <text x="340" y="100" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#30363d">[ 20 jokes. rotating every 6s. replace these with yours in the .svg ]</text>
+</svg>
