@@ -1,0 +1,85 @@
+<svg viewBox="0 0 680 240" xmlns="http://www.w3.org/2000/svg" width="680" height="240">
+  <defs>
+    <style>
+      .mono { font-family: 'Courier New', monospace; }
+      .blink { animation: blink 1s step-end infinite; }
+      @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+      .row { animation: fadein 0.5s ease-out both; opacity: 0; }
+      .r1{animation-delay:0.5s} .r2{animation-delay:1.5s}
+      .r3{animation-delay:2.5s} .r4{animation-delay:3.5s}
+      .r5{animation-delay:4.5s} .r6{animation-delay:5.5s}
+      .r7{animation-delay:6.5s} .r8{animation-delay:7.5s}
+      @keyframes fadein { to { opacity: 1; } }
+    </style>
+    <clipPath id="rc">
+      <rect width="680" height="240" rx="10"/>
+    </clipPath>
+  </defs>
+
+  <rect width="680" height="240" rx="10" fill="#0d1117"/>
+  <rect x="1" y="1" width="678" height="238" rx="9" fill="none" stroke="#21262d"/>
+
+  <!-- title bar -->
+  <rect width="680" height="26" rx="10" fill="#161b22"/>
+  <rect y="16" width="680" height="10" fill="#161b22"/>
+  <circle cx="12" cy="13" r="3.5" fill="#ff5f57"/>
+  <circle cx="22" cy="13" r="3.5" fill="#febc2e"/>
+  <circle cx="32" cy="13" r="3.5" fill="#28c840"/>
+  <text x="340" y="17" text-anchor="middle" class="mono" font-size="9" fill="#484f58">existential_crisis.sh</text>
+
+  <g clip-path="url(#rc)">
+    <text x="437" y="-44" font-family="Courier New,monospace" font-size="12" fill="#d2a8ff" opacity="0.08">イ<animate attributeName="y" from="-44" to="260" dur="5.12s" begin="-1.70s" repeatCount="indefinite"/></text>
+    <text x="441" y="-67" font-family="Courier New,monospace" font-size="12" fill="#f78166" opacity="0.07">ഒ<animate attributeName="y" from="-67" to="260" dur="5.87s" begin="-0.10s" repeatCount="indefinite"/></text>
+    <text x="33" y="-29" font-family="Courier New,monospace" font-size="12" fill="#3fb950" opacity="0.15">ഒ<animate attributeName="y" from="-29" to="260" dur="7.28s" begin="-0.61s" repeatCount="indefinite"/></text>
+    <text x="647" y="-43" font-family="Courier New,monospace" font-size="12" fill="#d2a8ff" opacity="0.10">ഘ<animate attributeName="y" from="-43" to="260" dur="7.68s" begin="-2.25s" repeatCount="indefinite"/></text>
+    <text x="346" y="-99" font-family="Courier New,monospace" font-size="12" fill="#d2a8ff" opacity="0.12">ഘ<animate attributeName="y" from="-99" to="260" dur="7.67s" begin="-2.47s" repeatCount="indefinite"/></text>
+    <text x="229" y="-90" font-family="Courier New,monospace" font-size="12" fill="#3fb950" opacity="0.09">ウ<animate attributeName="y" from="-90" to="260" dur="4.30s" begin="-4.77s" repeatCount="indefinite"/></text>
+    <text x="516" y="-37" font-family="Courier New,monospace" font-size="12" fill="#3fb950" opacity="0.05">ഒ<animate attributeName="y" from="-37" to="260" dur="4.01s" begin="-3.19s" repeatCount="indefinite"/></text>
+    <text x="423" y="-32" font-family="Courier New,monospace" font-size="12" fill="#58a6ff" opacity="0.06">ഓ<animate attributeName="y" from="-32" to="260" dur="7.35s" begin="-2.94s" repeatCount="indefinite"/></text>
+    <text x="313" y="-38" font-family="Courier New,monospace" font-size="12" fill="#d2a8ff" opacity="0.11">エ<animate attributeName="y" from="-38" to="260" dur="7.19s" begin="-3.19s" repeatCount="indefinite"/></text>
+    <text x="236" y="-89" font-family="Courier New,monospace" font-size="12" fill="#3fb950" opacity="0.08">ഘ<animate attributeName="y" from="-89" to="260" dur="3.62s" begin="-3.69s" repeatCount="indefinite"/></text>
+    <text x="454" y="-36" font-family="Courier New,monospace" font-size="12" fill="#58a6ff" opacity="0.06">イ<animate attributeName="y" from="-36" to="260" dur="4.49s" begin="-2.14s" repeatCount="indefinite"/></text>
+    <text x="225" y="-57" font-family="Courier New,monospace" font-size="12" fill="#58a6ff" opacity="0.05">1<animate attributeName="y" from="-57" to="260" dur="4.95s" begin="-3.81s" repeatCount="indefinite"/></text>
+    <text x="444" y="-34" font-family="Courier New,monospace" font-size="12" fill="#58a6ff" opacity="0.13">ഗ<animate attributeName="y" from="-34" to="260" dur="5.51s" begin="-4.20s" repeatCount="indefinite"/></text>
+    <text x="439" y="-25" font-family="Courier New,monospace" font-size="12" fill="#3fb950" opacity="0.14">ഓ<animate attributeName="y" from="-25" to="260" dur="4.19s" begin="-4.26s" repeatCount="indefinite"/></text>
+    <text x="558" y="-82" font-family="Courier New,monospace" font-size="12" fill="#58a6ff" opacity="0.06">ഘ<animate attributeName="y" from="-82" to="260" dur="4.80s" begin="-3.92s" repeatCount="indefinite"/></text>
+    <text x="359" y="-83" font-family="Courier New,monospace" font-size="12" fill="#d2a8ff" opacity="0.14">エ<animate attributeName="y" from="-83" to="260" dur="5.82s" begin="-3.04s" repeatCount="indefinite"/></text>
+    <text x="56" y="-44" font-family="Courier New,monospace" font-size="12" fill="#d2a8ff" opacity="0.14">ക<animate attributeName="y" from="-44" to="260" dur="4.21s" begin="-4.82s" repeatCount="indefinite"/></text>
+    <text x="93" y="-95" font-family="Courier New,monospace" font-size="12" fill="#d2a8ff" opacity="0.08">ക<animate attributeName="y" from="-95" to="260" dur="4.46s" begin="-1.91s" repeatCount="indefinite"/></text>
+    <text x="312" y="-33" font-family="Courier New,monospace" font-size="12" fill="#3fb950" opacity="0.09">0<animate attributeName="y" from="-33" to="260" dur="3.72s" begin="-0.01s" repeatCount="indefinite"/></text>
+    <text x="30" y="-54" font-family="Courier New,monospace" font-size="12" fill="#58a6ff" opacity="0.08">ウ<animate attributeName="y" from="-54" to="260" dur="3.73s" begin="-4.82s" repeatCount="indefinite"/></text>
+    <text x="495" y="-91" font-family="Courier New,monospace" font-size="12" fill="#3fb950" opacity="0.14">ウ<animate attributeName="y" from="-91" to="260" dur="4.08s" begin="-0.73s" repeatCount="indefinite"/></text>
+    <text x="269" y="-92" font-family="Courier New,monospace" font-size="12" fill="#f78166" opacity="0.11">ഘ<animate attributeName="y" from="-92" to="260" dur="3.65s" begin="-2.07s" repeatCount="indefinite"/></text>
+    <text x="119" y="-86" font-family="Courier New,monospace" font-size="12" fill="#3fb950" opacity="0.10">ഒ<animate attributeName="y" from="-86" to="260" dur="7.99s" begin="-1.09s" repeatCount="indefinite"/></text>
+    <text x="222" y="-24" font-family="Courier New,monospace" font-size="12" fill="#3fb950" opacity="0.12">1<animate attributeName="y" from="-24" to="260" dur="7.40s" begin="-1.86s" repeatCount="indefinite"/></text>
+    <text x="83" y="-100" font-family="Courier New,monospace" font-size="12" fill="#58a6ff" opacity="0.15">ഘ<animate attributeName="y" from="-100" to="260" dur="4.95s" begin="-4.90s" repeatCount="indefinite"/></text>
+    <text x="263" y="-27" font-family="Courier New,monospace" font-size="12" fill="#58a6ff" opacity="0.06">ഓ<animate attributeName="y" from="-27" to="260" dur="6.27s" begin="-1.08s" repeatCount="indefinite"/></text>
+    <text x="650" y="-87" font-family="Courier New,monospace" font-size="12" fill="#f78166" opacity="0.05">ア<animate attributeName="y" from="-87" to="260" dur="3.73s" begin="-0.29s" repeatCount="indefinite"/></text>
+    <text x="230" y="-50" font-family="Courier New,monospace" font-size="12" fill="#3fb950" opacity="0.10">イ<animate attributeName="y" from="-50" to="260" dur="3.70s" begin="-3.90s" repeatCount="indefinite"/></text>
+    <text x="449" y="-97" font-family="Courier New,monospace" font-size="12" fill="#f78166" opacity="0.13">ウ<animate attributeName="y" from="-97" to="260" dur="7.59s" begin="-3.10s" repeatCount="indefinite"/></text>
+    <text x="352" y="-66" font-family="Courier New,monospace" font-size="12" fill="#d2a8ff" opacity="0.08">0<animate attributeName="y" from="-66" to="260" dur="3.10s" begin="-0.64s" repeatCount="indefinite"/></text>
+    <text x="183" y="-76" font-family="Courier New,monospace" font-size="12" fill="#3fb950" opacity="0.08">エ<animate attributeName="y" from="-76" to="260" dur="5.26s" begin="-1.40s" repeatCount="indefinite"/></text>
+    <text x="567" y="-50" font-family="Courier New,monospace" font-size="12" fill="#3fb950" opacity="0.11">ウ<animate attributeName="y" from="-50" to="260" dur="4.68s" begin="-4.19s" repeatCount="indefinite"/></text>
+    <text x="413" y="-35" font-family="Courier New,monospace" font-size="12" fill="#d2a8ff" opacity="0.12">ഒ<animate attributeName="y" from="-35" to="260" dur="4.34s" begin="-3.24s" repeatCount="indefinite"/></text>
+    <text x="210" y="-64" font-family="Courier New,monospace" font-size="12" fill="#58a6ff" opacity="0.09">ഓ<animate attributeName="y" from="-64" to="260" dur="7.02s" begin="-4.29s" repeatCount="indefinite"/></text>
+    <text x="669" y="-81" font-family="Courier New,monospace" font-size="12" fill="#58a6ff" opacity="0.15">ア<animate attributeName="y" from="-81" to="260" dur="6.09s" begin="-1.05s" repeatCount="indefinite"/></text>
+    <text x="588" y="-31" font-family="Courier New,monospace" font-size="12" fill="#f78166" opacity="0.12">ア<animate attributeName="y" from="-31" to="260" dur="3.41s" begin="-3.60s" repeatCount="indefinite"/></text>
+    <text x="509" y="-99" font-family="Courier New,monospace" font-size="12" fill="#f78166" opacity="0.11">イ<animate attributeName="y" from="-99" to="260" dur="3.30s" begin="-3.11s" repeatCount="indefinite"/></text>
+    <text x="427" y="-48" font-family="Courier New,monospace" font-size="12" fill="#3fb950" opacity="0.14">ഖ<animate attributeName="y" from="-48" to="260" dur="4.52s" begin="-4.11s" repeatCount="indefinite"/></text>
+    <text x="184" y="-86" font-family="Courier New,monospace" font-size="12" fill="#f78166" opacity="0.10">ഗ<animate attributeName="y" from="-86" to="260" dur="5.41s" begin="-3.35s" repeatCount="indefinite"/></text>
+    <text x="150" y="-33" font-family="Courier New,monospace" font-size="12" fill="#f78166" opacity="0.11">ക<animate attributeName="y" from="-33" to="260" dur="4.11s" begin="-1.50s" repeatCount="indefinite"/></text>
+  </g>
+
+  <!-- Content -->
+  <text x="20" y="55" class="mono row r1" font-size="12" fill="#484f58">$ ./analyze_existence</text>
+  
+  <text x="20" y="80" class="mono row r2" font-size="12" fill="#e6edf3">[<tspan fill="#ff7b72">WARN</tspan>] Universe expansion accelerating. Heat death imminent.</text>
+  <text x="20" y="100" class="mono row r3" font-size="12" fill="#e6edf3">[<tspan fill="#3fb950"> OK </tspan>] Coffee cup is full. Priorities maintained.</text>
+  
+  <text x="20" y="130" class="mono row r4" font-size="12" fill="#484f58">$ whoami</text>
+  <text x="20" y="155" class="mono row r5" font-size="12" fill="#e6edf3">A ghost driving a meat skeleton made of stardust.</text>
+  <text x="20" y="175" class="mono row r6" font-size="12" fill="#8b949e">Currently debugging CSS while hurtling through the void at 67,000 mph.</text>
+
+  <text x="20" y="205" class="mono row r7" font-size="12" fill="#484f58">$ ping meaning_of_life</text>
+  <text x="20" y="225" class="mono row r8" font-size="12" fill="#ff7b72">Request timeout for icmp_seq 42 <tspan class="blink" fill="#e6edf3">&#x25AE;</tspan></text>
+</svg>

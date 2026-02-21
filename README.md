@@ -1,4 +1,8 @@
-﻿<div align="center">
+<div align="center">
+
+<img src="./rain.svg" width="680" alt="Matrix Rain"/>
+
+<br>
 
 ```text
   k a e l i t h 6 9
@@ -14,7 +18,7 @@
 
 <div align="center">
 
-![jokes](./joke.svg)
+<img src="./status.svg" width="330" alt="Status" align="top"/> &nbsp;&nbsp;&nbsp; <img src="./skills.svg" width="330" alt="Skills" align="top"/>
 
 </div>
 
@@ -22,7 +26,7 @@
 
 <div align="center">
 
-<img src="./status.svg" width="330"/> &nbsp;&nbsp;&nbsp; <img src="./skills.svg" width="330"/>
+<img src="./joke.svg" width="680" alt="Jokes"/>
 
 </div>
 
@@ -30,33 +34,7 @@
 
 <div align="center">
 
-```text
-the specs:
-  → mother tongue: malayalam (മലയാളം)
-  → tech stack: html, css, js, photoshop, procreate
-  → main quest: pass the turing test
-  → aesthetic: clean code & cell-shaded art
-```
-
-```text
-things i do:
-  → write code that works (once, briefly)
-  → start procreate sketches (cell-shaded, obviously)
-  → find a philosophical quote for literally any situation
-  → contemplate the turing test
-  → lose to dad jokes. every time.
-```
-
-```text
-                ┌──────────────────────────────────┐
-                │  Dad: "I'm afraid for the        │
-                │  calendar. Its days are           │
-                │  numbered."                       │
-                │                                  │
-                │  me: ...                         │
-                │                      [stunned]   │
-                └──────────────────────────────────┘
-```
+<img src="./existential.svg" width="680" alt="Existential Crisis"/>
 
 </div>
 
@@ -68,7 +46,7 @@ things i do:
 
 <br>
 
-<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJndXp4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/fSvqyvXn1M3btN8sDh/giphy.gif" width="200" alt="Funny Gaming Gif"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJndXp4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/13HgwGsXF0aiGY/giphy.gif" width="200" alt="Nerdy Anime Gif">
+<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJndXp4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/fSvqyvXn1M3btN8sDh/giphy.gif" width="200" alt="Funny Gaming Gif" align="top"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJndXp4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/13HgwGsXF0aiGY/giphy.gif" width="200" alt="Nerdy Anime Gif" align="top">
 
 <br><br>
 
