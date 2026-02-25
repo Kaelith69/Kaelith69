@@ -31,24 +31,24 @@
   <!-- Row 2 -->
   <rect x="14" y="86" width="68" height="26" fill="#1f2937" rx="5" stroke="#3fb950" stroke-width="0.5"/>
   <text x="48" y="103" font-family="'Courier New',monospace" font-size="12" fill="#3fb950" text-anchor="middle">React</text>
-  <rect x="90" y="86" width="58" height="26" fill="#1f2937" rx="5" stroke="#64748b" stroke-width="0.5"/>
-  <text x="119" y="103" font-family="'Courier New',monospace" font-size="12" fill="#94a3b8" text-anchor="middle">Node</text>
+  <rect x="90" y="86" width="58" height="26" fill="#1f2937" rx="5" stroke="#a78bfa" stroke-width="0.5"/>
+  <text x="119" y="103" font-family="'Courier New',monospace" font-size="12" fill="#c4b5fd" text-anchor="middle">Prompt</text>
   <rect x="156" y="86" width="60" height="26" fill="#1f2937" rx="5" stroke="#f87171" stroke-width="0.5"/>
   <text x="186" y="103" font-family="'Courier New',monospace" font-size="12" fill="#fca5a5" text-anchor="middle">Linux</text>
-  <rect x="224" y="86" width="52" height="26" fill="#1f2937" rx="5" stroke="#34d399" stroke-width="0.5"/>
-  <text x="250" y="103" font-family="'Courier New',monospace" font-size="12" fill="#6ee7b7" text-anchor="middle">Git</text>
-  <rect x="284" y="86" width="54" height="26" fill="#1f2937" rx="5" stroke="#818cf8" stroke-width="0.5"/>
-  <text x="311" y="103" font-family="'Courier New',monospace" font-size="12" fill="#a5b4fc" text-anchor="middle">SQL</text>
+  <rect x="224" y="86" width="60" height="26" fill="#1f2937" rx="5" stroke="#c9d1d9" stroke-width="0.5"/>
+  <text x="254" y="103" font-family="'Courier New',monospace" font-size="12" fill="#e6edf3" text-anchor="middle">GitHub</text>
+  <rect x="292" y="86" width="54" height="26" fill="#1f2937" rx="5" stroke="#818cf8" stroke-width="0.5"/>
+  <text x="319" y="103" font-family="'Courier New',monospace" font-size="12" fill="#a5b4fc" text-anchor="middle">SQL</text>
 
   <!-- Row 3 (tools) -->
-  <rect x="14" y="122" width="78" height="26" fill="#1f2937" rx="5" stroke="#f472b6" stroke-width="0.5"/>
-  <text x="53" y="139" font-family="'Courier New',monospace" font-size="12" fill="#f9a8d4" text-anchor="middle">Blender</text>
-  <rect x="100" y="122" width="72" height="26" fill="#1f2937" rx="5" stroke="#67e8f9" stroke-width="0.5"/>
-  <text x="136" y="139" font-family="'Courier New',monospace" font-size="12" fill="#a5f3fc" text-anchor="middle">VS Code</text>
-  <rect x="180" y="122" width="78" height="26" fill="#1f2937" rx="5" stroke="#fbbf24" stroke-width="0.5"/>
-  <text x="219" y="139" font-family="'Courier New',monospace" font-size="12" fill="#fde68a" text-anchor="middle">Figma</text>
-  <rect x="266" y="122" width="72" height="26" fill="#1f2937" rx="5" stroke="#fb923c" stroke-width="0.5"/>
-  <text x="302" y="139" font-family="'Courier New',monospace" font-size="12" fill="#fdba74" text-anchor="middle">Docker</text>
+  <rect x="14" y="122" width="78" height="26" fill="#1f2937" rx="5" stroke="#60a5fa" stroke-width="0.5"/>
+  <text x="53" y="139" font-family="'Courier New',monospace" font-size="12" fill="#93c5fd" text-anchor="middle">Flutter</text>
+  <rect x="100" y="122" width="72" height="26" fill="#1f2937" rx="5" stroke="#38bdf8" stroke-width="0.5"/>
+  <text x="136" y="139" font-family="'Courier New',monospace" font-size="12" fill="#7dd3fc" text-anchor="middle">Photoshop</text>
+  <rect x="180" y="122" width="78" height="26" fill="#1f2937" rx="5" stroke="#2dd4bf" stroke-width="0.5"/>
+  <text x="219" y="139" font-family="'Courier New',monospace" font-size="12" fill="#5eead4" text-anchor="middle">Canva</text>
+  <rect x="266" y="122" width="72" height="26" fill="#1f2937" rx="5" stroke="#67e8f9" stroke-width="0.5"/>
+  <text x="302" y="139" font-family="'Courier New',monospace" font-size="12" fill="#a5f3fc" text-anchor="middle">VS Code</text>
 
   <!-- Divider -->
   <rect x="14" y="162" width="320" height="1" fill="#21262d"/>
