@@ -88,11 +88,7 @@
 
 <br>
 
-<a href="https://github.com/Kaelith69">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Kaelith69&theme=tokyonight" width="720" alt="GitHub Stats"/>
-</a>
 
-<br><br>
 
 <a href="https://github.com/Kaelith69">
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=Kaelith69&theme=tokyonight_duo&hide_border=true" alt="GitHub Streak"/>
@@ -108,14 +104,6 @@
 </picture>
 
 <br><br>
-
-<!-- TOP LANGUAGES CARDS -->
-<img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Kaelith69&theme=tokyonight" width="348" alt="Repos per Language" align="top"/>&nbsp;&nbsp;<img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Kaelith69&theme=tokyonight" width="348" alt="Most Commit Language" align="top"/>
-
-<br><br>
-
-<!-- PROFILE DETAILS -->
-<img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Kaelith69&theme=tokyonight" width="720" alt="Profile Details"/>
 
 </div>
 
