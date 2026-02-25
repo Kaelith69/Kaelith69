@@ -1,0 +1,37 @@
+name: Refresh Dynamic Widgets
+
+on:
+  schedule:
+    - cron: "30 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Update dynamic SVG widgets
+        run: python scripts/update_dynamic_widgets.py
+
+      - name: Commit and push if changed
+        run: |
+          if git diff --quiet; then
+            echo "No widget changes"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add joke.svg time-region.svg recent-work.svg
+          git commit -m "chore: refresh dynamic profile widgets"
+          git push

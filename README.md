@@ -36,8 +36,8 @@
 
 <div align="center">
 
-<!-- CODING ACTIVITY / WAKATIME WIDGET -->
-<img src="./activity.svg" width="720" alt="Coding Activity"/>
+<!-- LIVE CODING ACTIVITY GRAPH -->
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=Kaelith69&bg_color=0a0f1f&color=a5b4fc&line=00e5ff&point=39ff14&area=true&hide_border=true" width="720" alt="Live Activity Graph"/>
 
 </div>
 
@@ -80,13 +80,13 @@
 <br>
 
 <a href="https://github.com/Kaelith69">
-  <img src="https://github-readme-stats.vercel.app/api?username=Kaelith69&show_icons=true&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=e6edf3&text_color=8b949e&icon_color=58a6ff&rank_icon=github" width="720" alt="GitHub Stats"/>
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Kaelith69&theme=tokyonight" width="720" alt="GitHub Stats"/>
 </a>
 
 <br><br>
 
 <a href="https://github.com/Kaelith69">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Kaelith69&theme=github-dark&hide_border=true&background=0d1117&ring=58a6ff&fire=3fb950&currStreakLabel=e6edf3" alt="GitHub Streak"/>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Kaelith69&theme=tokyonight_duo&hide_border=true" alt="GitHub Streak"/>
 </a>
 
 <br><br>
@@ -97,6 +97,25 @@
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Kaelith69/Kaelith69/output/github-contribution-grid-snake.svg">
   <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/Kaelith69/Kaelith69/output/github-contribution-grid-snake.svg"/>
 </picture>
+
+<br><br>
+
+<!-- TOP LANGUAGES CARDS -->
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Kaelith69&theme=tokyonight" width="348" alt="Repos per Language" align="top"/>&nbsp;&nbsp;<img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Kaelith69&theme=tokyonight" width="348" alt="Most Commit Language" align="top"/>
+
+<br><br>
+
+<!-- PROFILE DETAILS -->
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Kaelith69&theme=tokyonight" width="720" alt="Profile Details"/>
+
+</div>
+
+---
+
+<div align="center">
+
+<!-- LATEST REPOS + COMMITS (AUTO-GENERATED) -->
+<img src="./recent-work.svg" width="720" alt="Latest Repos and Commits"/>
 
 </div>
 
