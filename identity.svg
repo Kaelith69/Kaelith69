@@ -1,0 +1,36 @@
+<svg width="720" height="100" viewBox="0 0 720 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="line-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3fb950" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#3fb950" stop-opacity="1"/>
+      <stop offset="70%" stop-color="#58a6ff" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="100" fill="#0d1117" rx="10"/>
+  <rect width="720" height="100" fill="none" stroke="#21262d" stroke-width="1" rx="10"/>
+
+  <!-- Accent bar left -->
+  <rect x="20" y="22" width="3" height="56" fill="#3fb950" rx="2" opacity="0.9"/>
+
+  <!-- Tag label -->
+  <text x="36" y="39" font-family="'Courier New',monospace" font-size="10" fill="#3fb950" opacity="0.7" letter-spacing="2">IDENTITY.JSON</text>
+
+  <!-- Name line -->
+  <text x="36" y="62" font-family="'Courier New',monospace" font-size="22" font-weight="bold" fill="#e6edf3" letter-spacing="2">Kaelith69</text>
+  <text x="180" y="62" font-family="'Courier New',monospace" font-size="11" fill="#58a6ff" opacity="0.7"> // @github</text>
+
+  <!-- Bottom tag line -->
+  <text x="36" y="80" font-family="'Courier New',monospace" font-size="12" fill="#8b949e">
+    <tspan fill="#3fb950">role:</tspan> cs student  
+    <tspan fill="#3fb950">  loc:</tspan> malabar, kerala 🌿  
+    <tspan fill="#3fb950">  status:</tspan> debugging...
+    <animate attributeName="opacity" values="1;0.6;1" dur="3s" repeatCount="indefinite"/>
+  </text>
+
+  <!-- Right side - bracket decoration -->
+  <text x="660" y="55" font-family="'Courier New',monospace" font-size="40" fill="#21262d" font-weight="bold">{}</text>
+
+  <!-- Divider line -->
+  <rect x="20" y="88" width="680" height="1" fill="url(#line-grad)" opacity="0.4"/>
+</svg>
