@@ -7,12 +7,12 @@
       .title { font-family: 'Share Tech Mono', 'Courier New', monospace; }
     </style>
     <linearGradient id="fadeBottom" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="60%" stop-color="#0d1117" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#0d1117" stop-opacity="1"/>
+      <stop offset="60%" stop-color="#0a0f1f" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0a0f1f" stop-opacity="1"/>
     </linearGradient>
     <linearGradient id="fadeTop" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#0d1117" stop-opacity="1"/>
-      <stop offset="25%" stop-color="#0d1117" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#0a0f1f" stop-opacity="1"/>
+      <stop offset="25%" stop-color="#0a0f1f" stop-opacity="0"/>
     </linearGradient>
 
     <!-- Glow filter -->
@@ -27,7 +27,7 @@
   </defs>
 
   <!-- Background -->
-  <rect width="720" height="160" fill="#0d1117" rx="12"/>
+  <rect width="720" height="160" fill="#0a0f1f" rx="12"/>
 
   <!-- Matrix rain columns - col 0 -->
   <g opacity="0.5">
@@ -66,7 +66,7 @@
   <rect width="720" height="160" fill="url(#fadeBottom)" rx="12"/>
 
   <!-- Center glow backdrop -->
-  <ellipse cx="360" cy="80" rx="260" ry="55" fill="#0d1117" opacity="0.85"/>
+  <ellipse cx="360" cy="80" rx="260" ry="55" fill="#0a0f1f" opacity="0.85"/>
 
   <!-- Name -->
   <text x="360" y="62" font-family="'Share Tech Mono','Courier New',monospace" font-size="34" font-weight="bold"

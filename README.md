@@ -36,6 +36,15 @@
 
 <div align="center">
 
+<!-- LATEST REPOS + COMMITS (AUTO-GENERATED) -->
+<img src="./recent-work.svg" width="720" alt="Latest Repos and Commits"/>
+
+</div>
+
+---
+
+<div align="center">
+
 <!-- LIVE CODING ACTIVITY GRAPH -->
 <img src="https://github-readme-activity-graph.vercel.app/graph?username=Kaelith69&bg_color=0a0f1f&color=a5b4fc&line=00e5ff&point=39ff14&area=true&hide_border=true" width="720" alt="Live Activity Graph"/>
 
@@ -107,15 +116,6 @@
 
 <!-- PROFILE DETAILS -->
 <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Kaelith69&theme=tokyonight" width="720" alt="Profile Details"/>
-
-</div>
-
----
-
-<div align="center">
-
-<!-- LATEST REPOS + COMMITS (AUTO-GENERATED) -->
-<img src="./recent-work.svg" width="720" alt="Latest Repos and Commits"/>
 
 </div>
 

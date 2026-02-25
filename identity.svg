@@ -7,7 +7,7 @@
       <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
     </linearGradient>
   </defs>
-  <rect width="720" height="100" fill="#0d1117" rx="10"/>
+  <rect width="720" height="100" fill="#0a0f1f" rx="10"/>
   <rect width="720" height="100" fill="none" stroke="#21262d" stroke-width="1" rx="10"/>
 
   <!-- Accent bar left -->
