@@ -94,6 +94,8 @@ def update_time_region(now_ist: datetime) -> None:
 
     date_text = now_ist.strftime("%d %b %Y").upper()
     tz_text = "IST · UTC+05:30"
+    country_text = "India"
+    region_text = "Kerala · Malabar Coast"
 
     content = replace_once(
         content,
@@ -104,6 +106,16 @@ def update_time_region(now_ist: datetime) -> None:
         content,
         r"(<text id=\"tz-text\"[^>]*>)(.*?)(</text>)",
         rf"\g<1>{tz_text}\g<3>",
+    )
+    content = replace_once(
+        content,
+        r"(<text id=\"country-text\"[^>]*>)(.*?)(</text>)",
+        rf"\g<1>{country_text}\g<3>",
+    )
+    content = replace_once(
+        content,
+        r"(<text id=\"region-text\"[^>]*>)(.*?)(</text>)",
+        rf"\g<1>{region_text}\g<3>",
     )
 
     TIME_FILE.write_text(content, encoding="utf-8")
