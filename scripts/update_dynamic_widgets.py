@@ -92,29 +92,18 @@ def update_joke(now_ist: datetime) -> None:
 def update_time_region(now_ist: datetime) -> None:
     content = TIME_FILE.read_text(encoding="utf-8")
 
-    time_text = now_ist.strftime("%H:%M IST")
     date_text = now_ist.strftime("%d %b %Y").upper()
-    season_short, season_long = season_for_month(now_ist.month)
+    tz_text = "IST · UTC+05:30"
 
     content = replace_once(
         content,
-        r"(<text x=\"155\" y=\"58\"[^>]*>)(.*?)(</text>)",
-        rf"\g<1>{time_text}\g<3>",
-    )
-    content = replace_once(
-        content,
-        r"(<text x=\"637\" y=\"58\"[^>]*>)(.*?)(</text>)",
+        r"(<text id=\"date-text\"[^>]*>)(.*?)(</text>)",
         rf"\g<1>{date_text}\g<3>",
     )
     content = replace_once(
         content,
-        r"(<text x=\"637\" y=\"73\"[^>]*>)(.*?)(</text>)",
-        rf"\g<1>{season_short}\g<3>",
-    )
-    content = replace_once(
-        content,
-        r"(<text x=\"598\" y=\"93\"[^>]*>)(.*?)(</text>)",
-        rf"\g<1>{season_long} 🌿\g<3>",
+        r"(<text id=\"tz-text\"[^>]*>)(.*?)(</text>)",
+        rf"\g<1>{tz_text}\g<3>",
     )
 
     TIME_FILE.write_text(content, encoding="utf-8")
