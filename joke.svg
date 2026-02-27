@@ -17,12 +17,12 @@
 
   <!-- Joke line -->
   <text x="20" y="80" font-family="'Courier New',monospace" font-size="13" fill="#ffa657">
-    Why did the dev go broke?
+    Why do Python devs wear glasses?
   </text>
 
   <!-- Punchline -->
   <text x="20" y="100" font-family="'Courier New',monospace" font-size="13" fill="#58a6ff">
-    Used up all cache.
+    Because they cannot C.
   </text>
 
   <!-- Prompt with cursor -->
@@ -32,5 +32,5 @@
   </rect>
 
   <!-- Right label -->
-  <text x="700" y="105" font-family="'Courier New',monospace" font-size="10" fill="#30363d" text-anchor="end">// rotates daily · 2026-02-27</text>
+  <text x="700" y="105" font-family="'Courier New',monospace" font-size="10" fill="#30363d" text-anchor="end">// rotates daily · 2026-02-28</text>
 </svg>
