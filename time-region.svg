@@ -45,7 +45,7 @@
   </g>
 
   <!-- Text block (no split divider) -->
-  <text id="date-text" x="505" y="60" font-family="'Courier New',monospace" font-size="24" fill="#e6edf3" text-anchor="middle" font-weight="bold" filter="url(#glow)">28 FEB 2026</text>
+  <text id="date-text" x="505" y="60" font-family="'Courier New',monospace" font-size="24" fill="#e6edf3" text-anchor="middle" font-weight="bold" filter="url(#glow)">01 MAR 2026</text>
   <text id="tz-text" x="505" y="76" font-family="'Courier New',monospace" font-size="12" fill="#00e5ff" text-anchor="middle">IST · UTC+05:30</text>
   <text id="country-text" x="505" y="90" font-family="'Courier New',monospace" font-size="11" fill="#8b949e" text-anchor="middle">India</text>
   <text id="region-text" x="505" y="101" font-family="'Courier New',monospace" font-size="10" fill="#39ff14" text-anchor="middle">Kerala · Malabar Coast</text>
