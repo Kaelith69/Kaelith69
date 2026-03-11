@@ -17,12 +17,12 @@
 
   <!-- Joke line -->
   <text x="20" y="80" font-family="'Courier New',monospace" font-size="13" fill="#ffa657">
-    Why was the terminal calm?
+    Why did the repo smile?
   </text>
 
   <!-- Punchline -->
   <text x="20" y="100" font-family="'Courier New',monospace" font-size="13" fill="#58a6ff">
-    It had shell control.
+    It finally got a clean commit.
   </text>
 
   <!-- Prompt with cursor -->
@@ -32,5 +32,5 @@
   </rect>
 
   <!-- Right label -->
-  <text x="700" y="105" font-family="'Courier New',monospace" font-size="10" fill="#30363d" text-anchor="end">// rotates daily · 2026-03-11</text>
+  <text x="700" y="105" font-family="'Courier New',monospace" font-size="10" fill="#30363d" text-anchor="end">// rotates daily · 2026-03-12</text>
 </svg>
