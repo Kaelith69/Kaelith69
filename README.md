@@ -6,7 +6,7 @@
 
 <div align="center">
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Cinzel&weight=600&size=15&duration=3000&pause=1600&color=A5B4FC&center=true&vCenter=true&width=580&lines=Kerala%2C+India+%E2%80%94+UTC%2B5%3A30;Gaming+is+my+cardio.;Turning+caffeine+into+commits.;git+commit+-m+%22fix%22+%23+nothing+fixed)](https://github.com/Kaelith69)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Cinzel&weight=600&size=15&duration=3000&pause=1600&color=A5B4FC&center=true&vCenter=true&width=580&lines=Kerala%2C+India+%E2%80%94+UTC%2B5%3A30;Building+with+clarity.;Shipping+reliable+work.)](https://github.com/Kaelith69)
 
 </div>
 
@@ -114,7 +114,7 @@ uptime:    23:59  daily
   <img alt="contribution snake" src="https://raw.githubusercontent.com/Kaelith69/Kaelith69/output/github-contribution-grid-snake-dark.svg" width="100%"/>
 </picture>
 
-<sub>snake not showing? 2-min setup → <a href="https://github.com/Platane/snk">Platane/snk</a></sub>
+<sub>Snake animation is published from the output branch and refreshes automatically.</sub>
 
 </div>
 
@@ -126,37 +126,18 @@ uptime:    23:59  daily
 
 <div align="center">
 
-### `// honest_dev_facts.json`
+### `// highlights`
 
 <br/>
 
-![](https://img.shields.io/badge/bugs_created-unknown-7c3aed?style=flat-square&labelColor=0d1117)
-![](https://img.shields.io/badge/bugs_fixed-fewer-a5b4fc?style=flat-square&labelColor=0d1117)
-![](https://img.shields.io/badge/stackoverflow_tabs_open-yes-6ee7b7?style=flat-square&labelColor=0d1117)
-![](https://img.shields.io/badge/works_on_my_machine-true-7c3aed?style=flat-square&labelColor=0d1117)
-![](https://img.shields.io/badge/sleep_schedule-404_not_found-a5b4fc?style=flat-square&labelColor=0d1117)
-![](https://img.shields.io/badge/last_commit_msg-"fix"-6ee7b7?style=flat-square&labelColor=0d1117)
-![](https://img.shields.io/badge/documentation-lol-7c3aed?style=flat-square&labelColor=0d1117)
-![](https://img.shields.io/badge/gaming_hours_lost-%E2%88%9E-a5b4fc?style=flat-square&labelColor=0d1117)
-![](https://img.shields.io/badge/anime_dropped-too_many-6ee7b7?style=flat-square&labelColor=0d1117)
-![](https://img.shields.io/badge/coffee_dependency-critical-7c3aed?style=flat-square&labelColor=0d1117)
+![](https://img.shields.io/badge/focus-delivery_%26_quality-7c3aed?style=flat-square&labelColor=0d1117)
+![](https://img.shields.io/badge/style-clean_and_consistent-a5b4fc?style=flat-square&labelColor=0d1117)
+![](https://img.shields.io/badge/maintenance-automated-6ee7b7?style=flat-square&labelColor=0d1117)
+![](https://img.shields.io/badge/profile_assets-generated_locally-7c3aed?style=flat-square&labelColor=0d1117)
 
 <br/>
 
-```
-$ git log --oneline --author=Kaelith69
-
-a1b2c3d  fix
-d4e5f6a  fix for real this time
-7890abc  ok NOW it's fixed
-bcd1234  revert "ok NOW it's fixed"
-ef56789  why is this still broken
-1234abc  it works don't touch it
-5678def  touched it
-90abcde  add feature
-fghij12  remove feature  # cursed
-klmno34  final final FINAL fix  ✓
-```
+This profile is kept in sync by the repository workflow and the generated widgets under the project root.
 
 </div>
 
@@ -168,21 +149,7 @@ klmno34  final final FINAL fix  ✓
 
 <div align="center">
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Cormorant+Garamond&weight=600&size=22&duration=4500&pause=3000&color=A5B4FC&center=true&vCenter=true&multiline=true&repeat=true&width=720&height=120&lines=%E2%80%9CWe+don%27t+fight+because+we+believe+we+can+win.%E2%80%9D;%E2%80%9CWe+fight+because+we+have+to.%E2%80%9D+%E2%80%94+2B+%C2%B7+NieR%3A+Automata)](https://github.com/Kaelith69)
-
-<br/>
-
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Cormorant+Garamond&weight=600&size=22&duration=4500&pause=3000&color=6EE7B7&center=true&vCenter=true&multiline=true&repeat=true&width=720&height=120&lines=%E2%80%9CThe+universe+itself+might+be+a+mistake+%E2%80%94%E2%80%9D;%E2%80%9Cbut+there%27s+still+meaning+in+our+struggle.%E2%80%9D+%E2%80%94+Emil)](https://github.com/Kaelith69)
-
-<br/>
-
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Cormorant+Garamond&weight=600&size=22&duration=4500&pause=3000&color=C4B5FD&center=true&vCenter=true&multiline=true&repeat=true&width=720&height=120&lines=%E2%80%9CAny+fool+can+write+code+a+computer+understands.%E2%80%9D;%E2%80%9CGood+programmers+write+for+humans.%E2%80%9D+%E2%80%94+Fowler)](https://github.com/Kaelith69)
-
-<br/>
-
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Cormorant+Garamond&weight=700&size=28&duration=5000&pause=4000&color=A5B4FC&center=true&vCenter=true&width=400&height=60&lines=%22Glory+to+mankind.%22)](https://github.com/Kaelith69)
-
-<sub>— NieR: Automata &nbsp;·&nbsp; *and every dev who ships at 3am*</sub>
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Cormorant+Garamond&weight=600&size=24&duration=4200&pause=2500&color=A5B4FC&center=true&vCenter=true&multiline=true&repeat=true&width=720&height=120&lines=Building+practical+software+with+clean+interfaces.;Maintaining+small+systems+that+ship+well.;Focused+on+clarity%2C+consistency%2C+and+reliability.)](https://github.com/Kaelith69)
 
 </div>
 
