@@ -1,34 +1,34 @@
 <svg width="720" height="100" viewBox="0 0 720 100" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <filter id="glow"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="glow"><feGaussianBlur stdDeviation="0.9" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
     <linearGradient id="fade-lr" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0"/>
-      <stop offset="15%" stop-color="#00e5ff" stop-opacity="0.4"/>
-      <stop offset="85%" stop-color="#39ff14" stop-opacity="0.4"/>
-      <stop offset="100%" stop-color="#39ff14" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#6FB7FF" stop-opacity="0"/>
+      <stop offset="15%" stop-color="#6FB7FF" stop-opacity="0.28"/>
+      <stop offset="85%" stop-color="#2AA198" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#2AA198" stop-opacity="0"/>
     </linearGradient>
   </defs>
 
-  <rect width="720" height="100" fill="#0a0f1f" rx="10"/>
-  <rect width="720" height="100" fill="none" stroke="#21262d" stroke-width="1" rx="10"/>
+  <rect width="720" height="100" fill="#0F1724" rx="10"/>
+  <rect width="720" height="100" fill="none" stroke="#16202a" stroke-width="1" rx="10"/>
 
   <!-- Top line -->
   <rect x="20" y="12" width="680" height="1" fill="url(#fade-lr)"/>
 
   <!-- Quote marks decorative -->
-  <text x="24" y="52" font-family="Georgia,serif" font-size="48" fill="#21262d" opacity="0.6">"</text>
-  <text x="686" y="68" font-family="Georgia,serif" font-size="48" fill="#21262d" opacity="0.6">"</text>
+  <text x="24" y="52" font-family="Georgia,serif" font-size="48" fill="#16202a" opacity="0.6">"</text>
+  <text x="686" y="68" font-family="Georgia,serif" font-size="48" fill="#16202a" opacity="0.6">"</text>
 
   <!-- Main quote -->
-  <text x="360" y="48" font-family="'Courier New',monospace" font-size="13" fill="#e6edf3" text-anchor="middle" font-style="italic" filter="url(#glow)">
+  <text x="360" y="48" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" font-size="13" fill="#F7F6F2" text-anchor="middle" font-style="italic" font-weight="400" filter="url(#glow)">
     "Everything that lives is designed to end."
-    <animate attributeName="opacity" values="1;0.7;1" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;0.75;1" dur="4s" repeatCount="indefinite"/>
   </text>
-  <text x="360" y="66" font-family="'Courier New',monospace" font-size="11" fill="#58a6ff" text-anchor="middle">
-    — NieR: Automata  ·  <tspan fill="#8b949e">my bugs didn't get the memo</tspan>
+  <text x="360" y="66" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" font-size="11" fill="#6FB7FF" text-anchor="middle">
+    — NieR: Automata  ·  <tspan fill="#A3ADB8">my bugs didn't get the memo</tspan>
   </text>
 
   <!-- Bottom line + kaelith tag -->
   <rect x="20" y="84" width="680" height="1" fill="url(#fade-lr)"/>
-  <text x="360" y="97" font-family="'Courier New',monospace" font-size="9" fill="#30363d" text-anchor="middle" letter-spacing="2">KAELITH69 · MALABAR · 2026</text>
+  <text x="360" y="97" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" font-size="9" fill="#30363d" text-anchor="middle" letter-spacing="2">KAELITH69 · MALABAR · 2026</text>
 </svg>

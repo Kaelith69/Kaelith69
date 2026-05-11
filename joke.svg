@@ -1,36 +1,36 @@
 <svg width="720" height="130" viewBox="0 0 720 130" xmlns="http://www.w3.org/2000/svg">
 
-  <rect width="720" height="130" fill="#0a0f1f" rx="10"/>
-  <rect width="720" height="130" fill="none" stroke="#21262d" stroke-width="1" rx="10"/>
+  <rect width="720" height="130" fill="#0F1724" rx="10"/>
+  <rect width="720" height="130" fill="none" stroke="#16202a" stroke-width="1" rx="10"/>
 
   <!-- Terminal header -->
-  <rect x="0" y="0" width="720" height="34" fill="#11172a" rx="10"/>
-  <rect x="0" y="24" width="720" height="10" fill="#11172a"/>
-  <circle cx="20" cy="17" r="5" fill="#f78166"/>
-  <circle cx="36" cy="17" r="5" fill="#ffa657"/>
-  <circle cx="52" cy="17" r="5" fill="#3fb950"/>
-  <text x="360" y="22" font-family="'Courier New',monospace" font-size="11" fill="#8b949e" text-anchor="middle" letter-spacing="2">JOKE.EXE — DAILY BUILD</text>
+  <rect x="0" y="0" width="720" height="34" fill="#0d1622" rx="10"/>
+  <rect x="0" y="24" width="720" height="10" fill="#0d1622"/>
+  <circle cx="20" cy="17" r="5" fill="#E07A5F"/>
+  <circle cx="36" cy="17" r="5" fill="#E6B800"/>
+  <circle cx="52" cy="17" r="5" fill="#2AA198"/>
+  <text x="360" y="22" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" font-size="11" fill="#A3ADB8" text-anchor="middle" letter-spacing="2">JOKE.EXE — DAILY BUILD</text>
 
   <!-- Terminal content -->
-  <text x="20" y="58" font-family="'Courier New',monospace" font-size="12" fill="#3fb950">Kaelith69@malabar:~$</text>
-  <text x="175" y="58" font-family="'Courier New',monospace" font-size="12" fill="#e6edf3"> ./joke --today</text>
+  <text x="20" y="58" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" font-size="12" fill="#2AA198">Kaelith69@malabar:~$</text>
+  <text x="175" y="58" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" font-size="12" fill="#F7F6F2"> ./joke --today</text>
 
   <!-- Joke line -->
-  <text x="20" y="80" font-family="'Courier New',monospace" font-size="13" fill="#ffa657">
+  <text x="20" y="80" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" font-size="13" fill="#E6B800">
     Why was the JavaScript file sad?
   </text>
 
   <!-- Punchline -->
-  <text x="20" y="100" font-family="'Courier New',monospace" font-size="13" fill="#58a6ff">
+  <text x="20" y="100" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" font-size="13" fill="#6FB7FF">
     It did not know how to Node.
   </text>
 
   <!-- Prompt with cursor -->
-  <text x="20" y="120" font-family="'Courier New',monospace" font-size="12" fill="#3fb950">Kaelith69@malabar:~$</text>
-  <rect x="175" y="108" width="8" height="14" fill="#3fb950">
+  <text x="20" y="120" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" font-size="12" fill="#2AA198">Kaelith69@malabar:~$</text>
+  <rect x="175" y="108" width="8" height="14" fill="#2AA198">
     <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
   </rect>
 
   <!-- Right label -->
-  <text x="700" y="105" font-family="'Courier New',monospace" font-size="10" fill="#30363d" text-anchor="end">// rotates daily · 2026-05-09</text>
+  <text x="700" y="105" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" font-size="10" fill="#30363d" text-anchor="end">// rotates daily · 2026-05-09</text>
 </svg>

@@ -1,33 +1,32 @@
 <svg width="720" height="160" viewBox="0 0 720 160" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&amp;display=swap');
-      .rain-char { font-family: 'Share Tech Mono', 'Courier New', monospace; font-size: 14px; fill: #3fb950; opacity: 0; }
-      .rain-char-bright { font-family: 'Share Tech Mono', 'Courier New', monospace; font-size: 14px; fill: #58a6ff; font-weight: bold; }
-      .title { font-family: 'Share Tech Mono', 'Courier New', monospace; }
+      .rain-char { font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; font-size: 14px; fill: #2AA198; opacity: 0; }
+      .rain-char-bright { font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; font-size: 14px; fill: #6FB7FF; font-weight: 600; }
+      .title { font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
     </style>
     <linearGradient id="fadeBottom" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="60%" stop-color="#0a0f1f" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#0a0f1f" stop-opacity="1"/>
+      <stop offset="60%" stop-color="#0F1724" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0F1724" stop-opacity="1"/>
     </linearGradient>
     <linearGradient id="fadeTop" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#0a0f1f" stop-opacity="1"/>
-      <stop offset="25%" stop-color="#0a0f1f" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#0F1724" stop-opacity="1"/>
+      <stop offset="25%" stop-color="#0F1724" stop-opacity="0"/>
     </linearGradient>
 
     <!-- Glow filter -->
     <filter id="glow">
-      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feGaussianBlur stdDeviation="0.8" result="coloredBlur"/>
       <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
     <filter id="glow-blue">
-      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feGaussianBlur stdDeviation="1.0" result="coloredBlur"/>
       <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
 
   <!-- Background -->
-  <rect width="720" height="160" fill="#0a0f1f" rx="12"/>
+  <rect width="720" height="160" fill="#0F1724" rx="12"/>
 
   <!-- Matrix rain columns - col 0 -->
   <g opacity="0.5">
@@ -66,32 +65,32 @@
   <rect width="720" height="160" fill="url(#fadeBottom)" rx="12"/>
 
   <!-- Center glow backdrop -->
-  <ellipse cx="360" cy="80" rx="260" ry="55" fill="#0a0f1f" opacity="0.85"/>
+  <ellipse cx="360" cy="80" rx="260" ry="55" fill="#0F1724" opacity="0.85"/>
 
   <!-- Name -->
-  <text x="360" y="62" font-family="'Share Tech Mono','Courier New',monospace" font-size="34" font-weight="bold"
-    fill="#58a6ff" text-anchor="middle" filter="url(#glow-blue)" letter-spacing="8">
+  <text x="360" y="62" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" font-size="34" font-weight="700"
+    fill="#6FB7FF" text-anchor="middle" filter="url(#glow-blue)" letter-spacing="8">
     k a e l i t h
-    <animate attributeName="opacity" values="1;0.75;1" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;0.8;1" dur="3.2s" repeatCount="indefinite"/>
   </text>
 
   <!-- Subtitle line -->
-  <text x="360" y="90" font-family="'Share Tech Mono','Courier New',monospace" font-size="13"
-    fill="#3fb950" text-anchor="middle" filter="url(#glow)" letter-spacing="3" opacity="0.9">
+  <text x="360" y="90" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" font-size="13"
+    fill="#A3ADB8" text-anchor="middle" filter="url(#glow)" letter-spacing="3" opacity="0.9">
     cs student · malabar · developer &amp; digital artist
   </text>
 
   <!-- Blinking cursor -->
-  <rect x="536" y="78" width="9" height="2" fill="#3fb950" opacity="0.9">
-    <animate attributeName="opacity" values="0.9;0;0.9" dur="1s" repeatCount="indefinite"/>
+  <rect x="536" y="78" width="9" height="2" fill="#2AA198" opacity="0.9">
+    <animate attributeName="opacity" values="0.9;0;0.9" dur="0.8s" repeatCount="indefinite"/>
   </rect>
 
   <!-- Bottom scan line effect -->
-  <rect x="0" y="0" width="720" height="2" fill="#3fb950" opacity="0.08">
+  <rect x="0" y="0" width="720" height="2" fill="#2AA198" opacity="0.06">
     <animateTransform attributeName="transform" type="translate" values="0,0;0,160" dur="2s" repeatCount="indefinite"/>
   </rect>
 
   <!-- Border -->
-  <rect width="720" height="160" fill="none" stroke="#21262d" stroke-width="1" rx="12"/>
-  <rect x="1" y="1" width="718" height="158" fill="none" stroke="#3fb950" stroke-width="0.5" rx="11" opacity="0.3"/>
+  <rect width="720" height="160" fill="none" stroke="#16202a" stroke-width="1" rx="12"/>
+  <rect x="1" y="1" width="718" height="158" fill="none" stroke="#2AA198" stroke-width="0.5" rx="11" opacity="0.22"/>
 </svg>
