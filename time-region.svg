@@ -1,0 +1,55 @@
+<svg width="720" height="110" viewBox="0 0 720 110" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1.0" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0F1724"/>
+      <stop offset="100%" stop-color="#0b1220"/>
+    </linearGradient>
+    <linearGradient id="divider" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#00e5ff" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#39ff14" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="grid" width="8" height="8" patternUnits="userSpaceOnUse">
+      <path d="M8 0H0V8" fill="none" stroke="#16202a" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <rect width="720" height="110" fill="url(#bg)" rx="10"/>
+  <rect width="720" height="110" fill="url(#grid)" opacity="0.2" rx="10"/>
+  <rect width="720" height="110" fill="none" stroke="#21262d" stroke-width="1" rx="10"/>
+
+  <!-- Header bar -->
+  <rect x="0" y="0" width="720" height="26" fill="#0d1622" rx="10"/>
+  <rect x="0" y="18" width="720" height="8" fill="#0d1622"/>
+  <circle cx="20" cy="13" r="4.5" fill="#E07A5F"/>
+  <circle cx="34" cy="13" r="4.5" fill="#E6B800"/>
+  <circle cx="48" cy="13" r="4.5" fill="#2AA198"/>
+  <text x="360" y="18" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" font-size="10" fill="#A3ADB8" text-anchor="middle" letter-spacing="2">DATE + TIME ZONE</text>
+
+  <!-- Large country flag (3:2) with wave -->
+  <g id="country-flag" transform="translate(70 26)">
+    <rect width="126" height="84" fill="#ff9933" rx="8"/>
+    <rect y="28" width="126" height="28" fill="#ffffff"/>
+    <rect y="56" width="126" height="28" fill="#138808" rx="8"/>
+    <circle cx="63" cy="42" r="7.2" fill="none" stroke="#000080" stroke-width="1.2"/>
+    <circle cx="63" cy="42" r="2" fill="#000080"/>
+    <animateTransform attributeName="transform" type="skewX" values="-3;3;-3" dur="2.8s" repeatCount="indefinite" additive="sum"/>
+    <animateTransform attributeName="transform" type="translate" values="0 0;2 0;0 0;-2 0;0 0" dur="2.8s" repeatCount="indefinite" additive="sum"/>
+  </g>
+
+  <!-- Text block (no split divider) -->
+  <text id="date-text" x="505" y="60" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" font-size="24" fill="#F7F6F2" text-anchor="middle" font-weight="700" filter="url(#glow)">09 MAY 2026</text>
+  <text id="tz-text" x="505" y="76" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" font-size="12" fill="#6FB7FF" text-anchor="middle">IST · UTC+05:30</text>
+  <text id="country-text" x="505" y="90" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" font-size="11" fill="#A3ADB8" text-anchor="middle">India</text>
+  <text id="region-text" x="505" y="101" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" font-size="10" fill="#2AA198" text-anchor="middle">Kerala · Malabar Coast</text>
+
+  <!-- Bottom accent line -->
+  <rect x="20" y="106" width="680" height="1" fill="url(#divider)"/>
+</svg>
