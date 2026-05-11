@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD033 MD045 MD041 MD040 -->
+
 <img src="https://capsule-render.vercel.app/api?type=venom&color=0:0d0221,50:2d1b69,100:7c3aed&height=240&section=header&text=KAELITH69&fontSize=72&fontColor=a5b4fc&fontAlignY=50&animation=fadeIn&fontFamily=Cinzel&desc=builder%20%E2%80%A2%20gamer%20%E2%80%A2%20night%20owl&descSize=16&descAlignY=70&descColor=6ee7b7&descFontFamily=Cinzel" width="100%"/>
 
 <br/>
@@ -80,17 +82,9 @@ uptime:    23:59  daily
 
 <br/>
 
-<picture>
-  <source media="(prefers-color-scheme: dark)"  srcset="https://github-readme-stats.vercel.app/api?username=Kaelith69&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=a5b4fc&icon_color=6ee7b7&text_color=c9d1d9&ring_color=7c3aed&count_private=true&include_all_commits=true"/>
-  <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api?username=Kaelith69&show_icons=true&theme=default&hide_border=true&count_private=true&include_all_commits=true"/>
-  <img src="https://github-readme-stats.vercel.app/api?username=Kaelith69&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=a5b4fc&icon_color=6ee7b7&text_color=c9d1d9&ring_color=7c3aed&count_private=true&include_all_commits=true" height="165" alt="stats"/>
-</picture>
+<img src="stats.svg" width="49%" alt="stats"/>
 &nbsp;&nbsp;
-<picture>
-  <source media="(prefers-color-scheme: dark)"  srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=Kaelith69&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=a5b4fc&text_color=c9d1d9&langs_count=6"/>
-  <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=Kaelith69&layout=compact&theme=default&hide_border=true&langs_count=6"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Kaelith69&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=a5b4fc&text_color=c9d1d9&langs_count=6" height="165" alt="langs"/>
-</picture>
+<img src="langs.svg" width="49%" alt="langs"/>
 
 <br/><br/>
 
