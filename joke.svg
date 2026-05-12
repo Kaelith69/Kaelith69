@@ -17,12 +17,12 @@
 
   <!-- Joke line -->
   <text x="20" y="80" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" font-size="13" fill="#E6B800">
-    Why did the function return early?
+    Why did the CSS developer panic?
   </text>
 
   <!-- Punchline -->
   <text x="20" y="100" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" font-size="13" fill="#6FB7FF">
-    It had a base case.
+    Specificity got out of hand.
   </text>
 
   <!-- Prompt with cursor -->
@@ -32,5 +32,5 @@
   </rect>
 
   <!-- Right label -->
-  <text x="700" y="105" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" font-size="10" fill="#30363d" text-anchor="end">// rotates daily · 2026-05-12</text>
+  <text x="700" y="105" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" font-size="10" fill="#30363d" text-anchor="end">// rotates daily · 2026-05-13</text>
 </svg>
