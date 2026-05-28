@@ -1,0 +1,57 @@
+<svg width="860" height="110" viewBox="0 0 860 110" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Current focus">
+  <defs>
+    <linearGradient id="focus-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#12161b"/>
+      <stop offset="100%" stop-color="#171c22"/>
+    </linearGradient>
+  </defs>
+  <rect width="860" height="110" rx="16" fill="url(#focus-bg)"/>
+  <rect x="1" y="1" width="858" height="108" rx="15" stroke="#2a313a"/>
+
+  <!-- Subtle background particles -->
+  <g opacity="0.2">
+    <circle cx="150" cy="90" r="1.5" fill="#7a8fa6">
+      <animate attributeName="cy" values="90;20;90" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="15s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="380" cy="80" r="2" fill="#d7c3a3">
+      <animate attributeName="cy" values="80;10;80" dur="22s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="22s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="720" cy="100" r="1.5" fill="#66708a">
+      <animate attributeName="cy" values="100;30;100" dur="18s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="18s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="250" cy="70" r="1" fill="#b89f7a">
+      <animate attributeName="cy" values="70;20;70" dur="20s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.6;0" dur="20s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="600" cy="60" r="2" fill="#7a8fa6">
+      <animate attributeName="cy" values="60;90;60" dur="25s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.7;0" dur="25s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Section label -->
+  <text x="40" y="28" font-family="'JetBrains Mono','SFMono-Regular',monospace" font-size="10" fill="#9da6b2" letter-spacing="2">CURRENT FOCUS</text>
+  <line x1="40" y1="36" x2="820" y2="36" stroke="#20262d" stroke-width="1"/>
+
+  <!-- Focus items inline row 1 -->
+  <g font-family="Inter, sans-serif" font-size="12" fill="#9da6b2">
+    <circle cx="52" cy="56" r="2.5" fill="#d7c3a3" opacity="0.7"/>
+    <text x="62" y="61">refining engineering workflows</text>
+
+    <circle cx="52" cy="80" r="2.5" fill="#7a8fa6" opacity="0.7"/>
+    <text x="62" y="85">building polished developer tooling</text>
+
+    <!-- Col 2 -->
+    <circle cx="440" cy="56" r="2.5" fill="#b89f7a" opacity="0.7"/>
+    <text x="450" y="61">improving systems thinking and architecture</text>
+
+    <circle cx="440" cy="80" r="2.5" fill="#66708a" opacity="0.7"/>
+    <text x="450" y="85">making software feel effortless</text>
+  </g>
+
+  <!-- Corner tag -->
+  <text x="820" y="102" font-family="'JetBrains Mono','SFMono-Regular',monospace" font-size="9" fill="#20262d" text-anchor="end">// wip</text>
+</svg>

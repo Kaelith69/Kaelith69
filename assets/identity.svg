@@ -1,30 +1,89 @@
-<svg width="860" height="120" viewBox="0 0 860 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Identity card">
+<svg width="860" height="200" viewBox="0 0 860 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Identity dossier">
   <defs>
     <linearGradient id="identity-bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#12161b"/>
       <stop offset="100%" stop-color="#171c22"/>
     </linearGradient>
+    <linearGradient id="id-accent-line" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d7c3a3" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#d7c3a3" stop-opacity="0.1"/>
+    </linearGradient>
   </defs>
-  <rect width="860" height="120" rx="16" fill="url(#identity-bg)"/>
-  <rect x="1" y="1" width="858" height="118" rx="15" stroke="#2a313a"/>
+  <rect width="860" height="200" rx="16" fill="url(#identity-bg)"/>
+  <rect x="1" y="1" width="858" height="198" rx="15" stroke="#2a313a"/>
 
-  <g>
-    <circle cx="72" cy="60" r="28" fill="#171c22" stroke="#2a313a" stroke-width="1.5"/>
-    <text x="72" y="68" text-anchor="middle" font-family="'Cormorant Garamond','Libre Baskerville','Georgia',serif" font-size="26" fill="#e8e4dc">K</text>
-    <circle cx="104" cy="38" r="4" fill="#d7c3a3">
-      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="6s" repeatCount="indefinite"/>
+  <!-- Subtle background particles -->
+  <g opacity="0.2">
+    <circle cx="150" cy="180" r="1.5" fill="#7a8fa6">
+      <animate attributeName="cy" values="180;80;180" dur="16s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="16s" repeatCount="indefinite"/>
     </circle>
-    <path d="M60 86 L72 98 L84 86" stroke="#7a8fa6" stroke-width="1" fill="none" opacity="0.7"/>
+    <circle cx="400" cy="150" r="2" fill="#d7c3a3">
+      <animate attributeName="cy" values="150;50;150" dur="21s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="21s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="720" cy="190" r="1.5" fill="#66708a">
+      <animate attributeName="cy" values="190;90;190" dur="19s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="19s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="250" cy="140" r="1" fill="#b89f7a">
+      <animate attributeName="cy" values="140;40;140" dur="23s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.6;0" dur="23s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="600" cy="120" r="2" fill="#7a8fa6">
+      <animate attributeName="cy" values="120;180;120" dur="26s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.7;0" dur="26s" repeatCount="indefinite"/>
+    </circle>
   </g>
 
-  <line x1="140" y1="20" x2="140" y2="100" stroke="#2a313a"/>
+  <!-- Left accent bar -->
+  <rect x="36" y="24" width="2" height="152" rx="1" fill="url(#id-accent-line)"/>
 
+  <!-- Section label -->
+  <text x="52" y="38" font-family="'JetBrains Mono','SFMono-Regular',monospace" font-size="10" fill="#9da6b2" letter-spacing="2">ABOUT</text>
+  <circle cx="96" cy="35" r="2" fill="#d7c3a3" opacity="0.5"/>
+
+  <!-- Bio copy -->
+  <text x="52" y="64" font-family="Inter, sans-serif" font-size="13" fill="#e8e4dc">I build systems, tools, and interfaces with an obsession for polish, reliability, and clarity.</text>
+  <text x="52" y="84" font-family="Inter, sans-serif" font-size="12" fill="#9da6b2">Interested in software architecture, automation, developer tooling, systems thinking, and elegant engineering.</text>
+
+  <!-- Divider -->
+  <line x1="52" y1="100" x2="808" y2="100" stroke="#20262d" stroke-width="1"/>
+
+  <!-- YAML block -->
   <g font-family="'JetBrains Mono','SFMono-Regular',monospace" font-size="12">
-    <text x="170" y="32" fill="#9da6b2">name: <tspan fill="#e8e4dc">Kaelith69</tspan></text>
-    <text x="170" y="48" fill="#9da6b2">base: <tspan fill="#e8e4dc">Kerala, India</tspan></text>
-    <text x="170" y="64" fill="#9da6b2">timezone: <tspan fill="#e8e4dc">IST · UTC+5:30</tspan></text>
-    <text x="170" y="80" fill="#9da6b2">stack: <tspan fill="#e8e4dc">Python · JS · React</tspan></text>
-    <text x="170" y="96" fill="#9da6b2">mood: <tspan fill="#e8e4dc">quietly focused</tspan></text>
-    <text x="170" y="112" fill="#9da6b2">energy: <tspan fill="#e8e4dc">late-night shipping</tspan></text>
+    <!-- col 1 -->
+    <text x="52" y="122" fill="#66708a">name:</text>
+    <text x="120" y="122" fill="#e8e4dc">kaelith69</text>
+
+    <text x="52" y="140" fill="#66708a">base:</text>
+    <text x="120" y="140" fill="#e8e4dc">Kerala, India</text>
+
+    <text x="52" y="158" fill="#66708a">timezone:</text>
+    <text x="152" y="158" fill="#e8e4dc">IST · UTC+5:30</text>
+
+    <text x="52" y="176" fill="#66708a">approach:</text>
+    <text x="158" y="176" fill="#c8c0b2">reliability</text>
+    <text x="248" y="176" fill="#66708a">&gt;</text>
+    <text x="260" y="176" fill="#c8c0b2">complexity</text>
+
+    <!-- col 2 -->
+    <text x="460" y="122" fill="#66708a">focus:</text>
+    <text x="522" y="122" fill="#c8c0b2">systems · tooling · automation</text>
+
+    <text x="460" y="140" fill="#66708a">currently:</text>
+    <text x="558" y="140" fill="#c8c0b2">building polished things slowly</text>
+
+    <text x="460" y="158" fill="#66708a">outside:</text>
+    <text x="544" y="158" fill="#c8c0b2">sci-fi · mythology · history · games</text>
+
+    <text x="460" y="176" fill="#66708a">status:</text>
+    <text x="524" y="176" fill="#c8c0b2">
+      <tspan>exploring new tech &amp; art</tspan>
+      <animate attributeName="opacity" values="1;0.5;1" dur="3s" repeatCount="indefinite"/>
+    </text>
   </g>
+
+  <!-- Corner decoration -->
+  <text x="810" y="190" font-family="'JetBrains Mono','SFMono-Regular',monospace" font-size="9" fill="#20262d" text-anchor="end">// identity.json</text>
 </svg>
