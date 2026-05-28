@@ -1,39 +1,51 @@
 <svg width="860" height="80" viewBox="0 0 860 80" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Profile footer">
   <defs>
-    <linearGradient id="footer-bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0b0d10"/>
-      <stop offset="100%" stop-color="#12161b"/>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#05070B">
+        <animate attributeName="stop-color" values="#05070B;#081018;#05070B" dur="60s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#0B1220">
+        <animate attributeName="stop-color" values="#0B1220;#05070B;#0B1220" dur="60s" repeatCount="indefinite" />
+      </stop>
     </linearGradient>
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 0.02 0" />
+    </filter>
   </defs>
-  <rect width="860" height="80" rx="16" fill="url(#footer-bg)"/>
-  <rect x="1" y="1" width="858" height="78" rx="15" stroke="#20262d"/>
 
-  <!-- Subtle background particles -->
-  <g opacity="0.2">
-    <circle cx="120" cy="60" r="1.5" fill="#7a8fa6">
-      <animate attributeName="cy" values="60;10;60" dur="13s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;1;0" dur="13s" repeatCount="indefinite"/>
+  <rect width="860" height="80" rx="16" fill="url(#bg-grad)"/>
+  <rect width="860" height="80" rx="16" filter="url(#noise)" style="mix-blend-mode: soft-light" pointer-events="none"/>
+  <rect x="1" y="1" width="858" height="78" rx="15" stroke="#18314A" stroke-opacity="0.8"/>
+
+  <!-- Dust Nebula Layer -->
+  <g opacity="1">
+    <circle cx="15%" cy="80%" r="1" fill="rgba(110,160,255,0.08)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 20,-40; 0,0" dur="25s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.03;0.12;0.03" dur="18s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="450" cy="70" r="2" fill="#d7c3a3">
-      <animate attributeName="cy" values="70;20;70" dur="18s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;0.8;0" dur="18s" repeatCount="indefinite"/>
+    <circle cx="45%" cy="70%" r="1.5" fill="rgba(110,160,255,0.08)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -15,-30; 0,0" dur="30s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.03;0.12;0.03" dur="22s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="750" cy="50" r="1.5" fill="#66708a">
-      <animate attributeName="cy" values="50;10;50" dur="16s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;1;0" dur="16s" repeatCount="indefinite"/>
+    <circle cx="75%" cy="90%" r="1" fill="rgba(220,190,150,0.10)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 25,-50; 0,0" dur="35s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.03;0.10;0.03" dur="26s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="280" cy="65" r="1" fill="#b89f7a">
-      <animate attributeName="cy" values="65;15;65" dur="21s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;0.6;0" dur="21s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="620" cy="40" r="2" fill="#7a8fa6">
-      <animate attributeName="cy" values="40;70;40" dur="23s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;0.7;0" dur="23s" repeatCount="indefinite"/>
+    <circle cx="88%" cy="50%" r="2" fill="rgba(110,160,255,0.08)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -10,-20; 0,0" dur="28s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.03;0.12;0.03" dur="20s" repeatCount="indefinite"/>
     </circle>
   </g>
 
-  <line x1="90" y1="40" x2="150" y2="40" stroke="#2a313a"/>
-  <line x1="710" y1="40" x2="770" y2="40" stroke="#2a313a"/>
+  <!-- Sacred Pulse around Aham Brahmasmi -->
+  <circle cx="430" cy="40" r="100" fill="rgba(215,194,162,1)">
+    <animate attributeName="r" values="98;102;98" dur="8s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.02;0.06;0.02" dur="8s" repeatCount="indefinite"/>
+  </circle>
+
+  <line x1="90" y1="40" x2="150" y2="40" stroke="#18314A" stroke-opacity="0.8"/>
+  <line x1="710" y1="40" x2="770" y2="40" stroke="#18314A" stroke-opacity="0.8"/>
   <circle cx="150" cy="40" r="2" fill="#d7c3a3"/>
   <circle cx="710" cy="40" r="2" fill="#d7c3a3"/>
 

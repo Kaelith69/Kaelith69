@@ -1,56 +1,62 @@
 <svg width="860" height="110" viewBox="0 0 860 110" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Contact information">
   <defs>
-    <linearGradient id="contact-bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#12161b"/>
-      <stop offset="100%" stop-color="#171c22"/>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#05070B">
+        <animate attributeName="stop-color" values="#05070B;#081018;#05070B" dur="60s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#0B1220">
+        <animate attributeName="stop-color" values="#0B1220;#05070B;#0B1220" dur="60s" repeatCount="indefinite" />
+      </stop>
     </linearGradient>
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 0.02 0" />
+    </filter>
   </defs>
-  <rect width="860" height="110" rx="16" fill="url(#contact-bg)"/>
-  <rect x="1" y="1" width="858" height="108" rx="15" stroke="#2a313a"/>
 
-  <!-- Subtle background particles -->
-  <g opacity="0.2">
-    <circle cx="150" cy="90" r="1.5" fill="#7a8fa6">
-      <animate attributeName="cy" values="90;20;90" dur="15s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;1;0" dur="15s" repeatCount="indefinite"/>
+  <rect width="860" height="110" rx="16" fill="url(#bg-grad)"/>
+  <rect width="860" height="110" rx="16" filter="url(#noise)" style="mix-blend-mode: soft-light" pointer-events="none"/>
+  <rect x="1" y="1" width="858" height="108" rx="15" stroke="#18314A" stroke-opacity="0.8"/>
+
+  <!-- Dust Nebula Layer -->
+  <g opacity="1">
+    <circle cx="15%" cy="80%" r="1" fill="rgba(110,160,255,0.08)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 20,-40; 0,0" dur="25s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.03;0.12;0.03" dur="18s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="380" cy="80" r="2" fill="#d7c3a3">
-      <animate attributeName="cy" values="80;10;80" dur="22s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;0.8;0" dur="22s" repeatCount="indefinite"/>
+    <circle cx="45%" cy="70%" r="1.5" fill="rgba(110,160,255,0.08)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -15,-30; 0,0" dur="30s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.03;0.12;0.03" dur="22s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="720" cy="100" r="1.5" fill="#66708a">
-      <animate attributeName="cy" values="100;30;100" dur="18s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;1;0" dur="18s" repeatCount="indefinite"/>
+    <circle cx="75%" cy="90%" r="1" fill="rgba(220,190,150,0.10)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 25,-50; 0,0" dur="35s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.03;0.10;0.03" dur="26s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="250" cy="70" r="1" fill="#b89f7a">
-      <animate attributeName="cy" values="70;20;70" dur="20s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;0.6;0" dur="20s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="600" cy="60" r="2" fill="#7a8fa6">
-      <animate attributeName="cy" values="60;90;60" dur="25s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;0.7;0" dur="25s" repeatCount="indefinite"/>
+    <circle cx="88%" cy="50%" r="2" fill="rgba(110,160,255,0.08)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -10,-20; 0,0" dur="28s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.03;0.12;0.03" dur="20s" repeatCount="indefinite"/>
     </circle>
   </g>
 
   <!-- Section label -->
   <text x="40" y="28" font-family="'JetBrains Mono','SFMono-Regular',monospace" font-size="10" fill="#9da6b2" letter-spacing="2">NETWORK</text>
-  <line x1="40" y1="36" x2="820" y2="36" stroke="#20262d" stroke-width="1"/>
+  <line x1="40" y1="36" x2="820" y2="36" stroke="#18314A" stroke-opacity="0.6" stroke-width="1"/>
 
   <g font-family="Inter, sans-serif" font-size="13" fill="#e8e4dc">
     <!-- Discord -->
-    <rect x="40" y="52" width="370" height="42" rx="10" fill="#171c22" stroke="#20262d"/>
+    <rect x="40" y="52" width="370" height="42" rx="10" fill="#0B1220" stroke="#18314A" stroke-opacity="0.8"/>
     <circle cx="60" cy="73" r="3" fill="#7a8fa6"/>
     <text x="76" y="77" fill="#66708a" font-family="'JetBrains Mono','SFMono-Regular',monospace" font-size="11">discord</text>
     <text x="146" y="77">kaelith6.9</text>
     <text x="236" y="77" fill="#9da6b2" font-family="'JetBrains Mono','SFMono-Regular',monospace" font-size="10">id: 1413084975938539540</text>
 
     <!-- Instagram -->
-    <rect x="430" y="52" width="390" height="42" rx="10" fill="#171c22" stroke="#20262d"/>
+    <rect x="430" y="52" width="390" height="42" rx="10" fill="#0B1220" stroke="#18314A" stroke-opacity="0.8"/>
     <circle cx="450" cy="73" r="3" fill="#d7c3a3"/>
     <text x="466" y="77" fill="#66708a" font-family="'JetBrains Mono','SFMono-Regular',monospace" font-size="11">instagram</text>
-    <text x="556" y="77">@kaelith69</text>
+    <text x="556" y="77">@kaelith6.9</text>
   </g>
 
   <!-- Corner tag -->
-  <text x="820" y="102" font-family="'JetBrains Mono','SFMono-Regular',monospace" font-size="9" fill="#20262d" text-anchor="end">// ping</text>
+  <text x="820" y="102" font-family="'JetBrains Mono','SFMono-Regular',monospace" font-size="9" fill="#18314A" text-anchor="end">// ping</text>
 </svg>

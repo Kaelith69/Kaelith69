@@ -1,70 +1,98 @@
 <svg width="860" height="180" viewBox="0 0 860 180" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Kaelith69 profile hero">
   <defs>
-    <linearGradient id="hero-bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0b0d10"/>
-      <stop offset="100%" stop-color="#12161b"/>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#05070B">
+        <animate attributeName="stop-color" values="#05070B;#081018;#05070B" dur="60s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#0B1220">
+        <animate attributeName="stop-color" values="#0B1220;#05070B;#0B1220" dur="60s" repeatCount="indefinite" />
+      </stop>
     </linearGradient>
     <radialGradient id="hero-vignette" cx="0.5" cy="0.4" r="0.8">
-      <stop offset="55%" stop-color="#0b0d10" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#0b0d10" stop-opacity="0.85"/>
+      <stop offset="55%" stop-color="#05070B" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#05070B" stop-opacity="0.85"/>
     </radialGradient>
     <linearGradient id="hero-line" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#7a8fa6" stop-opacity="0"/>
       <stop offset="50%" stop-color="#7a8fa6" stop-opacity="0.6"/>
       <stop offset="100%" stop-color="#7a8fa6" stop-opacity="0"/>
     </linearGradient>
+    <linearGradient id="sweep" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="45%" stop-color="transparent" />
+      <stop offset="50%" stop-color="#D7C2A2" />
+      <stop offset="55%" stop-color="transparent" />
+    </linearGradient>
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 0.02 0" />
+    </filter>
   </defs>
-  <rect width="860" height="180" rx="18" fill="url(#hero-bg)"/>
+
+  <!-- Background Layer -->
+  <rect width="860" height="180" rx="18" fill="url(#bg-grad)"/>
   <rect width="860" height="180" rx="18" fill="url(#hero-vignette)"/>
-  <rect x="24" y="26" width="812" height="128" rx="14" fill="none" stroke="#20262d" stroke-opacity="0.6"/>
+  <rect width="860" height="180" rx="18" filter="url(#noise)" style="mix-blend-mode: soft-light" pointer-events="none"/>
 
-  <!-- Subtle background particles -->
-  <g opacity="0.2">
-    <circle cx="120" cy="150" r="1.5" fill="#7a8fa6">
-      <animate attributeName="cy" values="150;50;150" dur="15s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;1;0" dur="15s" repeatCount="indefinite"/>
+  <!-- Celestial Sweep -->
+  <g style="mix-blend-mode: screen" opacity="0.015">
+    <rect x="-100%" y="-100%" width="300%" height="300%" fill="url(#sweep)" transform="rotate(30)">
+      <animateTransform attributeName="transform" type="translate" values="-1500,-500; 1000,500" dur="25s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- Outline -->
+  <rect x="24" y="26" width="812" height="128" rx="14" fill="none" stroke="#18314A" stroke-opacity="0.6"/>
+
+  <!-- Dust Nebula Layer (Layer 2) -->
+  <g opacity="1">
+    <circle cx="10%" cy="80%" r="1" fill="rgba(110,160,255,0.08)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 20,-40; 0,0" dur="25s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.03;0.12;0.03" dur="18s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="430" cy="120" r="2" fill="#d7c3a3">
-      <animate attributeName="cy" values="120;20;120" dur="20s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;0.8;0" dur="20s" repeatCount="indefinite"/>
+    <circle cx="40%" cy="70%" r="1.5" fill="rgba(110,160,255,0.08)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -15,-30; 0,0" dur="30s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.03;0.12;0.03" dur="22s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="750" cy="160" r="1.5" fill="#66708a">
-      <animate attributeName="cy" values="160;60;160" dur="18s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;1;0" dur="18s" repeatCount="indefinite"/>
+    <circle cx="70%" cy="90%" r="1" fill="rgba(220,190,150,0.10)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 25,-50; 0,0" dur="35s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.03;0.10;0.03" dur="26s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="280" cy="130" r="1" fill="#b89f7a">
-      <animate attributeName="cy" values="130;30;130" dur="22s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;0.6;0" dur="22s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="620" cy="100" r="2" fill="#7a8fa6">
-      <animate attributeName="cy" values="100;160;100" dur="25s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;0.7;0" dur="25s" repeatCount="indefinite"/>
+    <circle cx="85%" cy="30%" r="2" fill="rgba(110,160,255,0.08)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -10,-20; 0,0" dur="28s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.03;0.12;0.03" dur="20s" repeatCount="indefinite"/>
     </circle>
   </g>
 
-  <g opacity="0.6" stroke="#2a313a" stroke-width="1">
-    <line x1="70" y1="40" x2="130" y2="40"/>
-    <line x1="730" y1="140" x2="790" y2="140"/>
-    <line x1="780" y1="50" x2="820" y2="90"/>
-    <line x1="40" y1="120" x2="110" y2="150"/>
-  </g>
+  <!-- Constellation Layer (Layer 3) -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 1.5,1; 0,0" dur="20s" repeatCount="indefinite"/>
+    
+    <g opacity="0.3" stroke="rgba(118,160,255,0.08)" stroke-width="1">
+      <animate attributeName="opacity" values="0.2;0.4;0.2" dur="15s" repeatCount="indefinite"/>
+      <line x1="70" y1="40" x2="130" y2="40"/>
+      <line x1="730" y1="140" x2="790" y2="140"/>
+      <line x1="780" y1="50" x2="820" y2="90"/>
+      <line x1="40" y1="120" x2="110" y2="150"/>
+    </g>
 
-  <g opacity="0.5" stroke="#7a8fa6" stroke-width="1">
-    <line x1="540" y1="38" x2="620" y2="70"/>
-    <line x1="620" y1="70" x2="700" y2="56"/>
-    <line x1="700" y1="56" x2="760" y2="88"/>
-  </g>
+    <g opacity="0.3" stroke="rgba(118,160,255,0.08)" stroke-width="1">
+      <animate attributeName="opacity" values="0.2;0.4;0.2" dur="18s" repeatCount="indefinite"/>
+      <line x1="540" y1="38" x2="620" y2="70"/>
+      <line x1="620" y1="70" x2="700" y2="56"/>
+      <line x1="700" y1="56" x2="760" y2="88"/>
+    </g>
 
-  <g fill="#7a8fa6">
-    <circle cx="540" cy="38" r="2"/>
-    <circle cx="620" cy="70" r="2.5"/>
-    <circle cx="700" cy="56" r="2"/>
-    <circle cx="760" cy="88" r="2"/>
+    <g fill="#D8C4A5" style="filter: drop-shadow(0 0 6px rgba(190,170,140,.06))">
+      <circle cx="540" cy="38" r="2"><animate attributeName="opacity" values="0.12;0.35;0.12" dur="12s" repeatCount="indefinite"/></circle>
+      <circle cx="620" cy="70" r="2.5"><animate attributeName="opacity" values="0.12;0.35;0.12" dur="14s" repeatCount="indefinite"/></circle>
+      <circle cx="700" cy="56" r="2"><animate attributeName="opacity" values="0.12;0.35;0.12" dur="16s" repeatCount="indefinite"/></circle>
+      <circle cx="760" cy="88" r="2"><animate attributeName="opacity" values="0.12;0.35;0.12" dur="13s" repeatCount="indefinite"/></circle>
+    </g>
   </g>
 
   <g opacity="0.35">
-    <circle cx="115" cy="64" r="3" fill="#d7c3a3"/>
-    <circle cx="804" cy="120" r="2" fill="#d7c3a3"/>
+    <circle cx="115" cy="64" r="3" fill="#D7C2A2"/>
+    <circle cx="804" cy="120" r="2" fill="#D7C2A2"/>
     <line x1="150" y1="100" x2="360" y2="100" stroke="url(#hero-line)" stroke-width="1"/>
   </g>
 
@@ -75,12 +103,12 @@
   </g>
 
   <g>
-    <line x1="78" y1="98" x2="180" y2="98" stroke="#b89f7a" stroke-width="1"/>
+    <line x1="78" y1="98" x2="180" y2="98" stroke="#BCA17D" stroke-width="1"/>
   </g>
 
   <g opacity="0.45">
-    <circle cx="792" cy="42" r="3" fill="#d7c3a3"/>
-    <circle cx="812" cy="54" r="2" fill="#d7c3a3"/>
+    <circle cx="792" cy="42" r="3" fill="#D7C2A2"/>
+    <circle cx="812" cy="54" r="2" fill="#D7C2A2"/>
     <animate attributeName="opacity" values="0.2;0.5;0.2" dur="16s" repeatCount="indefinite"/>
   </g>
 </svg>
