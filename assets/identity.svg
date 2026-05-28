@@ -1,0 +1,30 @@
+<svg width="860" height="120" viewBox="0 0 860 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Identity card">
+  <defs>
+    <linearGradient id="identity-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#12161b"/>
+      <stop offset="100%" stop-color="#171c22"/>
+    </linearGradient>
+  </defs>
+  <rect width="860" height="120" rx="16" fill="url(#identity-bg)"/>
+  <rect x="1" y="1" width="858" height="118" rx="15" stroke="#2a313a"/>
+
+  <g>
+    <circle cx="72" cy="60" r="28" fill="#171c22" stroke="#2a313a" stroke-width="1.5"/>
+    <text x="72" y="68" text-anchor="middle" font-family="'Cormorant Garamond','Libre Baskerville','Georgia',serif" font-size="26" fill="#e8e4dc">K</text>
+    <circle cx="104" cy="38" r="4" fill="#d7c3a3">
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <path d="M60 86 L72 98 L84 86" stroke="#7a8fa6" stroke-width="1" fill="none" opacity="0.7"/>
+  </g>
+
+  <line x1="140" y1="20" x2="140" y2="100" stroke="#2a313a"/>
+
+  <g font-family="'JetBrains Mono','SFMono-Regular',monospace" font-size="12">
+    <text x="170" y="32" fill="#9da6b2">name: <tspan fill="#e8e4dc">Kaelith69</tspan></text>
+    <text x="170" y="48" fill="#9da6b2">base: <tspan fill="#e8e4dc">Kerala, India</tspan></text>
+    <text x="170" y="64" fill="#9da6b2">timezone: <tspan fill="#e8e4dc">IST · UTC+5:30</tspan></text>
+    <text x="170" y="80" fill="#9da6b2">stack: <tspan fill="#e8e4dc">Python · JS · React</tspan></text>
+    <text x="170" y="96" fill="#9da6b2">mood: <tspan fill="#e8e4dc">quietly focused</tspan></text>
+    <text x="170" y="112" fill="#9da6b2">energy: <tspan fill="#e8e4dc">late-night shipping</tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,41 @@
+<svg width="860" height="140" viewBox="0 0 860 140" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Metrics panel">
+  <rect width="860" height="140" rx="16" fill="#12161b"/>
+  <rect x="1" y="1" width="858" height="138" rx="15" stroke="#2a313a"/>
+
+  <text x="40" y="26" font-family="'JetBrains Mono','SFMono-Regular',monospace" font-size="11" fill="#9da6b2" letter-spacing="1">SIGNAL</text>
+  <text x="360" y="26" font-family="'JetBrains Mono','SFMono-Regular',monospace" font-size="11" fill="#9da6b2" letter-spacing="1">LANGUAGE RHYTHM</text>
+
+  <line x1="320" y1="24" x2="320" y2="118" stroke="#2a313a"/>
+
+  <g font-family="Inter, sans-serif" font-size="11" fill="#c8c0b2" text-anchor="middle">
+    <circle cx="90" cy="68" r="22" stroke="#20262d" stroke-width="6"/>
+    <circle cx="90" cy="68" r="22" stroke="#d7c3a3" stroke-width="6" stroke-linecap="round" stroke-dasharray="95 140" transform="rotate(-90 90 68)"/>
+    <text x="90" y="106">Delivery</text>
+
+    <circle cx="180" cy="68" r="22" stroke="#20262d" stroke-width="6"/>
+    <circle cx="180" cy="68" r="22" stroke="#7a8fa6" stroke-width="6" stroke-linecap="round" stroke-dasharray="88 140" transform="rotate(-90 180 68)"/>
+    <text x="180" y="106">Code Quality</text>
+
+    <circle cx="270" cy="68" r="22" stroke="#20262d" stroke-width="6"/>
+    <circle cx="270" cy="68" r="22" stroke="#b89f7a" stroke-width="6" stroke-linecap="round" stroke-dasharray="82 140" transform="rotate(-90 270 68)"/>
+    <text x="270" y="106">Automation</text>
+  </g>
+
+  <g font-family="Inter, sans-serif" font-size="12" fill="#c8c0b2">
+    <text x="360" y="48">Python</text>
+    <rect x="470" y="40" width="300" height="6" rx="3" fill="#20262d"/>
+    <rect x="470" y="40" width="224" height="6" rx="3" fill="#d7c3a3"/>
+
+    <text x="360" y="72">JavaScript</text>
+    <rect x="470" y="64" width="300" height="6" rx="3" fill="#20262d"/>
+    <rect x="470" y="64" width="186" height="6" rx="3" fill="#7a8fa6"/>
+
+    <text x="360" y="96">HTML/CSS</text>
+    <rect x="470" y="88" width="300" height="6" rx="3" fill="#20262d"/>
+    <rect x="470" y="88" width="160" height="6" rx="3" fill="#b89f7a"/>
+
+    <text x="360" y="120">Shell</text>
+    <rect x="470" y="112" width="300" height="6" rx="3" fill="#20262d"/>
+    <rect x="470" y="112" width="120" height="6" rx="3" fill="#66708a"/>
+  </g>
+</svg>

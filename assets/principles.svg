@@ -1,0 +1,27 @@
+<svg width="860" height="90" viewBox="0 0 860 90" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Principles strip">
+  <rect width="860" height="90" rx="16" fill="#12161b"/>
+  <rect x="1" y="1" width="858" height="88" rx="15" stroke="#2a313a"/>
+
+  <g font-family="Inter, sans-serif" font-size="12" fill="#e8e4dc">
+    <g>
+      <rect x="50" y="22" width="180" height="46" rx="12" fill="#171c22" stroke="#2a313a"/>
+      <circle cx="70" cy="45" r="4" fill="#d7c3a3"/>
+      <text x="86" y="49">clean code</text>
+    </g>
+    <g>
+      <rect x="245" y="22" width="180" height="46" rx="12" fill="#171c22" stroke="#2a313a"/>
+      <circle cx="265" cy="45" r="4" fill="#7a8fa6"/>
+      <text x="281" y="49">ships reliably</text>
+    </g>
+    <g>
+      <rect x="440" y="22" width="180" height="46" rx="12" fill="#171c22" stroke="#2a313a"/>
+      <circle cx="460" cy="45" r="4" fill="#b89f7a"/>
+      <text x="476" y="49">automated</text>
+    </g>
+    <g>
+      <rect x="635" y="22" width="180" height="46" rx="12" fill="#171c22" stroke="#2a313a"/>
+      <circle cx="655" cy="45" r="4" fill="#66708a"/>
+      <text x="671" y="49">night owl</text>
+    </g>
+  </g>
+</svg>
