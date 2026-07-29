@@ -10,7 +10,13 @@
   <br/>
   <img src="assets/focus.svg" alt="Current focus" style="width: 100%; max-width: 860px;" />
   <br/>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=kaelith69&theme=dark&hide_border=true&background=12161b&ring=d7c3a3&fire=d7c3a3&currStreakNum=e8e4dc&sideNums=9da6b2&currStreakLabel=66708a&sideLabels=66708a&dates=7a8fa6&stroke=2a313a" alt="GitHub Streak" style="width: 100%; max-width: 860px;" />
+
+  <img
+    src="https://streak-stats.demolab.com?user=kaelith69&theme=dark&hide_border=true&background=12161b&ring=d7c3a3&fire=d7c3a3&currStreakNum=e8e4dc&sideNums=9da6b2&currStreakLabel=66708a&sideLabels=66708a&dates=7a8fa6&stroke=2a313a&cache_seconds=86400"
+    alt="GitHub Streak"
+    style="width: 100%; max-width: 860px;"
+  />
+
   <br/>
   <a href="https://instagram.com/kaelith6.9" target="_blank">
     <img src="assets/contact.svg" alt="Contact Network" style="width: 100%; max-width: 860px;" />
@@ -20,6 +26,10 @@
 
   <br/>
   <br/>
-  <img src="https://komarev.com/ghpvc/?username=kaelith69&style=flat-square&color=12161b&label=PROFILE+VISITS&labelColor=171c22" alt="Profile Visits" />
+
+  <img
+    src="https://komarev.com/ghpvc/?username=kaelith69&style=flat-square&color=12161b&label=PROFILE+VISITS&labelColor=171c22"
+    alt="Profile Visits"
+  />
 
 </div>
