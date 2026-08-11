@@ -11,11 +11,11 @@
   <img src="assets/focus.svg" alt="Current focus" style="width: 100%; max-width: 860px;" />
   <br/>
 
-  <img
-    src="https://streak-stats.demolab.com?user=Kaelith69&theme=dark&hide_border=true&background=12161b&ring=d7c3a3&fire=d7c3a3&currStreakNum=e8e4dc&sideNums=9da6b2&currStreakLabel=66708a&sideLabels=66708a&dates=7a8fa6&stroke=2a313a"
-    alt="GitHub Streak"
-    style="width: 100%; max-width: 860px;"
-  />
+ <img
+  src="https://streak-stats.demolab.com?user=Kaelith69&theme=dark&hide_border=true&background=12161b&ring=d7c3a3&fire=d7c3a3&currStreakNum=e8e4dc&sideNums=9da6b2&currStreakLabel=66708a&sideLabels=66708a&dates=7a8fa6&stroke=2a313a"
+  alt="GitHub Streak"
+  style="width: 100%; max-width: 860px;"
+/>
 
   <br/>
 
