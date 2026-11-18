@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="172" viewBox="0 0 860 172" role="img" aria-label="Exploration archive">
+<defs>
+  <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#101A34"/>
+    <stop offset="1" stop-color="#0B132B"/>
+  </linearGradient>
+  <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#F4C653" stop-opacity=".85"/>
+    <stop offset="1" stop-color="#55C9C0" stop-opacity=".15"/>
+  </linearGradient>
+  <pattern id="dots" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(18)">
+    <circle cx="4.5" cy="4.5" r="1.1" fill="#60718E" opacity=".19"/>
+  </pattern>
+</defs>
+<rect width="860" height="172" rx="18" fill="url(#panel)"/>
+<rect width="860" height="172" rx="18" fill="url(#dots)" opacity=".42"/>
+<rect x="1" y="1" width="858" height="170" rx="17" fill="none" stroke="#273957" stroke-width="2"/>
+<path d="M22 54V22H54 M806 22H838V54 M22 118V150H54 M806 150H838V118" fill="none" stroke="#526487" stroke-width="2" opacity=".48"/>
+<rect x="28" y="30" width="3" height="112" rx="1.5" fill="url(#edge)"/>
+<g font-family="Arial, Helvetica, sans-serif">
+<text x="56" y="46" fill="#F4C653" font-family="monospace" font-size="13" letter-spacing="3">05 / EXPLORATION ARCHIVE</text>
+<text x="56" y="82" fill="#FFF0D1" font-size="19" font-weight="700">Curiosity beyond the terminal.</text>
+<text x="56" y="110" fill="#9BAED0" font-size="15">Science fiction & speculative worlds</text>
+<text x="56" y="137" fill="#9BAED0" font-size="15">Greek, Roman & Vedic mythology</text>
+<text x="420" y="110" fill="#9BAED0" font-size="15">History & ancient civilizations</text>
+<text x="420" y="137" fill="#9BAED0" font-size="15">Science, games & creative technology</text>
+<path d="M56 151H804" stroke="#273957"/>
+<text x="56" y="164" fill="#55C9C0" font-family="monospace" font-size="10" letter-spacing="2">READ WIDELY · BUILD CURIOUSLY</text>
+</g>
+</svg>
