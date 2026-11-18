@@ -1,11 +1,11 @@
 <svg width="860" height="200" viewBox="0 0 860 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Identity dossier">
   <defs>
     <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#05070B">
-        <animate attributeName="stop-color" values="#05070B;#081018;#05070B" dur="60s" repeatCount="indefinite" />
+      <stop offset="0%" stop-color="#080D1D">
+        <animate attributeName="stop-color" values="#080D1D;#101A34;#080D1D" dur="60s" repeatCount="indefinite" />
       </stop>
-      <stop offset="100%" stop-color="#0B1220">
-        <animate attributeName="stop-color" values="#0B1220;#05070B;#0B1220" dur="60s" repeatCount="indefinite" />
+      <stop offset="100%" stop-color="#17213E">
+        <animate attributeName="stop-color" values="#17213E;#080D1D;#17213E" dur="60s" repeatCount="indefinite" />
       </stop>
     </linearGradient>
     <filter id="noise">
@@ -13,14 +13,14 @@
       <feColorMatrix type="matrix" values="1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 0.02 0" />
     </filter>
     <linearGradient id="id-accent-line" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#d7c3a3" stop-opacity="0.8"/>
-      <stop offset="100%" stop-color="#d7c3a3" stop-opacity="0.1"/>
+      <stop offset="0%" stop-color="#F4C653" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#F4C653" stop-opacity="0.1"/>
     </linearGradient>
-  </defs>
+  <radialGradient id="comic-nebula" cx="18%" cy="12%" r="88%"><stop offset="0%" stop-color="#6C3D87" stop-opacity="0.30"/><stop offset="48%" stop-color="#55366F" stop-opacity="0.12"/><stop offset="100%" stop-color="#55366F" stop-opacity="0"/></radialGradient><radialGradient id="comic-warm-light" cx="86%" cy="8%" r="72%"><stop offset="0%" stop-color="#F4C653" stop-opacity="0.22"/><stop offset="42%" stop-color="#EF8148" stop-opacity="0.09"/><stop offset="100%" stop-color="#EF8148" stop-opacity="0"/></radialGradient><pattern id="comic-halftone" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.05" fill="#8DA6BC" fill-opacity="0.24"/></pattern></defs>
 
   <rect width="860" height="200" rx="16" fill="url(#bg-grad)"/>
   <rect width="860" height="200" rx="16" filter="url(#noise)" style="mix-blend-mode: soft-light" pointer-events="none"/>
-  <rect x="1" y="1" width="858" height="198" rx="15" stroke="#18314A" stroke-opacity="0.8"/>
+  <rect x="1" y="1" width="858" height="198" rx="15" stroke="#526487" stroke-opacity="0.8"/>
 
   <!-- Dust Nebula Layer -->
   <g opacity="1">
@@ -46,50 +46,50 @@
   <rect x="36" y="24" width="2" height="152" rx="1" fill="url(#id-accent-line)"/>
 
   <!-- Section label -->
-  <text x="52" y="38" font-family="'JetBrains Mono','SFMono-Regular',monospace" font-size="10" fill="#9da6b2" letter-spacing="2">ABOUT</text>
-  <circle cx="96" cy="35" r="2" fill="#d7c3a3" opacity="0.5"/>
+  <text x="52" y="38" font-family="'JetBrains Mono','SFMono-Regular',monospace" font-size="10" fill="#A5C4D4" letter-spacing="2">ABOUT</text>
+  <circle cx="96" cy="35" r="2" fill="#F4C653" opacity="0.5"/>
 
   <!-- Bio copy -->
-  <text x="52" y="64" font-family="Inter, sans-serif" font-size="13" fill="#e8e4dc">I build systems, tools, and interfaces with an obsession for polish, reliability, and clarity.</text>
-  <text x="52" y="84" font-family="Inter, sans-serif" font-size="12" fill="#9da6b2">Interested in software architecture, automation, developer tooling, systems thinking, and elegant engineering.</text>
+  <text x="52" y="64" font-family="Inter, sans-serif" font-size="13" fill="#FFF0D1">I build systems, tools, and interfaces with an obsession for polish, reliability, and clarity.</text>
+  <text x="52" y="84" font-family="Inter, sans-serif" font-size="12" fill="#A5C4D4">Interested in software architecture, automation, developer tooling, systems thinking, and elegant engineering.</text>
 
   <!-- Divider -->
-  <line x1="52" y1="100" x2="808" y2="100" stroke="#18314A" stroke-width="1" stroke-opacity="0.6"/>
+  <line x1="52" y1="100" x2="808" y2="100" stroke="#526487" stroke-width="1" stroke-opacity="0.6"/>
 
   <!-- YAML block -->
   <g font-family="'JetBrains Mono','SFMono-Regular',monospace" font-size="12">
     <!-- col 1 -->
-    <text x="52" y="122" fill="#66708a">name:</text>
-    <text x="120" y="122" fill="#e8e4dc">kaelith69</text>
+    <text x="52" y="122" fill="#8DA6BC">name:</text>
+    <text x="120" y="122" fill="#FFF0D1">kaelith69</text>
 
-    <text x="52" y="140" fill="#66708a">base:</text>
-    <text x="120" y="140" fill="#e8e4dc">Kerala, India</text>
+    <text x="52" y="140" fill="#8DA6BC">base:</text>
+    <text x="120" y="140" fill="#FFF0D1">Kerala, India</text>
 
-    <text x="52" y="158" fill="#66708a">timezone:</text>
-    <text x="152" y="158" fill="#e8e4dc">IST · UTC+5:30</text>
+    <text x="52" y="158" fill="#8DA6BC">timezone:</text>
+    <text x="152" y="158" fill="#FFF0D1">IST · UTC+5:30</text>
 
-    <text x="52" y="176" fill="#66708a">approach:</text>
-    <text x="158" y="176" fill="#c8c0b2">reliability</text>
-    <text x="248" y="176" fill="#66708a">&gt;</text>
-    <text x="260" y="176" fill="#c8c0b2">complexity</text>
+    <text x="52" y="176" fill="#8DA6BC">approach:</text>
+    <text x="158" y="176" fill="#FFF0D1">reliability</text>
+    <text x="248" y="176" fill="#8DA6BC">&gt;</text>
+    <text x="260" y="176" fill="#FFF0D1">complexity</text>
 
     <!-- col 2 -->
-    <text x="460" y="122" fill="#66708a">focus:</text>
-    <text x="522" y="122" fill="#c8c0b2">systems · tooling · automation</text>
+    <text x="460" y="122" fill="#8DA6BC">focus:</text>
+    <text x="522" y="122" fill="#FFF0D1">systems · tooling · automation</text>
 
-    <text x="460" y="140" fill="#66708a">currently:</text>
-    <text x="558" y="140" fill="#c8c0b2">building polished things slowly</text>
+    <text x="460" y="140" fill="#8DA6BC">currently:</text>
+    <text x="558" y="140" fill="#FFF0D1">building polished things slowly</text>
 
-    <text x="460" y="158" fill="#66708a">outside:</text>
-    <text x="544" y="158" fill="#c8c0b2">sci-fi · mythology · history · games</text>
+    <text x="460" y="158" fill="#8DA6BC">outside:</text>
+    <text x="544" y="158" fill="#FFF0D1">sci-fi · mythology · history · games</text>
 
-    <text x="460" y="176" fill="#66708a">status:</text>
-    <text x="524" y="176" fill="#c8c0b2">
+    <text x="460" y="176" fill="#8DA6BC">status:</text>
+    <text x="524" y="176" fill="#FFF0D1">
       <tspan>exploring new tech &amp; art</tspan>
       <animate attributeName="opacity" values="1;0.5;1" dur="3s" repeatCount="indefinite"/>
     </text>
   </g>
 
   <!-- Corner decoration -->
-  <text x="810" y="190" font-family="'JetBrains Mono','SFMono-Regular',monospace" font-size="9" fill="#18314A" text-anchor="end">// identity.json</text>
+  <text x="810" y="190" font-family="'JetBrains Mono','SFMono-Regular',monospace" font-size="9" fill="#526487" text-anchor="end">// identity.json</text>
 </svg>
