@@ -10,9 +10,9 @@
 
   <p>
     <sub>
-      <a href="./assets/clockwork-cosmos-final.svg">Editable SVG master</a>
+      <a href="./assets/clockwork-cosmos-final.svg">SVG source</a>
       ·
-      <a href="./assets/clockwork-cosmos-final-preview.png">Static 1280 × 720 preview</a>
+      <a href="./assets/clockwork-cosmos-final-preview.png">PNG preview</a>
     </sub>
   </p>
 
@@ -32,6 +32,8 @@
   <br />
   <img src="assets/contact.svg" alt="Contact network" width="100%" />
   <p>
+    <a href="https://discord.com/users/1413084975938539540">Discord</a>
+    ·
     <a href="https://instagram.com/kaelith6.9">Instagram</a>
   </p>
 

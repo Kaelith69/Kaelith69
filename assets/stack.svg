@@ -34,12 +34,12 @@
   </g>
 
   <!-- Section label -->
-  <text x="40" y="26" font-family="'JetBrains Mono','SFMono-Regular',monospace" font-size="10" fill="#9BAED0" letter-spacing="2">STACK</text>
+  <text x="40" y="26" font-family="'JetBrains Mono','SFMono-Regular',monospace" font-size="11" fill="#9BAED0" letter-spacing="2">STACK</text>
 
   <!-- Row label: Core & Frontend -->
-  <text x="40" y="60" font-family="'JetBrains Mono','SFMono-Regular',monospace" font-size="9" fill="#526487" letter-spacing="1">dev</text>
+  <text x="40" y="60" font-family="'JetBrains Mono','SFMono-Regular',monospace" font-size="10" fill="#526487" letter-spacing="1">dev</text>
 
-  <g font-family="Inter, sans-serif" font-size="12" fill="#FFF0D1">
+  <g font-family="Inter, sans-serif" font-size="13" fill="#FFF0D1">
     <!-- Row 1: Dev -->
     <g>
       <rect x="80" y="46" width="90" height="26" rx="13" fill="#0B132B" stroke="#273957" stroke-opacity="0.8"/>
@@ -73,7 +73,7 @@
     </g>
 
     <!-- Row label: Environment -->
-    <text x="40" y="106" font-family="'JetBrains Mono','SFMono-Regular',monospace" font-size="9" fill="#526487" letter-spacing="1">env</text>
+    <text x="40" y="106" font-family="'JetBrains Mono','SFMono-Regular',monospace" font-size="10" fill="#526487" letter-spacing="1">env</text>
 
     <!-- Row 2: Environment -->
     <g>
