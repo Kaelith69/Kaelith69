@@ -49,5 +49,5 @@
   <circle cx="150" cy="40" r="2" fill="#F4C653"/>
   <circle cx="710" cy="40" r="2" fill="#F4C653"/>
 
-  <text x="430" y="46" text-anchor="middle" font-family="'Tiro Devanagari Sanskrit', 'Nirmala UI', 'Mangal', 'Cormorant Garamond', 'Libre Baskerville', 'Georgia', serif" font-size="24" fill="#FFF0D1">अहं ब्रह्मास्मि</text>
+  <text x="430" y="46" text-anchor="middle" font-size="24" fill="#FFF0D1" font-family="'Tiro Devanagari Sanskrit', 'Nirmala UI', 'Mangal', 'Cormorant Garamond', 'Libre Baskerville', 'Georgia', serif" font-size="25" font-weight="700" fill="#F4C653" stroke="#080D1D" stroke-width="0.8" paint-order="stroke">अहं ब्रह्मास्मि</text>
 </svg>
