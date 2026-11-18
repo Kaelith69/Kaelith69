@@ -1,27 +1,95 @@
-<svg xmlns="http://www.w3.org/2000/svg" overflow="hidden" width="860" height="220" viewBox="0 0 860 220" role="img" aria-label="Operator dossier">
-<defs>
-  <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="#101A34"/>
-    <stop offset="1" stop-color="#0B132B"/>
-  </linearGradient>
-  <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0" stop-color="#F4C653" stop-opacity=".85"/>
-    <stop offset="1" stop-color="#55C9C0" stop-opacity=".15"/>
-  </linearGradient>
+<svg width="860" height="200" viewBox="0 0 860 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Identity dossier">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#05070B">
+        <animate attributeName="stop-color" values="#05070B;#081018;#05070B" dur="60s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#0B1220">
+        <animate attributeName="stop-color" values="#0B1220;#05070B;#0B1220" dur="60s" repeatCount="indefinite" />
+      </stop>
+    </linearGradient>
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 0.02 0" />
+    </filter>
+    <linearGradient id="id-accent-line" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d7c3a3" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#d7c3a3" stop-opacity="0.1"/>
+    </linearGradient>
   </defs>
-<rect width="860" height="220" rx="18" fill="url(#panel)"/>
-<rect width="860" height="220" rx="18" fill="url(#dots)" opacity=".42"/>
-<rect x="1" y="1" width="858" height="218" rx="17" fill="none" stroke="#273957" stroke-width="2"/>
-<path d="M22 54V22H54 M806 22H838V54 M22 166V198H54 M806 198H838V166" fill="none" stroke="#526487" stroke-width="2" opacity=".48"/>
-<rect x="28" y="30" width="3" height="160" rx="1.5" fill="url(#edge)"/>
-<g font-family="Arial, Helvetica, sans-serif">
-<text x="56" y="48" fill="#F4C653" font-family="monospace" font-size="13" letter-spacing="3">01 / OPERATOR DOSSIER</text>
-<text x="56" y="91" fill="#FFF0D1" font-size="30" font-weight="700">KAELITH69</text>
-<text x="56" y="120" fill="#A5C4D4" font-size="17">I build systems, tools and interfaces with an obsession for polish,</text>
-<text x="56" y="144" fill="#A5C4D4" font-size="17">reliability and clarity.</text>
-<path d="M56 164H804" stroke="#273957" stroke-width="1.5"/>
-<text x="56" y="193" fill="#9BAED0" font-family="monospace" font-size="14">BASE  KERALA, INDIA</text>
-<text x="380" y="193" fill="#9BAED0" font-family="monospace" font-size="14">TIMEZONE  IST / UTC+5:30</text>
-<circle cx="782" cy="48" r="5" fill="#55C9C0"/>
-</g>
+
+  <rect width="860" height="200" rx="16" fill="url(#bg-grad)"/>
+  <rect width="860" height="200" rx="16" filter="url(#noise)" style="mix-blend-mode: soft-light" pointer-events="none"/>
+  <rect x="1" y="1" width="858" height="198" rx="15" stroke="#18314A" stroke-opacity="0.8"/>
+
+  <!-- Dust Nebula Layer -->
+  <g opacity="1">
+    <circle cx="15%" cy="80%" r="1" fill="rgba(110,160,255,0.08)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 20,-40; 0,0" dur="25s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.03;0.12;0.03" dur="18s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="45%" cy="70%" r="1.5" fill="rgba(110,160,255,0.08)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -15,-30; 0,0" dur="30s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.03;0.12;0.03" dur="22s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="75%" cy="90%" r="1" fill="rgba(220,190,150,0.10)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 25,-50; 0,0" dur="35s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.03;0.10;0.03" dur="26s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="88%" cy="50%" r="2" fill="rgba(110,160,255,0.08)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -10,-20; 0,0" dur="28s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.03;0.12;0.03" dur="20s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Left accent bar -->
+  <rect x="36" y="24" width="2" height="152" rx="1" fill="url(#id-accent-line)"/>
+
+  <!-- Section label -->
+  <text x="52" y="38" font-family="'JetBrains Mono','SFMono-Regular',monospace" font-size="10" fill="#9da6b2" letter-spacing="2">ABOUT</text>
+  <circle cx="96" cy="35" r="2" fill="#d7c3a3" opacity="0.5"/>
+
+  <!-- Bio copy -->
+  <text x="52" y="64" font-family="Inter, sans-serif" font-size="13" fill="#e8e4dc">I build systems, tools, and interfaces with an obsession for polish, reliability, and clarity.</text>
+  <text x="52" y="84" font-family="Inter, sans-serif" font-size="12" fill="#9da6b2">Interested in software architecture, automation, developer tooling, systems thinking, and elegant engineering.</text>
+
+  <!-- Divider -->
+  <line x1="52" y1="100" x2="808" y2="100" stroke="#18314A" stroke-width="1" stroke-opacity="0.6"/>
+
+  <!-- YAML block -->
+  <g font-family="'JetBrains Mono','SFMono-Regular',monospace" font-size="12">
+    <!-- col 1 -->
+    <text x="52" y="122" fill="#66708a">name:</text>
+    <text x="120" y="122" fill="#e8e4dc">kaelith69</text>
+
+    <text x="52" y="140" fill="#66708a">base:</text>
+    <text x="120" y="140" fill="#e8e4dc">Kerala, India</text>
+
+    <text x="52" y="158" fill="#66708a">timezone:</text>
+    <text x="152" y="158" fill="#e8e4dc">IST · UTC+5:30</text>
+
+    <text x="52" y="176" fill="#66708a">approach:</text>
+    <text x="158" y="176" fill="#c8c0b2">reliability</text>
+    <text x="248" y="176" fill="#66708a">&gt;</text>
+    <text x="260" y="176" fill="#c8c0b2">complexity</text>
+
+    <!-- col 2 -->
+    <text x="460" y="122" fill="#66708a">focus:</text>
+    <text x="522" y="122" fill="#c8c0b2">systems · tooling · automation</text>
+
+    <text x="460" y="140" fill="#66708a">currently:</text>
+    <text x="558" y="140" fill="#c8c0b2">building polished things slowly</text>
+
+    <text x="460" y="158" fill="#66708a">outside:</text>
+    <text x="544" y="158" fill="#c8c0b2">sci-fi · mythology · history · games</text>
+
+    <text x="460" y="176" fill="#66708a">status:</text>
+    <text x="524" y="176" fill="#c8c0b2">
+      <tspan>exploring new tech &amp; art</tspan>
+      <animate attributeName="opacity" values="1;0.5;1" dur="3s" repeatCount="indefinite"/>
+    </text>
+  </g>
+
+  <!-- Corner decoration -->
+  <text x="810" y="190" font-family="'JetBrains Mono','SFMono-Regular',monospace" font-size="9" fill="#18314A" text-anchor="end">// identity.json</text>
 </svg>
