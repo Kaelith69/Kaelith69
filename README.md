@@ -8,13 +8,6 @@
     width="100%"
   />
 
-  <p>
-    <sub>
-      <a href="./assets/clockwork-cosmos-final.svg">SVG source</a>
-      ·
-      <a href="./assets/clockwork-cosmos-final-preview.png">PNG preview</a>
-    </sub>
-  </p>
 
   <img src="assets/identity.svg" alt="Identity dossier" width="100%" />
   <br />
