@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="860" height="100" viewBox="0 0 860 100" role="img" aria-label="Profile footer">
+<svg xmlns="http://www.w3.org/2000/svg" overflow="hidden" width="860" height="100" viewBox="0 0 860 100" role="img" aria-label="Profile footer">
 <defs>
   <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
     <stop offset="0" stop-color="#101A34"/>
@@ -8,17 +8,14 @@
     <stop offset="0" stop-color="#F4C653" stop-opacity=".85"/>
     <stop offset="1" stop-color="#55C9C0" stop-opacity=".15"/>
   </linearGradient>
-  <pattern id="dots" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(18)">
-    <circle cx="4.5" cy="4.5" r="1.1" fill="#60718E" opacity=".19"/>
-  </pattern>
-</defs>
+  </defs>
 <rect width="860" height="100" rx="18" fill="url(#panel)"/>
 <rect width="860" height="100" rx="18" fill="url(#dots)" opacity=".42"/>
 <rect x="1" y="1" width="858" height="98" rx="17" fill="none" stroke="#273957" stroke-width="2"/>
 <path d="M22 54V22H54 M806 22H838V54 M22 46V78H54 M806 78H838V46" fill="none" stroke="#526487" stroke-width="2" opacity=".48"/>
 <rect x="28" y="30" width="3" height="40" rx="1.5" fill="url(#edge)"/>
 <g font-family="Arial, Helvetica, sans-serif">
-<text x="430" y="58" fill="#FFF0D1" text-anchor="middle" font-family="Georgia,serif" font-size="27">अहं ब्रह्मास्मि</text>
+<text x="430" y="58" fill="#FFF0D1" text-anchor="middle" font-family="Noto Sans Devanagari, Nirmala UI, Arial, sans-serif" font-size="27">अहं ब्रह्मास्मि</text>
 <path d="M90 50H270 M590 50H770" stroke="#273957" stroke-width="1.5"/>
 <circle cx="270" cy="50" r="3" fill="#F4C653"/><circle cx="590" cy="50" r="3" fill="#55C9C0"/>
 </g>
