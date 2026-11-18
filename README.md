@@ -1,19 +1,38 @@
+<!-- markdownlint-disable MD033 -->
+
 <div align="center">
-  <img src="assets/clockwork-cosmos-final.gif" alt="Clockwork cosmos" width="100%" />
+
+  <img src="assets/clockwork-cosmos-final.gif" alt="Clockwork Cosmos" style="width: 100%; max-width: 860px;" />
+  <br/>
+  <img src="assets/identity.svg" alt="Identity dossier" style="width: 100%; max-width: 860px;" />
+  <br/>
+  <img src="assets/stack.svg" alt="Curated stack" style="width: 100%; max-width: 860px;" />
+  <br/>
+  <img src="assets/focus.svg" alt="Current focus" style="width: 100%; max-width: 860px;" />
+  <br/>
+
+  <img
+    src="https://streak-stats.demolab.com?user=Kaelith69&theme=dark&hide_border=true&background=12161b&ring=d7c3a3&fire=d7c3a3&currStreakNum=e8e4dc&sideNums=9da6b2&currStreakLabel=66708a&sideLabels=66708a&dates=7a8fa6&stroke=2a313a"
+    alt="GitHub Streak"
+    style="width: 100%; max-width: 860px;"
+  />
+
+  <br/>
+
+  <a href="https://instagram.com/kaelith6.9" target="_blank">
+    <img src="assets/contact.svg" alt="Contact Network" style="width: 100%; max-width: 860px;" />
+  </a>
+
+  <br/>
+
+  <img src="assets/footer.svg" alt="Footer" style="width: 100%; max-width: 860px;" />
+
+  <br/>
+  <br/>
+
+  <img
+    src="https://komarev.com/ghpvc/?username=Kaelith69&style=flat-square&color=12161b&label=PROFILE+VISITS&labelColor=171c22"
+    alt="Profile Visits"
+  />
+
 </div>
-
-# Kaelith
-
-I make apps, tools and things for the web.
-
-### Projects
-
-| | |
-| :--- | :--- |
-| **[CineCommon](https://github.com/Kaelith69/CineCommon)** | Android movie community built with Kotlin and Compose. |
-| **[WRDLiNK](https://github.com/Kaelith69/WRDLiNK-Web)** | Word ladder game with graph based hints. |
-| **[Prism](https://github.com/Kaelith69/Prism)** | Presentation generator with SVG and PDF export. |
-| **[GodView](https://github.com/Kaelith69/GodView)** | Dashboard with maps, search and CSV export. |
-| **[ORION](https://github.com/Kaelith69/ORION)** | Anonymous real time chat. |
-
-[Discord](https://discord.com/users/1413084975938539540) · [Instagram](https://instagram.com/kaelith6.9)
