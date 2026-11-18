@@ -205,11 +205,11 @@ def asteroid_belt(t, smil):
             d='M '+' L '.join(f'{fmt(px)} {fmt(py)}' for px,py in pts)+' Z'
             color=rng.choice(colors)
             opacity=rng.uniform(.42,.82)
-            spin=rng.uniform(-120,120); phase=rng.uniform(0,360); spin_period=rng.choice([4,6,8,12])
+            spin=rng.choice([-1,1]); phase=rng.uniform(0,360); spin_period=rng.choice([4,6,8,12])
             if not smil:
-                out.append(f'<g transform="translate({fmt(x)} {fmt(y)}) rotate({fmt(phase+spin*t/spin_period)}) translate({fmt(-x)} {fmt(-y)})">')
+                out.append(f'<g transform="translate({fmt(x)} {fmt(y)}) rotate({fmt(phase+spin*360*t/spin_period)}) translate({fmt(-x)} {fmt(-y)})">')
             else:
-                out.append(f'<g transform="rotate({fmt(phase)} {fmt(x)} {fmt(y)})"><animateTransform attributeName="transform" type="rotate" from="{fmt(phase)} {fmt(x)} {fmt(y)}" to="{fmt(phase+spin)} {fmt(x)} {fmt(y)}" dur="{fmt(spin_period)}s" repeatCount="indefinite"/>')
+                out.append(f'<g transform="rotate({fmt(phase)} {fmt(x)} {fmt(y)})"><animateTransform attributeName="transform" type="rotate" from="{fmt(phase)} {fmt(x)} {fmt(y)}" to="{fmt(phase+spin*360)} {fmt(x)} {fmt(y)}" dur="{fmt(spin_period)}s" repeatCount="indefinite"/>')
             out.append(f'<path d="{d}" fill="{color}" opacity="{fmt(opacity)}" stroke="{INK}" stroke-width="1.4" stroke-linejoin="round"/>')
             out.append('</g>')
         out.append('</g>')
@@ -231,7 +231,7 @@ def sun(t, smil):
     out.append(f'<circle r="88" fill="{INK}" stroke="{GOLD}" stroke-width="3"/>')
     rot=360*t/32
     if smil:
-        out.append(f'<g id="sun-gear-ring"><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="32s" repeatCount="indefinite"/>')
+        out.append(f'<g id="sun-gear-ring"><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="8s" repeatCount="indefinite"/>')
     else: out.append(f'<g id="sun-gear-ring" transform="rotate({fmt(rot)})">')
     out.append(f'<circle r="77" fill="{GOLD}" stroke="{INK}" stroke-width="4"/>')
     out.append(f'<circle r="67" fill="{ORANGE}" stroke="{INK}" stroke-width="3"/>')
@@ -241,8 +241,8 @@ def sun(t, smil):
         out.append(f'<path d="M {fmt(x1)} {fmt(y1)} L {fmt(x2)} {fmt(y2)}" stroke="{INK}" stroke-width="3" stroke-linecap="round"/>')
     out.append(f'<circle r="57" fill="url(#sun-core)" stroke="{INK}" stroke-width="3"/>')
     out.append('</g>')
-    inner_rot=-360*t/18
-    if smil: out.append('<g id="sun-clock-face"><animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="18s" repeatCount="indefinite"/>')
+    inner_rot=-360*t/12
+    if smil: out.append('<g id="sun-clock-face"><animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="12s" repeatCount="indefinite"/>')
     else: out.append(f'<g id="sun-clock-face" transform="rotate({fmt(inner_rot)})">')
     out.append(f'<circle r="43" fill="none" stroke="{CREAM}" stroke-width="2"/>')
     for i in range(12):
@@ -267,8 +267,8 @@ def planet(t, smil, kind):
         out.append(f'<path d="M -24 -10 C -14 -31 15 -28 25 -5 C 7 -12 -6 -8 -12 6 C -18 14 -24 8 -24 -10 Z" fill="{MINT}" opacity="0.9"/>')
         out.append(f'<path d="M -3 2 C 10 0 25 9 23 22 C 10 34 -11 31 -20 14 C -15 7 -9 4 -3 2 Z" fill="{TEAL_DARK}" stroke="{INK}" stroke-width="1.3"/>')
         out.append(f'<path d="M -17 -15 Q -8 -25 2 -23" fill="none" stroke="{CREAM}" stroke-width="2.2" stroke-linecap="round" opacity="0.78"/>')
-        if smil: out.append('<g id="teal-moon-orbit"><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="7s" repeatCount="indefinite"/>')
-        else: out.append(f'<g id="teal-moon-orbit" transform="rotate({fmt(360*t/7)})">')
+        if smil: out.append('<g id="teal-moon-orbit"><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="8s" repeatCount="indefinite"/>')
+        else: out.append(f'<g id="teal-moon-orbit" transform="rotate({fmt(360*t/8)})">')
         out.append(f'<ellipse cx="0" cy="0" rx="48" ry="36" fill="none" stroke="{ICE}" stroke-width="1" stroke-dasharray="2 5" opacity="0.32"/>')
         out.append(f'<circle cx="45" cy="-5" r="6" fill="url(#ice-moon)" stroke="{INK}" stroke-width="1.5"/>')
         out.append('</g></g></g></g>')
