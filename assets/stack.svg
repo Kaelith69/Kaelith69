@@ -1,22 +1,22 @@
 <svg width="860" height="140" viewBox="0 0 860 140" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Technology stack">
   <defs>
     <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#05070B">
-        <animate attributeName="stop-color" values="#05070B;#081018;#05070B" dur="60s" repeatCount="indefinite" />
+      <stop offset="0%" stop-color="#080D1D">
+        <animate attributeName="stop-color" values="#080D1D;#101A34;#080D1D" dur="60s" repeatCount="indefinite" />
       </stop>
-      <stop offset="100%" stop-color="#0B1220">
-        <animate attributeName="stop-color" values="#0B1220;#05070B;#0B1220" dur="60s" repeatCount="indefinite" />
+      <stop offset="100%" stop-color="#17213E">
+        <animate attributeName="stop-color" values="#17213E;#080D1D;#17213E" dur="60s" repeatCount="indefinite" />
       </stop>
     </linearGradient>
     <filter id="noise">
       <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/>
       <feColorMatrix type="matrix" values="1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 0.02 0" />
     </filter>
-  </defs>
+  <radialGradient id="comic-nebula" cx="18%" cy="12%" r="88%"><stop offset="0%" stop-color="#6C3D87" stop-opacity="0.30"/><stop offset="48%" stop-color="#55366F" stop-opacity="0.12"/><stop offset="100%" stop-color="#55366F" stop-opacity="0"/></radialGradient><radialGradient id="comic-warm-light" cx="86%" cy="8%" r="72%"><stop offset="0%" stop-color="#F4C653" stop-opacity="0.22"/><stop offset="42%" stop-color="#EF8148" stop-opacity="0.09"/><stop offset="100%" stop-color="#EF8148" stop-opacity="0"/></radialGradient><pattern id="comic-halftone" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.05" fill="#8DA6BC" fill-opacity="0.24"/></pattern></defs>
 
   <rect width="860" height="140" rx="16" fill="url(#bg-grad)"/>
   <rect width="860" height="140" rx="16" filter="url(#noise)" style="mix-blend-mode: soft-light" pointer-events="none"/>
-  <rect x="1" y="1" width="858" height="138" rx="15" stroke="#18314A" stroke-opacity="0.8"/>
+  <rect x="1" y="1" width="858" height="138" rx="15" stroke="#526487" stroke-opacity="0.8"/>
 
   <!-- Dust Nebula Layer -->
   <g opacity="1">
@@ -39,70 +39,70 @@
   </g>
 
   <!-- Section label -->
-  <text x="40" y="26" font-family="'JetBrains Mono','SFMono-Regular',monospace" font-size="10" fill="#9da6b2" letter-spacing="2">STACK</text>
+  <text x="40" y="26" font-family="'JetBrains Mono','SFMono-Regular',monospace" font-size="10" fill="#A5C4D4" letter-spacing="2">STACK</text>
 
   <!-- Row label: Core & Frontend -->
-  <text x="40" y="60" font-family="'JetBrains Mono','SFMono-Regular',monospace" font-size="9" fill="#66708a" letter-spacing="1">dev</text>
+  <text x="40" y="60" font-family="'JetBrains Mono','SFMono-Regular',monospace" font-size="9" fill="#8DA6BC" letter-spacing="1">dev</text>
 
-  <g font-family="Inter, sans-serif" font-size="12" fill="#e8e4dc">
+  <g font-family="Inter, sans-serif" font-size="12" fill="#FFF0D1">
     <!-- Row 1: Dev -->
     <g>
-      <rect x="80" y="46" width="90" height="26" rx="13" fill="#0B1220" stroke="#18314A" stroke-opacity="0.8"/>
-      <circle cx="94" cy="59" r="3" fill="#d7c3a3"/>
+      <rect x="80" y="46" width="90" height="26" rx="13" fill="#17213E" stroke="#526487" stroke-opacity="0.8"/>
+      <circle cx="94" cy="59" r="3" fill="#F4C653"/>
       <text x="105" y="64">Python</text>
     </g>
     <g>
-      <rect x="180" y="46" width="110" height="26" rx="13" fill="#0B1220" stroke="#18314A" stroke-opacity="0.8"/>
-      <circle cx="194" cy="59" r="3" fill="#7a8fa6"/>
+      <rect x="180" y="46" width="110" height="26" rx="13" fill="#17213E" stroke="#526487" stroke-opacity="0.8"/>
+      <circle cx="194" cy="59" r="3" fill="#55C9C0"/>
       <text x="205" y="64">JavaScript</text>
     </g>
     <g>
-      <rect x="300" y="46" width="80" height="26" rx="13" fill="#0B1220" stroke="#18314A" stroke-opacity="0.8"/>
-      <circle cx="314" cy="59" r="3" fill="#b89f7a"/>
+      <rect x="300" y="46" width="80" height="26" rx="13" fill="#17213E" stroke="#526487" stroke-opacity="0.8"/>
+      <circle cx="314" cy="59" r="3" fill="#EF8148"/>
       <text x="325" y="64">HTML</text>
     </g>
     <g>
-      <rect x="390" y="46" width="70" height="26" rx="13" fill="#0B1220" stroke="#18314A" stroke-opacity="0.8"/>
-      <circle cx="404" cy="59" r="3" fill="#66708a"/>
+      <rect x="390" y="46" width="70" height="26" rx="13" fill="#17213E" stroke="#526487" stroke-opacity="0.8"/>
+      <circle cx="404" cy="59" r="3" fill="#8DA6BC"/>
       <text x="415" y="64">CSS</text>
     </g>
     <g>
-      <rect x="470" y="46" width="80" height="26" rx="13" fill="#0B1220" stroke="#18314A" stroke-opacity="0.8"/>
-      <circle cx="484" cy="59" r="3" fill="#7a8fa6"/>
+      <rect x="470" y="46" width="80" height="26" rx="13" fill="#17213E" stroke="#526487" stroke-opacity="0.8"/>
+      <circle cx="484" cy="59" r="3" fill="#55C9C0"/>
       <text x="495" y="64">React</text>
     </g>
     <g>
-      <rect x="560" y="46" width="90" height="26" rx="13" fill="#0B1220" stroke="#18314A" stroke-opacity="0.8"/>
-      <circle cx="574" cy="59" r="3" fill="#d7c3a3"/>
+      <rect x="560" y="46" width="90" height="26" rx="13" fill="#17213E" stroke="#526487" stroke-opacity="0.8"/>
+      <circle cx="574" cy="59" r="3" fill="#F4C653"/>
       <text x="585" y="64">Flutter</text>
     </g>
 
     <!-- Row label: Environment -->
-    <text x="40" y="106" font-family="'JetBrains Mono','SFMono-Regular',monospace" font-size="9" fill="#66708a" letter-spacing="1">env</text>
+    <text x="40" y="106" font-family="'JetBrains Mono','SFMono-Regular',monospace" font-size="9" fill="#8DA6BC" letter-spacing="1">env</text>
 
     <!-- Row 2: Environment -->
     <g>
-      <rect x="80" y="92" width="80" height="26" rx="13" fill="#0B1220" stroke="#18314A" stroke-opacity="0.8"/>
-      <circle cx="94" cy="105" r="3" fill="#66708a"/>
+      <rect x="80" y="92" width="80" height="26" rx="13" fill="#17213E" stroke="#526487" stroke-opacity="0.8"/>
+      <circle cx="94" cy="105" r="3" fill="#8DA6BC"/>
       <text x="105" y="110">Linux</text>
     </g>
     <g>
-      <rect x="170" y="92" width="90" height="26" rx="13" fill="#0B1220" stroke="#18314A" stroke-opacity="0.8"/>
-      <circle cx="184" cy="105" r="3" fill="#d7c3a3"/>
+      <rect x="170" y="92" width="90" height="26" rx="13" fill="#17213E" stroke="#526487" stroke-opacity="0.8"/>
+      <circle cx="184" cy="105" r="3" fill="#F4C653"/>
       <text x="195" y="110">VS Code</text>
     </g>
     <g>
-      <rect x="270" y="92" width="90" height="26" rx="13" fill="#0B1220" stroke="#18314A" stroke-opacity="0.8"/>
-      <circle cx="284" cy="105" r="3" fill="#7a8fa6"/>
+      <rect x="270" y="92" width="90" height="26" rx="13" fill="#17213E" stroke="#526487" stroke-opacity="0.8"/>
+      <circle cx="284" cy="105" r="3" fill="#55C9C0"/>
       <text x="295" y="110">GitHub</text>
     </g>
     <g>
-      <rect x="370" y="92" width="70" height="26" rx="13" fill="#0B1220" stroke="#18314A" stroke-opacity="0.8"/>
-      <circle cx="384" cy="105" r="3" fill="#b89f7a"/>
+      <rect x="370" y="92" width="70" height="26" rx="13" fill="#17213E" stroke="#526487" stroke-opacity="0.8"/>
+      <circle cx="384" cy="105" r="3" fill="#EF8148"/>
       <text x="395" y="110">Git</text>
     </g>
   </g>
 
   <!-- Corner tag -->
-  <text x="820" y="130" font-family="'JetBrains Mono','SFMono-Regular',monospace" font-size="9" fill="#18314A" text-anchor="end">// curated</text>
+  <text x="820" y="130" font-family="'JetBrains Mono','SFMono-Regular',monospace" font-size="9" fill="#526487" text-anchor="end">// curated</text>
 </svg>

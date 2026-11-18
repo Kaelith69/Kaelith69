@@ -1,22 +1,22 @@
 <svg width="860" height="110" viewBox="0 0 860 110" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Current focus">
   <defs>
     <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#05070B">
-        <animate attributeName="stop-color" values="#05070B;#081018;#05070B" dur="60s" repeatCount="indefinite" />
+      <stop offset="0%" stop-color="#080D1D">
+        <animate attributeName="stop-color" values="#080D1D;#101A34;#080D1D" dur="60s" repeatCount="indefinite" />
       </stop>
-      <stop offset="100%" stop-color="#0B1220">
-        <animate attributeName="stop-color" values="#0B1220;#05070B;#0B1220" dur="60s" repeatCount="indefinite" />
+      <stop offset="100%" stop-color="#17213E">
+        <animate attributeName="stop-color" values="#17213E;#080D1D;#17213E" dur="60s" repeatCount="indefinite" />
       </stop>
     </linearGradient>
     <filter id="noise">
       <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/>
       <feColorMatrix type="matrix" values="1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 0.02 0" />
     </filter>
-  </defs>
+  <radialGradient id="comic-nebula" cx="18%" cy="12%" r="88%"><stop offset="0%" stop-color="#6C3D87" stop-opacity="0.30"/><stop offset="48%" stop-color="#55366F" stop-opacity="0.12"/><stop offset="100%" stop-color="#55366F" stop-opacity="0"/></radialGradient><radialGradient id="comic-warm-light" cx="86%" cy="8%" r="72%"><stop offset="0%" stop-color="#F4C653" stop-opacity="0.22"/><stop offset="42%" stop-color="#EF8148" stop-opacity="0.09"/><stop offset="100%" stop-color="#EF8148" stop-opacity="0"/></radialGradient><pattern id="comic-halftone" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.05" fill="#8DA6BC" fill-opacity="0.24"/></pattern></defs>
 
   <rect width="860" height="110" rx="16" fill="url(#bg-grad)"/>
   <rect width="860" height="110" rx="16" filter="url(#noise)" style="mix-blend-mode: soft-light" pointer-events="none"/>
-  <rect x="1" y="1" width="858" height="108" rx="15" stroke="#18314A" stroke-opacity="0.8"/>
+  <rect x="1" y="1" width="858" height="108" rx="15" stroke="#526487" stroke-opacity="0.8"/>
 
   <!-- Dust Nebula Layer -->
   <g opacity="1">
@@ -39,25 +39,25 @@
   </g>
 
   <!-- Section label -->
-  <text x="40" y="28" font-family="'JetBrains Mono','SFMono-Regular',monospace" font-size="10" fill="#9da6b2" letter-spacing="2">CURRENT FOCUS</text>
-  <line x1="40" y1="36" x2="820" y2="36" stroke="#18314A" stroke-opacity="0.6" stroke-width="1"/>
+  <text x="40" y="28" font-family="'JetBrains Mono','SFMono-Regular',monospace" font-size="10" fill="#A5C4D4" letter-spacing="2">CURRENT FOCUS</text>
+  <line x1="40" y1="36" x2="820" y2="36" stroke="#526487" stroke-opacity="0.6" stroke-width="1"/>
 
   <!-- Focus items inline row 1 -->
-  <g font-family="Inter, sans-serif" font-size="12" fill="#9da6b2">
-    <circle cx="52" cy="56" r="2.5" fill="#d7c3a3" opacity="0.7"/>
+  <g font-family="Inter, sans-serif" font-size="12" fill="#A5C4D4">
+    <circle cx="52" cy="56" r="2.5" fill="#F4C653" opacity="0.7"/>
     <text x="62" y="61">refining engineering workflows</text>
 
-    <circle cx="52" cy="80" r="2.5" fill="#7a8fa6" opacity="0.7"/>
+    <circle cx="52" cy="80" r="2.5" fill="#55C9C0" opacity="0.7"/>
     <text x="62" y="85">building polished developer tooling</text>
 
     <!-- Col 2 -->
-    <circle cx="440" cy="56" r="2.5" fill="#b89f7a" opacity="0.7"/>
+    <circle cx="440" cy="56" r="2.5" fill="#EF8148" opacity="0.7"/>
     <text x="450" y="61">improving systems thinking and architecture</text>
 
-    <circle cx="440" cy="80" r="2.5" fill="#66708a" opacity="0.7"/>
+    <circle cx="440" cy="80" r="2.5" fill="#8DA6BC" opacity="0.7"/>
     <text x="450" y="85">making software feel effortless</text>
   </g>
 
   <!-- Corner tag -->
-  <text x="820" y="102" font-family="'JetBrains Mono','SFMono-Regular',monospace" font-size="9" fill="#18314A" text-anchor="end">// wip</text>
+  <text x="820" y="102" font-family="'JetBrains Mono','SFMono-Regular',monospace" font-size="9" fill="#526487" text-anchor="end">// wip</text>
 </svg>
