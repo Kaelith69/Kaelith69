@@ -1,53 +1,48 @@
 <svg width="860" height="80" viewBox="0 0 860 80" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Profile footer">
   <defs>
     <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#05070B">
-        <animate attributeName="stop-color" values="#05070B;#081018;#05070B" dur="60s" repeatCount="indefinite" />
+      <stop offset="0%" stop-color="#080D1D">
+        <animate attributeName="stop-color" values="#080D1D;#101A34;#080D1D" dur="60s" repeatCount="indefinite" />
       </stop>
-      <stop offset="100%" stop-color="#0B1220">
-        <animate attributeName="stop-color" values="#0B1220;#05070B;#0B1220" dur="60s" repeatCount="indefinite" />
+      <stop offset="100%" stop-color="#0B132B">
+        <animate attributeName="stop-color" values="#0B132B;#080D1D;#0B132B" dur="60s" repeatCount="indefinite" />
       </stop>
     </linearGradient>
-    <filter id="noise">
-      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/>
-      <feColorMatrix type="matrix" values="1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 0.02 0" />
-    </filter>
   </defs>
 
   <rect width="860" height="80" rx="16" fill="url(#bg-grad)"/>
-  <rect width="860" height="80" rx="16" filter="url(#noise)" style="mix-blend-mode: soft-light" pointer-events="none"/>
-  <rect x="1" y="1" width="858" height="78" rx="15" stroke="#18314A" stroke-opacity="0.8"/>
+  <rect x="1" y="1" width="858" height="78" rx="15" stroke="#273957" stroke-opacity="0.8"/>
 
   <!-- Dust Nebula Layer -->
   <g opacity="1">
-    <circle cx="15%" cy="80%" r="1" fill="rgba(110,160,255,0.08)">
+    <circle cx="15%" cy="80%" r="1" fill="rgba(85,201,192,0.08)">
       <animateTransform attributeName="transform" type="translate" values="0,0; 20,-40; 0,0" dur="25s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="0.03;0.12;0.03" dur="18s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="45%" cy="70%" r="1.5" fill="rgba(110,160,255,0.08)">
+    <circle cx="45%" cy="70%" r="1.5" fill="rgba(85,201,192,0.08)">
       <animateTransform attributeName="transform" type="translate" values="0,0; -15,-30; 0,0" dur="30s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="0.03;0.12;0.03" dur="22s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="75%" cy="90%" r="1" fill="rgba(220,190,150,0.10)">
+    <circle cx="75%" cy="90%" r="1" fill="rgba(244,198,83,0.10)">
       <animateTransform attributeName="transform" type="translate" values="0,0; 25,-50; 0,0" dur="35s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="0.03;0.10;0.03" dur="26s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="88%" cy="50%" r="2" fill="rgba(110,160,255,0.08)">
+    <circle cx="88%" cy="50%" r="2" fill="rgba(85,201,192,0.08)">
       <animateTransform attributeName="transform" type="translate" values="0,0; -10,-20; 0,0" dur="28s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="0.03;0.12;0.03" dur="20s" repeatCount="indefinite"/>
     </circle>
   </g>
 
   <!-- Sacred Pulse around Aham Brahmasmi -->
-  <circle cx="430" cy="40" r="100" fill="rgba(215,194,162,1)">
+  <circle cx="430" cy="40" r="100" fill="rgba(244,198,83,1)">
     <animate attributeName="r" values="98;102;98" dur="8s" repeatCount="indefinite"/>
     <animate attributeName="opacity" values="0.02;0.06;0.02" dur="8s" repeatCount="indefinite"/>
   </circle>
 
-  <line x1="90" y1="40" x2="150" y2="40" stroke="#18314A" stroke-opacity="0.8"/>
-  <line x1="710" y1="40" x2="770" y2="40" stroke="#18314A" stroke-opacity="0.8"/>
-  <circle cx="150" cy="40" r="2" fill="#d7c3a3"/>
-  <circle cx="710" cy="40" r="2" fill="#d7c3a3"/>
+  <line x1="90" y1="40" x2="150" y2="40" stroke="#273957" stroke-opacity="0.8"/>
+  <line x1="710" y1="40" x2="770" y2="40" stroke="#273957" stroke-opacity="0.8"/>
+  <circle cx="150" cy="40" r="2" fill="#F4C653"/>
+  <circle cx="710" cy="40" r="2" fill="#F4C653"/>
 
-  <text x="430" y="46" text-anchor="middle" font-family="'Tiro Devanagari Sanskrit', 'Nirmala UI', 'Mangal', 'Cormorant Garamond', 'Libre Baskerville', 'Georgia', serif" font-size="24" fill="#e8e4dc">अहं ब्रह्मास्मि</text>
+  <text x="430" y="46" text-anchor="middle" font-family="'Tiro Devanagari Sanskrit', 'Nirmala UI', 'Mangal', 'Cormorant Garamond', 'Libre Baskerville', 'Georgia', serif" font-size="24" fill="#FFF0D1">अहं ब्रह्मास्मि</text>
 </svg>

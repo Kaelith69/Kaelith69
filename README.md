@@ -2,37 +2,44 @@
 
 <div align="center">
 
-  <img src="assets/hero.svg" alt="Kaelith69 — Kerala · IST · exploring new tech and art" style="width: 100%; max-width: 860px;" />
-  <br/>
-  <img src="assets/identity.svg" alt="Identity dossier" style="width: 100%; max-width: 860px;" />
-  <br/>
-  <img src="assets/stack.svg" alt="Curated stack" style="width: 100%; max-width: 860px;" />
-  <br/>
-  <img src="assets/focus.svg" alt="Current focus" style="width: 100%; max-width: 860px;" />
-  <br/>
+  <img
+    src="assets/clockwork-cosmos-final.gif"
+    alt="A mechanical solar system in a retro science fiction comic book style"
+    width="100%"
+  />
 
- <img
-  src="https://streak-stats.demolab.com?user=Kaelith69&theme=dark&hide_border=true&background=12161b&ring=d7c3a3&fire=d7c3a3&currStreakNum=e8e4dc&sideNums=9da6b2&currStreakLabel=66708a&sideLabels=66708a&dates=7a8fa6&stroke=2a313a"
-  alt="GitHub Streak"
-  style="width: 100%; max-width: 860px;"
-/>
+  <p>
+    <sub>
+      <a href="./assets/clockwork-cosmos-final.svg">Editable SVG master</a>
+      ·
+      <a href="./assets/clockwork-cosmos-final-preview.png">Static 1280 × 720 preview</a>
+    </sub>
+  </p>
 
-  <br/>
-
-  <a href="https://instagram.com/kaelith6.9" target="_blank">
-    <img src="assets/contact.svg" alt="Contact Network" style="width: 100%; max-width: 860px;" />
-  </a>
-
-  <br/>
-
-  <img src="assets/footer.svg" alt="Footer" style="width: 100%; max-width: 860px;" />
-
-  <br/>
-  <br/>
+  <img src="assets/identity.svg" alt="Identity dossier" width="100%" />
+  <br />
+  <img src="assets/stack.svg" alt="Technology stack" width="100%" />
+  <br />
+  <img src="assets/focus.svg" alt="Current focus" width="100%" />
+  <br />
 
   <img
-    src="https://komarev.com/ghpvc/?username=Kaelith69&style=flat-square&color=12161b&label=PROFILE+VISITS&labelColor=171c22"
-    alt="Profile Visits"
+    src="https://streak-stats.demolab.com?user=Kaelith69&theme=dark&hide_border=true&background=0B132B&ring=F4C653&fire=EF8148&currStreakNum=FFF0D1&sideNums=9BAED0&currStreakLabel=9BE7D7&sideLabels=8DA6BC&dates=A5C4D4&stroke=273957"
+    alt="GitHub contribution streak"
+    width="100%"
+  />
+
+  <br />
+  <img src="assets/contact.svg" alt="Contact network" width="100%" />
+  <p>
+    <a href="https://instagram.com/kaelith6.9">Instagram</a>
+  </p>
+
+  <img src="assets/footer.svg" alt="अहं ब्रह्मास्मि" width="100%" />
+  <br />
+  <img
+    src="https://komarev.com/ghpvc/?username=Kaelith69&style=flat-square&color=F4C653&label=PROFILE+VISITS&labelColor=273957"
+    alt="Profile visits"
   />
 
 </div>

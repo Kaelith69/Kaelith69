@@ -1,0 +1,53 @@
+name: Build Clockwork Cosmos artwork
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "scripts/build_clockwork.py"
+      - ".github/workflows/build-clockwork-cosmos.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: clockwork-cosmos-artwork
+  cancel-in-progress: true
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out profile repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install rendering dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes libcairo2 ffmpeg
+          python -m pip install --upgrade pip
+          python -m pip install "CairoSVG==2.8.2" "Pillow>=11,<13"
+
+      - name: Render SVG, PNG and looping GIF
+        run: python scripts/build_clockwork.py
+
+      - name: Commit generated artwork
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/clockwork-cosmos-final.svg \
+                  assets/clockwork-cosmos-final.gif \
+                  assets/clockwork-cosmos-final-preview.png
+          if git diff --cached --quiet; then
+            echo "Artwork is already up to date."
+          else
+            git commit -m "Build Clockwork Cosmos profile artwork"
+            git push
+          fi
