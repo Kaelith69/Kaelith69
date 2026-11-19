@@ -875,35 +875,55 @@ def render_svg(
     )
 
     octopus_arms = [
-        ("-20 3", "M0 0 C-25 -13 -49 -8 -72 2 S-112 10 -145 21", "-15 -5 -28 -7 -41 -5 -55 -1 -71 3 -87 5 -104 9 -123 15", "-1.8 0 0;1.2 0 0;-1.8 0 0", "7.6s", "0s"),
-        ("-17 8", "M0 0 C-28 -2 -51 11 -73 18 S-116 20 -143 35", "-16 3 -31 7 -46 12 -62 16 -80 18 -99 20 -123 29", "1.4 0 0;-1.1 0 0;1.4 0 0", "8.2s", ".6s"),
-        ("-10 13", "M0 0 C-24 13 -38 28 -65 31 S-112 38 -128 54", "-12 8 -27 18 -42 26 -58 30 -76 34 -96 41 -113 49", "-1.2 0 0;1.5 0 0;-1.2 0 0", "9.1s", "1s"),
-        ("-2 15", "M0 0 C-13 20 -28 39 -51 43 S-93 53 -108 68", "-8 12 -20 28 -33 38 -49 43 -67 51 -88 61", "1.3 0 0;-1.1 0 0;1.3 0 0", "8.7s", "1.4s"),
-        ("10 12", "M0 0 C22 12 39 29 65 31 S112 39 130 54", "11 9 26 18 42 27 57 31 76 36 96 43 116 50", "-1.4 0 0;1.1 0 0;-1.4 0 0", "8.4s", ".4s"),
-        ("17 7", "M0 0 C27 0 52 11 74 16 S117 19 146 34", "16 2 31 6 47 11 64 15 84 18 104 23 129 30", "1.3 0 0;-1.2 0 0;1.3 0 0", "9.3s", "1.2s"),
-        ("20 2", "M0 0 C29 -12 50 -8 76 0 S119 9 147 18", "16 -5 33 -7 49 -5 66 -1 87 3 109 9 130 14", "-1.2 0 0;1.5 0 0;-1.2 0 0", "8.9s", ".8s"),
-        ("3 17", "M0 0 C17 22 33 39 61 45 S105 55 120 71", "7 12 22 28 39 39 56 44 76 51 97 62 112 68", "1.1 0 0;-1.4 0 0;1.1 0 0", "9.6s", "1.7s"),
+        # Six rear and side arms sit behind the mantle. Each is broad at the
+        # shoulder, naturally tapered and flexes independently at low amplitude.
+        (-12, 3, 154, "M0 -3 C22 -15 47 -18 72 -12 C101 -6 125 9 148 25 C123 17 101 6 77 3 C49 -1 24 7 0 5 Q-6 1 0 -3Z", "9.4s", "0s"),
+        (-17, 9, 178, "M0 -3 C25 -12 49 -12 73 -4 C101 5 123 20 145 36 C120 27 99 16 75 11 C49 6 25 12 0 5 Q-6 1 0 -3Z", "10.2s", ".7s"),
+        (-14, 17, 207, "M0 -3 C22 -13 45 -12 67 -3 C92 8 108 28 125 48 C104 37 87 22 65 15 C41 7 21 12 0 5 Q-6 1 0 -3Z", "9.8s", "1.3s"),
+        (12, 3, 26, "M0 -3 C22 -15 47 -18 72 -12 C101 -6 125 9 148 25 C123 17 101 6 77 3 C49 -1 24 7 0 5 Q-6 1 0 -3Z", "9.6s", ".3s"),
+        (17, 9, 2, "M0 -3 C25 -12 49 -12 73 -4 C101 5 123 20 145 36 C120 27 99 16 75 11 C49 6 25 12 0 5 Q-6 1 0 -3Z", "10.4s", "1s"),
+        (14, 17, 333, "M0 -3 C22 -13 45 -12 67 -3 C92 8 108 28 125 48 C104 37 87 22 65 15 C41 7 21 12 0 5 Q-6 1 0 -3Z", "9.9s", "1.7s"),
+        # Two shorter front arms curl back toward the mouth and overlap the mantle.
+        (-7, 22, 245, "M0 -3 C18 -12 36 -10 49 1 C63 12 66 30 56 40 C47 49 31 43 34 32 C36 24 47 24 51 31 C53 16 39 7 23 9 C13 10 5 8 0 5 Q-5 1 0 -3Z", "8.7s", ".5s"),
+        (7, 22, 295, "M0 -3 C18 -12 36 -10 49 1 C63 12 66 30 56 40 C47 49 31 43 34 32 C36 24 47 24 51 31 C53 16 39 7 23 9 C13 10 5 8 0 5 Q-5 1 0 -3Z", "8.9s", "1.1s"),
     ]
-    for translate, arm_path, sucker_coords, rotation, duration, begin in octopus_arms:
+
+    def render_octopus_arm(index: int, arm: tuple[Any, ...]) -> None:
+        x, y, angle, arm_path, duration, begin = arm
         pieces.append(
-            f'''  <g transform="translate({translate})" data-octopus-arm="true">
-    <animateTransform attributeName="transform" type="rotate" additive="sum"
-      values="{rotation}" dur="{duration}" begin="{begin}" repeatCount="indefinite"/>
-    <path d="{arm_path}" fill="none" stroke="#140C34" stroke-opacity=".48"
-      stroke-width="11" stroke-linecap="round"/>
-    <path d="{arm_path}" fill="none" stroke="url(#octopus-arm)"
-      stroke-width="8.2" stroke-linecap="round"/>
-    <path d="{arm_path}" fill="none" stroke="url(#octopus-highlight)"
-      stroke-width="1.15" stroke-linecap="round" opacity=".46"/>
+            f'''  <g data-octopus-arm="true" data-arm-index="{index}"
+       transform="translate({x} {y})">
+    <g transform="rotate({angle} 0 0)">
+      <animateTransform attributeName="transform" type="rotate" additive="sum"
+        values="-2.4 0 0;2.4 0 0;-2.4 0 0" dur="{duration}"
+        begin="{begin}" calcMode="spline"
+        keySplines=".42 0 .58 1;.42 0 .58 1" repeatCount="indefinite"/>
+      <path d="{arm_path}" fill="#030411" stroke="#02030B"
+        stroke-width="3.2" stroke-linejoin="round"/>
+      <path d="{arm_path}" fill="url(#octopus-arm)" stroke="#25134A"
+        stroke-width="1.15" stroke-linejoin="round"/>
+      <path d="M8 0 C31 -10 52 -12 74 -7"
+        fill="none" stroke="url(#octopus-highlight)" stroke-width="1.8"
+        stroke-linecap="round" opacity=".72"/>
 '''
         )
-        coordinates = sucker_coords.split()
-        for index in range(0, len(coordinates), 2):
-            sx, sy = coordinates[index], coordinates[index + 1]
+        cup_positions = ([(18, 2), (33, 3), (48, 4), (63, 5), (78, 6), (93, 8), (108, 11)]
+                         if index < 6 else
+                         [(14, 3), (26, 7), (38, 12), (48, 20), (52, 29)])
+        for cup_index, (cx, cy) in enumerate(cup_positions):
             pieces.append(
-                f'    <circle cx="{sx}" cy="{sy}" r="1.35" fill="#E7C8FF" fill-opacity=".88" stroke="#382064" stroke-opacity=".38" stroke-width=".4"/>\n'
+                f'''      <g transform="translate({cx} {cy})">
+        <ellipse rx="3.0" ry="2.15" fill="#08071A"
+          stroke="#FFB5F0" stroke-width=".7"/>
+        <ellipse rx="1.35" ry=".9" fill="#00E5FF" opacity=".82"/>
+        <circle cx="-.55" cy="-.45" r=".42" fill="#FFFFFF" opacity=".82"/>
+      </g>
+'''
             )
-        pieces.append("  </g>\n")
+        pieces.append("    </g>\n  </g>\n")
+
+    for arm_index, arm in enumerate(octopus_arms[:6]):
+        render_octopus_arm(arm_index, arm)
 
     pieces.append(
         '''  <g id="octopus-mantle">
