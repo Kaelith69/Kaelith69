@@ -70,7 +70,7 @@ class ContributionArcadeTests(unittest.TestCase):
                 {"contributionDays": [self.days[0]]},
             ]
         }
-        with self.assertRaisesRegex(RuntimeError, "contains"):
+        with self.assertRaisesRegex(RuntimeError, "Duplicate contribution day"):
             collect_days(duplicate, self.start, self.end)
 
     def test_rejects_unknown_level_and_negative_count(self) -> None:
