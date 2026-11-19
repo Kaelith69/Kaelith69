@@ -68,7 +68,7 @@ class ContributionMazeTests(unittest.TestCase):
             ]
         }
         result = collect_days(calendar, self.start, self.end)
-        svg = render_svg(self.start, self.end, 48, result)
+        svg = render_svg(self.start, self.end, 42, result)
         root = ET.fromstring(svg)
         namespace = {"svg": "http://www.w3.org/2000/svg"}
 
@@ -80,7 +80,7 @@ class ContributionMazeTests(unittest.TestCase):
             1,
         )
         self.assertIn("CONTRIBUTION MAZE", svg)
-        self.assertIn(">48<", svg)
+        self.assertIn(">42<", svg)
         self.assertIn("repeatCount=\"indefinite\"", svg)
         self.assertIn("FOURTH_QUARTILE", svg)
 
