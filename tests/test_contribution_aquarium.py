@@ -18,6 +18,7 @@ from scripts.build_contribution_aquarium import (  # noqa: E402
     LAUNCH_POINT,
     LEVEL_COLORS,
     PITCH,
+    ROW_PITCH,
     RESET_FADE,
     RESET_HOLD,
     calendar_weeks,
@@ -220,30 +221,62 @@ class ContributionAquariumTests(unittest.TestCase):
         svg = render_svg(self.start, self.end, total, self.days)
         root = ET.fromstring(svg)
         creatures = root.findall(".//*[@data-date]")
-        self.assertEqual(root.attrib["viewBox"], "0 0 860 258")
+        self.assertEqual(root.attrib["viewBox"], "0 0 1120 430")
         self.assertEqual(len(creatures), 14)
         self.assertTrue(all(item.tag.endswith("g") for item in creatures))
         self.assertTrue(all(item.find("{http://www.w3.org/2000/svg}ellipse") is not None for item in creatures))
         self.assertTrue(all(item.find("{http://www.w3.org/2000/svg}path") is not None for item in creatures))
-        self.assertEqual(PITCH - CELL, 6)
-        self.assertEqual(GRID_X, 58)
-        self.assertEqual(GRID_Y, 98)
+        self.assertEqual(PITCH - CELL, 8)
+        self.assertEqual(ROW_PITCH, 22)
+        self.assertEqual(GRID_X, 70)
+        self.assertEqual(GRID_Y, 135)
 
     def test_neon_food_palette_and_large_fish_are_present(self) -> None:
         total = sum(item["count"] for item in self.days.values())
         svg = render_svg(self.start, self.end, total, self.days)
-        self.assertIn("#07182B", svg)
-        self.assertIn("#174BFF", svg)
-        self.assertIn("#00A9FF", svg)
-        self.assertIn("#00D9C2", svg)
-        self.assertIn("#CE42FF", svg)
+        self.assertIn("#041A27", svg)
+        self.assertIn("#2876A6", svg)
+        self.assertIn("#21A9B7", svg)
+        self.assertIn("#55D6B0", svg)
+        self.assertIn("#FFC879", svg)
         self.assertIn("fish-body", svg)
         self.assertIn("fish-fin", svg)
-        self.assertIn('transform="translate(-14 0) scale(.58)"', svg)
+        self.assertIn('transform="translate(-16.3 0) scale(.68)"', svg)
         self.assertIn("animateMotion", svg)
+        self.assertIn("keySplines=", svg)
+        self.assertIn('calcMode="spline"', svg)
+        self.assertIn(" Q ", svg)
+        self.assertIn("octopus-skin", svg)
+        self.assertIn("color shifting octopus", svg)
         self.assertNotIn("rocket", svg.lower())
         self.assertNotIn("pacman", svg.lower())
         self.assertNotIn("ghost", svg.lower())
+
+    def test_octopus_is_resting_on_the_seabed_with_eight_animated_arms(self) -> None:
+        total = sum(item["count"] for item in self.days.values())
+        svg = render_svg(self.start, self.end, total, self.days)
+        root = ET.fromstring(svg)
+        octopus = root.find(".//*[@id='resting-octopus']")
+        self.assertIsNotNone(octopus)
+        arms = root.findall(".//*[@data-octopus-arm='true']")
+        self.assertEqual(len(arms), 8)
+        skin = root.find(".//*[@id='octopus-skin']")
+        self.assertIsNotNone(skin)
+        ns = {"svg": "http://www.w3.org/2000/svg"}
+        changes = skin.findall(".//svg:animate[@attributeName='stop-color']", ns)
+        self.assertGreaterEqual(len(changes), 2)
+        self.assertTrue(all(item.attrib.get("dur") == "38s" for item in changes))
+
+    def test_motion_path_rounds_non_feeding_turns(self) -> None:
+        weeks = calendar_weeks(self.start, self.end)
+        route = nearest_food_route(weeks, self.start, self.end, self.days)
+        timeline = flight_timeline(route)
+        self.assertIn("Q ", timeline["path"])
+        self.assertTrue(timeline["key_splines"])
+        self.assertEqual(
+            len(timeline["key_splines"].split(";")),
+            len(timeline["key_times"].split(";")) - 1,
+        )
 
     def test_only_active_food_disappears_and_all_food_resets_together(self) -> None:
         total = sum(item["count"] for item in self.days.values())
