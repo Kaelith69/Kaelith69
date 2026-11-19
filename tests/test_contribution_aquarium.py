@@ -9,7 +9,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from scripts.build_contribution_aquarium import (
+from scripts.build_contribution_aquarium import (  # noqa: E402
     CELL,
     EAT_DWELL,
     GRID_X,
@@ -18,15 +18,14 @@ from scripts.build_contribution_aquarium import (
     LEVEL_COLORS,
     PITCH,
     RESET_FADE,
-    approach_anchor,
-    build_flight_plan,
+    RESET_HOLD,
     calendar_weeks,
     cell_center,
     collect_days,
     date_window,
-    manhattan_distance,
+    flight_timeline,
     nearest_food_route,
-    orthogonal_leg,
+    orthogonal_flight_points,
     render_svg,
 )
 
@@ -95,31 +94,13 @@ class ContributionAquariumTests(unittest.TestCase):
         with self.assertRaisesRegex(RuntimeError, "Unknown contribution level"):
             collect_days({"weeks": [{"contributionDays": unknown}]}, self.start, self.end)
 
-    def test_grid_uses_sunday_first_columns(self) -> None:
+    def test_calendar_is_sunday_first(self) -> None:
         weeks = calendar_weeks(self.start, self.end)
         self.assertEqual(weeks[0][0].weekday(), 6)
         self.assertEqual(weeks[0][0], self.start)
         self.assertEqual(weeks[-1][-1], self.end)
 
-    def test_orthogonal_leg_never_returns_diagonal_segments(self) -> None:
-        cases = [
-            ((0, 0), (12, 9), "x"),
-            ((0, 0), (12, 9), "y"),
-            ((10, 20), (4, 7), "x"),
-            ((10, 20), (4, 7), "y"),
-            ((0, 0), (0, 9), "y"),
-            ((0, 0), (12, 0), "x"),
-        ]
-        for start, end, axis in cases:
-            points = [start, *orthogonal_leg(start, end, axis)]
-            self.assertEqual(points[-1], end)
-            for first, second in zip(points, points[1:]):
-                self.assertTrue(
-                    first[0] == second[0] or first[1] == second[1],
-                    (start, end, axis, first, second),
-                )
-
-    def test_first_food_is_the_nearest_manhattan_target(self) -> None:
+    def test_first_food_is_nearest_by_manhattan_distance(self) -> None:
         weeks = calendar_weeks(self.start, self.end)
         route = nearest_food_route(weeks, self.start, self.end, self.days)
         active = [
@@ -131,13 +112,14 @@ class ContributionAquariumTests(unittest.TestCase):
         expected = min(
             active,
             key=lambda item: (
-                manhattan_distance(LAUNCH_POINT, cell_center(item[0], item[1])),
+                abs(cell_center(item[0], item[1])[0] - LAUNCH_POINT[0])
+                + abs(cell_center(item[0], item[1])[1] - LAUNCH_POINT[1]),
                 item[2].isoformat(),
             ),
         )
         self.assertEqual(route[0], expected)
 
-    def test_each_next_food_is_nearest_from_the_fish_mouth_position(self) -> None:
+    def test_every_subsequent_food_is_nearest_remaining(self) -> None:
         weeks = calendar_weeks(self.start, self.end)
         route = nearest_food_route(weeks, self.start, self.end, self.days)
         remaining = [
@@ -152,17 +134,18 @@ class ContributionAquariumTests(unittest.TestCase):
             expected = min(
                 remaining,
                 key=lambda item: (
-                    manhattan_distance(current, cell_center(item[0], item[1])),
+                    abs(cell_center(item[0], item[1])[0] - current[0])
+                    + abs(cell_center(item[0], item[1])[1] - current[1]),
                     item[2].isoformat(),
                 ),
             )
             self.assertEqual(actual, expected)
-            current, _ = approach_anchor(current, cell_center(actual[0], actual[1]))
+            current = cell_center(actual[0], actual[1])
             remaining.remove(actual)
 
         self.assertEqual(remaining, [])
 
-    def test_route_covers_every_active_date_once(self) -> None:
+    def test_route_visits_only_active_days_once(self) -> None:
         weeks = calendar_weeks(self.start, self.end)
         route = nearest_food_route(weeks, self.start, self.end, self.days)
         active = {date for date, item in self.days.items() if item["count"] > 0}
@@ -170,102 +153,112 @@ class ContributionAquariumTests(unittest.TestCase):
         self.assertEqual(len(route), len(active))
         self.assertEqual(len({item[2] for item in route}), len(route))
 
-    def test_flight_plan_contains_only_axis_aligned_segments(self) -> None:
+    def test_every_flight_segment_is_horizontal_or_vertical(self) -> None:
         weeks = calendar_weeks(self.start, self.end)
         route = nearest_food_route(weeks, self.start, self.end, self.days)
-        plan = build_flight_plan(route)
-        self.assertGreater(len(plan["points"]), 2)
-        for first, second in zip(plan["points"], plan["points"][1:]):
-            self.assertTrue(
-                first[0] == second[0] or first[1] == second[1],
-                (first, second),
-            )
+        points, stop_indices = orthogonal_flight_points(route)
+        self.assertEqual(len(stop_indices), len(route))
+        self.assertGreater(len(points), len(route))
+        for first, second in zip(points, points[1:]):
+            horizontal = math.isclose(first[1], second[1], abs_tol=1e-8)
+            vertical = math.isclose(first[0], second[0], abs_tol=1e-8)
+            self.assertTrue(horizontal or vertical, (first, second))
+            self.assertFalse(horizontal and vertical, (first, second))
 
-    def test_flight_plan_has_a_pause_for_every_meal_and_a_full_reset(self) -> None:
+    def test_flight_timeline_pauses_for_each_meal_then_resets(self) -> None:
         weeks = calendar_weeks(self.start, self.end)
         route = nearest_food_route(weeks, self.start, self.end, self.days)
-        plan = build_flight_plan(route)
-        self.assertEqual(len(plan["arrivals"]), len(route))
-        self.assertAlmostEqual(plan["cycle"] - plan["returned_at"], RESET_FADE)
+        timeline = flight_timeline(route)
 
-        for arrival, eaten in plan["arrivals"].values():
-            self.assertAlmostEqual(eaten - arrival, EAT_DWELL * .56)
+        self.assertEqual(len(timeline["arrivals"]), len(route))
+        self.assertAlmostEqual(
+            timeline["cycle"] - timeline["returned_at"],
+            RESET_HOLD + RESET_FADE,
+        )
+        for arrival, eaten in timeline["arrivals"].values():
+            self.assertAlmostEqual(eaten - arrival, EAT_DWELL)
 
-        key_points = [float(value) for value in plan["key_points"].split(";")]
-        key_times = [float(value) for value in plan["key_times"].split(";")]
+        key_points = [float(value) for value in timeline["key_points"].split(";")]
+        key_times = [float(value) for value in timeline["key_times"].split(";")]
         self.assertEqual(len(key_points), len(key_times))
         self.assertTrue(all(b > a for a, b in zip(key_times, key_times[1:])))
         self.assertTrue(all(b >= a for a, b in zip(key_points, key_points[1:])))
         self.assertAlmostEqual(key_times[0], 0)
         self.assertAlmostEqual(key_times[-1], 1)
 
-    def test_empty_activity_has_a_valid_idle_loop(self) -> None:
-        empty_days = {
+    def test_empty_activity_has_a_valid_idle_path(self) -> None:
+        empty = {
             date: {"count": 0, "level": "NONE"}
             for date in self.days
         }
         weeks = calendar_weeks(self.start, self.end)
-        route = nearest_food_route(weeks, self.start, self.end, empty_days)
-        plan = build_flight_plan(route)
+        route = nearest_food_route(weeks, self.start, self.end, empty)
+        timeline = flight_timeline(route)
         self.assertEqual(route, [])
-        self.assertEqual(plan["arrivals"], {})
-        self.assertTrue(plan["path"])
+        self.assertEqual(timeline["arrivals"], {})
+        self.assertTrue(timeline["path"])
 
-    def test_svg_uses_creature_food_and_spaced_neon_colors(self) -> None:
+    def test_each_day_is_a_small_fish_with_clear_spacing(self) -> None:
         total = sum(item["count"] for item in self.days.values())
         svg = render_svg(self.start, self.end, total, self.days)
         root = ET.fromstring(svg)
         creatures = root.findall(".//*[@data-date]")
-        self.assertEqual(root.attrib["viewBox"], "0 0 860 252")
+        self.assertEqual(root.attrib["viewBox"], "0 0 860 258")
         self.assertEqual(len(creatures), 14)
-        self.assertEqual(
-            sum(int(item.attrib["data-count"]) for item in creatures),
-            total,
-        )
-        self.assertIn("#061B2D", svg)
-        self.assertIn("#246BFF", svg)
-        self.assertIn("#00B9FF", svg)
-        self.assertIn("#00E0C8", svg)
-        self.assertIn("#D34DFF", svg)
+        self.assertTrue(all(item.tag.endswith("g") for item in creatures))
+        self.assertTrue(all(item.find("{http://www.w3.org/2000/svg}ellipse") is not None for item in creatures))
+        self.assertTrue(all(item.find("{http://www.w3.org/2000/svg}path") is not None for item in creatures))
+        self.assertEqual(PITCH - CELL, 5)
+        self.assertEqual(GRID_X, 64)
+        self.assertEqual(GRID_Y, 94)
+        self.assertNotIn("data-date=", svg[svg.find("<rect"):svg.find("</svg>")])
+
+    def test_neon_food_palette_and_large_fish_are_present(self) -> None:
+        total = sum(item["count"] for item in self.days.values())
+        svg = render_svg(self.start, self.end, total, self.days)
+        self.assertIn("#07182B", svg)
+        self.assertIn("#174BFF", svg)
+        self.assertIn("#00A9FF", svg)
+        self.assertIn("#00D9C2", svg)
+        self.assertIn("#CE42FF", svg)
         self.assertIn("fish-body", svg)
         self.assertIn("fish-fin", svg)
         self.assertIn("animateMotion", svg)
         self.assertNotIn("rocket", svg.lower())
         self.assertNotIn("pacman", svg.lower())
         self.assertNotIn("ghost", svg.lower())
-        self.assertEqual(PITCH - CELL, 5)
-        self.assertEqual(GRID_X, 62)
-        self.assertEqual(GRID_Y, 99)
 
-    def test_only_active_creatures_disappear_and_all_share_the_reset(self) -> None:
+    def test_only_active_food_disappears_and_all_food_resets_together(self) -> None:
         total = sum(item["count"] for item in self.days.values())
         svg = render_svg(self.start, self.end, total, self.days)
         root = ET.fromstring(svg)
         ns = {"svg": "http://www.w3.org/2000/svg"}
         creatures = root.findall(".//*[@data-date]")
-        animated = [
+        animations = [
             creature.find("svg:animate[@attributeName='opacity']", ns)
             for creature in creatures
         ]
-        animated = [animation for animation in animated if animation is not None]
-
+        animated = [item for item in animations if item is not None]
         active_count = sum(item["count"] > 0 for item in self.days.values())
         self.assertEqual(len(animated), active_count)
 
-        reset_values = {
+        reset_times = {
             animation.attrib["keyTimes"].split(";")[-2]
             for animation in animated
         }
-        self.assertEqual(len(reset_values), 1)
+        self.assertEqual(len(reset_times), 1)
 
-    def test_fish_jaw_uses_per_meal_keyframes(self) -> None:
+    def test_jaw_opens_and_closes_once_for_each_meal(self) -> None:
         total = sum(item["count"] for item in self.days.values())
         svg = render_svg(self.start, self.end, total, self.days)
         root = ET.fromstring(svg)
         ns = {"svg": "http://www.w3.org/2000/svg"}
         jaw = root.findall(".//svg:path/svg:animate[@attributeName='d']", ns)
         self.assertEqual(len(jaw), 1)
-        self.assertGreater(len(jaw[0].attrib["keyTimes"].split(";")), 2)
+        values = jaw[0].attrib["values"].split(";")
+        key_times = jaw[0].attrib["keyTimes"].split(";")
+        self.assertEqual(len(values), len(key_times))
+        self.assertEqual(len(values), 2 * sum(item["count"] > 0 for item in self.days.values()) + 2)
 
 
 if __name__ == "__main__":
