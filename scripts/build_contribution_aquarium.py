@@ -28,7 +28,7 @@ PITCH = 14
 LAUNCH_POINT = (42.0, 205.0)
 FISH_NOSE_OFFSET = 10.0
 SWIM_SPEED = 105.0
-EAT_DWELL = 0.56
+EAT_DWELL = 0.64
 RESET_FADE = 0.42
 
 QUERY = """
@@ -312,6 +312,9 @@ def flight_timeline(
         raise RuntimeError("Fish animation key times must increase strictly.")
 
     reset_time = returned_at / cycle
+    fish_fade_start = returned_at / cycle
+    fish_fade_end = (returned_at + RESET_FADE * .45) / cycle
+    fish_hidden_until = (cycle - .001) / cycle
     return {
         "points": points,
         "path": path,
@@ -321,6 +324,9 @@ def flight_timeline(
         "returned_at": returned_at,
         "cycle": cycle,
         "reset_time": reset_time,
+        "fish_fade_start": fish_fade_start,
+        "fish_fade_end": fish_fade_end,
+        "fish_hidden_until": fish_hidden_until,
     }
 
 
@@ -333,7 +339,6 @@ def render_svg(
     weeks = calendar_weeks(start, end)
     route = nearest_food_route(weeks, start, end, days)
     timeline = flight_timeline(route)
-    route_order = {date: index for index, (_, _, date) in enumerate(route)}
     cycle = timeline["cycle"]
     reset_time = timeline["reset_time"]
 
@@ -484,6 +489,7 @@ def render_svg(
     f'{(timeline["returned_at"] + RESET_FADE * .45) / cycle:.8f};'
     f'{(cycle - .001) / cycle:.8f};1" dur="{cycle:.6f}s" repeatCount="indefinite"/>
 
+  <g transform="scale(.55)">
   <!-- Forked tail: the caudal fin beats while the body glides. -->
   <g transform="translate(-15 0)">
     <g>
@@ -542,6 +548,7 @@ def render_svg(
   <path d="M18 2.1L22 2.5" stroke="#FFFFFF" stroke-width=".55" opacity=".85"/>
   <path d="M-13 -3 Q-18 -1 -19 1" fill="none"
     stroke="#DDFBFF" stroke-opacity=".85" stroke-width=".7"/>
+  </g>
 </g>
 
 <!-- Small air bubbles drift upward from the fish tank floor. -->
