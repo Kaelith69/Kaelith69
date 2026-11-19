@@ -500,8 +500,15 @@ def render_svg(
             f'calcMode="linear" dur="{cycle:.6f}s" rotate="auto" '
             f'repeatCount="indefinite"/>'
         )
+        fish_opacity = (
+            f'<animate attributeName="opacity" values="1;1;0;0" '
+            f'keyTimes="0;{timeline["reset_start_fraction"]:.8f};'
+            f'{timeline["fish_fade_end_fraction"]:.8f};1" '
+            f'dur="{cycle:.6f}s" repeatCount="indefinite"/>'
+        )
     else:
         fish_motion = '<animateTransform attributeName="transform" type="translate" values="0 0;0 -2;0 0" dur="2.8s" repeatCount="indefinite"/>'
+        fish_opacity = '<animate attributeName="opacity" values="1;.94;1" dur="2.8s" repeatCount="indefinite"/>'
 
     # One detailed fish. Local +X is its nose, so rotate="auto" turns it onto each axis.
     jaw_values = ["M17 1 Q21 2.2 24 1"]
@@ -529,6 +536,7 @@ def render_svg(
     pieces.append(
         f'''<g id="aquarium-fish" filter="url(#fish-glow)">
   {fish_motion}
+  {fish_opacity}
   <g transform="scale(.58)">
     <!-- Tail fin. -->
     <g transform="translate(-15 0)">
