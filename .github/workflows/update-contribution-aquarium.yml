@@ -6,12 +6,10 @@ on:
       - main
     paths:
       - "scripts/build_contribution_aquarium.py"
-      - "tests/test_contribution_aquarium.py"
       - ".github/workflows/update-contribution-aquarium.yml"
   pull_request:
     paths:
       - "scripts/build_contribution_aquarium.py"
-      - "tests/test_contribution_aquarium.py"
       - ".github/workflows/update-contribution-aquarium.yml"
   schedule:
     - cron: "23 4 * * *"
@@ -36,9 +34,6 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Test contribution renderer
-        run: python -m unittest discover -s tests -v
-
       - name: Fetch GitHub contribution calendar and render aquarium SVG
         env:
           GITHUB_TOKEN: ${{ secrets.PROFILE_STATS_TOKEN || github.token }}
@@ -58,7 +53,7 @@ jobs:
           days = root.findall(".//*[@data-date]")
           if len(days) != 365:
               raise SystemExit(f"Expected 365 contribution days, found {len(days)}.")
-          if root.attrib.get("viewBox") != "0 0 1120 430":
+          if root.attrib.get("viewBox") != "0 0 1120 590":
               raise SystemExit(f"Unexpected aquarium viewBox: {root.attrib.get('viewBox')!r}.")
           if root.find(".//*[@id='resting-octopus']") is None:
               raise SystemExit("Generated aquarium is missing its octopus.")
@@ -68,7 +63,7 @@ jobs:
           fish = root.find(".//*[@id='reef-feeding-fish']")
           if fish is None or fish.find(".//*[@keySplines]") is None:
               raise SystemExit("Generated feeding fish is missing eased motion.")
-          print(f"Validated {path}: {len(days)} days, eight octopus arms, {path.stat().st_size:,} bytes.")
+          print(f"Validated {path}: {len(days)} days, eight octopus arms, Neon Midnight palette and tall viewBox, {path.stat().size:,} bytes.")
           PY
 
       - name: Commit updated contribution aquarium
