@@ -21,10 +21,10 @@ OUTPUT = ROOT / "assets" / "contributions-aquarium.svg"
 LOGIN = os.environ.get("GITHUB_PROFILE_LOGIN", "Kaelith69")
 API_URL = os.environ.get("GITHUB_GRAPHQL_URL", "https://api.github.com/graphql")
 
-GRID_X = 64
-GRID_Y = 94
+GRID_X = 58
+GRID_Y = 98
 CELL = 9
-PITCH = 14
+PITCH = 15
 LAUNCH_POINT = (42.0, 205.0)
 FISH_SPEED = 115.0
 EAT_DWELL = 0.58
