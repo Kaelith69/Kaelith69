@@ -542,6 +542,7 @@ def render_svg(
     pieces.append(
         f'''<g id="aquarium-fish" filter="url(#fish-glow)">
   {fish_motion}
+  {fish_opacity}
   <g transform="scale(.58)">
     <!-- Tail fin. -->
     <g transform="translate(-15 0)">
