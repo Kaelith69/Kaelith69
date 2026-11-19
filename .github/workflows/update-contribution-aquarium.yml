@@ -12,7 +12,7 @@ on:
     paths:
       - "scripts/build_contribution_aquarium.py"
       - "tests/test_contribution_aquarium.py"
-      - ".github/workflows/update-contribution-maze.yml"
+      - ".github/workflows/update-contribution-aquarium.yml"
   schedule:
     - cron: "23 4 * * *"
   workflow_dispatch:
