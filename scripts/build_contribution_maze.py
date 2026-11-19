@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render a contribution calendar as a restrained, animated arcade cabinet panel."""
+"""Render GitHub contributions as a neon activity field visited by a small rocket."""
 
 from __future__ import annotations
 
@@ -20,12 +20,12 @@ OUTPUT = ROOT / "assets" / "contributions-pacman.svg"
 LOGIN = os.environ.get("GITHUB_PROFILE_LOGIN", "Kaelith69")
 API_URL = os.environ.get("GITHUB_GRAPHQL_URL", "https://api.github.com/graphql")
 
-CYCLE_SECONDS = 55
-GRID_X = 96
-GRID_Y = 86
-CELL = 10
-GAP = 3
-PITCH = CELL + GAP
+CYCLE_SECONDS = 58
+GRID_X = 106
+GRID_Y = 87
+CELL = 9
+PITCH = 12
+LAUNCH_POINT = (82.0, 176.0)
 
 QUERY = """
 query ContributionCalendar($login: String!, $from: DateTime!, $to: DateTime!) {
@@ -47,11 +47,11 @@ query ContributionCalendar($login: String!, $from: DateTime!, $to: DateTime!) {
 """
 
 LEVEL_COLORS = {
-    "NONE": ("#172137", "#2A3851"),
-    "FIRST_QUARTILE": ("#17434D", "#2D7180"),
-    "SECOND_QUARTILE": ("#216B73", "#3B9995"),
-    "THIRD_QUARTILE": ("#4AA78C", "#77C8A5"),
-    "FOURTH_QUARTILE": ("#E9B84D", "#FFF0D1"),
+    "NONE": ("#0B1322", "#17283F", "none"),
+    "FIRST_QUARTILE": ("#1748FF", "#6890FF", "blue"),
+    "SECOND_QUARTILE": ("#008FFF", "#66D6FF", "cyan"),
+    "THIRD_QUARTILE": ("#00D8C2", "#7FFFF0", "teal"),
+    "FOURTH_QUARTILE": ("#C52CFF", "#F0A0FF", "violet"),
 }
 
 
@@ -78,7 +78,7 @@ def fetch_calendar(start: dt.date, end: dt.date) -> dict[str, Any]:
             "Authorization": f"Bearer {token}",
             "Accept": "application/vnd.github+json",
             "Content-Type": "application/json",
-            "User-Agent": "Kaelith69-contribution-arcade/2.0",
+            "User-Agent": "Kaelith69-neon-contribution-rocket/3.0",
         },
         method="POST",
     )
@@ -167,7 +167,7 @@ def collect_days(
 
 
 def calendar_weeks(start: dt.date, end: dt.date) -> list[list[dt.date]]:
-    """Build Sunday-first columns with edge dates retained only as grid positions."""
+    """Return Sunday first columns matching GitHub's contribution calendar."""
     first_sunday = start - dt.timedelta(days=(start.weekday() + 1) % 7)
     last_sunday = end - dt.timedelta(days=(end.weekday() + 1) % 7)
     count = ((last_sunday - first_sunday).days // 7) + 1
@@ -180,22 +180,43 @@ def calendar_weeks(start: dt.date, end: dt.date) -> list[list[dt.date]]:
     ]
 
 
-def arcade_route(
+def cell_center(column: int, row: int) -> tuple[float, float]:
+    return (
+        GRID_X + column * PITCH + CELL / 2,
+        GRID_Y + row * PITCH + CELL / 2,
+    )
+
+
+def nearest_neighbor_route(
     weeks: list[list[dt.date]],
     start: dt.date,
     end: dt.date,
+    days: dict[dt.date, dict[str, Any]],
+    launch_point: tuple[float, float] = LAUNCH_POINT,
 ) -> list[tuple[int, int, dt.date]]:
-    """Snake down alternating week columns, visiting every real date once."""
-    route: list[tuple[int, int, dt.date]] = []
+    """Visit active contribution cells by repeatedly choosing the nearest unvisited one."""
+    remaining: list[tuple[int, int, dt.date]] = []
     for column, week in enumerate(weeks):
-        rows = range(7) if column % 2 == 0 else range(6, -1, -1)
-        for row in rows:
-            date = week[row]
-            if start <= date <= end:
-                route.append((column, row, date))
-    expected = (end - start).days + 1
-    if len(route) != expected or len({item[2] for item in route}) != expected:
-        raise RuntimeError("Arcade path does not cover every contribution date exactly once.")
+        for row, date in enumerate(week):
+            if start <= date <= end and days[date]["count"] > 0:
+                remaining.append((column, row, date))
+
+    route: list[tuple[int, int, dt.date]] = []
+    current = launch_point
+
+    while remaining:
+        next_cell = min(
+            remaining,
+            key=lambda item: (
+                (cell_center(item[0], item[1])[0] - current[0]) ** 2
+                + (cell_center(item[0], item[1])[1] - current[1]) ** 2,
+                item[2].isoformat(),
+            ),
+        )
+        route.append(next_cell)
+        current = cell_center(next_cell[0], next_cell[1])
+        remaining.remove(next_cell)
+
     return route
 
 
@@ -206,66 +227,77 @@ def render_svg(
     days: dict[dt.date, dict[str, Any]],
 ) -> str:
     weeks = calendar_weeks(start, end)
-    route = arcade_route(weeks, start, end)
-    route_indices = {(column, row): index for index, (column, row, _) in enumerate(route)}
-    path_points = [
-        (
-            GRID_X + column * PITCH + CELL / 2,
-            GRID_Y + row * PITCH + CELL / 2,
-        )
+    route = nearest_neighbor_route(weeks, start, end, days)
+    route_index = {
+        (column, row): index
+        for index, (column, row, _) in enumerate(route)
+    }
+
+    path_points = [LAUNCH_POINT]
+    path_points.extend(
+        cell_center(column, row)
         for column, row, _ in route
-    ]
+    )
     motion_path = "M " + " L ".join(
-        f"{x:.1f},{y:.1f}" for x, y in path_points
+        f"{x:.2f},{y:.2f}" for x, y in path_points
     )
 
     pieces: list[str] = []
     pieces.append(
         f'''<svg xmlns="http://www.w3.org/2000/svg" width="860" height="226"
  viewBox="0 0 860 226" role="img" aria-labelledby="title desc">
-<title id="title">{html.escape(LOGIN)} GitHub contributions</title>
-<desc id="desc">{total:,} contributions from {start.isoformat()} to {end.isoformat()}, shown as a 365-day calendar. Pac-Man moves down alternating week columns and consumes active contribution cells.</desc>
+<title id="title">{html.escape(LOGIN)} contribution rocket</title>
+<desc id="desc">{total:,} GitHub contributions from {start.isoformat()} to {end.isoformat()}. A white and electric blue rocket visits each active contribution square in nearest neighbor order across a 365 day neon calendar.</desc>
 <defs>
-  <linearGradient id="cabinet" x1="0" y1="0" x2="0" y2="1">
-    <stop stop-color="#111A2D"/><stop offset="1" stop-color="#080D19"/>
+  <linearGradient id="space-bg" x1="0" y1="0" x2="1" y2="1">
+    <stop stop-color="#030711"/><stop offset=".52" stop-color="#071020"/><stop offset="1" stop-color="#08091A"/>
   </linearGradient>
-  <linearGradient id="header-metal" x1="0" y1="0" x2="1" y2="0">
-    <stop stop-color="#F4C653" stop-opacity=".9"/><stop offset=".55" stop-color="#D7C3A3" stop-opacity=".6"/><stop offset="1" stop-color="#55C9C0" stop-opacity=".55"/>
-  </linearGradient>
-  <linearGradient id="pacman-body" x1=".12" y1="0" x2=".86" y2="1">
-    <stop stop-color="#FFF0B8"/><stop offset=".34" stop-color="#F4C653"/><stop offset="1" stop-color="#D58C2E"/>
-  </linearGradient>
-  <radialGradient id="screen-glass" cx="50%" cy="35%" r="75%">
-    <stop stop-color="#26314A" stop-opacity=".22"/><stop offset="1" stop-color="#080D19" stop-opacity=".08"/>
+  <radialGradient id="blue-nebula">
+    <stop stop-color="#145BFF" stop-opacity=".17"/><stop offset="1" stop-color="#145BFF" stop-opacity="0"/>
   </radialGradient>
-  <filter id="character-shadow" x="-80%" y="-80%" width="260%" height="260%">
-    <feGaussianBlur in="SourceAlpha" stdDeviation="1.8" result="shadow"/>
-    <feOffset dy="1.2" result="offset"/>
-    <feComponentTransfer><feFuncA type="linear" slope=".48"/></feComponentTransfer>
-    <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+  <linearGradient id="rocket-shell" x1="0" y1="0" x2="0" y2="1">
+    <stop stop-color="#FFFFFF"/><stop offset=".46" stop-color="#DDEEFF"/><stop offset="1" stop-color="#8DBBFF"/>
+  </linearGradient>
+  <linearGradient id="rocket-blue" x1="0" y1="0" x2="1" y2="1">
+    <stop stop-color="#A9EFFF"/><stop offset=".45" stop-color="#238CFF"/><stop offset="1" stop-color="#1550F5"/>
+  </linearGradient>
+  <linearGradient id="engine-flare" x1="0" y1="0" x2="1" y2="0">
+    <stop stop-color="#FFFFFF"/><stop offset=".35" stop-color="#73E9FF"/><stop offset="1" stop-color="#167BFF" stop-opacity="0"/>
+  </linearGradient>
+  <filter id="neon-blue" x="-120%" y="-120%" width="340%" height="340%">
+    <feGaussianBlur stdDeviation="2.8" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
   </filter>
-  <clipPath id="screen-clip"><rect x="1" y="1" width="858" height="224" rx="9"/></clipPath>
+  <filter id="cell-glow" x="-100%" y="-100%" width="300%" height="300%">
+    <feGaussianBlur stdDeviation="1.4" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <clipPath id="screen-clip"><rect x="1" y="1" width="858" height="224" rx="10"/></clipPath>
 </defs>
 <g clip-path="url(#screen-clip)">
-  <rect width="860" height="226" fill="url(#cabinet)"/>
-  <rect x="8" y="8" width="844" height="210" rx="6" fill="url(#screen-glass)" stroke="#526487" stroke-opacity=".38"/>
-  <path d="M24 57H836" stroke="url(#header-metal)" stroke-opacity=".6"/>
-  <path d="M24 58H836" stroke="#080D19" stroke-opacity=".9"/>
-  <circle cx="29" cy="33" r="3" fill="#F4C653"/>
-  <circle cx="29" cy="33" r="6" fill="none" stroke="#F4C653" stroke-opacity=".24"/>
-  <text x="46" y="40" font-family="Bangers, Impact, 'Arial Black', sans-serif"
-        font-size="27" letter-spacing="1.5" fill="#FFF0D1">CONTRIBUTIONS</text>
-  <text x="821" y="37" text-anchor="end"
+  <rect width="860" height="226" fill="url(#space-bg)"/>
+  <ellipse cx="430" cy="125" rx="450" ry="155" fill="url(#blue-nebula)"/>
+  <g fill="#BBD7FF" opacity=".3">
+    <circle cx="26" cy="36" r=".65"/><circle cx="48" cy="166" r=".7"/>
+    <circle cx="270" cy="24" r=".65"/><circle cx="492" cy="33" r=".6"/>
+    <circle cx="775" cy="49" r=".7"/><circle cx="837" cy="184" r=".6"/>
+    <circle cx="713" cy="24" r=".5"/><circle cx="365" cy="197" r=".55"/>
+  </g>
+  <path d="M24 55H836" stroke="#28456F" stroke-opacity=".62"/>
+  <text x="28" y="37" font-family="Bangers, Impact, 'Arial Black', sans-serif"
+        font-size="25" letter-spacing="1.6" fill="#F4F8FF">CONTRIBUTIONS</text>
+  <text x="824" y="37" text-anchor="end"
         font-family="Bangers, Impact, 'Arial Black', sans-serif"
-        font-size="31" letter-spacing=".7" fill="#F4C653">{total:,}</text>
-  <text x="822" y="49" text-anchor="end"
+        font-size="30" letter-spacing=".8" fill="#6DEBFF"
+        filter="url(#neon-blue)">{total:,}</text>
+  <text x="824" y="48" text-anchor="end"
         font-family="Trebuchet MS, Arial, sans-serif"
-        font-size="8" letter-spacing="1.1" fill="#8DA6BC">LAST 365 DAYS</text>
+        font-size="8" letter-spacing="1.2" fill="#7794BB">365 DAYS</text>
   <g font-family="Trebuchet MS, Arial, sans-serif" font-size="8"
-     font-weight="700" letter-spacing=".6" fill="#A5B7CE">'''
+     font-weight="700" letter-spacing=".6" fill="#8299BC">'''
     )
 
-    # Month labels sit above the week in which each month begins.
+    # Month markers align with the column containing each month's first day.
     month_positions: list[tuple[int, str]] = []
     seen_months: set[tuple[int, int]] = set()
     for column, week in enumerate(weeks):
@@ -277,17 +309,17 @@ def render_svg(
                     seen_months.add(key)
     if not month_positions or month_positions[0][0] != 0:
         month_positions.insert(0, (0, start.strftime("%b").upper()))
+
     for column, label in month_positions:
         x = GRID_X + column * PITCH
-        pieces.append(f'<text x="{x}" y="76">{label}</text>')
+        pieces.append(f'<text x="{x}" y="74">{label}</text>')
 
-    day_labels = ["S", "M", "T", "W", "T", "F", "S"]
-    for row, label in enumerate(day_labels):
+    for row, label in enumerate(("S", "M", "T", "W", "T", "F", "S")):
         y = GRID_Y + row * PITCH + 7
-        pieces.append(f'<text x="78" y="{y}" text-anchor="middle">{label}</text>')
+        pieces.append(f'<text x="88" y="{y}" text-anchor="middle">{label}</text>')
     pieces.append("</g>")
 
-    # Only the 365 requested dates become data cells. Padded edge dates are omitted.
+    # Each square represents exactly one date, with real GitHub intensity levels.
     for column, week in enumerate(weeks):
         for row, date in enumerate(week):
             if not start <= date <= end:
@@ -296,77 +328,100 @@ def render_svg(
             detail = days[date]
             count = int(detail["count"])
             level = str(detail["level"])
-            fill, stroke = LEVEL_COLORS[level]
+            fill, stroke, _ = LEVEL_COLORS[level]
             x = GRID_X + column * PITCH
             y = GRID_Y + row * PITCH
-            cell_markup = (
-                f'<rect x="{x}" y="{y}" width="{CELL}" height="{CELL}" rx="2" '
-                f'data-date="{date.isoformat()}" data-count="{count}" '
-                f'data-level="{level}" fill="{fill}" stroke="{stroke}" '
-                f'stroke-width=".7" fill-opacity="1">'
-                f'<title>{date.isoformat()} · {count} contribution'
-                f'{"s" if count != 1 else ""}</title>'
-            )
+            animation = ""
 
             if count > 0:
-                index = route_indices[(column, row)]
-                begin = index / len(route) * CYCLE_SECONDS
-                cell_markup += (
-                    f'<animate attributeName="fill-opacity" values="1;.12;.12" '
-                    f'keyTimes="0;.006;1" dur="{CYCLE_SECONDS}s" '
-                    f'begin="{begin:.3f}s" repeatCount="indefinite"/>'
+                index = route_index[(column, row)]
+                progress = max(0.0001, (index + 1) / max(1, len(route)))
+                animation = (
+                    f'<animate attributeName="opacity" values="1;1;.18" '
+                    f'keyTimes="0;{progress:.6f};1" dur="{CYCLE_SECONDS}s" '
+                    f'repeatCount="indefinite"/>'
                 )
 
-            cell_markup += "</rect>"
-            pieces.append(cell_markup)
+            pieces.append(
+                f'''<rect x="{x}" y="{y}" width="{CELL}" height="{CELL}" rx="2"
+ data-date="{date.isoformat()}" data-count="{count}" data-level="{level}"
+ fill="{fill}" stroke="{stroke}" stroke-width=".7"
+ opacity="1" {f'filter="url(#cell-glow)"' if count else ''}>
+ <title>{date.isoformat()} · {count} contribution{"s" if count != 1 else ""}</title>
+ {animation}
+</rect>'''
+            )
 
-    # One purpose-drawn Pac-Man character, scaled to sit just above the cell pitch.
+    # The flight trace is restrained and exists only to make the route legible.
     pieces.append(
-        f'''<g filter="url(#character-shadow)">
+        f'''<path d="{motion_path}" fill="none" stroke="#288CFF"
+      stroke-width="1.1" stroke-opacity=".22" stroke-dasharray="2 5"
+      stroke-linecap="round"/>'''
+    )
+
+    # Horizontal local axis points toward the rocket nose; auto rotation follows the route.
+    pieces.append(
+        f'''<g filter="url(#neon-blue)">
   <g>
     <animateMotion path="{motion_path}" dur="{CYCLE_SECONDS}s"
-                   calcMode="paced" rotate="auto" repeatCount="indefinite"/>
-    <g transform="scale(.72)">
-      <path d="M0 0 L10 -6.7 A12 12 0 1 1 10 6.7 Z"
-            fill="url(#pacman-body)" stroke="#FFF0D1" stroke-width=".9"
-            stroke-linejoin="round">
+                   calcMode="paced" rotate="auto"
+                   repeatCount="indefinite"/>
+    <g>
+      <path d="M-17 -3.5 Q-27 -9 -34 -4 Q-31 0 -34 4 Q-27 9 -17 3.5Z"
+            fill="url(#engine-flare)" opacity=".9">
         <animate attributeName="d"
-          values="M0 0 L10 -6.7 A12 12 0 1 1 10 6.7 Z;M0 0 L11.9 -.55 A12 12 0 1 1 11.9 .55 Z;M0 0 L10 -6.7 A12 12 0 1 1 10 6.7 Z"
-          dur=".38s" repeatCount="indefinite"/>
+          values="M-17 -3.5 Q-27 -9 -34 -4 Q-31 0 -34 4 Q-27 9 -17 3.5Z;M-17 -3 Q-31 -12 -41 -3 Q-34 0 -41 3 Q-31 12 -17 3Z;M-17 -3.5 Q-27 -9 -34 -4 Q-31 0 -34 4 Q-27 9 -17 3.5Z"
+          dur=".32s" repeatCount="indefinite"/>
       </path>
-      <path d="M-6 -8.5 Q-1 -13 5 -10.6" fill="none"
-            stroke="#FFF9DF" stroke-opacity=".72" stroke-width="1.35"
-            stroke-linecap="round"/>
-      <ellipse cx="3.1" cy="-6.6" rx="1.55" ry="2.05" fill="#142039"/>
-      <circle cx="3.55" cy="-7.25" r=".55" fill="#FFF0D1"/>
+      <path d="M-17 -2 Q-25 -4 -29 0 Q-25 4 -17 2Z"
+            fill="#FFFFFF" opacity=".9">
+        <animate attributeName="opacity" values=".75;1;.75" dur=".2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M-16 -4 L-23 -11 L-9 -8 L-4 -4Z"
+            fill="#1768FF" stroke="#A4EFFF" stroke-width=".8" stroke-linejoin="round"/>
+      <path d="M-16 4 L-23 11 L-9 8 L-4 4Z"
+            fill="#1768FF" stroke="#A4EFFF" stroke-width=".8" stroke-linejoin="round"/>
+      <path d="M-18 -3.5 H-22 V3.5 H-18Z"
+            fill="#0D3DB9" stroke="#68DFFF" stroke-width=".7"/>
+      <path d="M-17 0 Q-13 -10 -2 -10 Q10 -10 18 0 Q10 10 -2 10 Q-13 10 -17 0Z"
+            fill="url(#rocket-shell)" stroke="#A8E9FF" stroke-width="1.15"/>
+      <path d="M-6 -7.5 Q6 -10 15 -2" fill="none"
+            stroke="#FFFFFF" stroke-opacity=".9" stroke-width="1.1" stroke-linecap="round"/>
+      <path d="M7 -8 Q14 -5 18 0 Q14 5 7 8 L3 0Z"
+            fill="url(#rocket-blue)" stroke="#C5F5FF" stroke-width=".65"/>
+      <path d="M-7 0 H6" stroke="#1768FF" stroke-opacity=".68" stroke-width="1.2"/>
+      <circle cx="-1" cy="0" r="4.05" fill="#0B2E69" stroke="#FFFFFF" stroke-width="1.1"/>
+      <circle cx="-1" cy="0" r="2.55" fill="#3DD9FF" stroke="#A9F5FF" stroke-width=".5"/>
+      <circle cx="-1.9" cy="-1" r=".85" fill="#FFFFFF"/>
+      <path d="M-10 -5 Q-5 -7 -1 -6" fill="none"
+            stroke="#FFFFFF" stroke-opacity=".75" stroke-width=".7"/>
     </g>
   </g>
-  <animate attributeName="opacity" values="1;1;0" keyTimes="0;.985;1"
-           dur="{CYCLE_SECONDS}s" repeatCount="indefinite"/>
+  <animate attributeName="opacity" values="1;1;0;0;1"
+           keyTimes="0;.94;.975;.999;1" dur="{CYCLE_SECONDS}s"
+           repeatCount="indefinite"/>
 </g>'''
     )
 
-    # Minimal controls and an activity key. No decorative captions or ghost characters.
-    range_label = (
+    date_label = (
         f"{start.strftime('%b %d, %Y').upper()}  /  "
         f"{end.strftime('%b %d, %Y').upper()}"
     )
     pieces.append(
-        f'''<path d="M24 184H836" stroke="#526487" stroke-opacity=".48"/>
-<text x="29" y="203" font-family="Trebuchet MS, Arial, sans-serif"
+        f'''<path d="M24 184H836" stroke="#28456F" stroke-opacity=".56"/>
+<text x="28" y="203" font-family="Trebuchet MS, Arial, sans-serif"
       font-size="9" font-weight="600" letter-spacing="1.05"
-      fill="#8DA6BC">{range_label}</text>
+      fill="#8299BC">{date_label}</text>
 <g font-family="Trebuchet MS, Arial, sans-serif" font-size="8"
-   font-weight="700" letter-spacing=".7" fill="#8DA6BC">
-  <text x="676" y="203">LESS</text>'''
+   font-weight="700" letter-spacing=".7" fill="#8299BC">
+  <text x="674" y="203">LESS</text>'''
     )
 
-    legend_x = 710
     for index, level in enumerate(
         ("NONE", "FIRST_QUARTILE", "SECOND_QUARTILE", "THIRD_QUARTILE", "FOURTH_QUARTILE")
     ):
-        fill, stroke = LEVEL_COLORS[level]
-        x = legend_x + index * 15
+        fill, stroke, _ = LEVEL_COLORS[level]
+        x = 708 + index * 15
         pieces.append(
             f'<rect x="{x}" y="195" width="9" height="9" rx="2" '
             f'fill="{fill}" stroke="{stroke}" stroke-width=".7"/>'
@@ -375,10 +430,8 @@ def render_svg(
         '''<text x="790" y="203">MORE</text>
 </g>
 </g>
-<rect x=".7" y=".7" width="858.6" height="224.6" rx="9.3"
-      fill="none" stroke="#526487" stroke-opacity=".85"/>
-<rect x="3.5" y="3.5" width="853" height="219" rx="7"
-      fill="none" stroke="#FFF0D1" stroke-opacity=".045"/>
+<rect x=".7" y=".7" width="858.6" height="224.6" rx="10"
+      fill="none" stroke="#27456F" stroke-opacity=".82"/>
 </svg>'''
     )
 
@@ -406,7 +459,8 @@ def main() -> None:
     OUTPUT.write_text(svg, encoding="utf-8")
     print(
         f"Rendered {total:,} contributions across {len(days)} days "
-        f"from {start.isoformat()} to {end.isoformat()}."
+        f"from {start.isoformat()} to {end.isoformat()}; "
+        f"rocket route includes {sum(item['count'] > 0 for item in days.values())} active days."
     )
 
 
@@ -414,5 +468,5 @@ if __name__ == "__main__":
     try:
         main()
     except Exception as error:
-        print(f"Contribution arcade update failed: {error}", file=sys.stderr)
+        print(f"Contribution rocket update failed: {error}", file=sys.stderr)
         raise
