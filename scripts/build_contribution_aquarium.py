@@ -515,11 +515,9 @@ def render_svg(
             "M17 1 Q23 8 27 5",
             "M17 1 Q21 2.2 24 1",
         ])
-    if len(jaw_values) > 1:
+    if timeline["arrivals"]:
         jaw_times.append("1")
         jaw_values.append("M17 1 Q21 2.2 24 1")
-    if timeline["arrivals"]:
-        if timeline["arrivals"]:
         jaw_markup = (
             f'<animate attributeName="d" calcMode="discrete" '
             f'values="{";".join(jaw_values)}" keyTimes="{";".join(jaw_times)}" '
@@ -531,7 +529,6 @@ def render_svg(
     pieces.append(
         f'''<g id="aquarium-fish" filter="url(#fish-glow)">
   {fish_motion}
-  {fish_opacity}
   <g transform="scale(.58)">
     <!-- Tail fin. -->
     <g transform="translate(-15 0)">
