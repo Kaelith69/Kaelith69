@@ -485,9 +485,7 @@ def render_svg(
     calcMode="linear" dur="{cycle:.6f}s" rotate="auto"
     repeatCount="indefinite"/>
   <animate attributeName="opacity" values="1;1;0;0;1"
-    keyTimes="0;{(timeline["returned_at"] / cycle):.8f};'
-    f'{(timeline["returned_at"] + RESET_FADE * .45) / cycle:.8f};'
-    f'{(cycle - .001) / cycle:.8f};1" dur="{cycle:.6f}s" repeatCount="indefinite"/>
+    keyTimes="0;{timeline["fish_fade_start"]:.8f};{timeline["fish_fade_end"]:.8f};{timeline["fish_hidden_until"]:.8f};1" dur="{cycle:.6f}s" repeatCount="indefinite"/>
 
   <g transform="scale(.55)">
   <!-- Forked tail: the caudal fin beats while the body glides. -->
