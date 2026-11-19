@@ -838,9 +838,9 @@ def render_svg(
 </g>
 
 <!-- A drifting jellyfish in the lower water column. -->
-<g id="reef-jellyfish" transform="translate(150 324)" opacity=".68">
+<g id="reef-jellyfish" transform="translate(150 335)" opacity=".68">
   <animateTransform attributeName="transform" type="translate"
-    values="150 324;158 309;151 324" dur="14s" repeatCount="indefinite"/>
+    values="150 335;158 323;151 335" dur="14s" repeatCount="indefinite"/>
   <path d="M-12 1 C-13 -14 -5 -22 0 -22 C7 -22 13 -13 12 1Z"
         fill="#68CFC3" fill-opacity=".24" stroke="#B8F5E9" stroke-opacity=".7" stroke-width=".9"/>
   <path d="M-10 1 Q0 7 10 1" fill="none" stroke="#B8F5E9" stroke-width="1"/>
@@ -869,7 +869,7 @@ def render_svg(
     ]
     for translate, arm_path, sucker_coords, rotation, duration, begin in octopus_arms:
         pieces.append(
-            f'''  <g transform="translate({translate})">
+            f'''  <g transform="translate({translate})" data-octopus-arm="true">
     <animateTransform attributeName="transform" type="rotate" additive="sum"
       values="{rotation}" dur="{duration}" begin="{begin}" repeatCount="indefinite"/>
     <path d="{arm_path}" fill="none" stroke="#1A2733" stroke-opacity=".48"
