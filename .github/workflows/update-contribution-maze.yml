@@ -8,6 +8,11 @@ on:
       - "scripts/build_contribution_maze.py"
       - "tests/test_contribution_maze.py"
       - ".github/workflows/update-contribution-maze.yml"
+  pull_request:
+    paths:
+      - "scripts/build_contribution_maze.py"
+      - "tests/test_contribution_maze.py"
+      - ".github/workflows/update-contribution-maze.yml"
   schedule:
     - cron: "23 4 * * *"
   workflow_dispatch:
@@ -35,6 +40,7 @@ jobs:
         run: python -m unittest discover -s tests -v
 
       - name: Fetch GitHub contribution calendar and render Pac Man SVG
+        if: github.event_name != 'pull_request'
         env:
           GITHUB_TOKEN: ${{ secrets.PROFILE_STATS_TOKEN || github.token }}
           GITHUB_PROFILE_LOGIN: Kaelith69
@@ -56,6 +62,7 @@ jobs:
           PY
 
       - name: Commit updated contribution maze
+        if: github.event_name != 'pull_request'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
