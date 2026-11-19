@@ -814,32 +814,44 @@ def render_svg(
 <path d="M0 470 C125 448 225 469 344 462 C466 453 570 478 702 462
  C850 451 970 472 1120 458"
       fill="none" stroke="#8B5CFF" stroke-opacity=".5" stroke-width="1.4"/>
-<g fill="#9BC9B4" opacity=".23">
+<g fill="#6757FF" opacity=".32">
   <ellipse cx="105" cy="492" rx="17" ry="3"/>
   <ellipse cx="278" cy="499" rx="24" ry="3"/>
   <ellipse cx="810" cy="495" rx="19" ry="3"/>
   <ellipse cx="1020" cy="489" rx="26" ry="3"/>
 </g>
-<g fill="#B9D4C5" opacity=".35">
+<g fill="#A69BFF" opacity=".5">
   <circle cx="145" cy="484" r="1.1"/><circle cx="169" cy="499" r=".8"/>
   <circle cx="313" cy="485" r="1.2"/><circle cx="751" cy="495" r="1"/>
   <circle cx="1045" cy="505" r="1.3"/><circle cx="1080" cy="487" r=".8"/>
 </g>
 
-<!-- Kelp and coral frame the lower corners without intruding into the calendar. -->
-<g fill="none" stroke-linecap="round">
-  <g stroke="#3B9B83" stroke-width="3" opacity=".56">
-    <path d="M24 358 C30 330 16 317 27 292 C39 318 31 337 39 358">
-      <animate attributeName="d" values="M24 358 C30 330 16 317 27 292 C39 318 31 337 39 358;M24 358 C35 330 25 314 34 292 C43 319 28 338 39 358;M24 358 C30 330 16 317 27 292 C39 318 31 337 39 358" dur="8s" repeatCount="indefinite"/>
+<!-- Neon coral gardens and kelp frame the foreground shelf. -->
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <g stroke="#00E5FF" stroke-width="3.4" opacity=".82">
+    <path d="M25 470 C31 444 17 424 28 384 C41 421 32 447 40 470">
+      <animate attributeName="d" values="M25 470 C31 444 17 424 28 384 C41 421 32 447 40 470;M25 470 C36 444 25 421 35 384 C44 422 29 448 40 470;M25 470 C31 444 17 424 28 384 C41 421 32 447 40 470" dur="9s" repeatCount="indefinite"/>
     </path>
-    <path d="M1085 357 C1077 331 1098 316 1088 291 C1074 316 1082 337 1072 359">
-      <animate attributeName="d" values="M1085 357 C1077 331 1098 316 1088 291 C1074 316 1082 337 1072 359;M1085 357 C1073 331 1089 313 1080 291 C1069 317 1088 338 1072 359;M1085 357 C1077 331 1098 316 1088 291 C1074 316 1082 337 1072 359" dur="9s" repeatCount="indefinite"/>
+    <path d="M1085 470 C1077 443 1098 421 1088 384 C1074 419 1082 448 1072 470">
+      <animate attributeName="d" values="M1085 470 C1077 443 1098 421 1088 384 C1074 419 1082 448 1072 470;M1085 470 C1073 443 1089 419 1080 384 C1069 420 1088 449 1072 470;M1085 470 C1077 443 1098 421 1088 384 C1074 419 1082 448 1072 470" dur="10s" repeatCount="indefinite"/>
     </path>
   </g>
-  <g stroke="#BE8F7A" stroke-width="2" opacity=".45">
-    <path d="M57 358 Q47 337 56 322 M56 342 Q41 332 43 320 M57 349 Q74 337 76 325"/>
-    <path d="M1052 357 Q1065 337 1058 321 M1058 344 Q1075 333 1076 321"/>
+  <g stroke="#FF3BC8" stroke-width="2.6" opacity=".88">
+    <path d="M112 470 Q104 450 113 428 M113 452 Q94 438 98 420 M113 460 Q132 442 136 423 M110 445 Q108 430 119 416"/>
+    <path d="M1007 470 Q1017 450 1008 428 M1008 452 Q1027 438 1023 420 M1008 460 Q989 442 985 423"/>
   </g>
+  <g stroke="#8B5CFF" stroke-width="2.4" opacity=".95">
+    <path d="M72 470 Q73 451 62 437 M72 455 Q87 444 87 429 M72 461 Q58 454 54 443"/>
+    <path d="M1047 470 Q1046 450 1058 435 M1047 455 Q1033 444 1032 429"/>
+  </g>
+</g>
+<g fill="#171638" stroke="#5143A4" stroke-opacity=".78" stroke-width="1">
+  <path d="M0 470 Q30 448 62 455 Q89 444 116 470 L140 590H0Z"/>
+  <path d="M1120 464 Q1090 446 1060 456 Q1036 444 1005 469 L980 590H1120Z"/>
+</g>
+<g fill="none" stroke="#FF3BC8" stroke-width="1.35" stroke-linecap="round" opacity=".82">
+  <path d="M126 470 Q124 455 134 448 Q146 442 144 429 M134 448 Q119 442 117 430 M134 448 Q151 444 158 434"/>
+  <path d="M994 469 Q996 452 985 446 Q974 439 976 427 M985 446 Q999 440 1003 429 M985 446 Q969 440 963 432"/>
 </g>
 
 <!-- A drifting jellyfish in the lower water column. -->
@@ -931,14 +943,14 @@ def render_svg(
 </g>
 
 <!-- The footer is a clear information strip, separate from the seabed. -->
-<path d="M24 389 Q250 382 450 388 T850 387 T1096 389"
-      fill="none" stroke="#83C9BE" stroke-opacity=".2"/>
-<text x="39" y="411" font-family="Trebuchet MS, Arial, sans-serif"
+<path d="M24 558 Q250 550 450 556 T850 555 T1096 558"
+      fill="none" stroke="#00E5FF" stroke-opacity=".36"/>
+<text x="39" y="578" font-family="Trebuchet MS, Arial, sans-serif"
       font-size="9" font-weight="700" letter-spacing=".9"
-      fill="#9BCBC0">{start.strftime("%b %d, %Y").upper()}  /  {end.strftime("%b %d, %Y").upper()}</text>
+      fill="#B9B7FF">{start.strftime("%b %d, %Y").upper()}  /  {end.strftime("%b %d, %Y").upper()}</text>
 <g font-family="Trebuchet MS, Arial, sans-serif" font-size="8"
-   font-weight="700" letter-spacing=".7" fill="#91BFB8">
-  <text x="822" y="411">LESS</text>'''
+   font-weight="700" letter-spacing=".8" fill="#A9A5FF">
+  <text x="820" y="578">LESS</text>'''
     )
 
     for index, level in enumerate(
@@ -946,17 +958,17 @@ def render_svg(
     ):
         fill, stroke, _ = LEVEL_COLORS[level]
         pieces.append(
-            f'<rect x="{858 + index * 20}" y="402" width="12" height="12" rx="4" '
+            f'<rect x="{858 + index * 20}" y="569" width="12" height="12" rx="4" '
             f'fill="{fill}" stroke="{stroke}" stroke-width=".85"/>'
         )
 
     pieces.append(
-        '''<text x="972" y="411">MORE</text>
+        '''<text x="972" y="578">MORE</text>
 </g>
 </g>
-<rect x=".75" y=".75" width="1118.5" height="428.5" rx="19"
-      fill="none" stroke="url(#glass-edge)" stroke-width="1.35"/>
-<rect x="5" y="5" width="1110" height="420" rx="15"
+<rect x=".75" y=".75" width="1118.5" height="588.5" rx="22"
+      fill="none" stroke="url(#glass-edge)" stroke-width="1.6"/>
+<rect x="5" y="5" width="1110" height="580" rx="18"
       fill="none" stroke="#E2FFF5" stroke-opacity=".055"/>
 </svg>'''
     )
