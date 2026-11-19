@@ -502,7 +502,6 @@ def render_svg(
             f'repeatCount="indefinite"/>'
         )
     else:
-        fish_opacity = '<animate attributeName="opacity" values="1;.94;1" dur="2.8s" repeatCount="indefinite"/>'
         fish_motion = '<animateTransform attributeName="transform" type="translate" values="0 0;0 -2;0 0" dur="2.8s" repeatCount="indefinite"/>'
 
     # One detailed fish. Local +X is its nose, so rotate="auto" turns it onto each axis.
@@ -520,11 +519,14 @@ def render_svg(
     if len(jaw_values) > 1:
         jaw_times.append("1")
         jaw_values.append("M17 1 Q21 2.2 24 1")
-    jaw_markup = (
-        f'<animate attributeName="d" calcMode="discrete" '
-        f'values="{";".join(jaw_values)}" keyTimes="{";".join(jaw_times)}" '
-        f'dur="{cycle:.6f}s" repeatCount="indefinite"/>'
-    )
+    if timeline["arrivals"]:
+        jaw_markup = (
+            f'<animate attributeName="d" calcMode="discrete" '
+            f'values="{";".join(jaw_values)}" keyTimes="{";".join(jaw_times)}" '
+            f'dur="{cycle:.6f}s" repeatCount="indefinite"/>'
+        )
+    else:
+        jaw_markup = ""
 
     pieces.append(
         f'''<g id="aquarium-fish" filter="url(#fish-glow)">
