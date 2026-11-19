@@ -61,7 +61,7 @@ jobs:
           print(f"Validated {path} ({path.stat().st_size:,} bytes).")
           PY
 
-      - name: Commit updated contribution maze
+      - name: Commit updated contribution rocket
         if: github.event_name != 'pull_request'
         run: |
           git config user.name "github-actions[bot]"
