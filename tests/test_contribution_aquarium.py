@@ -14,6 +14,7 @@ from scripts.build_contribution_aquarium import (  # noqa: E402
     EAT_DWELL,
     GRID_X,
     GRID_Y,
+    FISH_MOUTH_OFFSET,
     LAUNCH_POINT,
     LEVEL_COLORS,
     PITCH,
@@ -24,6 +25,7 @@ from scripts.build_contribution_aquarium import (  # noqa: E402
     collect_days,
     date_window,
     flight_timeline,
+    fish_target_anchor,
     nearest_food_route,
     orthogonal_flight_points,
     render_svg,
@@ -140,10 +142,27 @@ class ContributionAquariumTests(unittest.TestCase):
                 ),
             )
             self.assertEqual(actual, expected)
-            current = cell_center(actual[0], actual[1])
+            current = fish_target_anchor(current, cell_center(actual[0], actual[1]))
             remaining.remove(actual)
 
         self.assertEqual(remaining, [])
+
+    def test_fish_stops_with_its_mouth_at_each_creature(self) -> None:
+        weeks = calendar_weeks(self.start, self.end)
+        route = nearest_food_route(weeks, self.start, self.end, self.days)
+        current = LAUNCH_POINT
+
+        for column, row, _date in route:
+            target = cell_center(column, row)
+            anchor = fish_target_anchor(current, target)
+            dx = target[0] - current[0]
+            dy = target[1] - current[1]
+            expected_offset = min(
+                FISH_MOUTH_OFFSET,
+                max(abs(dx), abs(dy)) * .62,
+            )
+            self.assertAlmostEqual(math.dist(anchor, target), expected_offset)
+            current = anchor
 
     def test_route_visits_only_active_days_once(self) -> None:
         weeks = calendar_weeks(self.start, self.end)
