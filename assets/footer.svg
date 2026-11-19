@@ -62,7 +62,7 @@
  <g stroke-linecap="round"><path d="M 66 62.400000000000006 l 28 -9" stroke="url(#cosmic-streak-grad)" stroke-width="2" opacity="0"><animate attributeName="opacity" values="0;0.85;0" keyTimes="0;0.12;1" dur="10s" begin="3s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="-38,12;210,-70" dur="10s" begin="3s" repeatCount="indefinite"/></path><path d="M 670 20 l 24 -8" stroke="#55C9C0" stroke-width="1.5" opacity="0"><animate attributeName="opacity" values="0;0.75;0" keyTimes="0;0.1;1" dur="14s" begin="4s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="-22,8;110,-36" dur="14s" begin="4s" repeatCount="indefinite"/></path></g></g><text x="430" y="46" text-anchor="middle" font-family="'Tiro Devanagari Sanskrit', 'Nirmala UI', 'Mangal', 'Cormorant Garamond', 'Libre Baskerville', 'Georgia', serif" font-size="25" font-weight="700" fill="#F4C653" stroke="#080D1D" stroke-width="0.8" paint-order="stroke">अहं ब्रह्मास्मि</text>
 
   <!-- Spider-Man inspired comic quote strip -->
-  <g id="hero-quote" transform="translate(0 80)">
+  <g id="hero-quote" transform="translate(0 73)">
     <path d="M16 0 H844 L830 34 H30 Z" fill="#142D5B" stroke="#10131B" stroke-width="3"/>
     <path d="M22 4 H838 L826 30 H34 Z" fill="#D92F3A" stroke="#F4C653" stroke-width="1.4"/>
     <path d="M22 4 H838 L826 30 H34 Z" fill="url(#comic-halftone)" opacity=".5"/>
