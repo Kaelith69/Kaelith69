@@ -318,7 +318,7 @@ def render_svg(
     <path fill="#F4C653" stroke="#FFF0D1" stroke-width=".75"
           d="M 0 0 L 10 -6 A 12 12 0 1 1 10 6 Z">
       <animate attributeName="d"
-        values="M 0 0 L 10 -6 A 12 12 0 1 1 10 6 Z;M 0 0 L 12 0 A 12 12 0 1 1 -12 0 A 12 12 0 1 1 12 0 Z;M 0 0 L 10 -6 A 12 12 0 1 1 10 6 Z"
+        values="M 0 0 L 10 -6 A 12 12 0 1 1 10 6 Z;M 0 0 L 11.9 -1 A 12 12 0 1 1 11.9 1 Z;M 0 0 L 10 -6 A 12 12 0 1 1 10 6 Z"
         dur=".42s" repeatCount="indefinite"/>
     </path>
     <circle cx="2.4" cy="-6.1" r="1.55" fill="#17213E"/>
