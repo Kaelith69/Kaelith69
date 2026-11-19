@@ -48,7 +48,7 @@
     <rect width="270" height="54" rx="9" fill="#080D1D" fill-opacity=".52" stroke="#D7C3A3" stroke-opacity=".4"/>
     <rect x="1" y="1" width="268" height="52" rx="8" fill="none" stroke="#55C9C0" stroke-opacity=".16"/>
     <text x="20" y="21" font-family="Trebuchet MS,Arial,sans-serif" font-size="9" font-weight="700" letter-spacing="2.4" fill="#55C9C0">VISITS</text>
-    <text id="visitor-count" x="20" y="46" font-family="Bangers, Impact, 'Arial Black', sans-serif" font-size="27" letter-spacing="1.2" fill="#FFF0D1" stroke="#080D1D" stroke-width="1.8" paint-order="stroke">443</text>
+    <text id="visitor-count" x="20" y="46" font-family="Bangers, Impact, 'Arial Black', sans-serif" font-size="27" letter-spacing="1.2" fill="#FFF0D1" stroke="#080D1D" stroke-width="1.8" paint-order="stroke">464</text>
     <g transform="translate(238 27)">
       <circle r="15" fill="url(#nebula)" opacity=".7"/>
       <circle r="13" fill="none" stroke="#F4C653" stroke-opacity=".65" stroke-width="1" stroke-dasharray="2 4">
