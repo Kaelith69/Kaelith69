@@ -265,7 +265,7 @@ def render_svg(
 
     # Month labels are anchored to the week containing the first of each month.
     month_positions: list[tuple[int, str]] = [(0, start.strftime("%b").upper())]
-    seen_months = {(weeks[0][0].year, weeks[0][0].month)}
+    seen_months = {(start.year, start.month)}
     for column, week in enumerate(weeks):
         for date in week:
             key = (date.year, date.month)
