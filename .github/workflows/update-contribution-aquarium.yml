@@ -60,10 +60,20 @@ jobs:
           arms = root.findall(".//*[@data-octopus-arm='true']")
           if len(arms) != 8:
               raise SystemExit(f"Expected eight octopus arms, found {len(arms)}.")
+          suckers = root.findall(".//*[@data-sucker='true']")
+          if len(suckers) < 48:
+              raise SystemExit(f"Expected at least 48 visible suckers, found {len(suckers)}.")
+          if root.find(".//*[@id='octopus-mantle']") is None:
+              raise SystemExit("Generated aquarium is missing its mantle.")
+          if root.find(".//*[@id='octopus-head']") is None:
+              raise SystemExit("Generated aquarium is missing its head.")
+          text_content = " ".join(node.text or "" for node in root.findall(".//{http://www.w3.org/2000/svg}text"))
+          if "{start." in text_content or "{end." in text_content:
+              raise SystemExit("Footer contains unevaluated date placeholders.")
           fish = root.find(".//*[@id='reef-feeding-fish']")
           if fish is None or fish.find(".//*[@keySplines]") is None:
               raise SystemExit("Generated feeding fish is missing eased motion.")
-          print(f"Validated {path}: {len(days)} days, eight octopus arms, Neon Midnight palette and tall viewBox, {path.stat().st_size:,} bytes.")
+          print(f"Validated {path}: {len(days)} days, eight octopus arms, Neon Midnight comic reef, octopus anatomy and evaluated dates, {path.stat().st_size:,} bytes.")
           PY
 
       - name: Commit updated contribution aquarium
