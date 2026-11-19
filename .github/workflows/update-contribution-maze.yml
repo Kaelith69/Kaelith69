@@ -36,7 +36,7 @@ jobs:
 
       - name: Fetch GitHub contribution calendar and render Pac Man SVG
         env:
-          GITHUB_TOKEN: \${{ secrets.PROFILE_STATS_TOKEN || github.token }}
+          GITHUB_TOKEN: ${{ secrets.PROFILE_STATS_TOKEN || github.token }}
           GITHUB_PROFILE_LOGIN: Kaelith69
         run: python scripts/build_contribution_maze.py
 
