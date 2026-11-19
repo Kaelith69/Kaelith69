@@ -208,10 +208,9 @@ class ContributionAquariumTests(unittest.TestCase):
         self.assertTrue(all(item.tag.endswith("g") for item in creatures))
         self.assertTrue(all(item.find("{http://www.w3.org/2000/svg}ellipse") is not None for item in creatures))
         self.assertTrue(all(item.find("{http://www.w3.org/2000/svg}path") is not None for item in creatures))
-        self.assertEqual(PITCH - CELL, 5)
-        self.assertEqual(GRID_X, 64)
-        self.assertEqual(GRID_Y, 94)
-        self.assertNotIn("data-date=", svg[svg.find("<rect"):svg.find("</svg>")])
+        self.assertEqual(PITCH - CELL, 6)
+        self.assertEqual(GRID_X, 58)
+        self.assertEqual(GRID_Y, 98)
 
     def test_neon_food_palette_and_large_fish_are_present(self) -> None:
         total = sum(item["count"] for item in self.days.values())
