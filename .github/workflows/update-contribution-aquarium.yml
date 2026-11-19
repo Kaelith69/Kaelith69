@@ -1,0 +1,75 @@
+name: Build Contribution Aquarium
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "scripts/build_contribution_aquarium.py"
+      - "tests/test_contribution_aquarium.py"
+      - ".github/workflows/update-contribution-aquarium.yml"
+  pull_request:
+    paths:
+      - "scripts/build_contribution_aquarium.py"
+      - "tests/test_contribution_aquarium.py"
+      - ".github/workflows/update-contribution-maze.yml"
+  schedule:
+    - cron: "23 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-data-refresh
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out profile repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Test contribution renderer
+        run: python -m unittest discover -s tests -v
+
+      - name: Fetch GitHub contribution calendar and render aquarium SVG
+        if: github.event_name != 'pull_request'
+        env:
+          GITHUB_TOKEN: ${{ secrets.PROFILE_STATS_TOKEN || github.token }}
+          GITHUB_PROFILE_LOGIN: Kaelith69
+        run: python scripts/build_contribution_aquarium.py
+
+      - name: Validate generated SVG
+        run: |
+          python - <<'PY'
+          import xml.etree.ElementTree as ET
+          from pathlib import Path
+
+          path = Path("assets/contributions-aquarium.svg")
+          root = ET.parse(path).getroot()
+          if root.tag.rsplit("}", 1)[-1] != "svg":
+              raise SystemExit("Generated contribution artwork is not SVG.")
+          if not root.findall(".//*[@data-date]"):
+              raise SystemExit("Generated contribution artwork contains no day cells.")
+          print(f"Validated {path} ({path.stat().st_size:,} bytes).")
+          PY
+
+      - name: Commit updated contribution aquarium
+        if: github.event_name != 'pull_request'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/contributions-aquarium.svg
+          if git diff --cached --quiet; then
+            echo "Contribution artwork is already current."
+          else
+            git commit -m "Refresh neon contribution aquarium"
+            git push origin HEAD:main
+          fi
