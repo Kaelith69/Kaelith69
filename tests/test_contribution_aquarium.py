@@ -157,10 +157,8 @@ class ContributionAquariumTests(unittest.TestCase):
             anchor = fish_target_anchor(current, target)
             dx = target[0] - current[0]
             dy = target[1] - current[1]
-            expected_offset = min(
-                FISH_MOUTH_OFFSET,
-                max(abs(dx), abs(dy)) * .62,
-            )
+            axis_distance = abs(dy) if dy != 0 else abs(dx)
+            expected_offset = min(FISH_MOUTH_OFFSET, axis_distance * .62)
             self.assertAlmostEqual(math.dist(anchor, target), expected_offset)
             current = anchor
 
