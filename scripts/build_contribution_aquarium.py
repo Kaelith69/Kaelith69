@@ -1150,7 +1150,7 @@ def render_svg(
       C65 11 52 -8 35 -16 C16 -26 -25 -25 -43 -13Z"
       fill="none" stroke="#030712" stroke-width="6"
       stroke-linejoin="round"/>
-    <path d="M-43 -13 C-59 -3 -60 19 -46 37
+    <path id="octopus-head" d="M-43 -13 C-59 -3 -60 19 -46 37
       C-31 55 -12 61 8 59 C30 58 48 47 57 29
       C65 11 52 -8 35 -16 C16 -26 -25 -25 -43 -13Z"
       fill="url(#octopus-arm)" stroke="#FFB5F0"
