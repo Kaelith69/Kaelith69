@@ -557,7 +557,7 @@ def render_svg(
         f'''<g id="aquarium-fish" filter="url(#fish-glow)">
   {fish_motion}
   {fish_opacity}
-  <g transform="scale(.58)">
+  <g transform="translate(-14 0) scale(.58)">
     <!-- Tail fin. -->
     <g transform="translate(-15 0)">
       <animateTransform attributeName="transform" type="rotate"
