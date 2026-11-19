@@ -534,6 +534,22 @@ def render_svg(
     <stop offset=".52" stop-color="#8B5CFF" stop-opacity=".3"/>
     <stop offset="1" stop-color="#8B5CFF" stop-opacity="0"/>
   </radialGradient>
+  <!-- Comic-print textures: coarse halftone and Ben-Day dots. -->
+  <pattern id="halftone-cyan" width="9" height="9" patternUnits="userSpaceOnUse">
+    <circle cx="2" cy="2" r="1.35" fill="#00E5FF" fill-opacity=".72"/>
+  </pattern>
+  <pattern id="halftone-violet" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(18)">
+    <circle cx="2" cy="2" r="1.2" fill="#A78BFF" fill-opacity=".72"/>
+  </pattern>
+  <pattern id="halftone-ink" width="7" height="7" patternUnits="userSpaceOnUse">
+    <circle cx="2" cy="2" r="1.05" fill="#030411" fill-opacity=".78"/>
+  </pattern>
+  <filter id="ink-shadow" x="-40%" y="-40%" width="180%" height="180%">
+    <feMorphology in="SourceAlpha" operator="dilate" radius="1.6" result="spread"/>
+    <feFlood flood-color="#030411" result="ink"/>
+    <feComposite in="ink" in2="spread" operator="in" result="outline"/>
+    <feMerge><feMergeNode in="outline"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
   <filter id="fish-glow" x="-100%" y="-100%" width="300%" height="300%">
     <feGaussianBlur stdDeviation="2.3" result="blur"/>
     <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
@@ -552,6 +568,24 @@ def render_svg(
 <g clip-path="url(#tank-clip)">
   <rect width="1120" height="590" fill="url(#water)"/>
   <rect width="1120" height="590" fill="url(#water-light)"/>
+
+  <!-- Angular comic panels and restrained halftone shadows. -->
+  <path d="M0 110 L176 110 L286 430 L150 430Z" fill="#263BFF" opacity=".045"/>
+  <path d="M1120 106 L1018 106 L926 423 L1040 423Z" fill="#FF3BC8" opacity=".035"/>
+  <path d="M0 340 L108 340 L140 470 L0 470Z" fill="url(#halftone-violet)" opacity=".22"/>
+  <path d="M1120 336 L1010 336 L978 470 L1120 470Z" fill="url(#halftone-cyan)" opacity=".16"/>
+  <path d="M0 105 L160 105 L198 220 L0 220Z" fill="url(#halftone-ink)" opacity=".1"/>
+  <path d="M1120 105 L1028 105 L992 218 L1120 218Z" fill="url(#halftone-ink)" opacity=".09"/>
+
+  <!-- Comic-book panel header with an offset magenta print shadow. -->
+  <path d="M35 20 L311 20 L295 68 L35 68Z" fill="#FF3BC8" opacity=".78"/>
+  <path d="M28 16 L305 16 L289 63 L28 63Z"
+        fill="#0A0A20" stroke="#030411" stroke-width="4" stroke-linejoin="bevel"/>
+  <path d="M31 19 L299 19 L284 59 L31 59Z"
+        fill="none" stroke="#00E5FF" stroke-width="1.45" stroke-linejoin="bevel"/>
+  <path d="M31 65 L287 65" fill="none" stroke="#8B5CFF" stroke-width="2.2"/>
+  <path d="M304 22 L312 14 L319 22 L312 30Z"
+        fill="#FF3BC8" stroke="#030411" stroke-width="2"/>
 
   <!-- Slow surface glow and moving shafts of water light. -->
   <path d="M0 84 Q170 66 340 80 T680 78 T1120 79 L1120 105 Q920 96 740 100 T360 99 T0 102Z"
@@ -580,6 +614,16 @@ def render_svg(
     </path>
   </g>
 
+  <!-- Inked motion marks and small speed streaks. -->
+  <g fill="none" stroke="#030411" stroke-width="3" opacity=".58">
+    <path d="M450 112 l15 -3 M461 119 l18 -2 M650 124 l13 -3"/>
+    <path d="M832 116 l13 -3 M842 122 l18 -2"/>
+  </g>
+  <g fill="none" stroke="#00E5FF" stroke-width="1.1" opacity=".45">
+    <path d="M450 110 l15 -3 M461 117 l18 -2 M650 122 l13 -3"/>
+    <path d="M832 114 l13 -3 M842 120 l18 -2"/>
+  </g>
+
   <!-- Distant fish schools create movement behind the calendar. -->
   <g fill="#A4D8FF" opacity=".3">
     <g transform="translate(175 99)">
@@ -605,7 +649,16 @@ def render_svg(
     <circle cx="755" cy="307" r="1" opacity=".38"><animate attributeName="cy" values="307;295;307" dur="8.2s" begin=".8s" repeatCount="indefinite"/></circle>
   </g>
 
-  <!-- Header is intentionally quiet and spacious. -->
+  <!-- Halftone-backed data badge and comic impact rays. -->
+  <path d="M1004 17 L1088 17 L1088 62 L1004 62Z"
+        fill="url(#halftone-cyan)" opacity=".25"/>
+  <path d="M1043 19 L1052 7 L1061 18 L1074 13 L1073 28 L1085 35
+           L1071 42 L1075 55 L1060 51 L1053 63 L1045 52 L1031 57
+           L1034 43 L1020 36 L1033 28 L1029 15Z"
+        fill="#263BFF" opacity=".3" stroke="#030411" stroke-width="2.5"
+        stroke-linejoin="miter"/>
+
+  <!-- Header keeps its comic-book display lettering. -->
   <text x="39" y="52" font-family="Bangers, Impact, 'Arial Black', sans-serif"
         font-size="29" letter-spacing="1.7" fill="#EAF8F3">CONTRIBUTIONS</text>
   <text x="40" y="68" font-family="Trebuchet MS, Arial, sans-serif"
@@ -673,7 +726,7 @@ def render_svg(
             if level == "NONE":
                 artwork = f'''
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="{fill}" stroke="{stroke}" stroke-width=".55"/>
+       fill="{fill}" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="{fill}" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>'''
             elif level == "FIRST_QUARTILE":
@@ -681,7 +734,7 @@ def render_svg(
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="{stroke}" stroke="{stroke}" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="{fill}" stroke="{stroke}" stroke-width=".65"/>
+          fill="{fill}" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -698,17 +751,17 @@ def render_svg(
                 artwork = f'''
  <path d="M-4.1 0 C-4.3 -3.1 -1.5 -4.2 1 -3.6
        C3.7 -3.1 4.3 -.9 3.5 .3Z"
-       fill="{fill}" stroke="{stroke}" stroke-width=".65"/>
+       fill="{fill}" stroke="#030411" stroke-width="1.3" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="-.8" rx="3.2" ry="2.5" fill="{fill}" opacity=".35"/>
  <path d="M-3.1 .5 Q-4.3 2 -3 3.7 M-.8 .8 Q-1.7 2.6 -.4 4
        M1.2 .5 Q2.2 2.5 2 3.8 M3 .3 Q4.2 2.2 4.4 3.3"
-       fill="none" stroke="{stroke}" stroke-width=".75" stroke-linecap="round"/>'''
+       fill="none" stroke="#030411" stroke-width="1.45" stroke-linecap="round"/>'''
             else:
                 artwork = f'''
  <path d="M0 -4.6 C1.1 -2.5 3.7 -2.8 4.4 -1.2
        C2.6 -.1 3.8 2.3 2.1 3.6 C.8 2.1 -1.3 4.1 -2.4 2.5
        C-1.7 .6 -4.1 -.1 -4.2 -1.8 C-2.1 -1.7 -1.5 -4.1 0 -4.6Z"
-       fill="{fill}" stroke="{stroke}" stroke-width=".7"/>
+       fill="{fill}" stroke="#030411" stroke-width="1.35" stroke-linejoin="miter"/>
  <ellipse cx="-.1" cy="-.1" rx="1.3" ry="1.3" fill="#FFF4D7"/>
  <circle cx="0" cy="-.1" r=".55" fill="#A86A42"/>'''
 
@@ -774,10 +827,15 @@ def render_svg(
     <path d="M-6 10 Q0 18 8 14 L10 9Z"
       fill="url(#fish-fin)" stroke="#DDF7F2" stroke-width=".7"/>
 
+    <!-- Heavy ink contour with a cyan registration edge. -->
     <path d="M-17 0 C-14 -11 -2 -15 10 -11
       C18 -8 22 -3 24 0 C22 3 18 8 10 11
       C-2 15 -14 11 -17 0Z"
-      fill="url(#fish-body)" stroke="#E9F2FF" stroke-width="1.15"/>
+      fill="none" stroke="#030411" stroke-width="4.2" stroke-linejoin="round"/>
+    <path d="M-17 0 C-14 -11 -2 -15 10 -11
+      C18 -8 22 -3 24 0 C22 3 18 8 10 11
+      C-2 15 -14 11 -17 0Z"
+      fill="url(#fish-body)" stroke="#E9F2FF" stroke-width="1.35" stroke-linejoin="round"/>
     <path d="M-8 5 C-1 12 11 10 19 3 C11 12 -2 15 -10 8Z"
       fill="url(#fish-belly)" opacity=".82"/>
     <path d="M-8 -5 Q1 -10 12 -6" fill="none"
@@ -791,7 +849,9 @@ def render_svg(
         calcMode="spline" keySplines=".42 0 .58 1;.42 0 .58 1"
         repeatCount="indefinite"/>
       <path d="M0 0 Q-5 6 1 11 Q8 7 6 1Z"
-        fill="url(#fish-fin)" stroke="#FFFFFF" stroke-opacity=".75" stroke-width=".7"/>
+        fill="none" stroke="#030411" stroke-width="2.7" stroke-linejoin="round"/>
+      <path d="M0 0 Q-5 6 1 11 Q8 7 6 1Z"
+        fill="url(#fish-fin)" stroke="#FFFFFF" stroke-opacity=".88" stroke-width=".9"/>
     </g>
     <path d="M7 -7 Q3 0 7 7" fill="none"
       stroke="#526DFF" stroke-width="1.1" stroke-linecap="round"/>
@@ -870,7 +930,20 @@ def render_svg(
 
 <!-- Eight relaxed arms, soft suckers, and a color-shifting mantle. -->
 <g id="resting-octopus" transform="translate(560 482)">
-  <ellipse cx="0" cy="31" rx="154" ry="8" fill="#030411" opacity=".58"/>
+  <ellipse cx="0" cy="31" rx="154" ry="8" fill="#030411" opacity=".68"/>
+  <!-- Eight-point impact burst behind the resting octopus. -->
+  <path d="M0 -128 L18 -62 L66 -105 L57 -48 L126 -53 L75 -10
+           L135 21 L65 32 L91 101 L29 56 L0 126 L-27 57
+           L-93 97 L-62 30 L-132 13 L-73 -20 L-124 -67
+           L-53 -53 L-68 -112 L-15 -64Z"
+        fill="#8B5CFF" fill-opacity=".17" stroke="#030411" stroke-width="4"
+        stroke-linejoin="miter"/>
+  <path d="M0 -119 L13 -63 L60 -96 L52 -44 L115 -47 L68 -8
+           L122 19 L59 26 L80 91 L25 49 L0 112 L-23 48
+           L-81 88 L-52 24 L-119 11 L-66 -18 L-111 -62
+           L-46 -49 L-59 -101 L-12 -58Z"
+        fill="none" stroke="#FF3BC8" stroke-width="2.2" opacity=".72"
+        stroke-linejoin="miter"/>
 '''
     )
 
@@ -889,8 +962,8 @@ def render_svg(
             f'''  <g transform="translate({translate})" data-octopus-arm="true">
     <animateTransform attributeName="transform" type="rotate" additive="sum"
       values="{rotation}" dur="{duration}" begin="{begin}" repeatCount="indefinite"/>
-    <path d="{arm_path}" fill="none" stroke="#140C34" stroke-opacity=".48"
-      stroke-width="11" stroke-linecap="round"/>
+    <path d="{arm_path}" fill="none" stroke="#030411" stroke-opacity=".92"
+      stroke-width="14" stroke-linecap="round"/>
     <path d="{arm_path}" fill="none" stroke="url(#octopus-arm)"
       stroke-width="8.2" stroke-linecap="round"/>
     <path d="{arm_path}" fill="none" stroke="url(#octopus-highlight)"
@@ -911,7 +984,11 @@ def render_svg(
       values="1 1;1.025 .975;1 1" dur="5.8s" repeatCount="indefinite"/>
     <path d="M-30 17 C-43 2 -37 -23 -20 -34 C-7 -43 12 -42 26 -29
       C42 -14 38 10 25 21 C10 31 -17 31 -30 17Z"
-      fill="url(#octopus-skin)" stroke="#FFB5F0" stroke-opacity=".55" stroke-width="1.2"/>
+      fill="none" stroke="#030411" stroke-width="5.2" stroke-linejoin="miter"/>
+    <path d="M-30 17 C-43 2 -37 -23 -20 -34 C-7 -43 12 -42 26 -29
+      C42 -14 38 10 25 21 C10 31 -17 31 -30 17Z"
+      fill="url(#octopus-skin)" stroke="#FFB5F0" stroke-opacity=".9" stroke-width="1.45"
+      stroke-linejoin="miter"/>
     <path d="M-24 8 C-24 -15 -10 -30 4 -31 C20 -30 30 -12 26 6
       C16 17 -9 22 -24 8Z" fill="url(#octopus-blush)" opacity=".6"/>
     <g fill="#B5A2FF" opacity=".58">
@@ -966,10 +1043,15 @@ def render_svg(
         '''<text x="972" y="578">MORE</text>
 </g>
 </g>
+<!-- Offset ink frame and registration edges finish the comic panel. -->
+<rect x="3.5" y="3.5" width="1113" height="583" rx="19"
+      fill="none" stroke="#030411" stroke-width="7"/>
 <rect x=".75" y=".75" width="1118.5" height="588.5" rx="22"
-      fill="none" stroke="url(#glass-edge)" stroke-width="1.6"/>
-<rect x="5" y="5" width="1110" height="580" rx="18"
-      fill="none" stroke="#E2FFF5" stroke-opacity=".055"/>
+      fill="none" stroke="url(#glass-edge)" stroke-width="2.4"/>
+<rect x="7" y="7" width="1106" height="576" rx="17"
+      fill="none" stroke="#00E5FF" stroke-opacity=".4" stroke-width=".8"/>
+<path d="M12 19 L12 92 M1108 19 L1108 92 M12 516 L12 570 M1108 516 L1108 570"
+      fill="none" stroke="#FF3BC8" stroke-width="2.2" opacity=".72"/>
 </svg>'''
     )
 
