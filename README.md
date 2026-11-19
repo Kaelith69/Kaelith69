@@ -34,6 +34,6 @@
   <br/>
   <br/>
 
-  <img src="assets/contributions-pacman.svg" alt="Animated GitHub contribution maze" style="width: 100%; max-width: 860px;" />
+  <img src="assets/contributions-rocket.svg" alt="Animated neon rocket contribution calendar" style="width: 100%; max-width: 860px;" />
 
 </div>
