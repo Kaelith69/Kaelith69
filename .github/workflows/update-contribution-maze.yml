@@ -1,4 +1,4 @@
-name: Build Pac Man contribution maze
+name: Build Neon Contribution Rocket
 
 on:
   push:
@@ -70,6 +70,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "Contribution artwork is already current."
           else
-            git commit -m "Refresh Pac Man contribution maze"
+            git commit -m "Refresh neon contribution rocket"
             git push origin HEAD:main
           fi
