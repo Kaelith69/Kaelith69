@@ -30,6 +30,7 @@ FISH_SPEED = 115.0
 EAT_DWELL = 0.58
 RESET_FADE = 0.42
 RESET_HOLD = 0.22
+FISH_MOUTH_OFFSET = 13.5
 
 
 QUERY = """
@@ -189,6 +190,25 @@ def cell_center(column: int, row: int) -> tuple[float, float]:
     )
 
 
+def fish_target_anchor(
+    current: tuple[float, float],
+    target: tuple[float, float],
+) -> tuple[float, float]:
+    """Stop with the fish's nose touching the target creature."""
+    dx = target[0] - current[0]
+    dy = target[1] - current[1]
+
+    # The route is horizontal first, then vertical. The final approach is
+    # vertical whenever rows differ, otherwise horizontal.
+    if dy != 0:
+        offset = min(FISH_MOUTH_OFFSET, abs(dy) * 0.62)
+        return (target[0], target[1] - (1 if dy > 0 else -1) * offset)
+    if dx != 0:
+        offset = min(FISH_MOUTH_OFFSET, abs(dx) * 0.62)
+        return (target[0] - (1 if dx > 0 else -1) * offset, target[1])
+    return target
+
+
 def nearest_food_route(
     weeks: list[list[dt.date]],
     start: dt.date,
@@ -217,7 +237,7 @@ def nearest_food_route(
             ),
         )
         route.append(next_cell)
-        current = cell_center(next_cell[0], next_cell[1])
+        current = fish_target_anchor(current, cell_center(next_cell[0], next_cell[1]))
         remaining.remove(next_cell)
 
     return route
@@ -249,7 +269,7 @@ def orthogonal_flight_points(
     current = launch_point
 
     for column, row, date in route:
-        target = cell_center(column, row)
+        target = fish_target_anchor(current, cell_center(column, row))
         target_x, target_y = target
 
         # Horizontal first, then vertical. Every segment is strictly axis aligned.
