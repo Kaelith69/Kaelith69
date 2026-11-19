@@ -571,11 +571,11 @@ def render_svg(
 
   <!-- Angular comic panels and restrained halftone shadows. -->
   <path d="M0 110 L176 110 L286 430 L150 430Z" fill="#263BFF" opacity=".045"/>
-  <path d="M1120 106 L1018 106 L926 423 L1040 423Z" fill="#FF3BC8" opacity=".035"/>
+  <path d="M1200 106 L1098 106 L1006 423 L1120 423Z" fill="#FF3BC8" opacity=".035"/>
   <path d="M0 340 L108 340 L140 470 L0 470Z" fill="url(#halftone-violet)" opacity=".22"/>
-  <path d="M1120 336 L1010 336 L978 470 L1120 470Z" fill="url(#halftone-cyan)" opacity=".16"/>
+  <path d="M1200 336 L1090 336 L1058 470 L1200 470Z" fill="url(#halftone-cyan)" opacity=".16"/>
   <path d="M0 105 L160 105 L198 220 L0 220Z" fill="url(#halftone-ink)" opacity=".1"/>
-  <path d="M1120 105 L1028 105 L992 218 L1120 218Z" fill="url(#halftone-ink)" opacity=".09"/>
+  <path d="M1200 105 L1108 105 L1072 218 L1200 218Z" fill="url(#halftone-ink)" opacity=".09"/>
 
   <!-- Comic-book panel header with an offset magenta print shadow. -->
   <path d="M35 20 L311 20 L295 68 L35 68Z" fill="#FF3BC8" opacity=".78"/>
@@ -590,9 +590,9 @@ def render_svg(
   <!-- Slow surface glow and moving shafts of water light. -->
   <path d="M0 84 Q170 66 340 80 T680 78 T1120 79 L1120 105 Q920 96 740 100 T360 99 T0 102Z"
         fill="url(#surface-light)" opacity=".64"/>
-  <path d="M18 88 Q200 71 380 85 T760 83 T1100 86"
+  <path d="M18 88 Q200 71 380 85 T760 83 T1180 86"
         fill="none" stroke="#00E5FF" stroke-opacity=".48" stroke-width="1.2"/>
-  <path d="M18 94 Q200 77 380 91 T760 89 T1100 92"
+  <path d="M18 94 Q200 77 380 91 T760 89 T1180 92"
         fill="none" stroke="#A78BFF" stroke-opacity=".18" stroke-width=".9"/>
   <g opacity=".18">
     <path d="M125 84 L205 84 L295 405 L245 405Z" fill="#00E5FF" opacity=".16">
@@ -642,22 +642,34 @@ def render_svg(
   <!-- Soft plankton field. Particles move independently at different depths. -->
   <g fill="#9AEFFF">
     <circle cx="64" cy="119" r="1.3" opacity=".42"><animate attributeName="cy" values="119;111;119" dur="7s" repeatCount="indefinite"/></circle>
-    <circle cx="1035" cy="119" r="1.5" opacity=".34"><animate attributeName="cy" values="119;106;119" dur="8s" begin="1s" repeatCount="indefinite"/></circle>
+    <circle cx="1115" cy="119" r="1.5" opacity=".34"><animate attributeName="cy" values="119;106;119" dur="8s" begin="1s" repeatCount="indefinite"/></circle>
     <circle cx="104" cy="292" r="1.1" opacity=".48"><animate attributeName="cy" values="292;278;292" dur="9s" repeatCount="indefinite"/></circle>
-    <circle cx="1000" cy="294" r="1.4" opacity=".38"><animate attributeName="cy" values="294;280;294" dur="8.5s" begin="2s" repeatCount="indefinite"/></circle>
+    <circle cx="1080" cy="294" r="1.4" opacity=".38"><animate attributeName="cy" values="294;280;294" dur="8.5s" begin="2s" repeatCount="indefinite"/></circle>
     <circle cx="333" cy="309" r=".9" opacity=".35"><animate attributeName="cy" values="309;299;309" dur="7.5s" begin="1.6s" repeatCount="indefinite"/></circle>
     <circle cx="755" cy="307" r="1" opacity=".38"><animate attributeName="cy" values="307;295;307" dur="8.2s" begin=".8s" repeatCount="indefinite"/></circle>
   </g>
 
   <!-- Halftone-backed data badge and comic impact rays. -->
-  <path d="M1004 17 L1088 17 L1088 62 L1004 62Z"
+  <path d="M1104 17 L1188 17 L1188 62 L1104 62Z"
         fill="url(#halftone-cyan)" opacity=".25"/>
-  <path d="M1043 19 L1052 7 L1061 18 L1074 13 L1073 28 L1085 35
-           L1071 42 L1075 55 L1060 51 L1053 63 L1045 52 L1031 57
-           L1034 43 L1020 36 L1033 28 L1029 15Z"
+  <path d="M1143 19 L1152 7 L1161 18 L1174 13 L1173 28 L1185 35
+           L1171 42 L1175 55 L1160 51 L1153 63 L1145 52 L1131 57
+           L1134 43 L1120 36 L1133 28 L1129 15Z"
         fill="#263BFF" opacity=".3" stroke="#030411" stroke-width="2.5"
         stroke-linejoin="miter"/>
 
+  <!-- Angular comic panel behind the live contribution matrix. -->
+  <path d="M74 177 L1173 177 L1181 370 L68 370Z"
+        fill="#030712" fill-opacity=".36" stroke="#030411" stroke-width="4"
+        stroke-linejoin="bevel"/>
+  <path d="M79 181 L1168 181 L1174 365 L74 365Z"
+        fill="url(#halftone-ink)" opacity=".2"/>
+  <path d="M78 182 L1168 182" fill="none" stroke="#FF2A85"
+        stroke-width="1.35" stroke-opacity=".72"/>
+  <path d="M75 371 L1179 371" fill="none" stroke="#00F5D4"
+        stroke-width="1.8" stroke-opacity=".42"/>
+  <path d="M75 182 L84 182 L75 194 M1168 182 L1177 182 L1177 194"
+        fill="none" stroke="#00F5D4" stroke-width="1.5"/>
   <!-- Header keeps its comic-book display lettering. -->
   <text x="39" y="52" font-family="Bangers, Impact, 'Arial Black', sans-serif"
         font-size="29" letter-spacing="1.7" fill="#EAF8F3">CONTRIBUTIONS</text>
@@ -725,45 +737,39 @@ def render_svg(
             glow = 'filter="url(#food-glow)"' if count else ""
             if level == "NONE":
                 artwork = f'''
- <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="{fill}" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
- <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="{fill}" opacity=".75"/>
- <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>'''
+ <rect x="-5.5" y="-4.5" width="11" height="9" rx="2.5"
+       fill="{fill}" stroke="{stroke}" stroke-width="1.05"/>
+ <path d="M-3.8 -2.8 H3.5" fill="none" stroke="#5676A8"
+       stroke-opacity=".36" stroke-width=".65" stroke-linecap="round"/>'''
             elif level == "FIRST_QUARTILE":
                 artwork = f'''
- <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
-       fill="{stroke}" stroke="{stroke}" stroke-width=".4"/>
- <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="{fill}" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
- <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
-       stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
- <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
- <circle cx="2.9" cy="-.78" r=".17" fill="#FFFFFF"/>'''
+ <path d="M-6 -5 H4.2 L6 -3.2 V5 H-6Z"
+       fill="{fill}" stroke="#030712" stroke-width="1.8" stroke-linejoin="bevel"/>
+ <path d="M-3.7 -2.6 H2.8" stroke="#93C5FD" stroke-width="1.25"
+       stroke-linecap="round"/>
+ <path d="M-5 3.6 L-1 3.6" stroke="#030712" stroke-opacity=".38" stroke-width=".8"/>'''
             elif level == "SECOND_QUARTILE":
                 artwork = f'''
- <path d="M-4.4 -.2 Q-2.2 -3 1.1 -2.4 Q4 -1.4 3.2 .9
-       Q1.3 3.1 -2.2 1.5Z" fill="{fill}" stroke="{stroke}" stroke-width=".65"/>
- <ellipse cx="-.2" cy="0" rx="3.2" ry="2" fill="{fill}" opacity=".6"/>
- <path d="M-2 -1.1 Q-4 -3.2 -5 -3.4 M1 -1.5 Q3 -3.4 4 -3.4
-       M-3 1 Q-4.5 2.8 -5 3.2" fill="none" stroke="{stroke}" stroke-width=".55"/>
- <circle cx="2.4" cy="-.65" r=".38" fill="#09232C"/>'''
+ <path d="M-6.5 -5.5 H4.4 L6.5 -3.5 V5.5 H-6.5Z"
+       fill="{fill}" stroke="#030712" stroke-width="1.8" stroke-linejoin="bevel"/>
+ <path d="M-4 -3 H3.7" stroke="#E0FBF7" stroke-width="1.45"
+       stroke-linecap="round"/>
+ <path d="M-4 3.6 H1.5" stroke="#FFFFFF" stroke-opacity=".46" stroke-width=".7"/>'''
             elif level == "THIRD_QUARTILE":
                 artwork = f'''
- <path d="M-4.1 0 C-4.3 -3.1 -1.5 -4.2 1 -3.6
-       C3.7 -3.1 4.3 -.9 3.5 .3Z"
-       fill="{fill}" stroke="#030411" stroke-width="1.3" stroke-linejoin="round"/>
- <ellipse cx="-.2" cy="-.8" rx="3.2" ry="2.5" fill="{fill}" opacity=".35"/>
- <path d="M-3.1 .5 Q-4.3 2 -3 3.7 M-.8 .8 Q-1.7 2.6 -.4 4
-       M1.2 .5 Q2.2 2.5 2 3.8 M3 .3 Q4.2 2.2 4.4 3.3"
-       fill="none" stroke="#030411" stroke-width="1.45" stroke-linecap="round"/>'''
+ <path d="M-6.5 -5.5 H3.7 L6.5 -2.7 V5.5 H-6.5Z"
+       fill="{fill}" stroke="#030712" stroke-width="1.8" stroke-linejoin="bevel"/>
+ <path d="M-3.8 -2.9 H2.9" stroke="#F8E8FF" stroke-width="1.4"
+       stroke-linecap="round"/>
+ <path d="M-4.5 3.7 L-1.5 3.7" stroke="#030712" stroke-opacity=".38" stroke-width=".8"/>'''
             else:
                 artwork = f'''
- <path d="M0 -4.6 C1.1 -2.5 3.7 -2.8 4.4 -1.2
-       C2.6 -.1 3.8 2.3 2.1 3.6 C.8 2.1 -1.3 4.1 -2.4 2.5
-       C-1.7 .6 -4.1 -.1 -4.2 -1.8 C-2.1 -1.7 -1.5 -4.1 0 -4.6Z"
-       fill="{fill}" stroke="#030411" stroke-width="1.35" stroke-linejoin="miter"/>
- <ellipse cx="-.1" cy="-.1" rx="1.3" ry="1.3" fill="#FFF4D7"/>
- <circle cx="0" cy="-.1" r=".55" fill="#A86A42"/>'''
+ <path d="M-7 -4.5 L-3 -6 H4.8 L7 -3.5 V4.4 L3 6 H-4.8 L-7 3Z"
+       fill="{fill}" stroke="#030712" stroke-width="2" stroke-linejoin="miter"/>
+ <path d="M-4.2 -3.2 H3.2" stroke="#FFE5F1" stroke-width="1.5"
+       stroke-linecap="round"/>
+ <path d="M-4 3.7 H1.8" stroke="#FFBE0B" stroke-opacity=".9" stroke-width=".9"
+       stroke-linecap="round"/>'''
 
             pieces.append(
                 f'''<g transform="translate({x:.2f} {y:.2f})"
