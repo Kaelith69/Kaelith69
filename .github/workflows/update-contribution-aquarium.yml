@@ -63,7 +63,7 @@ jobs:
           fish = root.find(".//*[@id='reef-feeding-fish']")
           if fish is None or fish.find(".//*[@keySplines]") is None:
               raise SystemExit("Generated feeding fish is missing eased motion.")
-          print(f"Validated {path}: {len(days)} days, eight octopus arms, Neon Midnight palette and tall viewBox, {path.stat().size:,} bytes.")
+          print(f"Validated {path}: {len(days)} days, eight octopus arms, Neon Midnight palette and tall viewBox, {path.stat().st_size:,} bytes.")
           PY
 
       - name: Commit updated contribution aquarium
