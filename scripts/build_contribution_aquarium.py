@@ -581,12 +581,12 @@ def render_svg(
       <path d="M-12 0 Q-5 -5 3 0 Q-5 5 -12 0Z M3 0L9 -5L8 0L9 5Z"/>
       <path d="M10 7 Q16 3 23 7 Q16 11 10 7Z M23 7L28 3L27 7L28 11Z" opacity=".7"/>
       <path d="M-28 10 Q-22 6 -15 10 Q-22 14 -28 10Z M-15 10L-10 6L-11 10L-10 14Z" opacity=".6"/>
-      <animateTransform attributeName="transform" type="translate" values="0 0;80 -4;0 0" dur="29s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" additive="sum" values="0 0;80 -4;0 0" dur="29s" repeatCount="indefinite"/>
     </g>
     <g transform="translate(810 96)">
       <path d="M-10 0 Q-3 -5 5 0 Q-3 5 -10 0Z M5 0L11 -5L10 0L11 5Z"/>
       <path d="M12 -8 Q19 -12 26 -8 Q19 -4 12 -8Z M26 -8L32 -12L31 -8L32 -4Z" opacity=".7"/>
-      <animateTransform attributeName="transform" type="translate" values="0 0;-66 5;0 0" dur="33s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" additive="sum" values="0 0;-66 5;0 0" dur="33s" repeatCount="indefinite"/>
     </g>
   </g>
 
@@ -753,7 +753,7 @@ def render_svg(
   <g transform="translate(-16.3 0) scale(.68)">
     <!-- Flexible tail with a gentle side to side beat. -->
     <g transform="translate(-15 0)">
-      <animateTransform attributeName="transform" type="rotate"
+      <animateTransform attributeName="transform" type="rotate" additive="sum"
         values="-12 0 0;12 0 0;-12 0 0" dur=".62s"
         calcMode="spline" keySplines=".42 0 .58 1;.42 0 .58 1"
         repeatCount="indefinite"/>
@@ -781,7 +781,7 @@ def render_svg(
       fill="none" stroke="#367C83" stroke-opacity=".6" stroke-width=".8"/>
 
     <g transform="translate(0 3)">
-      <animateTransform attributeName="transform" type="rotate"
+      <animateTransform attributeName="transform" type="rotate" additive="sum"
         values="-7 0 0;13 0 0;-7 0 0" dur=".78s"
         calcMode="spline" keySplines=".42 0 .58 1;.42 0 .58 1"
         repeatCount="indefinite"/>
@@ -839,8 +839,8 @@ def render_svg(
 
 <!-- A drifting jellyfish in the lower water column. -->
 <g id="reef-jellyfish" transform="translate(150 335)" opacity=".68">
-  <animateTransform attributeName="transform" type="translate"
-    values="150 335;158 323;151 335" dur="14s" repeatCount="indefinite"/>
+  <animateTransform attributeName="transform" type="translate" additive="sum"
+    values="0 0;8 -12;1 0" dur="14s" repeatCount="indefinite"/>
   <path d="M-12 1 C-13 -14 -5 -22 0 -22 C7 -22 13 -13 12 1Z"
         fill="#68CFC3" fill-opacity=".24" stroke="#B8F5E9" stroke-opacity=".7" stroke-width=".9"/>
   <path d="M-10 1 Q0 7 10 1" fill="none" stroke="#B8F5E9" stroke-width="1"/>
