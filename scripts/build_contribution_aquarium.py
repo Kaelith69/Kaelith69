@@ -980,7 +980,7 @@ def render_svg(
         for index in range(0, len(coordinates), 2):
             sx, sy = coordinates[index], coordinates[index + 1]
             pieces.append(
-                f'''    <g transform="translate({sx} {sy})">
+                f'''    <g data-sucker="true" transform="translate({sx} {sy})">
       <ellipse rx="3.05" ry="2.3" fill="#08071A"
         stroke="#FFB5F0" stroke-width=".8"/>
       <ellipse rx="1.55" ry="1.05" fill="#00E5FF" opacity=".9"/>
@@ -1001,7 +1001,7 @@ def render_svg(
       C54 -61 50 -25 26 -9 C11 2 -12 4 -26 -10Z"
       fill="url(#octopus-skin)" stroke="#FFB5F0" stroke-opacity=".96" stroke-width="1.8"
       stroke-linejoin="miter"/>
-    <path d="M-38 -8 C-54 2 -52 28 -34 45 C-18 61 16 61 34 44
+    <path id="octopus-head" d="M-38 -8 C-54 2 -52 28 -34 45 C-18 61 16 61 34 44
       C52 27 49 3 33 -9 C16 -24 -22 -24 -38 -8Z"
       fill="url(#octopus-arm)" stroke="#030411" stroke-width="5.2"
       stroke-linejoin="round"/>
