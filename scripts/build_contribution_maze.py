@@ -337,7 +337,7 @@ def render_svg(
 
             if count > 0:
                 index = route_index[(column, row)]
-                progress = min(0.999, max(0.0001, (index + 1) / max(1, len(route)))
+                progress = min(0.999, max(0.0001, (index + 1) / max(1, len(route))))
                 animation = (
                     f'<animate attributeName="opacity" values="1;1;.18" '
                     f'keyTimes="0;{progress:.6f};1" dur="{CYCLE_SECONDS}s" '
