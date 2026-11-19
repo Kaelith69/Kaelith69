@@ -26,9 +26,6 @@
   <br/>
   <br/>
 
-  <img
-    src="https://komarev.com/ghpvc/?username=Kaelith69&style=flat-square&color=12161b&label=PROFILE+VISITS&labelColor=171c22"
-    alt="Profile Visits"
-  />
+  <img src="assets/visitors.svg" alt="Cosmic Observatory" style="width: 100%; max-width: 860px;" />\n  <br/>\n  <img src="https://komarev.com/ghpvc/?username=Kaelith69&style=for-the-badge&color=6C3D87&label=VISITORS&labelColor=080D1D" alt="Profile visits" />
 
 </div>
