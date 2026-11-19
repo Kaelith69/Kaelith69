@@ -225,7 +225,8 @@ def nearest_food_route(
             ),
         )
         route.append(next_cell)
-        current = cell_center(next_cell[0], next_cell[1])
+        target = cell_center(next_cell[0], next_cell[1])
+        current, _ = approach_anchor(current, target)
         remaining.remove(next_cell)
 
     return route
@@ -587,8 +588,8 @@ def render_svg(
     keyPoints="{plan["key_points"]}" keyTimes="{plan["key_times"]}"
     calcMode="linear" dur="{cycle:.6f}s" rotate="auto"
     repeatCount="indefinite"/>
-  <animate attributeName="opacity" values="1;0;0;1"
-    keyTimes="0;{reset_time:.8f};{(cycle - .001) / cycle:.8f};1"
+  <animate attributeName="opacity" values="1;1;0;0;1"
+    keyTimes="0;{reset_time:.8f};{(reset_time + RESET_FADE * .45 / cycle):.8f};{(cycle - .001) / cycle:.8f};1"
     dur="{cycle:.6f}s" repeatCount="indefinite"/>
 
   <g transform="scale(.70)">
