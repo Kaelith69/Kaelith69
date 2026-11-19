@@ -764,26 +764,26 @@ def render_svg(
         repeatCount="indefinite"/>
       <path d="M0 0 C-7 -7 -17 -13 -21 -8 C-18 -3 -17 -1 -22 0
         C-17 1 -18 3 -21 8 C-17 13 -7 7 0 0Z"
-        fill="url(#fish-fin)" stroke="#D8F8F0" stroke-width=".9"/>
+        fill="url(#fish-fin)" stroke="#CBF4FF" stroke-width=".9"/>
       <path d="M-2 0L-17 -7 M-2 0L-17 7" stroke="#FFFFFF"
         stroke-opacity=".55" stroke-width=".7" fill="none"/>
     </g>
 
     <path d="M-7 -9 Q-4 -18 5 -16 Q11 -14 12 -9Z"
-      fill="url(#fish-fin)" stroke="#DDF7F2" stroke-width=".8"/>
+      fill="url(#fish-fin)" stroke="#C8E9FF" stroke-width=".8"/>
     <path d="M-6 10 Q0 18 8 14 L10 9Z"
       fill="url(#fish-fin)" stroke="#DDF7F2" stroke-width=".7"/>
 
     <path d="M-17 0 C-14 -11 -2 -15 10 -11
       C18 -8 22 -3 24 0 C22 3 18 8 10 11
       C-2 15 -14 11 -17 0Z"
-      fill="url(#fish-body)" stroke="#F1FFFA" stroke-width="1.15"/>
+      fill="url(#fish-body)" stroke="#E9F2FF" stroke-width="1.15"/>
     <path d="M-8 5 C-1 12 11 10 19 3 C11 12 -2 15 -10 8Z"
       fill="url(#fish-belly)" opacity=".82"/>
     <path d="M-8 -5 Q1 -10 12 -6" fill="none"
       stroke="#FFFFFF" stroke-opacity=".88" stroke-width="1.15" stroke-linecap="round"/>
     <path d="M-2 -5 Q1 -2 -1 1 M4 -6 Q7 -3 5 0"
-      fill="none" stroke="#367C83" stroke-opacity=".6" stroke-width=".8"/>
+      fill="none" stroke="#6278FF" stroke-opacity=".6" stroke-width=".8"/>
 
     <g transform="translate(0 3)">
       <animateTransform attributeName="transform" type="rotate" additive="sum"
@@ -794,13 +794,13 @@ def render_svg(
         fill="url(#fish-fin)" stroke="#FFFFFF" stroke-opacity=".75" stroke-width=".7"/>
     </g>
     <path d="M7 -7 Q3 0 7 7" fill="none"
-      stroke="#347C83" stroke-width="1.1" stroke-linecap="round"/>
+      stroke="#526DFF" stroke-width="1.1" stroke-linecap="round"/>
 
     <ellipse cx="14" cy="-4.4" rx="2.3" ry="2.75" fill="#071B29"/>
     <circle cx="14.6" cy="-5.3" r=".9" fill="#FFFFFF"/>
-    <circle cx="13.3" cy="-3.4" r=".45" fill="#74E4D6"/>
+    <circle cx="13.3" cy="-3.4" r=".45" fill="#00E5FF"/>
     <path d="M17 1 Q21 2.2 24 1" fill="none"
-      stroke="#135B6A" stroke-width="1.5" stroke-linecap="round">
+      stroke="#334AFF" stroke-width="1.5" stroke-linecap="round">
       {jaw_markup}
     </path>
     <path d="M18 2L22 2.5" stroke="#FFFFFF" stroke-width=".55" opacity=".9"/>
@@ -808,22 +808,22 @@ def render_svg(
 </g>
 
 <!-- The foreground seabed is layered behind the octopus and coral. -->
-<path d="M0 356 C125 342 225 355 344 350 C466 344 570 359 702 350
- C850 339 970 356 1120 346 L1120 430 L0 430Z"
-      fill="url(#sand)" opacity=".92"/>
-<path d="M0 356 C125 342 225 355 344 350 C466 344 570 359 702 350
- C850 339 970 356 1120 346"
-      fill="none" stroke="#7BB8A8" stroke-opacity=".28" stroke-width="1.1"/>
+<path d="M0 470 C125 448 225 469 344 462 C466 453 570 478 702 462
+ C850 451 970 472 1120 458 L1120 590 L0 590Z"
+      fill="url(#sand)" opacity=".96"/>
+<path d="M0 470 C125 448 225 469 344 462 C466 453 570 478 702 462
+ C850 451 970 472 1120 458"
+      fill="none" stroke="#8B5CFF" stroke-opacity=".5" stroke-width="1.4"/>
 <g fill="#9BC9B4" opacity=".23">
-  <ellipse cx="105" cy="372" rx="17" ry="3"/>
-  <ellipse cx="278" cy="379" rx="24" ry="3"/>
-  <ellipse cx="810" cy="375" rx="19" ry="3"/>
-  <ellipse cx="1020" cy="369" rx="26" ry="3"/>
+  <ellipse cx="105" cy="492" rx="17" ry="3"/>
+  <ellipse cx="278" cy="499" rx="24" ry="3"/>
+  <ellipse cx="810" cy="495" rx="19" ry="3"/>
+  <ellipse cx="1020" cy="489" rx="26" ry="3"/>
 </g>
 <g fill="#B9D4C5" opacity=".35">
-  <circle cx="145" cy="364" r="1.1"/><circle cx="169" cy="379" r=".8"/>
-  <circle cx="313" cy="365" r="1.2"/><circle cx="751" cy="375" r="1"/>
-  <circle cx="1045" cy="385" r="1.3"/><circle cx="1080" cy="367" r=".8"/>
+  <circle cx="145" cy="484" r="1.1"/><circle cx="169" cy="499" r=".8"/>
+  <circle cx="313" cy="485" r="1.2"/><circle cx="751" cy="495" r="1"/>
+  <circle cx="1045" cy="505" r="1.3"/><circle cx="1080" cy="487" r=".8"/>
 </g>
 
 <!-- Kelp and coral frame the lower corners without intruding into the calendar. -->
@@ -843,13 +843,13 @@ def render_svg(
 </g>
 
 <!-- A drifting jellyfish in the lower water column. -->
-<g id="reef-jellyfish" transform="translate(150 335)" opacity=".68">
+<g id="reef-jellyfish" transform="translate(190 410)" opacity=".82">
   <animateTransform attributeName="transform" type="translate" additive="sum"
-    values="0 0;8 -12;1 0" dur="14s" repeatCount="indefinite"/>
+    values="0 0;11 -18;2 0" dur="14s" repeatCount="indefinite"/>
   <path d="M-12 1 C-13 -14 -5 -22 0 -22 C7 -22 13 -13 12 1Z"
-        fill="#68CFC3" fill-opacity=".24" stroke="#B8F5E9" stroke-opacity=".7" stroke-width=".9"/>
-  <path d="M-10 1 Q0 7 10 1" fill="none" stroke="#B8F5E9" stroke-width="1"/>
-  <g fill="none" stroke="#A7EBDD" stroke-width="1" stroke-linecap="round">
+        fill="#8B5CFF" fill-opacity=".26" stroke="#D5BCFF" stroke-opacity=".92" stroke-width=".9"/>
+  <path d="M-10 1 Q0 7 10 1" fill="none" stroke="#FF79D8" stroke-width="1.1"/>
+  <g fill="none" stroke="#00E5FF" stroke-width="1.1" stroke-linecap="round">
     <path d="M-8 3 Q-13 13 -9 21"><animate attributeName="d" values="M-8 3 Q-13 13 -9 21;M-8 3 Q-4 13 -9 21;M-8 3 Q-13 13 -9 21" dur="3.2s" repeatCount="indefinite"/></path>
     <path d="M-2 4 Q-5 15 -1 24"><animate attributeName="d" values="M-2 4 Q-5 15 -1 24;M-2 4 Q2 15 -1 24;M-2 4 Q-5 15 -1 24" dur="3.8s" repeatCount="indefinite"/></path>
     <path d="M5 4 Q10 13 7 22"><animate attributeName="d" values="M5 4 Q10 13 7 22;M5 4 Q1 13 7 22;M5 4 Q10 13 7 22" dur="3.4s" repeatCount="indefinite"/></path>
@@ -857,8 +857,8 @@ def render_svg(
 </g>
 
 <!-- Eight relaxed arms, soft suckers, and a color-shifting mantle. -->
-<g id="resting-octopus" transform="translate(560 340)">
-  <ellipse cx="0" cy="31" rx="154" ry="8" fill="#071923" opacity=".36"/>
+<g id="resting-octopus" transform="translate(560 482)">
+  <ellipse cx="0" cy="31" rx="154" ry="8" fill="#030411" opacity=".58"/>
 '''
     )
 
@@ -877,7 +877,7 @@ def render_svg(
             f'''  <g transform="translate({translate})" data-octopus-arm="true">
     <animateTransform attributeName="transform" type="rotate" additive="sum"
       values="{rotation}" dur="{duration}" begin="{begin}" repeatCount="indefinite"/>
-    <path d="{arm_path}" fill="none" stroke="#1A2733" stroke-opacity=".48"
+    <path d="{arm_path}" fill="none" stroke="#140C34" stroke-opacity=".48"
       stroke-width="11" stroke-linecap="round"/>
     <path d="{arm_path}" fill="none" stroke="url(#octopus-arm)"
       stroke-width="8.2" stroke-linecap="round"/>
@@ -889,7 +889,7 @@ def render_svg(
         for index in range(0, len(coordinates), 2):
             sx, sy = coordinates[index], coordinates[index + 1]
             pieces.append(
-                f'    <circle cx="{sx}" cy="{sy}" r="1.35" fill="#F0D5C3" fill-opacity=".68" stroke="#664D5A" stroke-opacity=".38" stroke-width=".4"/>\n'
+                f'    <circle cx="{sx}" cy="{sy}" r="1.35" fill="#E7C8FF" fill-opacity=".88" stroke="#382064" stroke-opacity=".38" stroke-width=".4"/>\n'
             )
         pieces.append("  </g>\n")
 
@@ -899,10 +899,10 @@ def render_svg(
       values="1 1;1.025 .975;1 1" dur="5.8s" repeatCount="indefinite"/>
     <path d="M-30 17 C-43 2 -37 -23 -20 -34 C-7 -43 12 -42 26 -29
       C42 -14 38 10 25 21 C10 31 -17 31 -30 17Z"
-      fill="url(#octopus-skin)" stroke="#F0C4AB" stroke-opacity=".55" stroke-width="1.2"/>
+      fill="url(#octopus-skin)" stroke="#FFB5F0" stroke-opacity=".55" stroke-width="1.2"/>
     <path d="M-24 8 C-24 -15 -10 -30 4 -31 C20 -30 30 -12 26 6
       C16 17 -9 22 -24 8Z" fill="url(#octopus-blush)" opacity=".6"/>
-    <g fill="#F4C2A6" opacity=".46">
+    <g fill="#B5A2FF" opacity=".58">
       <circle cx="-18" cy="-13" r="2.1"><animate attributeName="opacity" values=".25;.65;.25" dur="8s" repeatCount="indefinite"/></circle>
       <circle cx="-8" cy="-25" r="1.5"><animate attributeName="opacity" values=".6;.22;.6" dur="7s" repeatCount="indefinite"/></circle>
       <circle cx="10" cy="-21" r="2"><animate attributeName="opacity" values=".25;.7;.25" dur="9s" repeatCount="indefinite"/></circle>
@@ -910,14 +910,14 @@ def render_svg(
       <circle cx="14" cy="12" r="1.7"><animate attributeName="opacity" values=".2;.6;.2" dur="8.5s" repeatCount="indefinite"/></circle>
     </g>
     <path d="M-17 -23 Q-4 -36 14 -27" fill="none"
-      stroke="#FFF0DF" stroke-opacity=".42" stroke-width="2.2" stroke-linecap="round"/>
-    <ellipse cx="-10" cy="7" rx="4.1" ry="5.1" fill="#F7D5BD" opacity=".82"/>
+      stroke="#E9F7FF" stroke-opacity=".68" stroke-width="2.2" stroke-linecap="round"/>
+    <ellipse cx="-10" cy="7" rx="4.1" ry="5.1" fill="#C9F4FF" opacity=".94"/>
     <ellipse cx="10" cy="7" rx="4.1" ry="5.1" fill="#F7D5BD" opacity=".82"/>
-    <ellipse cx="-9.5" cy="7" rx="2.2" ry="3.4" fill="#172A37"/>
+    <ellipse cx="-9.5" cy="7" rx="2.2" ry="3.4" fill="#080A20"/>
     <ellipse cx="10.5" cy="7" rx="2.2" ry="3.4" fill="#172A37"/>
     <circle cx="-10.1" cy="5.6" r=".8" fill="#FFFFFF"/>
     <circle cx="9.9" cy="5.6" r=".8" fill="#FFFFFF"/>
-    <path d="M-3 17 Q0 20 3 17" fill="none" stroke="#704B5B"
+    <path d="M-3 17 Q0 20 3 17" fill="none" stroke="#00E5FF"
       stroke-width="1" stroke-linecap="round" opacity=".6"/>
   </g>
 </g>
