@@ -22,11 +22,11 @@ LOGIN = os.environ.get("GITHUB_PROFILE_LOGIN", "Kaelith69")
 API_URL = os.environ.get("GITHUB_GRAPHQL_URL", "https://api.github.com/graphql")
 
 GRID_X = 70
-GRID_Y = 135
-CELL = 11
+GRID_Y = 155
+CELL = 12
 PITCH = 19
-ROW_PITCH = 22
-LAUNCH_POINT = (48.0, 301.0)
+ROW_PITCH = 24
+LAUNCH_POINT = (48.0, 365.0)
 FISH_SPEED = 105.0
 EAT_DWELL = 0.72
 RESET_FADE = 0.72
@@ -54,11 +54,11 @@ query ContributionCalendar($login: String!, $from: DateTime!, $to: DateTime!) {
 """
 
 LEVEL_COLORS = {
-    "NONE": ("#18313C", "#41616B", "quiet plankton"),
-    "FIRST_QUARTILE": ("#2876A6", "#9BD9EF", "reef fish"),
-    "SECOND_QUARTILE": ("#21A9B7", "#B0F1E8", "reef shrimp"),
-    "THIRD_QUARTILE": ("#55D6B0", "#C5F7E8", "jellyfish"),
-    "FOURTH_QUARTILE": ("#FFC879", "#FFF0C9", "glow star"),
+    "NONE": ("#171D3C", "#46548A", "midnight plankton"),
+    "FIRST_QUARTILE": ("#275BFF", "#A8C4FF", "electric reef fish"),
+    "SECOND_QUARTILE": ("#00D7FF", "#A8F5FF", "cyan reef shrimp"),
+    "THIRD_QUARTILE": ("#8C4DFF", "#D5BCFF", "ultraviolet jellyfish"),
+    "FOURTH_QUARTILE": ("#FF3BC8", "#FFC4F2", "magenta glow star"),
 }
 
 
@@ -459,48 +459,51 @@ def render_svg(
 
     pieces: list[str] = []
     pieces.append(
-        f'''<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="430"
- viewBox="0 0 1120 430" role="img" aria-labelledby="tank-title tank-desc">
+        f'''<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="590"
+ viewBox="0 0 1120 590" role="img" aria-labelledby="tank-title tank-desc">
 <title id="tank-title">{html.escape(LOGIN)} contribution reef</title>
 <desc id="tank-desc">{total:,} GitHub contributions from {start.isoformat()} to {end.isoformat()}. A white reef fish follows a rounded, eased route to each active contribution organism. A color shifting octopus rests on the sandy seabed beneath a living reef with drifting plankton, jellyfish, kelp and underwater light.</desc>
 <defs>
   <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
-    <stop stop-color="#041A27"/><stop offset=".34" stop-color="#062A38"/>
-    <stop offset=".72" stop-color="#082332"/><stop offset="1" stop-color="#04131E"/>
+    <stop stop-color="#030411"/><stop offset=".28" stop-color="#080B20"/>
+    <stop offset=".65" stop-color="#0D0B2C"/><stop offset="1" stop-color="#050611"/>
   </linearGradient>
-  <radialGradient id="water-light" cx="50%" cy="22%" r="80%">
-    <stop stop-color="#2A9EAA" stop-opacity=".19"/>
-    <stop offset=".48" stop-color="#176C7A" stop-opacity=".07"/>
-    <stop offset="1" stop-color="#02101A" stop-opacity="0"/>
+  <radialGradient id="water-light" cx="48%" cy="28%" r="78%">
+    <stop stop-color="#263BFF" stop-opacity=".24"/>
+    <stop offset=".34" stop-color="#7028C9" stop-opacity=".12"/>
+    <stop offset=".67" stop-color="#00BFEF" stop-opacity=".045"/>
+    <stop offset="1" stop-color="#030411" stop-opacity="0"/>
   </radialGradient>
   <linearGradient id="surface-light" x1="0" y1="0" x2="0" y2="1">
-    <stop stop-color="#B8F9F1" stop-opacity=".25"/>
-    <stop offset="1" stop-color="#55C8C0" stop-opacity="0"/>
+    <stop stop-color="#00E5FF" stop-opacity=".32"/>
+    <stop offset=".42" stop-color="#8A5CFF" stop-opacity=".14"/>
+    <stop offset="1" stop-color="#FF3BC8" stop-opacity="0"/>
   </linearGradient>
   <linearGradient id="glass-edge" x1="0" y1="0" x2="1" y2="1">
-    <stop stop-color="#A7F1E5" stop-opacity=".8"/>
-    <stop offset=".46" stop-color="#317D8A" stop-opacity=".38"/>
-    <stop offset="1" stop-color="#D7F5E9" stop-opacity=".74"/>
+    <stop stop-color="#00E5FF" stop-opacity=".92"/>
+    <stop offset=".42" stop-color="#625BFF" stop-opacity=".58"/>
+    <stop offset=".72" stop-color="#FF3BC8" stop-opacity=".42"/>
+    <stop offset="1" stop-color="#00E5FF" stop-opacity=".86"/>
   </linearGradient>
   <linearGradient id="sand" x1="0" y1="0" x2="0" y2="1">
-    <stop stop-color="#315B5B"/><stop offset=".42" stop-color="#244449"/>
-    <stop offset="1" stop-color="#102A32"/>
+    <stop stop-color="#26204D"/><stop offset=".42" stop-color="#171A3B"/>
+    <stop offset="1" stop-color="#090C20"/>
   </linearGradient>
   <linearGradient id="fish-body" x1=".12" y1="0" x2=".82" y2="1">
-    <stop stop-color="#FFFFFF"/><stop offset=".3" stop-color="#E8F8F3"/>
-    <stop offset=".72" stop-color="#9ED5DB"/><stop offset="1" stop-color="#438BA5"/>
+    <stop stop-color="#FFFFFF"/><stop offset=".3" stop-color="#E9F5FF"/>
+    <stop offset=".72" stop-color="#A6BFFF"/><stop offset="1" stop-color="#4964D8"/>
   </linearGradient>
   <linearGradient id="fish-fin" x1="0" y1="0" x2="1" y2="1">
-    <stop stop-color="#F6FFFF"/><stop offset=".42" stop-color="#70C9D1"/>
-    <stop offset="1" stop-color="#286A88"/>
+    <stop stop-color="#FFFFFF"/><stop offset=".38" stop-color="#00E5FF"/>
+    <stop offset="1" stop-color="#7657FF"/>
   </linearGradient>
   <linearGradient id="fish-belly" x1="0" y1="0" x2="0" y2="1">
     <stop stop-color="#FFFFFF" stop-opacity=".08"/>
     <stop offset="1" stop-color="#FFFFFF" stop-opacity=".76"/>
   </linearGradient>
   <linearGradient id="reef-blue" x1="0" y1="0" x2="1" y2="1">
-    <stop stop-color="#BCEBE9"/><stop offset=".45" stop-color="#3F9BAE"/>
-    <stop offset="1" stop-color="#24627D"/>
+    <stop stop-color="#FFC4F2"/><stop offset=".42" stop-color="#A44DFF"/>
+    <stop offset="1" stop-color="#263BFF"/>
   </linearGradient>
   <linearGradient id="octopus-skin" x1="0" y1="0" x2="1" y2="1">
     <stop offset="0" stop-color="#E0A184">
