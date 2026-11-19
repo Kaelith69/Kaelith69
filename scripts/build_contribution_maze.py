@@ -241,6 +241,8 @@ def render_svg(
     motion_path = "M " + " L ".join(
         f"{x:.2f},{y:.2f}" for x, y in path_points
     )
+    if len(path_points) == 1:
+        motion_path += f" L {LAUNCH_POINT[0]:.2f},{LAUNCH_POINT[1]:.2f}"
 
     pieces: list[str] = []
     pieces.append(
@@ -335,7 +337,7 @@ def render_svg(
 
             if count > 0:
                 index = route_index[(column, row)]
-                progress = max(0.0001, (index + 1) / max(1, len(route)))
+                progress = min(0.999, max(0.0001, (index + 1) / max(1, len(route)))
                 animation = (
                     f'<animate attributeName="opacity" values="1;1;.18" '
                     f'keyTimes="0;{progress:.6f};1" dur="{CYCLE_SECONDS}s" '
