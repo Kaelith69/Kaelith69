@@ -21,9 +21,9 @@ LOGIN = os.environ.get("GITHUB_PROFILE_LOGIN", "Kaelith69")
 API_URL = os.environ.get("GITHUB_GRAPHQL_URL", "https://api.github.com/graphql")
 
 CYCLE_SECONDS = 55
-GRID_X = 112
-GRID_Y = 88
-CELL = 9
+GRID_X = 96
+GRID_Y = 86
+CELL = 10
 GAP = 3
 PITCH = CELL + GAP
 
@@ -284,7 +284,7 @@ def render_svg(
     day_labels = ["S", "M", "T", "W", "T", "F", "S"]
     for row, label in enumerate(day_labels):
         y = GRID_Y + row * PITCH + 7
-        pieces.append(f'<text x="94" y="{y}" text-anchor="middle">{label}</text>')
+        pieces.append(f'<text x="78" y="{y}" text-anchor="middle">{label}</text>')
     pieces.append("</g>")
 
     # Only the 365 requested dates become data cells. Padded edge dates are omitted.
