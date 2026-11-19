@@ -66,7 +66,7 @@ jobs:
           if len(arms) != 8:
               raise SystemExit(f"Expected eight octopus arms, found {len(arms)}.")
           fish = root.find(".//*[@id='reef-feeding-fish']")
-          if fish is None or fish.find(".//*[@attributeName='keySplines']") is None:
+          if fish is None or fish.find(".//*[@keySplines]") is None:
               raise SystemExit("Generated feeding fish is missing eased motion.")
           print(f"Validated {path}: {len(days)} days, eight octopus arms, {path.stat().st_size:,} bytes.")
           PY
