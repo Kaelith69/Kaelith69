@@ -873,53 +873,117 @@ def render_svg(
   </g>
 </g>
 
-<!-- The foreground seabed is layered behind the octopus and coral. -->
-<path d="M0 470 C125 448 225 469 344 462 C466 453 570 478 702 462
- C850 451 970 472 1120 458 L1120 590 L0 590Z"
-      fill="url(#sand)" opacity=".96"/>
-<path d="M0 470 C125 448 225 469 344 462 C466 453 570 478 702 462
- C850 451 970 472 1120 458"
-      fill="none" stroke="#8B5CFF" stroke-opacity=".5" stroke-width="1.4"/>
-<g fill="#6757FF" opacity=".32">
-  <ellipse cx="105" cy="492" rx="17" ry="3"/>
-  <ellipse cx="278" cy="499" rx="24" ry="3"/>
-  <ellipse cx="810" cy="495" rx="19" ry="3"/>
-  <ellipse cx="1020" cy="489" rx="26" ry="3"/>
-</g>
-<g fill="#A69BFF" opacity=".5">
-  <circle cx="145" cy="484" r="1.1"/><circle cx="169" cy="499" r=".8"/>
-  <circle cx="313" cy="485" r="1.2"/><circle cx="751" cy="495" r="1"/>
-  <circle cx="1045" cy="505" r="1.3"/><circle cx="1080" cy="487" r=".8"/>
+<!-- Comic reef ridge and deep foreground shelf. -->
+<path d="M8 486 Q290 467 600 486 T1192 482 L1192 650 L8 650Z"
+      fill="#091633" stroke="#030712" stroke-width="4.2" stroke-linejoin="bevel"/>
+<path d="M8 486 Q290 467 600 486 T1192 482"
+      fill="none" stroke="#00F5D4" stroke-width="2.2" opacity=".62"/>
+<path d="M8 493 Q290 476 600 493 T1192 489"
+      fill="none" stroke="#FF2A85" stroke-width="1.2" opacity=".4"/>
+
+<!-- Left faceted boulder, with comic bevel and crosshatch shadows. -->
+<g id="left-rock">
+  <path d="M8 492 L78 472 L168 485 L238 538 L258 610 L8 610Z"
+        fill="url(#rockLit)" stroke="#030712" stroke-width="4.2" stroke-linejoin="bevel"/>
+  <path d="M8 492 L78 472 L168 485 L138 518 L52 510Z"
+        fill="#254685" stroke="#030712" stroke-width="2.1" opacity=".8"/>
+  <path d="M168 485 L238 538 L258 610 L155 610 L138 518Z"
+        fill="url(#rockShade)"/>
+  <path d="M168 485 L238 538 L258 610 L155 610 L138 518Z"
+        fill="url(#halftone-ink)" opacity=".76"/>
+  <path d="M12 492 L78 472 L166 485" fill="none"
+        stroke="#00F5D4" stroke-width="2.2" opacity=".8"/>
+  <path d="M22 526 L114 546 M35 548 L128 570"
+        fill="none" stroke="#8B5CFF" stroke-width="1.2" opacity=".5"/>
 </g>
 
-<!-- Neon coral gardens and kelp frame the foreground shelf. -->
+<!-- Right faceted boulder, lit by the magenta side of the reef. -->
+<g id="right-rock">
+  <path d="M1192 492 L1122 472 L1032 485 L962 538 L942 610 L1192 610Z"
+        fill="url(#rockLit)" stroke="#030712" stroke-width="4.2" stroke-linejoin="bevel"/>
+  <path d="M1192 492 L1122 472 L1032 485 L1062 518 L1148 510Z"
+        fill="#254685" stroke="#030712" stroke-width="2.1" opacity=".8"/>
+  <path d="M1032 485 L962 538 L942 610 L1045 610 L1062 518Z"
+        fill="url(#rockShade)"/>
+  <path d="M1032 485 L962 538 L942 610 L1045 610 L1062 518Z"
+        fill="url(#halftone-ink)" opacity=".76"/>
+  <path d="M1188 492 L1122 472 L1034 485" fill="none"
+        stroke="#FF2A85" stroke-width="2.2" opacity=".88"/>
+  <path d="M1090 548 L1000 570 M1078 526 L984 548"
+        fill="none" stroke="#8B5CFF" stroke-width="1.2" opacity=".5"/>
+</g>
+
+<!-- Left reef cluster: ribbon kelp, branching staghorn coral and tube anemones. -->
+<g transform="translate(42 495)">
+  <path d="M0 0 C-9 -42 -6 -88 3 -125 C11 -88 12 -42 6 0Z"
+        fill="#00F5D4" stroke="#030712" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M2 -14 C-2 -48 0 -80 3 -112"
+        fill="none" stroke="#030712" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M28 8 L28 -30 L11 -54 L17 -58 L32 -38 L36 -68 L44 -68
+           L40 -34 L58 -52 L63 -47 L41 -22 L41 8Z"
+        fill="#FF2A85" stroke="#030712" stroke-width="3"
+        stroke-linejoin="bevel" filter="url(#soft-glow)"/>
+  <path d="M28 -30 L32 -38 L36 -68 M40 -34 L58 -52"
+        fill="none" stroke="#FFE5F1" stroke-width="1.3" opacity=".75"/>
+  <g stroke="#030712" stroke-width="2.5" stroke-linejoin="round">
+    <path d="M80 16 L82 -20 Q83 -31 91 -31 Q99 -30 98 -20 L100 16Z"
+          fill="#7B2CBF"/>
+    <path d="M84 -25 Q73 -37 77 -46 M90 -28 Q88 -43 94 -51 M96 -25 Q106 -38 105 -46"
+          fill="none" stroke="#00F5D4" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M108 22 L110 -11 Q111 -21 117 -21 Q124 -20 124 -11 L126 22Z"
+          fill="#1D4ED8"/>
+    <path d="M112 -17 Q104 -29 108 -36 M118 -20 Q120 -34 125 -40"
+          fill="none" stroke="#FFBE0B" stroke-width="2" stroke-linecap="round"/>
+  </g>
+</g>
+
+<!-- Right reef cluster mirrors the left, but keeps a different silhouette. -->
+<g transform="translate(1156 495)">
+  <path d="M0 0 C9 -42 6 -88 -3 -125 C-11 -88 -12 -42 -6 0Z"
+        fill="#00F5D4" stroke="#030712" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M-2 -14 C2 -48 0 -80 -3 -112"
+        fill="none" stroke="#030712" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M-28 8 L-28 -30 L-11 -54 L-17 -58 L-32 -38 L-36 -68 L-44 -68
+           L-40 -34 L-58 -52 L-63 -47 L-41 -22 L-41 8Z"
+        fill="#FF2A85" stroke="#030712" stroke-width="3"
+        stroke-linejoin="bevel" filter="url(#soft-glow)"/>
+  <path d="M-28 -30 L-32 -38 L-36 -68 M-40 -34 L-58 -52"
+        fill="none" stroke="#FFE5F1" stroke-width="1.3" opacity=".75"/>
+  <g stroke="#030712" stroke-width="2.5" stroke-linejoin="round">
+    <path d="M-82 16 L-84 -20 Q-85 -31 -93 -31 Q-101 -30 -100 -20 L-102 16Z"
+          fill="#7B2CBF"/>
+    <path d="M-86 -25 Q-75 -37 -79 -46 M-92 -28 Q-90 -43 -96 -51 M-98 -25 Q-108 -38 -107 -46"
+          fill="none" stroke="#00F5D4" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M-108 22 L-110 -11 Q-111 -21 -117 -21 Q-124 -20 -124 -11 L-126 22Z"
+          fill="#1D4ED8"/>
+    <path d="M-112 -17 Q-104 -29 -108 -36 M-118 -20 Q-120 -34 -125 -40"
+          fill="none" stroke="#FFBE0B" stroke-width="2" stroke-linecap="round"/>
+  </g>
+</g>
+
+<!-- Small comic coral fans break up the long seabed line. -->
 <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <g stroke="#00E5FF" stroke-width="3.4" opacity=".82">
-    <path d="M25 470 C31 444 17 424 28 384 C41 421 32 447 40 470">
-      <animate attributeName="d" values="M25 470 C31 444 17 424 28 384 C41 421 32 447 40 470;M25 470 C36 444 25 421 35 384 C44 422 29 448 40 470;M25 470 C31 444 17 424 28 384 C41 421 32 447 40 470" dur="9s" repeatCount="indefinite"/>
-    </path>
-    <path d="M1085 470 C1077 443 1098 421 1088 384 C1074 419 1082 448 1072 470">
-      <animate attributeName="d" values="M1085 470 C1077 443 1098 421 1088 384 C1074 419 1082 448 1072 470;M1085 470 C1073 443 1089 419 1080 384 C1069 420 1088 449 1072 470;M1085 470 C1077 443 1098 421 1088 384 C1074 419 1082 448 1072 470" dur="10s" repeatCount="indefinite"/>
-    </path>
+  <g stroke="#FFBE0B" stroke-width="2.4" opacity=".86">
+    <path d="M286 490 Q276 467 282 449 M282 467 Q263 455 260 441 M282 471 Q300 454 306 438"/>
+    <path d="M914 490 Q924 467 918 449 M918 467 Q937 455 940 441 M918 471 Q900 454 894 438"/>
   </g>
-  <g stroke="#FF3BC8" stroke-width="2.6" opacity=".88">
-    <path d="M112 470 Q104 450 113 428 M113 452 Q94 438 98 420 M113 460 Q132 442 136 423 M110 445 Q108 430 119 416"/>
-    <path d="M1007 470 Q1017 450 1008 428 M1008 452 Q1027 438 1023 420 M1008 460 Q989 442 985 423"/>
+  <g stroke="#8B5CFF" stroke-width="2.2" opacity=".9">
+    <path d="M318 490 Q313 469 324 454 M324 470 Q340 456 342 444 M324 476 Q307 463 302 450"/>
+    <path d="M882 490 Q887 469 876 454 M876 470 Q860 456 858 444 M876 476 Q893 463 898 450"/>
   </g>
-  <g stroke="#8B5CFF" stroke-width="2.4" opacity=".95">
-    <path d="M72 470 Q73 451 62 437 M72 455 Q87 444 87 429 M72 461 Q58 454 54 443"/>
-    <path d="M1047 470 Q1046 450 1058 435 M1047 455 Q1033 444 1032 429"/>
-  </g>
-</g>
-<g fill="#171638" stroke="#5143A4" stroke-opacity=".78" stroke-width="1">
-  <path d="M0 470 Q30 448 62 455 Q89 444 116 470 L140 590H0Z"/>
-  <path d="M1120 464 Q1090 446 1060 456 Q1036 444 1005 469 L980 590H1120Z"/>
-</g>
-<g fill="none" stroke="#FF3BC8" stroke-width="1.35" stroke-linecap="round" opacity=".82">
-  <path d="M126 470 Q124 455 134 448 Q146 442 144 429 M134 448 Q119 442 117 430 M134 448 Q151 444 158 434"/>
-  <path d="M994 469 Q996 452 985 446 Q974 439 976 427 M985 446 Q999 440 1003 429 M985 446 Q969 440 963 432"/>
 </g>
 
+<!-- Layered sand shelf with a hard comic ink edge. -->
+<path d="M8 594 Q320 578 600 592 T1192 588 L1192 650 L8 650Z"
+      fill="#060D20" stroke="#030712" stroke-width="4" stroke-linejoin="bevel"/>
+<path d="M8 594 Q320 578 600 592 T1192 588"
+      fill="none" stroke="#00F5D4" stroke-width="1.7" opacity=".58"/>
+<path d="M48 615 Q150 604 236 614 M950 614 Q1048 604 1148 615"
+      fill="none" stroke="#7B2CBF" stroke-width="1.3" opacity=".62"/>
+<g fill="#FFBE0B" opacity=".52">
+  <ellipse cx="169" cy="611" rx="16" ry="2.5"/>
+  <ellipse cx="1033" cy="610" rx="21" ry="2.5"/>
+</g>
 <!-- A drifting jellyfish in the lower water column. -->
 <g id="reef-jellyfish" transform="translate(190 410)" opacity=".82">
   <animateTransform attributeName="transform" type="translate" additive="sum"
