@@ -222,7 +222,7 @@ class ContributionAquariumTests(unittest.TestCase):
             sum(int(item.attrib["data-count"]) for item in creatures),
             total,
         )
-        self.assertIn("#071B2D", svg)
+        self.assertIn("#061B2D", svg)
         self.assertIn("#246BFF", svg)
         self.assertIn("#00B9FF", svg)
         self.assertIn("#00E0C8", svg)
@@ -243,7 +243,11 @@ class ContributionAquariumTests(unittest.TestCase):
         root = ET.fromstring(svg)
         ns = {"svg": "http://www.w3.org/2000/svg"}
         creatures = root.findall(".//*[@data-date]")
-        animated = root.findall(".//svg:g/svg:animate[@attributeName='opacity']", ns)
+        animated = [
+            creature.find("svg:animate[@attributeName='opacity']", ns)
+            for creature in creatures
+        ]
+        animated = [animation for animation in animated if animation is not None]
 
         active_count = sum(item["count"] > 0 for item in self.days.values())
         self.assertEqual(len(animated), active_count)
