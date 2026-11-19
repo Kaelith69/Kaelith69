@@ -239,6 +239,7 @@ class ContributionAquariumTests(unittest.TestCase):
         self.assertIn("#CE42FF", svg)
         self.assertIn("fish-body", svg)
         self.assertIn("fish-fin", svg)
+        self.assertIn('transform="translate(-14 0) scale(.58)"', svg)
         self.assertIn("animateMotion", svg)
         self.assertNotIn("rocket", svg.lower())
         self.assertNotIn("pacman", svg.lower())
