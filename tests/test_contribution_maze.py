@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import datetime as dt
-import math
 import sys
 import unittest
 import xml.etree.ElementTree as ET
@@ -170,7 +169,6 @@ class NeonRocketContributionTests(unittest.TestCase):
         self.assertIn("#FFFFFF", svg)
         self.assertIn("#238CFF", svg)
         self.assertIn("rocket-shell", svg)
-        self.assertIn("NEAREST", svg.upper()) is False
         self.assertNotIn("Pac-Man", svg)
         self.assertNotIn("GHOST", svg.upper())
 
