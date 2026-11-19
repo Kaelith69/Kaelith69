@@ -21,12 +21,12 @@ OUTPUT = ROOT / "assets" / "contributions-aquarium.svg"
 LOGIN = os.environ.get("GITHUB_PROFILE_LOGIN", "Kaelith69")
 API_URL = os.environ.get("GITHUB_GRAPHQL_URL", "https://api.github.com/graphql")
 
-GRID_X = 70
-GRID_Y = 155
-CELL = 12
-PITCH = 19
-ROW_PITCH = 24
-LAUNCH_POINT = (48.0, 365.0)
+GRID_X = 112
+GRID_Y = 190
+CELL = 13
+PITCH = 20
+ROW_PITCH = 25
+LAUNCH_POINT = (58.0, 430.0)
 FISH_SPEED = 105.0
 EAT_DWELL = 0.72
 RESET_FADE = 0.72
@@ -54,11 +54,11 @@ query ContributionCalendar($login: String!, $from: DateTime!, $to: DateTime!) {
 """
 
 LEVEL_COLORS = {
-    "NONE": ("#171D3C", "#46548A", "midnight plankton"),
-    "FIRST_QUARTILE": ("#275BFF", "#A8C4FF", "electric reef fish"),
-    "SECOND_QUARTILE": ("#00D7FF", "#A8F5FF", "cyan reef shrimp"),
-    "THIRD_QUARTILE": ("#8C4DFF", "#D5BCFF", "ultraviolet jellyfish"),
-    "FOURTH_QUARTILE": ("#FF3BC8", "#FFC4F2", "magenta glow star"),
+    "NONE": ("#08132B", "#1E3A5F", "abyss"),
+    "FIRST_QUARTILE": ("#1D4ED8", "#93C5FD", "electric blue"),
+    "SECOND_QUARTILE": ("#00BBF9", "#E0FBF7", "bioluminescent cyan"),
+    "THIRD_QUARTILE": ("#7B2CBF", "#DCCBFF", "ultraviolet"),
+    "FOURTH_QUARTILE": ("#FF2A85", "#FFE5F1", "neon magenta"),
 }
 
 
@@ -459,14 +459,14 @@ def render_svg(
 
     pieces: list[str] = []
     pieces.append(
-        f'''<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="590"
- viewBox="0 0 1120 590" role="img" aria-labelledby="tank-title tank-desc">
+        f'''<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650"
+ viewBox="0 0 1200 650" role="img" aria-labelledby="tank-title tank-desc">
 <title id="tank-title">{html.escape(LOGIN)} contribution reef</title>
 <desc id="tank-desc">{total:,} GitHub contributions from {start.isoformat()} to {end.isoformat()}. A white reef fish follows a rounded, eased route to each active contribution organism. A color shifting octopus rests on the sandy seabed beneath a living reef with drifting plankton, jellyfish, kelp and underwater light.</desc>
 <defs>
-  <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
-    <stop stop-color="#030411"/><stop offset=".28" stop-color="#080B20"/>
-    <stop offset=".65" stop-color="#0D0B2C"/><stop offset="1" stop-color="#050611"/>
+  <linearGradient id="water" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#030712"/><stop offset="45%" stop-color="#07132E"/>
+    <stop offset="100%" stop-color="#0D1F46"/>
   </linearGradient>
   <radialGradient id="water-light" cx="48%" cy="28%" r="78%">
     <stop stop-color="#263BFF" stop-opacity=".24"/>
@@ -562,20 +562,20 @@ def render_svg(
     <feGaussianBlur stdDeviation="4" result="blur"/>
     <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
   </filter>
-  <clipPath id="tank-clip"><rect x="1" y="1" width="1118" height="588" rx="22"/></clipPath>
+  <clipPath id="tank-clip"><rect x="1" y="1" width="1198" height="648" rx="20"/></clipPath>
 </defs>
 
 <g clip-path="url(#tank-clip)">
-  <rect width="1120" height="590" fill="url(#water)"/>
-  <rect width="1120" height="590" fill="url(#water-light)"/>
+  <rect width="1200" height="650" fill="url(#water)"/>
+  <rect width="1200" height="650" fill="url(#water-light)"/>
 
   <!-- Angular comic panels and restrained halftone shadows. -->
   <path d="M0 110 L176 110 L286 430 L150 430Z" fill="#263BFF" opacity=".045"/>
-  <path d="M1120 106 L1018 106 L926 423 L1040 423Z" fill="#FF3BC8" opacity=".035"/>
+  <path d="M1200 106 L1098 106 L1006 423 L1120 423Z" fill="#FF3BC8" opacity=".035"/>
   <path d="M0 340 L108 340 L140 470 L0 470Z" fill="url(#halftone-violet)" opacity=".22"/>
-  <path d="M1120 336 L1010 336 L978 470 L1120 470Z" fill="url(#halftone-cyan)" opacity=".16"/>
+  <path d="M1200 336 L1090 336 L1058 470 L1200 470Z" fill="url(#halftone-cyan)" opacity=".16"/>
   <path d="M0 105 L160 105 L198 220 L0 220Z" fill="url(#halftone-ink)" opacity=".1"/>
-  <path d="M1120 105 L1028 105 L992 218 L1120 218Z" fill="url(#halftone-ink)" opacity=".09"/>
+  <path d="M1200 105 L1108 105 L1072 218 L1200 218Z" fill="url(#halftone-ink)" opacity=".09"/>
 
   <!-- Comic-book panel header with an offset magenta print shadow. -->
   <path d="M35 20 L311 20 L295 68 L35 68Z" fill="#FF3BC8" opacity=".78"/>
@@ -590,9 +590,9 @@ def render_svg(
   <!-- Slow surface glow and moving shafts of water light. -->
   <path d="M0 84 Q170 66 340 80 T680 78 T1120 79 L1120 105 Q920 96 740 100 T360 99 T0 102Z"
         fill="url(#surface-light)" opacity=".64"/>
-  <path d="M18 88 Q200 71 380 85 T760 83 T1100 86"
+  <path d="M18 88 Q200 71 380 85 T760 83 T1180 86"
         fill="none" stroke="#00E5FF" stroke-opacity=".48" stroke-width="1.2"/>
-  <path d="M18 94 Q200 77 380 91 T760 89 T1100 92"
+  <path d="M18 94 Q200 77 380 91 T760 89 T1180 92"
         fill="none" stroke="#A78BFF" stroke-opacity=".18" stroke-width=".9"/>
   <g opacity=".18">
     <path d="M125 84 L205 84 L295 405 L245 405Z" fill="#00E5FF" opacity=".16">
@@ -642,33 +642,45 @@ def render_svg(
   <!-- Soft plankton field. Particles move independently at different depths. -->
   <g fill="#9AEFFF">
     <circle cx="64" cy="119" r="1.3" opacity=".42"><animate attributeName="cy" values="119;111;119" dur="7s" repeatCount="indefinite"/></circle>
-    <circle cx="1035" cy="119" r="1.5" opacity=".34"><animate attributeName="cy" values="119;106;119" dur="8s" begin="1s" repeatCount="indefinite"/></circle>
+    <circle cx="1115" cy="119" r="1.5" opacity=".34"><animate attributeName="cy" values="119;106;119" dur="8s" begin="1s" repeatCount="indefinite"/></circle>
     <circle cx="104" cy="292" r="1.1" opacity=".48"><animate attributeName="cy" values="292;278;292" dur="9s" repeatCount="indefinite"/></circle>
-    <circle cx="1000" cy="294" r="1.4" opacity=".38"><animate attributeName="cy" values="294;280;294" dur="8.5s" begin="2s" repeatCount="indefinite"/></circle>
+    <circle cx="1080" cy="294" r="1.4" opacity=".38"><animate attributeName="cy" values="294;280;294" dur="8.5s" begin="2s" repeatCount="indefinite"/></circle>
     <circle cx="333" cy="309" r=".9" opacity=".35"><animate attributeName="cy" values="309;299;309" dur="7.5s" begin="1.6s" repeatCount="indefinite"/></circle>
     <circle cx="755" cy="307" r="1" opacity=".38"><animate attributeName="cy" values="307;295;307" dur="8.2s" begin=".8s" repeatCount="indefinite"/></circle>
   </g>
 
   <!-- Halftone-backed data badge and comic impact rays. -->
-  <path d="M1004 17 L1088 17 L1088 62 L1004 62Z"
+  <path d="M1104 17 L1188 17 L1188 62 L1104 62Z"
         fill="url(#halftone-cyan)" opacity=".25"/>
-  <path d="M1043 19 L1052 7 L1061 18 L1074 13 L1073 28 L1085 35
-           L1071 42 L1075 55 L1060 51 L1053 63 L1045 52 L1031 57
-           L1034 43 L1020 36 L1033 28 L1029 15Z"
+  <path d="M1143 19 L1152 7 L1161 18 L1174 13 L1173 28 L1185 35
+           L1171 42 L1175 55 L1160 51 L1153 63 L1145 52 L1131 57
+           L1134 43 L1120 36 L1133 28 L1129 15Z"
         fill="#263BFF" opacity=".3" stroke="#030411" stroke-width="2.5"
         stroke-linejoin="miter"/>
 
+  <!-- Angular comic panel behind the live contribution matrix. -->
+  <path d="M74 177 L1173 177 L1181 370 L68 370Z"
+        fill="#030712" fill-opacity=".36" stroke="#030411" stroke-width="4"
+        stroke-linejoin="bevel"/>
+  <path d="M79 181 L1168 181 L1174 365 L74 365Z"
+        fill="url(#halftone-ink)" opacity=".2"/>
+  <path d="M78 182 L1168 182" fill="none" stroke="#FF2A85"
+        stroke-width="1.35" stroke-opacity=".72"/>
+  <path d="M75 371 L1179 371" fill="none" stroke="#00F5D4"
+        stroke-width="1.8" stroke-opacity=".42"/>
+  <path d="M75 182 L84 182 L75 194 M1168 182 L1177 182 L1177 194"
+        fill="none" stroke="#00F5D4" stroke-width="1.5"/>
   <!-- Header keeps its comic-book display lettering. -->
   <text x="39" y="52" font-family="Bangers, Impact, 'Arial Black', sans-serif"
         font-size="29" letter-spacing="1.7" fill="#EAF8F3">CONTRIBUTIONS</text>
   <text x="40" y="68" font-family="Trebuchet MS, Arial, sans-serif"
         font-size="8" font-weight="700" letter-spacing="1.8"
         fill="#8F91D8">A YEAR OF BUILDING BELOW THE SURFACE</text>
-  <text x="1080" y="51" text-anchor="end"
+  <text x="1155" y="51" text-anchor="end"
         font-family="Bangers, Impact, 'Arial Black', sans-serif"
         font-size="37" letter-spacing="1.1" fill="#00E5FF"
         filter="url(#soft-glow)">{total:,}</text>
-  <text x="1080" y="65" text-anchor="end"
+  <text x="1155" y="65" text-anchor="end"
         font-family="Trebuchet MS, Arial, sans-serif"
         font-size="8.5" letter-spacing="1.7" fill="#FF69D4">365 DAY REEF</text>
 
@@ -689,11 +701,11 @@ def render_svg(
         month_positions.insert(0, (0, start.strftime("%b").upper()))
 
     for column, label in month_positions:
-        pieces.append(f'<text x="{GRID_X + column * PITCH}" y="136">{label}</text>')
+        pieces.append(f'<text x="{GRID_X + column * PITCH}" y="165">{label}</text>')
 
     for row, label in enumerate(("S", "M", "T", "W", "T", "F", "S")):
         pieces.append(
-            f'<text x="48" y="{GRID_Y + row * ROW_PITCH + 8}" text-anchor="middle">{label}</text>'
+            f'<text x="78" y="{GRID_Y + row * ROW_PITCH + 8}" text-anchor="middle">{label}</text>'
         )
     pieces.append("</g>")
 
@@ -725,45 +737,39 @@ def render_svg(
             glow = 'filter="url(#food-glow)"' if count else ""
             if level == "NONE":
                 artwork = f'''
- <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="{fill}" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
- <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="{fill}" opacity=".75"/>
- <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>'''
+ <rect x="-5.5" y="-4.5" width="11" height="9" rx="2.5"
+       fill="{fill}" stroke="{stroke}" stroke-width="1.05"/>
+ <path d="M-3.8 -2.8 H3.5" fill="none" stroke="#5676A8"
+       stroke-opacity=".36" stroke-width=".65" stroke-linecap="round"/>'''
             elif level == "FIRST_QUARTILE":
                 artwork = f'''
- <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
-       fill="{stroke}" stroke="{stroke}" stroke-width=".4"/>
- <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="{fill}" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
- <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
-       stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
- <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
- <circle cx="2.9" cy="-.78" r=".17" fill="#FFFFFF"/>'''
+ <path d="M-6 -5 H4.2 L6 -3.2 V5 H-6Z"
+       fill="{fill}" stroke="#030712" stroke-width="1.8" stroke-linejoin="bevel"/>
+ <path d="M-3.7 -2.6 H2.8" stroke="#93C5FD" stroke-width="1.25"
+       stroke-linecap="round"/>
+ <path d="M-5 3.6 L-1 3.6" stroke="#030712" stroke-opacity=".38" stroke-width=".8"/>'''
             elif level == "SECOND_QUARTILE":
                 artwork = f'''
- <path d="M-4.4 -.2 Q-2.2 -3 1.1 -2.4 Q4 -1.4 3.2 .9
-       Q1.3 3.1 -2.2 1.5Z" fill="{fill}" stroke="{stroke}" stroke-width=".65"/>
- <ellipse cx="-.2" cy="0" rx="3.2" ry="2" fill="{fill}" opacity=".6"/>
- <path d="M-2 -1.1 Q-4 -3.2 -5 -3.4 M1 -1.5 Q3 -3.4 4 -3.4
-       M-3 1 Q-4.5 2.8 -5 3.2" fill="none" stroke="{stroke}" stroke-width=".55"/>
- <circle cx="2.4" cy="-.65" r=".38" fill="#09232C"/>'''
+ <path d="M-6.5 -5.5 H4.4 L6.5 -3.5 V5.5 H-6.5Z"
+       fill="{fill}" stroke="#030712" stroke-width="1.8" stroke-linejoin="bevel"/>
+ <path d="M-4 -3 H3.7" stroke="#E0FBF7" stroke-width="1.45"
+       stroke-linecap="round"/>
+ <path d="M-4 3.6 H1.5" stroke="#FFFFFF" stroke-opacity=".46" stroke-width=".7"/>'''
             elif level == "THIRD_QUARTILE":
                 artwork = f'''
- <path d="M-4.1 0 C-4.3 -3.1 -1.5 -4.2 1 -3.6
-       C3.7 -3.1 4.3 -.9 3.5 .3Z"
-       fill="{fill}" stroke="#030411" stroke-width="1.3" stroke-linejoin="round"/>
- <ellipse cx="-.2" cy="-.8" rx="3.2" ry="2.5" fill="{fill}" opacity=".35"/>
- <path d="M-3.1 .5 Q-4.3 2 -3 3.7 M-.8 .8 Q-1.7 2.6 -.4 4
-       M1.2 .5 Q2.2 2.5 2 3.8 M3 .3 Q4.2 2.2 4.4 3.3"
-       fill="none" stroke="#030411" stroke-width="1.45" stroke-linecap="round"/>'''
+ <path d="M-6.5 -5.5 H3.7 L6.5 -2.7 V5.5 H-6.5Z"
+       fill="{fill}" stroke="#030712" stroke-width="1.8" stroke-linejoin="bevel"/>
+ <path d="M-3.8 -2.9 H2.9" stroke="#F8E8FF" stroke-width="1.4"
+       stroke-linecap="round"/>
+ <path d="M-4.5 3.7 L-1.5 3.7" stroke="#030712" stroke-opacity=".38" stroke-width=".8"/>'''
             else:
                 artwork = f'''
- <path d="M0 -4.6 C1.1 -2.5 3.7 -2.8 4.4 -1.2
-       C2.6 -.1 3.8 2.3 2.1 3.6 C.8 2.1 -1.3 4.1 -2.4 2.5
-       C-1.7 .6 -4.1 -.1 -4.2 -1.8 C-2.1 -1.7 -1.5 -4.1 0 -4.6Z"
-       fill="{fill}" stroke="#030411" stroke-width="1.35" stroke-linejoin="miter"/>
- <ellipse cx="-.1" cy="-.1" rx="1.3" ry="1.3" fill="#FFF4D7"/>
- <circle cx="0" cy="-.1" r=".55" fill="#A86A42"/>'''
+ <path d="M-7 -4.5 L-3 -6 H4.8 L7 -3.5 V4.4 L3 6 H-4.8 L-7 3Z"
+       fill="{fill}" stroke="#030712" stroke-width="2" stroke-linejoin="miter"/>
+ <path d="M-4.2 -3.2 H3.2" stroke="#FFE5F1" stroke-width="1.5"
+       stroke-linecap="round"/>
+ <path d="M-4 3.7 H1.8" stroke="#FFBE0B" stroke-opacity=".9" stroke-width=".9"
+       stroke-linecap="round"/>'''
 
             pieces.append(
                 f'''<g transform="translate({x:.2f} {y:.2f})"
@@ -867,53 +873,117 @@ def render_svg(
   </g>
 </g>
 
-<!-- The foreground seabed is layered behind the octopus and coral. -->
-<path d="M0 470 C125 448 225 469 344 462 C466 453 570 478 702 462
- C850 451 970 472 1120 458 L1120 590 L0 590Z"
-      fill="url(#sand)" opacity=".96"/>
-<path d="M0 470 C125 448 225 469 344 462 C466 453 570 478 702 462
- C850 451 970 472 1120 458"
-      fill="none" stroke="#8B5CFF" stroke-opacity=".5" stroke-width="1.4"/>
-<g fill="#6757FF" opacity=".32">
-  <ellipse cx="105" cy="492" rx="17" ry="3"/>
-  <ellipse cx="278" cy="499" rx="24" ry="3"/>
-  <ellipse cx="810" cy="495" rx="19" ry="3"/>
-  <ellipse cx="1020" cy="489" rx="26" ry="3"/>
-</g>
-<g fill="#A69BFF" opacity=".5">
-  <circle cx="145" cy="484" r="1.1"/><circle cx="169" cy="499" r=".8"/>
-  <circle cx="313" cy="485" r="1.2"/><circle cx="751" cy="495" r="1"/>
-  <circle cx="1045" cy="505" r="1.3"/><circle cx="1080" cy="487" r=".8"/>
+<!-- Comic reef ridge and deep foreground shelf. -->
+<path d="M8 486 Q290 467 600 486 T1192 482 L1192 650 L8 650Z"
+      fill="#091633" stroke="#030712" stroke-width="4.2" stroke-linejoin="bevel"/>
+<path d="M8 486 Q290 467 600 486 T1192 482"
+      fill="none" stroke="#00F5D4" stroke-width="2.2" opacity=".62"/>
+<path d="M8 493 Q290 476 600 493 T1192 489"
+      fill="none" stroke="#FF2A85" stroke-width="1.2" opacity=".4"/>
+
+<!-- Left faceted boulder, with comic bevel and crosshatch shadows. -->
+<g id="left-rock">
+  <path d="M8 492 L78 472 L168 485 L238 538 L258 610 L8 610Z"
+        fill="url(#rockLit)" stroke="#030712" stroke-width="4.2" stroke-linejoin="bevel"/>
+  <path d="M8 492 L78 472 L168 485 L138 518 L52 510Z"
+        fill="#254685" stroke="#030712" stroke-width="2.1" opacity=".8"/>
+  <path d="M168 485 L238 538 L258 610 L155 610 L138 518Z"
+        fill="url(#rockShade)"/>
+  <path d="M168 485 L238 538 L258 610 L155 610 L138 518Z"
+        fill="url(#halftone-ink)" opacity=".76"/>
+  <path d="M12 492 L78 472 L166 485" fill="none"
+        stroke="#00F5D4" stroke-width="2.2" opacity=".8"/>
+  <path d="M22 526 L114 546 M35 548 L128 570"
+        fill="none" stroke="#8B5CFF" stroke-width="1.2" opacity=".5"/>
 </g>
 
-<!-- Neon coral gardens and kelp frame the foreground shelf. -->
+<!-- Right faceted boulder, lit by the magenta side of the reef. -->
+<g id="right-rock">
+  <path d="M1192 492 L1122 472 L1032 485 L962 538 L942 610 L1192 610Z"
+        fill="url(#rockLit)" stroke="#030712" stroke-width="4.2" stroke-linejoin="bevel"/>
+  <path d="M1192 492 L1122 472 L1032 485 L1062 518 L1148 510Z"
+        fill="#254685" stroke="#030712" stroke-width="2.1" opacity=".8"/>
+  <path d="M1032 485 L962 538 L942 610 L1045 610 L1062 518Z"
+        fill="url(#rockShade)"/>
+  <path d="M1032 485 L962 538 L942 610 L1045 610 L1062 518Z"
+        fill="url(#halftone-ink)" opacity=".76"/>
+  <path d="M1188 492 L1122 472 L1034 485" fill="none"
+        stroke="#FF2A85" stroke-width="2.2" opacity=".88"/>
+  <path d="M1090 548 L1000 570 M1078 526 L984 548"
+        fill="none" stroke="#8B5CFF" stroke-width="1.2" opacity=".5"/>
+</g>
+
+<!-- Left reef cluster: ribbon kelp, branching staghorn coral and tube anemones. -->
+<g transform="translate(42 495)">
+  <path d="M0 0 C-9 -42 -6 -88 3 -125 C11 -88 12 -42 6 0Z"
+        fill="#00F5D4" stroke="#030712" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M2 -14 C-2 -48 0 -80 3 -112"
+        fill="none" stroke="#030712" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M28 8 L28 -30 L11 -54 L17 -58 L32 -38 L36 -68 L44 -68
+           L40 -34 L58 -52 L63 -47 L41 -22 L41 8Z"
+        fill="#FF2A85" stroke="#030712" stroke-width="3"
+        stroke-linejoin="bevel" filter="url(#soft-glow)"/>
+  <path d="M28 -30 L32 -38 L36 -68 M40 -34 L58 -52"
+        fill="none" stroke="#FFE5F1" stroke-width="1.3" opacity=".75"/>
+  <g stroke="#030712" stroke-width="2.5" stroke-linejoin="round">
+    <path d="M80 16 L82 -20 Q83 -31 91 -31 Q99 -30 98 -20 L100 16Z"
+          fill="#7B2CBF"/>
+    <path d="M84 -25 Q73 -37 77 -46 M90 -28 Q88 -43 94 -51 M96 -25 Q106 -38 105 -46"
+          fill="none" stroke="#00F5D4" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M108 22 L110 -11 Q111 -21 117 -21 Q124 -20 124 -11 L126 22Z"
+          fill="#1D4ED8"/>
+    <path d="M112 -17 Q104 -29 108 -36 M118 -20 Q120 -34 125 -40"
+          fill="none" stroke="#FFBE0B" stroke-width="2" stroke-linecap="round"/>
+  </g>
+</g>
+
+<!-- Right reef cluster mirrors the left, but keeps a different silhouette. -->
+<g transform="translate(1156 495)">
+  <path d="M0 0 C9 -42 6 -88 -3 -125 C-11 -88 -12 -42 -6 0Z"
+        fill="#00F5D4" stroke="#030712" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M-2 -14 C2 -48 0 -80 -3 -112"
+        fill="none" stroke="#030712" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M-28 8 L-28 -30 L-11 -54 L-17 -58 L-32 -38 L-36 -68 L-44 -68
+           L-40 -34 L-58 -52 L-63 -47 L-41 -22 L-41 8Z"
+        fill="#FF2A85" stroke="#030712" stroke-width="3"
+        stroke-linejoin="bevel" filter="url(#soft-glow)"/>
+  <path d="M-28 -30 L-32 -38 L-36 -68 M-40 -34 L-58 -52"
+        fill="none" stroke="#FFE5F1" stroke-width="1.3" opacity=".75"/>
+  <g stroke="#030712" stroke-width="2.5" stroke-linejoin="round">
+    <path d="M-82 16 L-84 -20 Q-85 -31 -93 -31 Q-101 -30 -100 -20 L-102 16Z"
+          fill="#7B2CBF"/>
+    <path d="M-86 -25 Q-75 -37 -79 -46 M-92 -28 Q-90 -43 -96 -51 M-98 -25 Q-108 -38 -107 -46"
+          fill="none" stroke="#00F5D4" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M-108 22 L-110 -11 Q-111 -21 -117 -21 Q-124 -20 -124 -11 L-126 22Z"
+          fill="#1D4ED8"/>
+    <path d="M-112 -17 Q-104 -29 -108 -36 M-118 -20 Q-120 -34 -125 -40"
+          fill="none" stroke="#FFBE0B" stroke-width="2" stroke-linecap="round"/>
+  </g>
+</g>
+
+<!-- Small comic coral fans break up the long seabed line. -->
 <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <g stroke="#00E5FF" stroke-width="3.4" opacity=".82">
-    <path d="M25 470 C31 444 17 424 28 384 C41 421 32 447 40 470">
-      <animate attributeName="d" values="M25 470 C31 444 17 424 28 384 C41 421 32 447 40 470;M25 470 C36 444 25 421 35 384 C44 422 29 448 40 470;M25 470 C31 444 17 424 28 384 C41 421 32 447 40 470" dur="9s" repeatCount="indefinite"/>
-    </path>
-    <path d="M1085 470 C1077 443 1098 421 1088 384 C1074 419 1082 448 1072 470">
-      <animate attributeName="d" values="M1085 470 C1077 443 1098 421 1088 384 C1074 419 1082 448 1072 470;M1085 470 C1073 443 1089 419 1080 384 C1069 420 1088 449 1072 470;M1085 470 C1077 443 1098 421 1088 384 C1074 419 1082 448 1072 470" dur="10s" repeatCount="indefinite"/>
-    </path>
+  <g stroke="#FFBE0B" stroke-width="2.4" opacity=".86">
+    <path d="M286 490 Q276 467 282 449 M282 467 Q263 455 260 441 M282 471 Q300 454 306 438"/>
+    <path d="M914 490 Q924 467 918 449 M918 467 Q937 455 940 441 M918 471 Q900 454 894 438"/>
   </g>
-  <g stroke="#FF3BC8" stroke-width="2.6" opacity=".88">
-    <path d="M112 470 Q104 450 113 428 M113 452 Q94 438 98 420 M113 460 Q132 442 136 423 M110 445 Q108 430 119 416"/>
-    <path d="M1007 470 Q1017 450 1008 428 M1008 452 Q1027 438 1023 420 M1008 460 Q989 442 985 423"/>
+  <g stroke="#8B5CFF" stroke-width="2.2" opacity=".9">
+    <path d="M318 490 Q313 469 324 454 M324 470 Q340 456 342 444 M324 476 Q307 463 302 450"/>
+    <path d="M882 490 Q887 469 876 454 M876 470 Q860 456 858 444 M876 476 Q893 463 898 450"/>
   </g>
-  <g stroke="#8B5CFF" stroke-width="2.4" opacity=".95">
-    <path d="M72 470 Q73 451 62 437 M72 455 Q87 444 87 429 M72 461 Q58 454 54 443"/>
-    <path d="M1047 470 Q1046 450 1058 435 M1047 455 Q1033 444 1032 429"/>
-  </g>
-</g>
-<g fill="#171638" stroke="#5143A4" stroke-opacity=".78" stroke-width="1">
-  <path d="M0 470 Q30 448 62 455 Q89 444 116 470 L140 590H0Z"/>
-  <path d="M1120 464 Q1090 446 1060 456 Q1036 444 1005 469 L980 590H1120Z"/>
-</g>
-<g fill="none" stroke="#FF3BC8" stroke-width="1.35" stroke-linecap="round" opacity=".82">
-  <path d="M126 470 Q124 455 134 448 Q146 442 144 429 M134 448 Q119 442 117 430 M134 448 Q151 444 158 434"/>
-  <path d="M994 469 Q996 452 985 446 Q974 439 976 427 M985 446 Q999 440 1003 429 M985 446 Q969 440 963 432"/>
 </g>
 
+<!-- Layered sand shelf with a hard comic ink edge. -->
+<path d="M8 594 Q320 578 600 592 T1192 588 L1192 650 L8 650Z"
+      fill="#060D20" stroke="#030712" stroke-width="4" stroke-linejoin="bevel"/>
+<path d="M8 594 Q320 578 600 592 T1192 588"
+      fill="none" stroke="#00F5D4" stroke-width="1.7" opacity=".58"/>
+<path d="M48 615 Q150 604 236 614 M950 614 Q1048 604 1148 615"
+      fill="none" stroke="#7B2CBF" stroke-width="1.3" opacity=".62"/>
+<g fill="#FFBE0B" opacity=".52">
+  <ellipse cx="169" cy="611" rx="16" ry="2.5"/>
+  <ellipse cx="1033" cy="610" rx="21" ry="2.5"/>
+</g>
 <!-- A drifting jellyfish in the lower water column. -->
 <g id="reef-jellyfish" transform="translate(190 410)" opacity=".82">
   <animateTransform attributeName="transform" type="translate" additive="sum"
@@ -927,150 +997,221 @@ def render_svg(
     <path d="M5 4 Q10 13 7 22"><animate attributeName="d" values="M5 4 Q10 13 7 22;M5 4 Q1 13 7 22;M5 4 Q10 13 7 22" dur="3.4s" repeatCount="indefinite"/></path>
   </g>
 </g>
+'''
+    )
 
-<!-- Eight relaxed arms, soft suckers, and a color-shifting mantle. -->
-<g id="resting-octopus" transform="translate(560 482)">
-  <ellipse cx="0" cy="31" rx="154" ry="8" fill="#030411" opacity=".68"/>
-  <!-- Eight-point impact burst behind the resting octopus. -->
-  <path d="M0 -128 L18 -62 L66 -105 L57 -48 L126 -53 L75 -10
-           L135 21 L65 32 L91 101 L29 56 L0 126 L-27 57
-           L-93 97 L-62 30 L-132 13 L-73 -20 L-124 -67
-           L-53 -53 L-68 -112 L-15 -64Z"
-        fill="#8B5CFF" fill-opacity=".17" stroke="#030411" stroke-width="4"
-        stroke-linejoin="miter"/>
-  <path d="M0 -119 L13 -63 L60 -96 L52 -44 L115 -47 L68 -8
-           L122 19 L59 26 L80 91 L25 49 L0 112 L-23 48
-           L-81 88 L-52 24 L-119 11 L-66 -18 L-111 -62
-           L-46 -49 L-59 -101 L-12 -58Z"
-        fill="none" stroke="#FF3BC8" stroke-width="2.2" opacity=".72"
-        stroke-linejoin="miter"/>
+    pieces.append(
+        '''<g id="resting-octopus" transform="translate(600 514)">
+  <!-- Broad contact shadow anchors the animal to the sand. -->
+  <ellipse cx="0" cy="116" rx="183" ry="13"
+           fill="#030712" opacity=".82"/>
+  <ellipse cx="0" cy="117" rx="136" ry="5"
+           fill="#8B5CFF" opacity=".16"/>
+
+  <!-- Quiet comic impact contour behind the mantle, not a cartoon sunburst. -->
+  <path d="M-8 -151 L12 -126 L46 -144 L42 -110 L78 -98
+           L52 -73 L75 -45 L37 -40 L27 -5 L0 -28
+           L-32 -5 L-38 -42 L-77 -53 L-51 -82 L-76 -111
+           L-39 -115Z"
+        fill="#7B2CBF" opacity=".16" stroke="#030712"
+        stroke-width="4" stroke-linejoin="bevel"/>
+  <path d="M-5 -140 L12 -118 L42 -132 L36 -105 L63 -92
+           L43 -72 L62 -49 L31 -43"
+        fill="none" stroke="#FF2A85" stroke-width="2"
+        stroke-linejoin="bevel" opacity=".72"/>
 '''
     )
 
     octopus_arms = [
-        # Four left and four right arms. Each is a filled, tapered ribbon rather
-        # than a constant width line, with an individually curved silhouette.
-        ("-12 3", "M0 -7 C-17 -19 -38 -20 -59 -12 C-82 -4 -108 8 -137 16 Q-149 20 -160 14 C-151 32 -137 32 -121 25 C-99 16 -81 4 -60 -1 C-38 -7 -17 2 0 7 Q-6 1 0 -7Z", "-22 -12 -42 -12 -62 -8 -82 0 -102 8 -122 14 -140 17", "-1.5 0 0;1.5 0 0;-1.5 0 0", "9.1s", "0s"),
-        ("-17 9", "M0 -6 C-21 -14 -43 -9 -65 4 C-88 17 -110 30 -139 32 Q-151 34 -161 25 C-153 45 -137 46 -120 42 C-97 37 -78 25 -56 13 C-35 2 -16 1 0 7Z", "-22 0 -43 4 -64 13 -84 22 -104 28 -126 33 -146 36", "1.2 0 0;-1.2 0 0;1.2 0 0", "9.8s", ".6s"),
-        ("-14 17", "M0 -5 C-17 -1 -34 15 -49 36 C-65 58 -91 70 -119 73 Q-132 74 -142 65 C-136 87 -119 87 -102 81 C-77 72 -57 59 -39 39 C-23 20 -10 9 0 7Z", "-14 10 -30 26 -47 43 -64 58 -83 68 -104 75 -124 78", "-1.1 0 0;1.4 0 0;-1.1 0 0", "10.4s", "1.2s"),
-        ("-4 22", "M0 -6 C-8 5 -14 17 -17 32 C-20 47 -38 62 -60 70 Q-70 73 -79 66 C-75 84 -60 85 -47 78 C-28 67 -13 54 -7 38 C0 22 6 7 7 4Z", "-5 12 -14 32 -24 52 -35 72 -51 89 -70 102 -84 106", "1.3 0 0;-1.1 0 0;1.3 0 0", "9.6s", "1.7s"),
-        ("12 3", "M0 -7 C17 -19 38 -20 59 -12 C82 -4 108 8 137 16 Q149 20 160 14 C151 32 137 32 121 25 C99 16 81 4 60 -1 C38 -7 17 2 0 7 Q6 1 0 -7Z", "22 -12 42 -12 62 -8 82 0 102 8 122 14 140 17", "1.4 0 0;-1.4 0 0;1.4 0 0", "9.3s", ".3s"),
-        ("17 9", "M0 -6 C21 -14 43 -9 65 4 C88 17 110 30 139 32 Q151 34 161 25 C153 45 137 46 120 42 C97 37 78 25 56 13 C35 2 16 1 0 7Z", "22 0 43 4 64 13 84 22 104 28 126 33 146 36", "-1.1 0 0;1.3 0 0;-1.1 0 0", "10.1s", "1s"),
-        ("14 17", "M0 -5 C17 -1 34 15 49 36 C65 58 91 70 119 73 Q132 74 142 65 C136 87 119 87 102 81 C77 72 57 59 39 39 C23 20 10 9 0 7Z", "14 10 30 26 47 43 64 58 83 68 104 75 124 78", "1.2 0 0;-1.5 0 0;1.2 0 0", "10.6s", "1.5s"),
-        ("4 22", "M0 -6 C8 5 14 17 17 32 C20 47 38 62 60 70 Q70 73 79 66 C75 84 60 85 47 78 C28 67 13 54 7 38 C0 22 -6 7 -7 4Z", "5 12 14 32 24 52 35 72 51 89 70 102 84 106", "-1.2 0 0;1.1 0 0;-1.2 0 0", "9.9s", ".8s"),
+        # Four arms fan out on each side. Broad shoulders taper toward curled tips.
+        (-13, 23, 155, 1.02,
+         "M0 -8 C22 -20 45 -18 68 -8 C95 3 120 17 148 25 C160 29 171 23 173 13 C184 23 178 39 163 45 C146 52 128 42 105 31 C81 18 56 5 34 4 C18 3 8 8 0 8 Q-6 0 0 -8Z",
+         [(20, 2), (36, 3), (52, 5), (68, 8), (84, 12), (100, 17), (116, 22), (132, 27)],
+         "9.1s", "0s"),
+        (-18, 28, 187, 1.00,
+         "M0 -7 C20 -17 42 -12 61 0 C85 14 107 30 132 36 C147 40 158 31 154 20 C169 31 164 48 148 54 C130 60 111 46 92 34 C70 20 45 8 22 10 L0 8Z",
+         [(19, 2), (35, 5), (51, 9), (67, 14), (83, 20), (99, 26), (115, 32)],
+         "10.1s", ".7s"),
+        (-14, 34, 218, .94,
+         "M0 -8 C17 -16 35 -8 50 7 C68 26 84 47 107 53 C121 57 133 47 126 35 C142 44 142 62 127 71 C109 80 91 64 75 47 C57 27 39 12 20 10 L0 8Z",
+         [(18, 3), (33, 7), (48, 13), (63, 21), (78, 30), (93, 39), (108, 48)],
+         "10.4s", "1.4s"),
+        (-7, 39, 246, .88,
+         "M0 -8 C15 -16 29 -6 41 10 C54 27 65 48 82 55 C96 60 106 49 98 38 C114 42 119 60 106 71 C89 81 72 66 59 48 C43 27 29 11 14 10 L0 8Z",
+         [(15, 3), (29, 8), (43, 15), (57, 24), (70, 34), (83, 44), (96, 55)],
+         "9.6s", "2.0s"),
+        (13, 23, 25, 1.00,
+         "M0 -8 C22 -20 45 -18 68 -8 C95 3 120 17 148 25 C160 29 171 23 173 13 C184 23 178 39 163 45 C146 52 128 42 105 31 C81 18 56 5 34 4 C18 3 8 8 0 8 Q-6 0 0 -8Z",
+         [(20, 2), (36, 3), (52, 5), (68, 8), (84, 12), (100, 17), (116, 22), (132, 27)],
+         "9.4s", ".3s"),
+        (18, 28, -8, 1.03,
+         "M0 -7 C20 -17 42 -12 61 0 C85 14 107 30 132 36 C147 40 158 31 154 20 C169 31 164 48 148 54 C130 60 111 46 92 34 C70 20 45 8 22 10 L0 8Z",
+         [(19, 2), (35, 5), (51, 9), (67, 14), (83, 20), (99, 26), (115, 32)],
+         "10.3s", "1.0s"),
+        (14, 34, -38, .96,
+         "M0 -8 C17 -16 35 -8 50 7 C68 26 84 47 107 53 C121 57 133 47 126 35 C142 44 142 62 127 71 C109 80 91 64 75 47 C57 27 39 12 20 10 L0 8Z",
+         [(18, 3), (33, 7), (48, 13), (63, 21), (78, 30), (93, 39), (108, 48)],
+         "10.7s", "1.7s"),
+        (7, 39, -66, .90,
+         "M0 -8 C15 -16 29 -6 41 10 C54 27 65 48 82 55 C96 60 106 49 98 38 C114 42 119 60 106 71 C89 81 72 66 59 48 C43 27 29 11 14 10 L0 8Z",
+         [(15, 3), (29, 8), (43, 15), (57, 24), (70, 34), (83, 44), (96, 55)],
+         "9.8s", ".9s"),
     ]
-    for arm_index, (translate, arm_path, sucker_coords, rotation, duration, begin) in enumerate(octopus_arms):
+
+    for arm_index, (x, y, angle, scale, arm_path, cups, duration, begin) in enumerate(octopus_arms):
         pieces.append(
-            f'''  <g transform="translate({translate})" data-octopus-arm="true"
-       data-arm-index="{arm_index}">
-    <animateTransform attributeName="transform" type="rotate" additive="sum"
-      values="{rotation}" dur="{duration}" begin="{begin}"
-      calcMode="spline" keySplines=".42 0 .58 1;.42 0 .58 1"
-      repeatCount="indefinite"/>
-    <path d="{arm_path}" fill="#030411" stroke="#02030B"
-      stroke-width="4.2" stroke-linejoin="round"/>
-    <path d="{arm_path}" fill="url(#octopus-arm)"
-      stroke="#FFB5F0" stroke-opacity=".76" stroke-width="1.05"
-      stroke-linejoin="round"/>
-    <path d="{arm_path}" fill="none" stroke="url(#octopus-highlight)"
-      stroke-width="1.7" stroke-linecap="round" opacity=".78"/>
+            f'''  <g data-octopus-arm="true" data-arm-index="{arm_index}"
+       transform="translate({x} {y}) rotate({angle}) scale({scale})">
+    <g>
+      <animateTransform attributeName="transform" type="rotate" additive="sum"
+        values="-1.1 0 0;1.1 0 0;-1.1 0 0" dur="{duration}"
+        begin="{begin}" calcMode="spline"
+        keySplines=".42 0 .58 1;.42 0 .58 1" repeatCount="indefinite"/>
+      <path d="{arm_path}" fill="#030712" stroke="#02030B"
+        stroke-width="5.2" stroke-linejoin="round"/>
+      <path d="{arm_path}" fill="url(#octopus-arm)"
+        stroke="#FFB5F0" stroke-opacity=".78" stroke-width="1.1"
+        stroke-linejoin="round"/>
+      <path d="{arm_path}" fill="url(#halftone-violet)" opacity=".24"
+        stroke="none"/>
+      <path d="M8 -3 C29 -13 51 -11 73 -3"
+        fill="none" stroke="url(#octopus-highlight)"
+        stroke-width="2.1" stroke-linecap="round" opacity=".8"/>
 '''
         )
-        coordinates = sucker_coords.split()
-        for index in range(0, len(coordinates), 2):
-            sx, sy = coordinates[index], coordinates[index + 1]
-            pieces.append(
-                f'''    <g data-sucker="true" transform="translate({sx} {sy})">
-      <ellipse rx="3.05" ry="2.3" fill="#08071A"
-        stroke="#FFB5F0" stroke-width=".8"/>
-      <ellipse rx="1.55" ry="1.05" fill="#00E5FF" opacity=".9"/>
-      <circle cx="-.55" cy="-.55" r=".48" fill="#FFFFFF" opacity=".9"/>
-    </g>
+        for cup_x, cup_y in cups:
+            for row_offset, opacity in ((-3.1, ".72"), (0, "1")):
+                pieces.append(
+                    f'''      <g data-sucker="true" transform="translate({cup_x} {cup_y + row_offset})">
+        <ellipse rx="3.0" ry="2.05" fill="#08071A"
+          stroke="#FFBE0B" stroke-width=".62" stroke-opacity=".78"/>
+        <ellipse rx="1.2" ry=".8" fill="#00F5D4" opacity="{opacity}"/>
+        <circle cx="-.55" cy="-.45" r=".42" fill="#FFFFFF" opacity=".92"/>
+      </g>
 '''
-            )
-        pieces.append("  </g>\n")
+                )
+        pieces.append("    </g>\\n  </g>\\n")
 
     pieces.append(
         f'''  <g id="octopus-mantle">
     <animateTransform attributeName="transform" type="scale"
-      values="1 1;1.025 .975;1 1" dur="5.8s" repeatCount="indefinite"/>
-    <path d="M-26 -10 C-50 -24 -48 -60 -28 -82 C-12 -100 16 -99 35 -80
-      C54 -61 50 -25 26 -9 C11 2 -12 4 -26 -10Z"
-      fill="none" stroke="#030411" stroke-width="5.2" stroke-linejoin="miter"/>
-    <path d="M-26 -10 C-50 -24 -48 -60 -28 -82 C-12 -100 16 -99 35 -80
-      C54 -61 50 -25 26 -9 C11 2 -12 4 -26 -10Z"
-      fill="url(#octopus-skin)" stroke="#FFB5F0" stroke-opacity=".96" stroke-width="1.8"
-      stroke-linejoin="miter"/>
-    <path id="octopus-head" d="M-38 -8 C-54 2 -52 28 -34 45 C-18 61 16 61 34 44
-      C52 27 49 3 33 -9 C16 -24 -22 -24 -38 -8Z"
-      fill="url(#octopus-arm)" stroke="#030411" stroke-width="5.2"
+      values="1 1;1.018 .988;1 1" dur="6.8s"
+      calcMode="spline" keySplines=".42 0 .58 1;.42 0 .58 1"
+      repeatCount="indefinite"/>
+
+    <!-- Rear mantle sac: broad dome tapering into the neck. -->
+    <path d="M-37 -20 C-59 -42 -61 -77 -49 -107
+      C-37 -139 -12 -153 17 -147 C48 -141 64 -112 59 -81
+      C55 -52 38 -26 18 -13 C1 -3 -22 -6 -37 -20Z"
+      fill="none" stroke="#030712" stroke-width="6"
       stroke-linejoin="round"/>
-    <path d="M-38 -8 C-54 2 -52 28 -34 45 C-18 61 16 61 34 44
-      C52 27 49 3 33 -9"
-      fill="none" stroke="#FFB5F0" stroke-width="1.6" stroke-opacity=".95"
-      stroke-linecap="round"/>
-    <path d="M-33 1 C-20 -10 10 -15 30 -3 L36 25
-      C19 43 -13 50 -34 28Z"
-      fill="url(#halftone-violet)" opacity=".28"/>
-    <path d="M-31 28 Q-16 42 0 43 Q19 42 33 26"
-      fill="none" stroke="#030411" stroke-width="2.5" stroke-opacity=".55"
-      stroke-linecap="round"/>
-    <path d="M-29 -1 Q-17 -10 -6 -5 M8 -5 Q20 -11 31 -1"
-      fill="none" stroke="#FFFFFF" stroke-opacity=".58" stroke-width="1.4"
-      stroke-linecap="round"/>
-    <path d="M-21 51 Q-10 58 0 56 Q11 58 22 51"
-      fill="none" stroke="#8B5CFF" stroke-width="2" stroke-linecap="round"/>
-    <path d="M-34 -34 C-27 -70 -7 -86 18 -82 C38 -77 45 -48 30 -24
-      C13 -10 -15 -13 -34 -34Z" fill="url(#octopus-blush)" opacity=".6"/>
-    <g fill="#B5A2FF" opacity=".74">
-      <circle cx="-18" cy="-13" r="2.1"><animate attributeName="opacity" values=".25;.65;.25" dur="8s" repeatCount="indefinite"/></circle>
-      <circle cx="-8" cy="-25" r="1.5"><animate attributeName="opacity" values=".6;.22;.6" dur="7s" repeatCount="indefinite"/></circle>
-      <circle cx="10" cy="-21" r="2"><animate attributeName="opacity" values=".25;.7;.25" dur="9s" repeatCount="indefinite"/></circle>
-      <circle cx="22" cy="-8" r="1.4"><animate attributeName="opacity" values=".65;.2;.65" dur="7.8s" repeatCount="indefinite"/></circle>
-      <circle cx="14" cy="12" r="1.7"><animate attributeName="opacity" values=".2;.6;.2" dur="8.5s" repeatCount="indefinite"/></circle>
+    <path d="M-37 -20 C-59 -42 -61 -77 -49 -107
+      C-37 -139 -12 -153 17 -147 C48 -141 64 -112 59 -81
+      C55 -52 38 -26 18 -13 C1 -3 -22 -6 -37 -20Z"
+      fill="url(#octopus-skin)" stroke="#FFB5F0"
+      stroke-opacity=".92" stroke-width="1.7" stroke-linejoin="round"/>
+    <!-- Inked shadow plane and offset halftone print. -->
+    <path d="M8 -144 C42 -137 62 -112 59 -81
+      C55 -51 37 -25 18 -13 L5 -8 C26 -35 39 -67 35 -96
+      C31 -122 19 -137 8 -144Z"
+      fill="#030712" opacity=".48"/>
+    <path d="M-37 -20 C-59 -42 -61 -77 -49 -107
+      C-37 -139 -12 -153 17 -147 C48 -141 64 -112 59 -81
+      C55 -52 38 -26 18 -13 C1 -3 -22 -6 -37 -20Z"
+      fill="url(#halftone-violet)" opacity=".36"/>
+    <path d="M-41 -34 C-55 -63 -53 -100 -32 -126"
+      fill="none" stroke="#00F5D4" stroke-width="4.2"
+      stroke-linecap="round" opacity=".88"/>
+    <path d="M32 -130 Q55 -103 49 -70"
+      fill="none" stroke="#FF2A85" stroke-width="3.2"
+      stroke-linecap="round" opacity=".78"/>
+
+    <!-- Chromatophore spots, including warm amber freckles. -->
+    <g fill="#FFBE0B" opacity=".7">
+      <circle cx="-31" cy="-89" r="2.2"><animate attributeName="opacity" values=".25;.8;.25" dur="7.4s" repeatCount="indefinite"/></circle>
+      <circle cx="-12" cy="-122" r="1.7"><animate attributeName="opacity" values=".8;.28;.8" dur="8.1s" repeatCount="indefinite"/></circle>
+      <circle cx="22" cy="-109" r="2.3"><animate attributeName="opacity" values=".3;.85;.3" dur="6.9s" repeatCount="indefinite"/></circle>
+      <circle cx="39" cy="-73" r="1.8"><animate attributeName="opacity" values=".8;.25;.8" dur="7.8s" repeatCount="indefinite"/></circle>
+      <circle cx="-20" cy="-57" r="1.6"><animate attributeName="opacity" values=".28;.8;.28" dur="9s" repeatCount="indefinite"/></circle>
     </g>
-    <path d="M-28 -67 Q-9 -91 14 -84" fill="none"
-      stroke="#FFFFFF" stroke-opacity=".78" stroke-width="3.1" stroke-linecap="round"/>
-    <path d="M-36 -48 Q-24 -72 -8 -75 M23 -78 Q40 -60 40 -42"
-      fill="none" stroke="#00E5FF" stroke-opacity=".72" stroke-width="1.7"
+    <g fill="#00F5D4" opacity=".62">
+      <circle cx="-22" cy="-103" r="1.5"/>
+      <circle cx="4" cy="-133" r="1.8"/>
+      <circle cx="34" cy="-93" r="1.35"/>
+      <circle cx="10" cy="-63" r="1.5"/>
+    </g>
+    <path d="M-31 -112 Q-15 -143 12 -139"
+      fill="none" stroke="#FFFFFF" stroke-opacity=".82"
+      stroke-width="3.2" stroke-linecap="round"/>
+
+    <!-- Cephalic head beneath the mantle, with lateral eye bulges. -->
+    <path d="M-43 -13 C-59 -3 -60 19 -46 37
+      C-31 55 -12 61 8 59 C30 58 48 47 57 29
+      C65 11 52 -8 35 -16 C16 -26 -25 -25 -43 -13Z"
+      fill="none" stroke="#030712" stroke-width="6"
+      stroke-linejoin="round"/>
+    <path id="octopus-head" d="M-43 -13 C-59 -3 -60 19 -46 37
+      C-31 55 -12 61 8 59 C30 58 48 47 57 29
+      C65 11 52 -8 35 -16 C16 -26 -25 -25 -43 -13Z"
+      fill="url(#octopus-arm)" stroke="#FFB5F0"
+      stroke-opacity=".92" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="M-49 21 Q-38 47 -13 53"
+      fill="none" stroke="#00F5D4" stroke-width="2"
+      stroke-linecap="round" opacity=".78"/>
+    <path d="M23 -13 Q47 -6 56 14"
+      fill="none" stroke="#FF2A85" stroke-width="2"
+      stroke-linecap="round" opacity=".8"/>
+    <path d="M-38 3 Q-19 -13 0 -9 Q24 -13 44 4
+      L39 34 Q12 52 -20 38Z"
+      fill="url(#halftone-violet)" opacity=".3"/>
+
+    <!-- Lateral eyes with horizontal pupils rather than oversized round cartoon eyes. -->
+    <ellipse cx="-25" cy="10" rx="8.6" ry="10.8"
+      fill="#D8F7FF" stroke="#030712" stroke-width="2.8"/>
+    <ellipse cx="27" cy="10" rx="8.6" ry="10.8"
+      fill="#D8F7FF" stroke="#030712" stroke-width="2.8"/>
+    <ellipse cx="-25" cy="10.4" rx="4.7" ry="2.25" fill="#08091C"/>
+    <ellipse cx="27" cy="10.4" rx="4.7" ry="2.25" fill="#08091C"/>
+    <circle cx="-27" cy="7.3" r="1.7" fill="#FFFFFF"/>
+    <circle cx="25" cy="7.3" r="1.7" fill="#FFFFFF"/>
+    <path d="M-36 -2 Q-25 -10 -14 -4 M16 -4 Q28 -11 39 -2"
+      fill="none" stroke="#030712" stroke-width="3.4"
       stroke-linecap="round"/>
-    <path d="M-34 -22 Q-13 -35 11 -30 Q27 -27 35 -16"
-      fill="none" stroke="#030411" stroke-opacity=".48" stroke-width="2.8"
+
+    <!-- Siphon funnel on the right underside of the head. -->
+    <g id="octopus-siphon">
+      <animateTransform attributeName="transform" type="scale"
+        values="1 1;1 .94;1 1" dur="4.8s" repeatCount="indefinite"/>
+      <path d="M38 16 C53 7 65 19 56 33
+        L45 43 Q43 31 34 25Z"
+        fill="#7B2CBF" stroke="#030712" stroke-width="2.8"
+        stroke-linejoin="round"/>
+      <ellipse cx="55" cy="22" rx="3.3" ry="5.2"
+        fill="#030712" transform="rotate(18 55 22)"/>
+      <path d="M43 18 Q51 12 57 18"
+        fill="none" stroke="#00F5D4" stroke-width="1.5"
+        stroke-linecap="round"/>
+    </g>
+
+    <!-- Beak and oral web sit where all eight arms meet. -->
+    <path d="M-6 43 Q0 35 6 43 L2 52 Q0 55 -3 52Z"
+      fill="#08091C" stroke="#FFBE0B" stroke-width="1.25"
+      stroke-linejoin="round"/>
+    <path d="M-1 43 L1 50" stroke="#FF2A85" stroke-width="1.2"
       stroke-linecap="round"/>
-    <path d="M-33 -55 Q-26 -66 -17 -62 Q-13 -54 -22 -50Z
-             M8 -70 Q18 -79 27 -69 Q28 -59 16 -58Z
-             M29 -39 Q39 -45 42 -33 Q35 -26 28 -30Z"
-      fill="#140B3D" opacity=".6"/>
-    <path d="M-32 -39 Q-28 -47 -21 -42 M-5 -54 Q1 -60 7 -54
-             M22 -48 Q29 -54 35 -48 M-20 -13 Q-13 -19 -7 -13"
-      fill="none" stroke="#FFE3FA" stroke-opacity=".74" stroke-width="1.6"
-      stroke-linecap="round"/>
-    <ellipse cx="-17" cy="12" rx="7.5" ry="9.2" fill="#D8F7FF"
-      stroke="#030411" stroke-width="2.1"/>
-    <ellipse cx="17" cy="12" rx="7.5" ry="9.2" fill="#D8F7FF"
-      stroke="#030411" stroke-width="2.1"/>
-    <ellipse cx="-16" cy="12" rx="2.7" ry="6.6" fill="#08091C"/>
-    <ellipse cx="18" cy="12" rx="2.7" ry="6.6" fill="#08091C"/>
-    <circle cx="-17.2" cy="8.7" r="1.7" fill="#FFFFFF"/>
-    <circle cx="16.8" cy="8.7" r="1.7" fill="#FFFFFF"/>
-    <path d="M-27 1 Q-17 -7 -7 0 M7 0 Q18 -8 28 1"
-      fill="none" stroke="#08091E" stroke-width="3.8" stroke-linecap="round"/>
-    <path d="M-5 34 Q0 27 5 34 L1 42 Q-1 44 -3 41Z"
-      fill="#16102F" stroke="#030411" stroke-width="1.8" stroke-linejoin="round"/>
-    <path d="M-1 34 L1 40" fill="none" stroke="#FFB5F0" stroke-width="1"/>
   </g>
 </g>
 
-<!-- Bubble trails rise from the octopus den. -->
-<g fill="none" stroke="#00E5FF" stroke-opacity=".82" stroke-width=".9">
-  <circle cx="410" cy="458" r="2.3"><animate attributeName="cy" values="458;410;458" dur="8s" repeatCount="indefinite"/></circle>
-  <circle cx="423" cy="466" r="1.3"><animate attributeName="cy" values="466;433;466" dur="9s" begin="1.4s" repeatCount="indefinite"/></circle>
-  <circle cx="430" cy="448" r="1.6"><animate attributeName="cy" values="448;414;448" dur="7.5s" begin=".7s" repeatCount="indefinite"/></circle>
+<!-- Bubbles rise from the octopus den and catch the neon rim light. -->
+<g fill="none" stroke="#00F5D4" stroke-opacity=".85" stroke-width="1.1">
+  <circle cx="375" cy="470" r="2.5"><animate attributeName="cy" values="470;420;470" dur="8s" repeatCount="indefinite"/></circle>
+  <circle cx="388" cy="482" r="1.4"><animate attributeName="cy" values="482;447;482" dur="9s" begin="1.4s" repeatCount="indefinite"/></circle>
+  <circle cx="402" cy="463" r="1.8"><animate attributeName="cy" values="463;424;463" dur="7.5s" begin=".7s" repeatCount="indefinite"/></circle>
 </g>
-<g fill="none" stroke="#FF3BC8" stroke-opacity=".78" stroke-width=".8">
-  <circle cx="706" cy="457" r="2"><animate attributeName="cy" values="457;418;457" dur="7.7s" begin=".8s" repeatCount="indefinite"/></circle>
-  <circle cx="718" cy="465" r="1.2"><animate attributeName="cy" values="465;430;465" dur="8.8s" begin="2s" repeatCount="indefinite"/></circle>
-  <circle cx="694" cy="447" r="1.4"><animate attributeName="cy" values="447;411;447" dur="7.1s" begin="1.2s" repeatCount="indefinite"/></circle>
+<g fill="none" stroke="#FF2A85" stroke-opacity=".86" stroke-width="1">
+  <circle cx="810" cy="468" r="2.2"><animate attributeName="cy" values="468;425;468" dur="7.7s" begin=".8s" repeatCount="indefinite"/></circle>
+  <circle cx="825" cy="482" r="1.35"><animate attributeName="cy" values="482;442;482" dur="8.8s" begin="2s" repeatCount="indefinite"/></circle>
+  <circle cx="795" cy="458" r="1.55"><animate attributeName="cy" values="458;418;458" dur="7.1s" begin="1.2s" repeatCount="indefinite"/></circle>
 </g>
 
 <!-- The footer is a clear information strip, separate from the seabed. -->
