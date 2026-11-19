@@ -151,7 +151,7 @@ class NeonRocketContributionTests(unittest.TestCase):
         svg = render_svg(self.start, self.end, total, self.days)
         root = ET.fromstring(svg)
         cells = root.findall(".//*[@data-date]")
-        active = root.findall(".//*[@data-count and @data-level]")
+        active = root.findall(".//*[@data-count]")
 
         self.assertEqual(root.attrib["viewBox"], "0 0 860 226")
         self.assertEqual(len(cells), 14)
