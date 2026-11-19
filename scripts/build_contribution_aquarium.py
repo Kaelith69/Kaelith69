@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render GitHub activity as a living aquarium with a fish that eats each active day."""
+"""Render GitHub contribution days as aquatic creatures in an animated fish tank."""
 
 from __future__ import annotations
 
@@ -21,15 +21,17 @@ OUTPUT = ROOT / "assets" / "contributions-aquarium.svg"
 LOGIN = os.environ.get("GITHUB_PROFILE_LOGIN", "Kaelith69")
 API_URL = os.environ.get("GITHUB_GRAPHQL_URL", "https://api.github.com/graphql")
 
-GRID_X = 62
-GRID_Y = 99
-CELL = 10
-PITCH = 15
-LAUNCH_POINT = (39.0, 181.5)
-FISH_MOUTH_OFFSET = 13.5
-SWIM_SPEED = 125.0
-EAT_DWELL = 0.68
-RESET_FADE = 0.48
+GRID_X = 64
+GRID_Y = 94
+CELL = 11
+PITCH = 14
+LAUNCH_POINT = (42.0, 205.0)
+FISH_SPEED = 115.0
+EAT_DWELL = 0.58
+RESET_FADE = 0.42
+RESET_HOLD = 0.22
+
+FISH_BODY_LENGTH = 23.0
 
 QUERY = """
 query ContributionCalendar($login: String!, $from: DateTime!, $to: DateTime!) {
@@ -51,11 +53,11 @@ query ContributionCalendar($login: String!, $from: DateTime!, $to: DateTime!) {
 """
 
 LEVEL_COLORS = {
-    "NONE": ("#122234", "#28435B"),
-    "FIRST_QUARTILE": ("#246BFF", "#8DB0FF"),
-    "SECOND_QUARTILE": ("#00B9FF", "#8CEBFF"),
-    "THIRD_QUARTILE": ("#00E0C8", "#91FFF1"),
-    "FOURTH_QUARTILE": ("#D34DFF", "#F4B4FF"),
+    "NONE": ("#102033", "#27445D", "quiet"),
+    "FIRST_QUARTILE": ("#174BFF", "#86A7FF", "electric blue"),
+    "SECOND_QUARTILE": ("#00A9FF", "#9AEAFF", "cyan"),
+    "THIRD_QUARTILE": ("#00D9C2", "#A2FFF1", "aqua"),
+    "FOURTH_QUARTILE": ("#CE42FF", "#F3B8FF", "violet"),
 }
 
 
@@ -171,15 +173,12 @@ def collect_days(
 
 
 def calendar_weeks(start: dt.date, end: dt.date) -> list[list[dt.date]]:
-    """Build Sunday-first calendar columns."""
+    """Return Sunday first columns matching GitHub's contribution calendar."""
     first_sunday = start - dt.timedelta(days=(start.weekday() + 1) % 7)
     last_sunday = end - dt.timedelta(days=(end.weekday() + 1) % 7)
     count = ((last_sunday - first_sunday).days // 7) + 1
     return [
-        [
-            first_sunday + dt.timedelta(days=column * 7 + row)
-            for row in range(7)
-        ]
+        [first_sunday + dt.timedelta(days=column * 7 + row) for row in range(7)]
         for column in range(count)
     ]
 
@@ -191,13 +190,6 @@ def cell_center(column: int, row: int) -> tuple[float, float]:
     )
 
 
-def manhattan_distance(
-    first: tuple[float, float],
-    second: tuple[float, float],
-) -> float:
-    return abs(first[0] - second[0]) + abs(first[1] - second[1])
-
-
 def nearest_food_route(
     weeks: list[list[dt.date]],
     start: dt.date,
@@ -205,7 +197,7 @@ def nearest_food_route(
     days: dict[dt.date, dict[str, Any]],
     launch_point: tuple[float, float] = LAUNCH_POINT,
 ) -> list[tuple[int, int, dt.date]]:
-    """Choose the nearest unvisited active creature using orthogonal distance."""
+    """Choose the closest remaining food using Manhattan distance after each meal."""
     remaining = [
         (column, row, date)
         for column, week in enumerate(weeks)
@@ -220,211 +212,135 @@ def nearest_food_route(
         next_cell = min(
             remaining,
             key=lambda item: (
-                manhattan_distance(current, cell_center(item[0], item[1])),
+                abs(cell_center(item[0], item[1])[0] - current[0])
+                + abs(cell_center(item[0], item[1])[1] - current[1]),
                 item[2].isoformat(),
             ),
         )
         route.append(next_cell)
-        target = cell_center(next_cell[0], next_cell[1])
-        current, _ = approach_anchor(current, target)
+        current = cell_center(next_cell[0], next_cell[1])
         remaining.remove(next_cell)
 
     return route
 
 
-def approach_anchor(
-    current: tuple[float, float],
-    target: tuple[float, float],
-) -> tuple[tuple[float, float], str]:
-    """Stop the fish with its mouth over the food and define its final axis."""
-    dx = target[0] - current[0]
-    dy = target[1] - current[1]
-
-    if dx == 0 and dy == 0:
-        return target, "x"
-
-    if dx != 0 and (dy == 0 or abs(dx) >= abs(dy)):
-        offset = min(FISH_MOUTH_OFFSET, abs(dx) * 0.62)
-        direction = 1 if dx > 0 else -1
-        return (target[0] - direction * offset, target[1]), "x"
-
-    offset = min(FISH_MOUTH_OFFSET, abs(dy) * 0.62)
-    direction = 1 if dy > 0 else -1
-    return (target[0], target[1] - direction * offset), "y"
+def add_orthogonal_point(
+    points: list[tuple[float, float]],
+    point: tuple[float, float],
+) -> None:
+    """Append a point only when it adds a nonzero horizontal or vertical segment."""
+    if points and math.dist(points[-1], point) < 1e-7:
+        return
+    if points:
+        previous = points[-1]
+        if abs(previous[0] - point[0]) > 1e-7 and abs(previous[1] - point[1]) > 1e-7:
+            raise RuntimeError(
+                f"Diagonal movement rejected: {previous!r} to {point!r}."
+            )
+    points.append(point)
 
 
-def orthogonal_leg(
-    start: tuple[float, float],
-    end: tuple[float, float],
-    final_axis: str,
-) -> list[tuple[float, float]]:
-    """Return horizontal and vertical waypoints only, ending on final_axis."""
-    if final_axis not in ("x", "y"):
-        raise ValueError("final_axis must be 'x' or 'y'.")
-
-    if start == end:
-        return []
-
-    if start[0] == end[0] or start[1] == end[1]:
-        return [end]
-
-    corner = (
-        (start[0], end[1])
-        if final_axis == "x"
-        else (end[0], start[1])
-    )
-    return [corner, end]
-
-
-def build_flight_plan(
+def orthogonal_flight_points(
     route: list[tuple[int, int, dt.date]],
     launch_point: tuple[float, float] = LAUNCH_POINT,
-) -> dict[str, Any]:
-    """Construct a rectilinear path and timed feeding pauses at every food stop."""
-    points: list[tuple[float, float]] = [launch_point]
-    target_indices: dict[int, list[dt.date]] = {}
+) -> tuple[list[tuple[float, float]], dict[dt.date, int]]:
+    """Build an axis aligned polyline through each selected food, then return home."""
+    points = [launch_point]
+    stop_indices: dict[dt.date, int] = {}
     current = launch_point
 
     for column, row, date in route:
         target = cell_center(column, row)
-        anchor, final_axis = approach_anchor(current, target)
+        target_x, target_y = target
 
-        for waypoint in orthogonal_leg(current, anchor, final_axis):
-            if waypoint != points[-1]:
-                points.append(waypoint)
+        # Horizontal first, then vertical. Every segment is strictly axis aligned.
+        add_orthogonal_point(points, (target_x, current[1]))
+        add_orthogonal_point(points, target)
+        stop_indices[date] = len(points) - 1
+        current = target
 
-        target_indices.setdefault(len(points) - 1, []).append(date)
-        current = anchor
-
-    if route:
-        home_dx = launch_point[0] - current[0]
-        home_dy = launch_point[1] - current[1]
-        home_axis = "x" if abs(home_dx) >= abs(home_dy) else "y"
-        for waypoint in orthogonal_leg(current, launch_point, home_axis):
-            if waypoint != points[-1]:
-                points.append(waypoint)
+    # Return to the launch point on the same orthogonal track system.
+    add_orthogonal_point(points, (launch_point[0], current[1]))
+    add_orthogonal_point(points, launch_point)
 
     if len(points) == 1:
-        points.append((launch_point[0] + 1.0, launch_point[1]))
+        points.append((launch_point[0] + 1, launch_point[1]))
 
-    segments = [
-        abs(points[index][0] - points[index - 1][0])
-        + abs(points[index][1] - points[index - 1][1])
+    return points, stop_indices
+
+
+def flight_timeline(
+    route: list[tuple[int, int, dt.date]],
+    launch_point: tuple[float, float] = LAUNCH_POINT,
+) -> dict[str, Any]:
+    points, stop_indices = orthogonal_flight_points(route, launch_point)
+    segment_lengths = [
+        math.dist(points[index - 1], points[index])
         for index in range(1, len(points))
     ]
-    if any(
-        points[index][0] != points[index - 1][0]
-        and points[index][1] != points[index - 1][1]
-        for index in range(1, len(points))
-    ):
-        raise RuntimeError("Fish path contains a diagonal segment.")
-
-    total_distance = sum(segments)
+    total_distance = sum(segment_lengths)
     if total_distance <= 0:
-        raise RuntimeError("Fish path has no travel distance.")
+        raise RuntimeError("Fish flight path has no measurable length.")
+
+    key_points = ["0"]
+    key_times = ["0"]
+    arrivals: dict[dt.date, tuple[float, float]] = {}
+    elapsed = 0.0
+    distance_so_far = 0.0
+
+    for point_index, distance in enumerate(segment_lengths, start=1):
+        elapsed += distance / FISH_SPEED
+        distance_so_far += distance
+        fraction = distance_so_far / total_distance
+        key_points.append(f"{fraction:.9f}")
+        key_times.append(f"{elapsed:.9f}")
+
+        target_date = next(
+            (date for date, stop_index in stop_indices.items() if stop_index == point_index),
+            None,
+        )
+        if target_date is not None:
+            arrival = elapsed
+            eaten = arrival + EAT_DWELL
+            key_points.append(f"{fraction:.9f}")
+            key_times.append(f"{eaten:.9f}")
+            arrivals[target_date] = (arrival, eaten)
+            elapsed = eaten
+
+    returned_at = elapsed
+    reset_start = returned_at + RESET_HOLD
+    cycle = reset_start + RESET_FADE
+
+    key_points.append("1")
+    key_times.append(f"{returned_at:.9f}")
+    key_points.append("1")
+    key_times.append(f"{cycle:.9f}")
+
+    normalized_times = [float(value) / cycle for value in key_times]
+    if any(b <= a for a, b in zip(normalized_times, normalized_times[1:])):
+        raise RuntimeError("Fish animation key times must increase strictly.")
+    if abs(normalized_times[-1] - 1.0) > 1e-8:
+        raise RuntimeError("Fish animation timeline does not end at one.")
 
     path = "M " + " L ".join(
         f"{x:.3f},{y:.3f}" for x, y in points
     )
+    for first, second in zip(points, points[1:]):
+        if abs(first[0] - second[0]) > 1e-7 and abs(first[1] - second[1]) > 1e-7:
+            raise RuntimeError("Generated fish flight path contains a diagonal segment.")
 
-    key_points = ["0"]
-    key_times = [0.0]
-    arrivals: dict[dt.date, tuple[float, float]] = {}
-    mouth_frames: list[tuple[float, str]] = []
-    elapsed = 0.0
-    distance_so_far = 0.0
-
-    def add_food_pause(index: int, distance_fraction: float) -> None:
-        nonlocal elapsed
-        for date in target_indices.get(index, []):
-            arrival = elapsed
-            open_at = arrival + EAT_DWELL * 0.12
-            eaten_at = arrival + EAT_DWELL * 0.56
-            close_at = arrival + EAT_DWELL * 0.82
-
-            key_points.append(f"{distance_fraction:.8f}")
-            key_times.append(open_at)
-            key_points.append(f"{distance_fraction:.8f}")
-            key_times.append(close_at)
-
-            mouth_frames.append((open_at, "open"))
-            mouth_frames.append((close_at, "closed"))
-            arrivals[date] = (arrival, eaten_at)
-            elapsed += EAT_DWELL
-
-    add_food_pause(0, 0.0)
-
-    for index, distance in enumerate(segments, start=1):
-        distance_so_far += distance
-        elapsed += distance / SWIM_SPEED
-        fraction = distance_so_far / total_distance
-
-        key_points.append(f"{fraction:.8f}")
-        key_times.append(elapsed)
-        add_food_pause(index, fraction)
-
-    returned_at = elapsed
-    cycle = returned_at + RESET_FADE
-
-    key_points.append("1")
-    key_times.append(cycle)
-
-    if len(key_points) != len(key_times):
-        raise RuntimeError("Fish path keyPoints and keyTimes lengths differ.")
-
-    normalized_times = [value / cycle for value in key_times]
-    if normalized_times[0] != 0 or abs(normalized_times[-1] - 1) > 1e-8:
-        raise RuntimeError("Fish animation does not span one complete cycle.")
-    if any(b <= a for a, b in zip(normalized_times, normalized_times[1:])):
-        raise RuntimeError("Fish animation keyTimes are not strictly increasing.")
-
-    open_path = "M13 1 Q18 2 21 1"
-    closed_path = "M13 1 Q18 1.3 21 1"
-    mouth_values = [closed_path]
-    mouth_times = [0.0]
-    for moment, state in mouth_frames:
-        mouth_values.append(open_path if state == "open" else closed_path)
-        mouth_times.append(moment / cycle)
-    if len(mouth_values) == 1:
-        mouth_values.append(closed_path)
-        mouth_times.append(1.0)
-
-    if any(b <= a for a, b in zip(mouth_times, mouth_times[1:])):
-        raise RuntimeError("Fish jaw keyTimes are not strictly increasing.")
-
-    reset_time = returned_at / cycle
     return {
         "points": points,
         "path": path,
         "key_points": ";".join(key_points),
-        "key_times": ";".join(f"{value:.8f}" for value in normalized_times),
+        "key_times": ";".join(f"{value:.9f}" for value in normalized_times),
         "arrivals": arrivals,
-        "cycle": cycle,
         "returned_at": returned_at,
-        "reset_time": reset_time,
-        "mouth_values": ";".join(mouth_values),
-        "mouth_times": ";".join(f"{value:.8f}" for value in mouth_times),
+        "reset_start": reset_start,
+        "cycle": cycle,
+        "reset_start_fraction": reset_start / cycle,
+        "fish_fade_end_fraction": (returned_at + RESET_HOLD) / cycle,
     }
-
-
-def creature_art(index: int, color: str, stroke: str) -> str:
-    """Return one small sea creature silhouette centred on the day cell."""
-    species = index % 4
-
-    if species == 0:
-        return f'''<path d="M-2.8 0 L-5.1 -2 L-5.1 2Z" fill="{color}" stroke="{stroke}" stroke-width=".45"/>
-<path d="M-3.1 0 C-2.1 -2.5 2.1 -2.5 3.3 0 C2.1 2.5 -2.1 2.5 -3.1 0Z" fill="{color}" stroke="{stroke}" stroke-width=".55"/>
-<circle cx="1.8" cy="-.7" r=".55" fill="#FFFFFF"/>'''
-    if species == 1:
-        return f'''<path d="M-3.4 1 C-3.3 -3 3.3 -3 3.4 1Z" fill="{color}" stroke="{stroke}" stroke-width=".55"/>
-<path d="M-2.3 1 Q-3.3 3 -2.2 4 M0 1 Q-.7 3.2 0 4.2 M2.2 1 Q3.1 3 2 4" fill="none" stroke="{stroke}" stroke-width=".7" stroke-linecap="round"/>
-<circle cx="-1.1" cy="-.1" r=".42" fill="#FFFFFF"/><circle cx="1.1" cy="-.1" r=".42" fill="#FFFFFF"/>'''
-    if species == 2:
-        return f'''<path d="M0 -4.1 L1.25 -1.55 L4 -1.3 L2 0.7 L2.5 3.5 L0 2.1 L-2.5 3.5 L-2 0.7 L-4 -1.3 L-1.25 -1.55Z" fill="{color}" stroke="{stroke}" stroke-width=".55" stroke-linejoin="round"/>
-<circle cx="0" cy="0" r=".55" fill="#FFFFFF"/>'''
-    return f'''<path d="M-4.4 0 Q-2.2 -3.5 0 -2.3 Q2.2 -3.5 4.4 0 Q2.2 3.5 0 2.3 Q-2.2 3.5 -4.4 0Z" fill="{color}" stroke="{stroke}" stroke-width=".55"/>
-<path d="M0 -2.1V2.1" stroke="#FFFFFF" stroke-opacity=".7" stroke-width=".55"/>
-<circle cx="2.2" cy="-.45" r=".4" fill="#FFFFFF"/>'''
 
 
 def render_svg(
@@ -435,70 +351,65 @@ def render_svg(
 ) -> str:
     weeks = calendar_weeks(start, end)
     route = nearest_food_route(weeks, start, end, days)
-    plan = build_flight_plan(route)
-    cycle = plan["cycle"]
-    reset_time = plan["reset_time"]
+    timeline = flight_timeline(route)
+    cycle = timeline["cycle"]
 
     pieces: list[str] = []
     pieces.append(
-        f'''<svg xmlns="http://www.w3.org/2000/svg" width="860" height="252"
- viewBox="0 0 860 252" role="img" aria-labelledby="tank-title tank-desc">
+        f'''<svg xmlns="http://www.w3.org/2000/svg" width="860" height="258"
+ viewBox="0 0 860 258" role="img" aria-labelledby="tank-title tank-desc">
 <title id="tank-title">{html.escape(LOGIN)} contribution aquarium</title>
-<desc id="tank-desc">{total:,} GitHub contributions from {start.isoformat()} to {end.isoformat()}. A detailed blue and white fish swims only horizontally and vertically to the nearest active sea creature, eats it, and all creatures return together when the tank is reset.</desc>
+<desc id="tank-desc">{total:,} GitHub contributions from {start.isoformat()} to {end.isoformat()}. A detailed white and blue fish swims to the nearest contribution creature using horizontal and vertical movements only. Each active creature disappears when eaten and all creatures reset after the fish returns.</desc>
 <defs>
   <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
-    <stop stop-color="#061B2D"/><stop offset=".48" stop-color="#041321"/><stop offset="1" stop-color="#020913"/>
+    <stop stop-color="#07182B"/><stop offset=".48" stop-color="#041321"/><stop offset="1" stop-color="#020913"/>
   </linearGradient>
-  <radialGradient id="water-light" cx="50%" cy="34%" r="72%">
-    <stop stop-color="#0B6B9B" stop-opacity=".2"/><stop offset=".6" stop-color="#06446F" stop-opacity=".065"/><stop offset="1" stop-color="#020913" stop-opacity="0"/>
+  <radialGradient id="water-light" cx="48%" cy="34%" r="72%">
+    <stop stop-color="#0B78A5" stop-opacity=".2"/><stop offset=".6" stop-color="#06446F" stop-opacity=".065"/><stop offset="1" stop-color="#020913" stop-opacity="0"/>
   </radialGradient>
   <linearGradient id="glass-edge" x1="0" y1="0" x2="1" y2="1">
-    <stop stop-color="#5FEAFF" stop-opacity=".78"/><stop offset=".5" stop-color="#245F8B" stop-opacity=".3"/><stop offset="1" stop-color="#B5F7FF" stop-opacity=".62"/>
+    <stop stop-color="#7CF3FF" stop-opacity=".78"/><stop offset=".52" stop-color="#245F8B" stop-opacity=".38"/><stop offset="1" stop-color="#D6FAFF" stop-opacity=".68"/>
   </linearGradient>
   <linearGradient id="fish-body" x1=".12" y1="0" x2=".82" y2="1">
-    <stop stop-color="#FFFFFF"/><stop offset=".35" stop-color="#EAF8FF"/><stop offset=".72" stop-color="#9AD5FF"/><stop offset="1" stop-color="#2E82E8"/>
+    <stop stop-color="#FFFFFF"/><stop offset=".32" stop-color="#ECF9FF"/><stop offset=".72" stop-color="#A3D8FF"/><stop offset="1" stop-color="#4D9CEB"/>
   </linearGradient>
   <linearGradient id="fish-fin" x1="0" y1="0" x2="1" y2="1">
-    <stop stop-color="#F5FFFF"/><stop offset=".4" stop-color="#55CFFF"/><stop offset="1" stop-color="#1558DB"/>
+    <stop stop-color="#FFFFFF"/><stop offset=".4" stop-color="#64D6FF"/><stop offset="1" stop-color="#1558D8"/>
   </linearGradient>
   <linearGradient id="fish-belly" x1="0" y1="0" x2="0" y2="1">
-    <stop stop-color="#FFFFFF" stop-opacity=".08"/><stop offset="1" stop-color="#FFFFFF" stop-opacity=".8"/>
+    <stop stop-color="#FFFFFF" stop-opacity=".06"/><stop offset="1" stop-color="#FFFFFF" stop-opacity=".78"/>
   </linearGradient>
-  <linearGradient id="bubble" x1="0" y1="0" x2="1" y2="1">
-    <stop stop-color="#FFFFFF" stop-opacity=".82"/><stop offset=".45" stop-color="#75DFFF" stop-opacity=".38"/><stop offset="1" stop-color="#2588FF" stop-opacity=".08"/>
+  <linearGradient id="prey-blue" x1="0" y1="0" x2="1" y2="1">
+    <stop stop-color="#C6F7FF"/><stop offset=".45" stop-color="#27BFFF"/><stop offset="1" stop-color="#175BFF"/>
   </linearGradient>
   <filter id="fish-glow" x="-100%" y="-100%" width="300%" height="300%">
-    <feGaussianBlur stdDeviation="2.3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <feGaussianBlur stdDeviation="2.1" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
   </filter>
   <filter id="creature-glow" x="-100%" y="-100%" width="300%" height="300%">
-    <feGaussianBlur stdDeviation="1.1" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <feGaussianBlur stdDeviation="1.2" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
   </filter>
-  <clipPath id="tank-clip"><rect x="1" y="1" width="858" height="250" rx="13"/></clipPath>
+  <clipPath id="tank-clip"><rect x="1" y="1" width="858" height="256" rx="13"/></clipPath>
 </defs>
 <g clip-path="url(#tank-clip)">
-  <rect width="860" height="252" fill="url(#water)"/>
-  <rect width="860" height="252" fill="url(#water-light)"/>
+  <rect width="860" height="258" fill="url(#water)"/>
+  <rect width="860" height="258" fill="url(#water-light)"/>
 
-  <g fill="none" stroke="#45C8F2" stroke-linecap="round">
-    <path d="M-25 61 Q105 43 225 61 T475 60 T735 58 T900 64" stroke-opacity=".09" stroke-width="1.2"/>
-    <path d="M-22 68 Q108 50 228 68 T478 67 T738 65 T902 71" stroke-opacity=".045" stroke-width=".8"/>
+  <!-- Subtle surface caustics and the aquarium glass refraction. -->
+  <path d="M18 60 Q160 48 300 59 T580 58 T842 60" fill="none" stroke="#78E8FF" stroke-opacity=".3"/>
+  <path d="M18 64 Q160 52 300 63 T580 62 T842 64" fill="none" stroke="#FFFFFF" stroke-opacity=".065"/>
+  <g fill="none" stroke="#61DFFF" stroke-linecap="round">
+    <path d="M-30 73 Q120 58 240 72 T490 70 T740 71 T900 69" stroke-opacity=".065" stroke-width="1.1"/>
+    <path d="M-20 78 Q130 63 250 77 T500 75 T750 76 T900 74" stroke-opacity=".035" stroke-width=".8"/>
   </g>
 
-  <g fill="none" stroke="url(#bubble)" stroke-width="1">
-    <circle cx="27" cy="111" r="3"><animate attributeName="cy" values="111;82;111" dur="8s" repeatCount="indefinite"/></circle>
-    <circle cx="39" cy="151" r="1.8"><animate attributeName="cy" values="151;125;151" dur="9s" begin="1.4s" repeatCount="indefinite"/></circle>
-    <circle cx="831" cy="118" r="2.6"><animate attributeName="cy" values="118;88;118" dur="7s" begin=".7s" repeatCount="indefinite"/></circle>
-    <circle cx="842" cy="169" r="1.7"><animate attributeName="cy" values="169;143;169" dur="8.5s" begin="2s" repeatCount="indefinite"/></circle>
-    <circle cx="21" cy="203" r="1.2"><animate attributeName="cy" values="203;179;203" dur="7.5s" begin="2.8s" repeatCount="indefinite"/></circle>
+  <!-- Small bubbles are deliberately kept away from the food field. -->
+  <g fill="none" stroke="#9CEBFF" stroke-opacity=".46">
+    <circle cx="28" cy="126" r="2"><animate attributeName="cy" values="126;97;126" dur="8s" repeatCount="indefinite"/></circle>
+    <circle cx="39" cy="169" r="1.4"><animate attributeName="cy" values="169;139;169" dur="9s" begin="1.2s" repeatCount="indefinite"/></circle>
+    <circle cx="827" cy="117" r="2.4"><animate attributeName="cy" values="117;88;117" dur="7s" begin=".6s" repeatCount="indefinite"/></circle>
+    <circle cx="839" cy="169" r="1.5"><animate attributeName="cy" values="169;145;169" dur="8.5s" begin="2s" repeatCount="indefinite"/></circle>
+    <circle cx="23" cy="211" r="1.1"><animate attributeName="cy" values="211;190;211" dur="7.5s" begin="2.5s" repeatCount="indefinite"/></circle>
   </g>
-
-  <g fill="none" stroke="#267A8C" stroke-width="1.4" stroke-linecap="round" opacity=".35">
-    <path d="M18 251 Q18 235 13 220 M18 251 Q24 237 29 226 M18 251 Q13 241 8 237"/>
-    <path d="M839 251 Q840 237 847 222 M839 251 Q832 239 827 230 M839 251 Q846 242 852 239"/>
-  </g>
-
-  <path d="M20 57 Q180 53 340 57 T660 56 T840 57" fill="none" stroke="#55DFFF" stroke-opacity=".35"/>
-  <path d="M20 59 Q180 55 340 59 T660 58 T840 59" fill="none" stroke="#FFFFFF" stroke-opacity=".08"/>
 
   <text x="27" y="37" font-family="Bangers, Impact, 'Arial Black', sans-serif"
         font-size="25" letter-spacing="1.5" fill="#EAFBFF">CONTRIBUTIONS</text>
@@ -531,11 +442,11 @@ def render_svg(
 
     for row, label in enumerate(("S", "M", "T", "W", "T", "F", "S")):
         pieces.append(
-            f'<text x="37" y="{GRID_Y + row * PITCH + 7}" text-anchor="middle">{label}</text>'
+            f'<text x="48" y="{GRID_Y + row * PITCH + 7}" text-anchor="middle">{label}</text>'
         )
     pieces.append("</g>")
 
-    day_index = 0
+    # Every date is a tiny fish fry. Activity controls its neon intensity and hue.
     for column, week in enumerate(weeks):
         for row, date in enumerate(week):
             if not start <= date <= end:
@@ -544,137 +455,177 @@ def render_svg(
             detail = days[date]
             count = int(detail["count"])
             level = str(detail["level"])
-            fill, stroke = LEVEL_COLORS[level]
-            x = GRID_X + column * PITCH + CELL / 2
-            y = GRID_Y + row * PITCH + CELL / 2
+            fill, stroke, _ = LEVEL_COLORS[level]
+            x, y = cell_center(column, row)
             animation = ""
 
             if count > 0:
-                arrival, eaten = plan["arrivals"][date]
-                eat_start = (arrival + EAT_DWELL * .18) / cycle
-                eat_end = (arrival + EAT_DWELL * .65) / cycle
+                arrival, eaten = timeline["arrivals"][date]
+                fade_start = (arrival + EAT_DWELL * .2) / cycle
+                fade_end = (arrival + EAT_DWELL * .62) / cycle
                 animation = (
                     f'<animate attributeName="opacity" values="1;1;0;0;1" '
-                    f'keyTimes="0;{eat_start:.8f};{eat_end:.8f};'
-                    f'{reset_time:.8f};1" dur="{cycle:.6f}s" '
-                    f'repeatCount="indefinite"/>'
+                    f'keyTimes="0;{fade_start:.8f};{fade_end:.8f};'
+                    f'{timeline["reset_start_fraction"]:.8f};1" '
+                    f'dur="{cycle:.6f}s" repeatCount="indefinite"/>'
                 )
 
-            art = creature_art(day_index, fill, stroke)
-            base_opacity = "1" if count > 0 else ".3"
+            opacity = "1" if count else ".38"
+            glow = 'filter="url(#creature-glow)"' if count else ""
             pieces.append(
-                f'''<g transform="translate({x:.1f} {y:.1f})"
+                f'''<g transform="translate({x:.2f} {y:.2f})"
  data-date="{date.isoformat()}" data-count="{count}" data-level="{level}"
- opacity="{base_opacity}" {f'filter="url(#creature-glow)"' if count else ''}>
+ opacity="{opacity}" {glow}>
  <title>{date.isoformat()} · {count} contribution{"s" if count != 1 else ""}</title>
- {art}
+ <path d="M-4.2 0 L-6.1 -2.5 Q-8.1 0 -6.1 2.5Z"
+       fill="{stroke}" stroke="{stroke}" stroke-width=".5"/>
+ <ellipse cx="-.4" cy="0" rx="4.5" ry="2.65"
+          fill="{fill}" stroke="{stroke}" stroke-width=".75"/>
+ <path d="M-2.5 -1.25 Q-.3 -2.5 2 -1.2"
+       fill="none" stroke="#FFFFFF" stroke-opacity=".65" stroke-width=".5"/>
+ <circle cx="2.75" cy="-.65" r=".62" fill="#071321"/>
+ <circle cx="2.95" cy="-.86" r=".22" fill="#FFFFFF"/>
  {animation}
 </g>'''
             )
-            day_index += 1
 
-    if plan["points"]:
-        route_path = "M " + " L ".join(
-            f"{x:.3f},{y:.3f}" for x, y in plan["points"]
+    # The fish glides through a Manhattan path. Every path segment is horizontal or vertical.
+    if route:
+        path_markup = (
+            f'<path d="{timeline["path"]}" fill="none" stroke="#56DFFF" '
+            f'stroke-width=".8" stroke-opacity=".12" stroke-dasharray="1.5 5"/>'
         )
-        pieces.append(
-            f'<path d="{route_path}" fill="none" stroke="#67DFFF" '
-            f'stroke-width=".75" stroke-opacity=".13" stroke-dasharray="1.5 5"/>'
+        pieces.append(path_markup)
+        fish_opacity = (
+            f'<animate attributeName="opacity" values="1;1;0;0;1" '
+            f'keyTimes="0;{timeline["fish_fade_start_fraction"]:.8f};'
+            f'{timeline["reset_start_fraction"]:.8f};1;1" '
+            f'dur="{cycle:.6f}s" repeatCount="indefinite"/>'
         )
+        fish_motion = (
+            f'<animateMotion path="{timeline["path"]}" '
+            f'keyPoints="{timeline["key_points"]}" keyTimes="{timeline["key_times"]}" '
+            f'calcMode="linear" dur="{cycle:.6f}s" rotate="auto" '
+            f'repeatCount="indefinite"/>'
+        )
+    else:
+        fish_opacity = '<animate attributeName="opacity" values="1;.94;1" dur="2.8s" repeatCount="indefinite"/>'
+        fish_motion = '<animateTransform attributeName="transform" type="translate" values="0 0;0 -2;0 0" dur="2.8s" repeatCount="indefinite"/>'
+
+    # One detailed fish. Local +X is its nose, so rotate="auto" turns it onto each axis.
+    jaw_values = ["M17 1 Q21 2.2 24 1"]
+    jaw_times = ["0"]
+    for arrival, eaten in timeline["arrivals"].values():
+        jaw_times.extend([
+            f"{(arrival + EAT_DWELL * .12) / cycle:.8f}",
+            f"{(arrival + EAT_DWELL * .54) / cycle:.8f}",
+        ])
+        jaw_values.extend([
+            "M17 1 Q23 8 27 5",
+            "M17 1 Q21 2.2 24 1",
+        ])
+    if len(jaw_values) > 1:
+        jaw_times.append("1")
+    jaw_markup = (
+        f'<animate attributeName="d" calcMode="discrete" '
+        f'values="{";".join(jaw_values)}" keyTimes="{";".join(jaw_times)}" '
+        f'dur="{cycle:.6f}s" repeatCount="indefinite"/>'
+    )
 
     pieces.append(
-        f'''<g id="fish" filter="url(#fish-glow)">
-  <animateMotion path="{plan["path"]}"
-    keyPoints="{plan["key_points"]}" keyTimes="{plan["key_times"]}"
-    calcMode="linear" dur="{cycle:.6f}s" rotate="auto"
-    repeatCount="indefinite"/>
-  <animate attributeName="opacity" values="1;1;0;0;1"
-    keyTimes="0;{reset_time:.8f};{(reset_time + RESET_FADE * .45 / cycle):.8f};{(cycle - .001) / cycle:.8f};1"
-    dur="{cycle:.6f}s" repeatCount="indefinite"/>
-
-  <g transform="scale(.70)">
+        f'''<g id="aquarium-fish" filter="url(#fish-glow)">
+  {fish_motion}
+  {fish_opacity}
+  <g transform="scale(.58)">
+    <!-- Tail fin. -->
     <g transform="translate(-15 0)">
       <animateTransform attributeName="transform" type="rotate"
-        values="-13 0 0;13 0 0;-13 0 0" dur=".36s" repeatCount="indefinite"/>
-      <path d="M0 0 C-7 -7 -17 -13 -20 -9 C-18 -4 -16 -1 -21 0
-        C-16 1 -18 4 -20 9 C-17 13 -7 7 0 0Z"
-        fill="url(#fish-fin)" stroke="#D9F8FF" stroke-width=".8"/>
-      <path d="M-2 0L-16 -7 M-2 0L-16 7" stroke="#FFFFFF"
-        stroke-opacity=".55" stroke-width=".7" fill="none"/>
+        values="-14 0 0;14 0 0;-14 0 0" dur=".36s" repeatCount="indefinite"/>
+      <path d="M0 0 C-7 -7 -17 -13 -21 -8 C-18 -3 -17 -1 -22 0
+        C-17 1 -18 3 -21 8 C-17 13 -7 7 0 0Z"
+        fill="url(#fish-fin)" stroke="#E5FBFF" stroke-width=".9"/>
+      <path d="M-2 0L-17 -7 M-2 0L-17 7" stroke="#FFFFFF"
+        stroke-opacity=".6" stroke-width=".7" fill="none"/>
     </g>
 
-    <path d="M-6 -9 Q-3 -18 5 -16 Q10 -14 12 -9Z"
-      fill="url(#fish-fin)" stroke="#D9F8FF" stroke-width=".8"/>
-    <path d="M-5 10 Q1 18 8 14 L10 9Z"
-      fill="url(#fish-fin)" stroke="#D9F8FF" stroke-width=".7"/>
+    <!-- Dorsal and ventral fins. -->
+    <path d="M-7 -9 Q-4 -18 5 -16 Q11 -14 12 -9Z"
+      fill="url(#fish-fin)" stroke="#E5FBFF" stroke-width=".8"/>
+    <path d="M-6 10 Q0 18 8 14 L10 9Z"
+      fill="url(#fish-fin)" stroke="#E5FBFF" stroke-width=".7"/>
 
-    <path d="M-16 0 C-13 -10 -1 -14 10 -10
-      C17 -8 21 -3 22 0 C21 3 17 8 10 10
-      C-1 14 -13 10 -16 0Z"
-      fill="url(#fish-body)" stroke="#E8FBFF" stroke-width="1.05"/>
+    <!-- Body, belly and reflective flank. -->
+    <path d="M-17 0 C-14 -11 -2 -15 10 -11
+      C18 -8 22 -3 24 0 C22 3 18 8 10 11
+      C-2 15 -14 11 -17 0Z"
+      fill="url(#fish-body)" stroke="#F1FDFF" stroke-width="1.15"/>
+    <path d="M-8 5 C-1 12 11 10 19 3 C11 12 -2 15 -10 8Z"
+      fill="url(#fish-belly)" opacity=".82"/>
+    <path d="M-8 -5 Q1 -10 12 -6" fill="none"
+      stroke="#FFFFFF" stroke-opacity=".92" stroke-width="1.15" stroke-linecap="round"/>
+    <path d="M-2 -5 Q1 -2 -1 1 M4 -6 Q7 -3 5 0"
+      fill="none" stroke="#367EBB" stroke-opacity=".6" stroke-width=".8"/>
 
-    <path d="M-8 5 C-1 11 10 9 17 3 C11 11 -1 14 -9 8Z"
-      fill="url(#fish-belly)" opacity=".8"/>
-    <path d="M-8 -4 Q0 -9 9 -6" fill="none"
-      stroke="#FFFFFF" stroke-opacity=".9" stroke-width="1.15" stroke-linecap="round"/>
-    <path d="M-1 -5 Q2 -2 0 1 M5 -5 Q8 -2 6 1"
-      fill="none" stroke="#2D79C8" stroke-opacity=".55" stroke-width=".75"/>
-
-    <g transform="translate(1 3)">
+    <!-- Pectoral fin and gill. -->
+    <g transform="translate(0 3)">
       <animateTransform attributeName="transform" type="rotate"
-        values="-5 0 0;12 0 0;-5 0 0" dur=".52s" repeatCount="indefinite"/>
-      <path d="M0 0 Q-4 5 1 10 Q7 7 5 1Z"
-        fill="url(#fish-fin)" stroke="#FFFFFF" stroke-opacity=".72" stroke-width=".65"/>
+        values="-6 0 0;13 0 0;-6 0 0" dur=".48s" repeatCount="indefinite"/>
+      <path d="M0 0 Q-5 6 1 11 Q8 7 6 1Z"
+        fill="url(#fish-fin)" stroke="#FFFFFF" stroke-opacity=".8" stroke-width=".7"/>
     </g>
+    <path d="M7 -7 Q3 0 7 7" fill="none"
+      stroke="#347CBD" stroke-width="1.1" stroke-linecap="round"/>
 
-    <path d="M7 -6 Q3 0 7 6" fill="none"
-      stroke="#3A8BCB" stroke-width="1.05" stroke-linecap="round"/>
-    <ellipse cx="13" cy="-4.2" rx="2.2" ry="2.65" fill="#08223F"/>
-    <circle cx="13.5" cy="-5.1" r=".85" fill="#FFFFFF"/>
-    <circle cx="12.2" cy="-3.3" r=".45" fill="#5BE7FF"/>
-
-    <path d="M13 1 Q18 1.3 21 1" fill="none"
-      stroke="#1266B8" stroke-width="1.25" stroke-linecap="round">
-      <animate attributeName="d" values="{plan["mouth_values"]}"
-        keyTimes="{plan["mouth_times"]}" calcMode="linear"
-        dur="{cycle:.6f}s" repeatCount="indefinite"/>
+    <!-- Eye, mouth and animated lower jaw. -->
+    <ellipse cx="14" cy="-4.4" rx="2.3" ry="2.75" fill="#071B35"/>
+    <circle cx="14.6" cy="-5.3" r=".9" fill="#FFFFFF"/>
+    <circle cx="13.3" cy="-3.4" r=".45" fill="#56E8FF"/>
+    <path d="M17 1 Q21 2.2 24 1" fill="none"
+      stroke="#135DA8" stroke-width="1.5" stroke-linecap="round">
+      {jaw_markup}
     </path>
-    <path d="M-13 -3 Q-18 -1 -19 1" fill="none"
-      stroke="#DDFBFF" stroke-opacity=".85" stroke-width=".7"/>
+    <path d="M18 2L22 2.5" stroke="#FFFFFF" stroke-width=".55" opacity=".9"/>
   </g>
 </g>
 
-<g fill="none" stroke="#8FEAFF" stroke-opacity=".42">
-  <circle cx="116" cy="215" r="1.7"><animate attributeName="cy" values="215;188;215" dur="6s" repeatCount="indefinite"/></circle>
-  <circle cx="131" cy="222" r="1.1"><animate attributeName="cy" values="222;200;222" dur="7s" begin="1.3s" repeatCount="indefinite"/></circle>
-  <circle cx="746" cy="213" r="1.6"><animate attributeName="cy" values="213;188;213" dur="6.5s" begin=".9s" repeatCount="indefinite"/></circle>
+<!-- Fine plant silhouettes frame the floor without competing with the calendar. -->
+<g fill="none" stroke="#1A967F" stroke-opacity=".3" stroke-width="1.6" stroke-linecap="round">
+  <path d="M16 256 Q22 230 15 216 Q29 228 25 244 Q35 225 33 213"/>
+  <path d="M844 256 Q837 233 844 219 Q831 230 834 246 Q824 229 826 215"/>
 </g>
 
-<path d="M22 221H838" stroke="#2B7395" stroke-opacity=".42"/>
-<text x="27" y="237" font-family="Trebuchet MS, Arial, sans-serif"
+<!-- Soft air bubbles move independently of the fish. -->
+<g fill="none" stroke="#A3EEFF" stroke-opacity=".5">
+  <circle cx="115" cy="223" r="1.7"><animate attributeName="cy" values="223;194;223" dur="6.2s" repeatCount="indefinite"/></circle>
+  <circle cx="129" cy="231" r="1.1"><animate attributeName="cy" values="231;208;231" dur="7.3s" begin="1.2s" repeatCount="indefinite"/></circle>
+  <circle cx="744" cy="225" r="1.5"><animate attributeName="cy" values="225;199;225" dur="6.6s" begin=".8s" repeatCount="indefinite"/></circle>
+</g>
+
+<path d="M22 215H838" stroke="#2B7395" stroke-opacity=".42"/>
+<text x="27" y="235" font-family="Trebuchet MS, Arial, sans-serif"
       font-size="8.5" font-weight="600" letter-spacing=".8"
       fill="#77AFCB">{start.strftime("%b %d, %Y").upper()}  /  {end.strftime("%b %d, %Y").upper()}</text>
 <g font-family="Trebuchet MS, Arial, sans-serif" font-size="8"
    font-weight="700" letter-spacing=".6" fill="#77AFCB">
-  <text x="672" y="237">LESS</text>'''
+  <text x="672" y="235">LESS</text>'''
     )
 
     for index, level in enumerate(
         ("NONE", "FIRST_QUARTILE", "SECOND_QUARTILE", "THIRD_QUARTILE", "FOURTH_QUARTILE")
     ):
-        fill, stroke = LEVEL_COLORS[level]
+        fill, stroke, _ = LEVEL_COLORS[level]
         pieces.append(
-            f'<rect x="{706 + index * 16}" y="229" width="10" height="10" rx="2.8" '
+            f'<rect x="{706 + index * 16}" y="227" width="10" height="10" rx="3" '
             f'fill="{fill}" stroke="{stroke}" stroke-width=".8"/>'
         )
 
     pieces.append(
-        '''<text x="794" y="237">MORE</text>
+        '''<text x="794" y="235">MORE</text>
 </g>
 </g>
-<rect x=".7" y=".7" width="858.6" height="250.6" rx="13"
+<rect x=".7" y=".7" width="858.6" height="256.6" rx="13"
       fill="none" stroke="url(#glass-edge)" stroke-width="1.15"/>
-<rect x="4" y="4" width="852" height="244" rx="10"
+<rect x="4" y="4" width="852" height="250" rx="10"
       fill="none" stroke="#DDFBFF" stroke-opacity=".045"/>
 </svg>'''
     )
@@ -704,7 +655,7 @@ def main() -> None:
     active_days = sum(item["count"] > 0 for item in days.values())
     print(
         f"Rendered {total:,} contributions across {len(days)} days; "
-        f"the fish route feeds on {active_days} active day creatures."
+        f"fish route eats {active_days} active contribution creatures."
     )
 
 
