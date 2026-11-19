@@ -143,6 +143,8 @@ def collect_days(
             if level not in LEVEL_COLORS:
                 raise RuntimeError(f"Unknown contribution level {level!r} for {date}.")
             if start <= date <= end:
+                if date in result:
+                    raise RuntimeError(f"Duplicate contribution day returned for {date}.")
                 result[date] = {
                     "count": count,
                     "level": level if count else "NONE",
