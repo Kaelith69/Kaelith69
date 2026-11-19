@@ -264,7 +264,7 @@ def render_svg(
     )
 
     # Month labels are anchored to the week containing the first of each month.
-    month_positions: list[tuple[int, str]] = [(0, weeks[0][0].strftime("%b").upper())]
+    month_positions: list[tuple[int, str]] = [(0, start.strftime("%b").upper())]
     seen_months = {(weeks[0][0].year, weeks[0][0].month)}
     for column, week in enumerate(weeks):
         for date in week:
@@ -300,6 +300,7 @@ def render_svg(
             )
             pieces.append(
                 f'''<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="2"
+ data-date="{date.isoformat()}" data-count="{count}" data-level="{html.escape(level)}"
  fill="{fill}" stroke="{stroke}" stroke-width=".7" opacity="1">
  <title>{tooltip}</title>
  <animate attributeName="opacity" values="1;.17;.17"
