@@ -22,11 +22,11 @@ LOGIN = os.environ.get("GITHUB_PROFILE_LOGIN", "Kaelith69")
 API_URL = os.environ.get("GITHUB_GRAPHQL_URL", "https://api.github.com/graphql")
 
 GRID_X = 70
-GRID_Y = 135
-CELL = 11
+GRID_Y = 155
+CELL = 12
 PITCH = 19
-ROW_PITCH = 22
-LAUNCH_POINT = (48.0, 301.0)
+ROW_PITCH = 24
+LAUNCH_POINT = (48.0, 365.0)
 FISH_SPEED = 105.0
 EAT_DWELL = 0.72
 RESET_FADE = 0.72
@@ -54,11 +54,11 @@ query ContributionCalendar($login: String!, $from: DateTime!, $to: DateTime!) {
 """
 
 LEVEL_COLORS = {
-    "NONE": ("#18313C", "#41616B", "quiet plankton"),
-    "FIRST_QUARTILE": ("#2876A6", "#9BD9EF", "reef fish"),
-    "SECOND_QUARTILE": ("#21A9B7", "#B0F1E8", "reef shrimp"),
-    "THIRD_QUARTILE": ("#55D6B0", "#C5F7E8", "jellyfish"),
-    "FOURTH_QUARTILE": ("#FFC879", "#FFF0C9", "glow star"),
+    "NONE": ("#171D3C", "#46548A", "midnight plankton"),
+    "FIRST_QUARTILE": ("#275BFF", "#A8C4FF", "electric reef fish"),
+    "SECOND_QUARTILE": ("#00D7FF", "#A8F5FF", "cyan reef shrimp"),
+    "THIRD_QUARTILE": ("#8C4DFF", "#D5BCFF", "ultraviolet jellyfish"),
+    "FOURTH_QUARTILE": ("#FF3BC8", "#FFC4F2", "magenta glow star"),
 }
 
 
@@ -459,75 +459,80 @@ def render_svg(
 
     pieces: list[str] = []
     pieces.append(
-        f'''<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="430"
- viewBox="0 0 1120 430" role="img" aria-labelledby="tank-title tank-desc">
+        f'''<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="590"
+ viewBox="0 0 1120 590" role="img" aria-labelledby="tank-title tank-desc">
 <title id="tank-title">{html.escape(LOGIN)} contribution reef</title>
 <desc id="tank-desc">{total:,} GitHub contributions from {start.isoformat()} to {end.isoformat()}. A white reef fish follows a rounded, eased route to each active contribution organism. A color shifting octopus rests on the sandy seabed beneath a living reef with drifting plankton, jellyfish, kelp and underwater light.</desc>
 <defs>
   <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
-    <stop stop-color="#041A27"/><stop offset=".34" stop-color="#062A38"/>
-    <stop offset=".72" stop-color="#082332"/><stop offset="1" stop-color="#04131E"/>
+    <stop stop-color="#030411"/><stop offset=".28" stop-color="#080B20"/>
+    <stop offset=".65" stop-color="#0D0B2C"/><stop offset="1" stop-color="#050611"/>
   </linearGradient>
-  <radialGradient id="water-light" cx="50%" cy="22%" r="80%">
-    <stop stop-color="#2A9EAA" stop-opacity=".19"/>
-    <stop offset=".48" stop-color="#176C7A" stop-opacity=".07"/>
-    <stop offset="1" stop-color="#02101A" stop-opacity="0"/>
+  <radialGradient id="water-light" cx="48%" cy="28%" r="78%">
+    <stop stop-color="#263BFF" stop-opacity=".24"/>
+    <stop offset=".34" stop-color="#7028C9" stop-opacity=".12"/>
+    <stop offset=".67" stop-color="#00BFEF" stop-opacity=".045"/>
+    <stop offset="1" stop-color="#030411" stop-opacity="0"/>
   </radialGradient>
   <linearGradient id="surface-light" x1="0" y1="0" x2="0" y2="1">
-    <stop stop-color="#B8F9F1" stop-opacity=".25"/>
-    <stop offset="1" stop-color="#55C8C0" stop-opacity="0"/>
+    <stop stop-color="#00E5FF" stop-opacity=".32"/>
+    <stop offset=".42" stop-color="#8A5CFF" stop-opacity=".14"/>
+    <stop offset="1" stop-color="#FF3BC8" stop-opacity="0"/>
   </linearGradient>
   <linearGradient id="glass-edge" x1="0" y1="0" x2="1" y2="1">
-    <stop stop-color="#A7F1E5" stop-opacity=".8"/>
-    <stop offset=".46" stop-color="#317D8A" stop-opacity=".38"/>
-    <stop offset="1" stop-color="#D7F5E9" stop-opacity=".74"/>
+    <stop stop-color="#00E5FF" stop-opacity=".92"/>
+    <stop offset=".42" stop-color="#625BFF" stop-opacity=".58"/>
+    <stop offset=".72" stop-color="#FF3BC8" stop-opacity=".42"/>
+    <stop offset="1" stop-color="#00E5FF" stop-opacity=".86"/>
   </linearGradient>
   <linearGradient id="sand" x1="0" y1="0" x2="0" y2="1">
-    <stop stop-color="#315B5B"/><stop offset=".42" stop-color="#244449"/>
-    <stop offset="1" stop-color="#102A32"/>
+    <stop stop-color="#26204D"/><stop offset=".42" stop-color="#171A3B"/>
+    <stop offset="1" stop-color="#090C20"/>
   </linearGradient>
   <linearGradient id="fish-body" x1=".12" y1="0" x2=".82" y2="1">
-    <stop stop-color="#FFFFFF"/><stop offset=".3" stop-color="#E8F8F3"/>
-    <stop offset=".72" stop-color="#9ED5DB"/><stop offset="1" stop-color="#438BA5"/>
+    <stop stop-color="#FFFFFF"/><stop offset=".3" stop-color="#E9F5FF"/>
+    <stop offset=".72" stop-color="#A6BFFF"/><stop offset="1" stop-color="#4964D8"/>
   </linearGradient>
   <linearGradient id="fish-fin" x1="0" y1="0" x2="1" y2="1">
-    <stop stop-color="#F6FFFF"/><stop offset=".42" stop-color="#70C9D1"/>
-    <stop offset="1" stop-color="#286A88"/>
+    <stop stop-color="#FFFFFF"/><stop offset=".38" stop-color="#00E5FF"/>
+    <stop offset="1" stop-color="#7657FF"/>
   </linearGradient>
   <linearGradient id="fish-belly" x1="0" y1="0" x2="0" y2="1">
     <stop stop-color="#FFFFFF" stop-opacity=".08"/>
     <stop offset="1" stop-color="#FFFFFF" stop-opacity=".76"/>
   </linearGradient>
   <linearGradient id="reef-blue" x1="0" y1="0" x2="1" y2="1">
-    <stop stop-color="#BCEBE9"/><stop offset=".45" stop-color="#3F9BAE"/>
-    <stop offset="1" stop-color="#24627D"/>
+    <stop stop-color="#FFC4F2"/><stop offset=".42" stop-color="#A44DFF"/>
+    <stop offset="1" stop-color="#263BFF"/>
   </linearGradient>
   <linearGradient id="octopus-skin" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="#E0A184">
-      <animate attributeName="stop-color" values="#D99B80;#64B9A6;#8298D6;#C38BAA;#D99B80" dur="38s" repeatCount="indefinite"/>
+    <stop offset="0" stop-color="#FF4FD8">
+      <animate attributeName="stop-color" values="#FF4FD8;#9B5CFF;#00E5FF;#A45BFF;#FF4FD8" dur="38s" repeatCount="indefinite"/>
     </stop>
-    <stop offset=".48" stop-color="#A85F68">
-      <animate attributeName="stop-color" values="#A85F68;#347F83;#526EAD;#985D85;#A85F68" dur="38s" repeatCount="indefinite"/>
+    <stop offset=".48" stop-color="#A13EDB">
+      <animate attributeName="stop-color" values="#A13EDB;#485BFF;#00AEEF;#D235C6;#A13EDB" dur="38s" repeatCount="indefinite"/>
     </stop>
-    <stop offset="1" stop-color="#70475A">
-      <animate attributeName="stop-color" values="#70475A;#25565E;#394C83;#69445F;#70475A" dur="38s" repeatCount="indefinite"/>
+    <stop offset="1" stop-color="#39235F">
+      <animate attributeName="stop-color" values="#39235F;#1B2F78;#07506F;#63206C;#39235F" dur="38s" repeatCount="indefinite"/>
     </stop>
   </linearGradient>
   <linearGradient id="octopus-arm" x1="0" y1="0" x2="0" y2="1">
-    <stop stop-color="#E4AA8D">
-      <animate attributeName="stop-color" values="#E4AA8D;#76C9B3;#9AACE7;#D29DBA;#E4AA8D" dur="38s" repeatCount="indefinite"/>
+    <stop stop-color="#FF8BE4">
+      <animate attributeName="stop-color" values="#FF8BE4;#A98BFF;#6CF5FF;#D98BFF;#FF8BE4" dur="38s" repeatCount="indefinite"/>
     </stop>
-    <stop offset="1" stop-color="#744C62">
-      <animate attributeName="stop-color" values="#744C62;#2D6C69;#46558E;#774A72;#744C62" dur="38s" repeatCount="indefinite"/>
+    <stop offset="1" stop-color="#542B8F">
+      <animate attributeName="stop-color" values="#542B8F;#273D9E;#075A86;#812D87;#542B8F" dur="38s" repeatCount="indefinite"/>
     </stop>
   </linearGradient>
   <linearGradient id="octopus-highlight" x1="0" y1="0" x2="1" y2="0">
-    <stop stop-color="#FFE2C9" stop-opacity=".75"/>
-    <stop offset="1" stop-color="#A2E9DB" stop-opacity=".5"/>
+    <stop stop-color="#FFFFFF" stop-opacity=".88"/>
+    <stop offset=".46" stop-color="#00E5FF" stop-opacity=".82"/>
+    <stop offset="1" stop-color="#FF73DF" stop-opacity=".6"/>
   </linearGradient>
   <radialGradient id="octopus-blush">
-    <stop stop-color="#F8C7A9" stop-opacity=".65"/>
-    <stop offset="1" stop-color="#F8C7A9" stop-opacity="0"/>
+    <stop stop-color="#FF8BE4" stop-opacity=".72"/>
+    <stop offset=".52" stop-color="#8B5CFF" stop-opacity=".3"/>
+    <stop offset="1" stop-color="#8B5CFF" stop-opacity="0"/>
   </radialGradient>
   <filter id="fish-glow" x="-100%" y="-100%" width="300%" height="300%">
     <feGaussianBlur stdDeviation="2.3" result="blur"/>
@@ -541,28 +546,28 @@ def render_svg(
     <feGaussianBlur stdDeviation="4" result="blur"/>
     <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
   </filter>
-  <clipPath id="tank-clip"><rect x="1" y="1" width="1118" height="428" rx="19"/></clipPath>
+  <clipPath id="tank-clip"><rect x="1" y="1" width="1118" height="588" rx="22"/></clipPath>
 </defs>
 
 <g clip-path="url(#tank-clip)">
-  <rect width="1120" height="430" fill="url(#water)"/>
-  <rect width="1120" height="430" fill="url(#water-light)"/>
+  <rect width="1120" height="590" fill="url(#water)"/>
+  <rect width="1120" height="590" fill="url(#water-light)"/>
 
   <!-- Slow surface glow and moving shafts of water light. -->
-  <path d="M0 75 Q170 58 340 72 T680 70 T1120 71 L1120 95 Q920 88 740 92 T360 91 T0 94Z"
+  <path d="M0 84 Q170 66 340 80 T680 78 T1120 79 L1120 105 Q920 96 740 100 T360 99 T0 102Z"
         fill="url(#surface-light)" opacity=".64"/>
-  <path d="M18 79 Q200 65 380 77 T760 75 T1100 78"
-        fill="none" stroke="#A9F4EB" stroke-opacity=".32" stroke-width="1.1"/>
-  <path d="M18 84 Q200 70 380 82 T760 80 T1100 83"
-        fill="none" stroke="#FFFFFF" stroke-opacity=".08" stroke-width=".8"/>
+  <path d="M18 88 Q200 71 380 85 T760 83 T1100 86"
+        fill="none" stroke="#00E5FF" stroke-opacity=".48" stroke-width="1.2"/>
+  <path d="M18 94 Q200 77 380 91 T760 89 T1100 92"
+        fill="none" stroke="#A78BFF" stroke-opacity=".18" stroke-width=".9"/>
   <g opacity=".18">
-    <path d="M125 75 L205 75 L295 314 L245 314Z" fill="#8DE5D9" opacity=".11">
+    <path d="M125 84 L205 84 L295 405 L245 405Z" fill="#00E5FF" opacity=".16">
       <animateTransform attributeName="transform" type="translate" values="-28 0;28 0;-28 0" dur="27s" repeatCount="indefinite"/>
     </path>
-    <path d="M470 75 L545 75 L627 303 L572 303Z" fill="#B3F0E7" opacity=".13">
+    <path d="M470 84 L545 84 L627 395 L572 395Z" fill="#8B5CFF" opacity=".17">
       <animateTransform attributeName="transform" type="translate" values="22 0;-22 0;22 0" dur="31s" repeatCount="indefinite"/>
     </path>
-    <path d="M865 75 L930 75 L1010 306 L965 306Z" fill="#74C8D0" opacity=".1">
+    <path d="M865 84 L930 84 L1010 405 L965 405Z" fill="#FF3BC8" opacity=".13">
       <animateTransform attributeName="transform" type="translate" values="-18 0;18 0;-18 0" dur="24s" repeatCount="indefinite"/>
     </path>
   </g>
@@ -576,7 +581,7 @@ def render_svg(
   </g>
 
   <!-- Distant fish schools create movement behind the calendar. -->
-  <g fill="#9ADCD8" opacity=".24">
+  <g fill="#A4D8FF" opacity=".3">
     <g transform="translate(175 99)">
       <path d="M-12 0 Q-5 -5 3 0 Q-5 5 -12 0Z M3 0L9 -5L8 0L9 5Z"/>
       <path d="M10 7 Q16 3 23 7 Q16 11 10 7Z M23 7L28 3L27 7L28 11Z" opacity=".7"/>
@@ -591,7 +596,7 @@ def render_svg(
   </g>
 
   <!-- Soft plankton field. Particles move independently at different depths. -->
-  <g fill="#B9F6E9">
+  <g fill="#9AEFFF">
     <circle cx="64" cy="119" r="1.3" opacity=".42"><animate attributeName="cy" values="119;111;119" dur="7s" repeatCount="indefinite"/></circle>
     <circle cx="1035" cy="119" r="1.5" opacity=".34"><animate attributeName="cy" values="119;106;119" dur="8s" begin="1s" repeatCount="indefinite"/></circle>
     <circle cx="104" cy="292" r="1.1" opacity=".48"><animate attributeName="cy" values="292;278;292" dur="9s" repeatCount="indefinite"/></circle>
@@ -605,17 +610,17 @@ def render_svg(
         font-size="29" letter-spacing="1.7" fill="#EAF8F3">CONTRIBUTIONS</text>
   <text x="40" y="68" font-family="Trebuchet MS, Arial, sans-serif"
         font-size="8" font-weight="700" letter-spacing="1.8"
-        fill="#75AAA9">A YEAR OF BUILDING BELOW THE SURFACE</text>
+        fill="#8F91D8">A YEAR OF BUILDING BELOW THE SURFACE</text>
   <text x="1080" y="51" text-anchor="end"
         font-family="Bangers, Impact, 'Arial Black', sans-serif"
-        font-size="35" letter-spacing=".9" fill="#9CEBE0"
+        font-size="37" letter-spacing="1.1" fill="#00E5FF"
         filter="url(#soft-glow)">{total:,}</text>
   <text x="1080" y="65" text-anchor="end"
         font-family="Trebuchet MS, Arial, sans-serif"
-        font-size="8" letter-spacing="1.5" fill="#83B8B5">365 DAY REEF</text>
+        font-size="8.5" letter-spacing="1.7" fill="#FF69D4">365 DAY REEF</text>
 
-  <g font-family="Trebuchet MS, Arial, sans-serif" font-size="9"
-     font-weight="700" letter-spacing=".85" fill="#8AC2BE">'''
+  <g font-family="Trebuchet MS, Arial, sans-serif" font-size="9.5"
+     font-weight="700" letter-spacing=".95" fill="#A7A8F7">'''
     )
 
     month_positions: list[tuple[int, str]] = []
@@ -631,7 +636,7 @@ def render_svg(
         month_positions.insert(0, (0, start.strftime("%b").upper()))
 
     for column, label in month_positions:
-        pieces.append(f'<text x="{GRID_X + column * PITCH}" y="113">{label}</text>')
+        pieces.append(f'<text x="{GRID_X + column * PITCH}" y="136">{label}</text>')
 
     for row, label in enumerate(("S", "M", "T", "W", "T", "F", "S")):
         pieces.append(
@@ -759,26 +764,26 @@ def render_svg(
         repeatCount="indefinite"/>
       <path d="M0 0 C-7 -7 -17 -13 -21 -8 C-18 -3 -17 -1 -22 0
         C-17 1 -18 3 -21 8 C-17 13 -7 7 0 0Z"
-        fill="url(#fish-fin)" stroke="#D8F8F0" stroke-width=".9"/>
+        fill="url(#fish-fin)" stroke="#CBF4FF" stroke-width=".9"/>
       <path d="M-2 0L-17 -7 M-2 0L-17 7" stroke="#FFFFFF"
         stroke-opacity=".55" stroke-width=".7" fill="none"/>
     </g>
 
     <path d="M-7 -9 Q-4 -18 5 -16 Q11 -14 12 -9Z"
-      fill="url(#fish-fin)" stroke="#DDF7F2" stroke-width=".8"/>
+      fill="url(#fish-fin)" stroke="#C8E9FF" stroke-width=".8"/>
     <path d="M-6 10 Q0 18 8 14 L10 9Z"
       fill="url(#fish-fin)" stroke="#DDF7F2" stroke-width=".7"/>
 
     <path d="M-17 0 C-14 -11 -2 -15 10 -11
       C18 -8 22 -3 24 0 C22 3 18 8 10 11
       C-2 15 -14 11 -17 0Z"
-      fill="url(#fish-body)" stroke="#F1FFFA" stroke-width="1.15"/>
+      fill="url(#fish-body)" stroke="#E9F2FF" stroke-width="1.15"/>
     <path d="M-8 5 C-1 12 11 10 19 3 C11 12 -2 15 -10 8Z"
       fill="url(#fish-belly)" opacity=".82"/>
     <path d="M-8 -5 Q1 -10 12 -6" fill="none"
       stroke="#FFFFFF" stroke-opacity=".88" stroke-width="1.15" stroke-linecap="round"/>
     <path d="M-2 -5 Q1 -2 -1 1 M4 -6 Q7 -3 5 0"
-      fill="none" stroke="#367C83" stroke-opacity=".6" stroke-width=".8"/>
+      fill="none" stroke="#6278FF" stroke-opacity=".6" stroke-width=".8"/>
 
     <g transform="translate(0 3)">
       <animateTransform attributeName="transform" type="rotate" additive="sum"
@@ -789,13 +794,13 @@ def render_svg(
         fill="url(#fish-fin)" stroke="#FFFFFF" stroke-opacity=".75" stroke-width=".7"/>
     </g>
     <path d="M7 -7 Q3 0 7 7" fill="none"
-      stroke="#347C83" stroke-width="1.1" stroke-linecap="round"/>
+      stroke="#526DFF" stroke-width="1.1" stroke-linecap="round"/>
 
     <ellipse cx="14" cy="-4.4" rx="2.3" ry="2.75" fill="#071B29"/>
     <circle cx="14.6" cy="-5.3" r=".9" fill="#FFFFFF"/>
-    <circle cx="13.3" cy="-3.4" r=".45" fill="#74E4D6"/>
+    <circle cx="13.3" cy="-3.4" r=".45" fill="#00E5FF"/>
     <path d="M17 1 Q21 2.2 24 1" fill="none"
-      stroke="#135B6A" stroke-width="1.5" stroke-linecap="round">
+      stroke="#334AFF" stroke-width="1.5" stroke-linecap="round">
       {jaw_markup}
     </path>
     <path d="M18 2L22 2.5" stroke="#FFFFFF" stroke-width=".55" opacity=".9"/>
@@ -803,48 +808,60 @@ def render_svg(
 </g>
 
 <!-- The foreground seabed is layered behind the octopus and coral. -->
-<path d="M0 356 C125 342 225 355 344 350 C466 344 570 359 702 350
- C850 339 970 356 1120 346 L1120 430 L0 430Z"
-      fill="url(#sand)" opacity=".92"/>
-<path d="M0 356 C125 342 225 355 344 350 C466 344 570 359 702 350
- C850 339 970 356 1120 346"
-      fill="none" stroke="#7BB8A8" stroke-opacity=".28" stroke-width="1.1"/>
-<g fill="#9BC9B4" opacity=".23">
-  <ellipse cx="105" cy="372" rx="17" ry="3"/>
-  <ellipse cx="278" cy="379" rx="24" ry="3"/>
-  <ellipse cx="810" cy="375" rx="19" ry="3"/>
-  <ellipse cx="1020" cy="369" rx="26" ry="3"/>
+<path d="M0 470 C125 448 225 469 344 462 C466 453 570 478 702 462
+ C850 451 970 472 1120 458 L1120 590 L0 590Z"
+      fill="url(#sand)" opacity=".96"/>
+<path d="M0 470 C125 448 225 469 344 462 C466 453 570 478 702 462
+ C850 451 970 472 1120 458"
+      fill="none" stroke="#8B5CFF" stroke-opacity=".5" stroke-width="1.4"/>
+<g fill="#6757FF" opacity=".32">
+  <ellipse cx="105" cy="492" rx="17" ry="3"/>
+  <ellipse cx="278" cy="499" rx="24" ry="3"/>
+  <ellipse cx="810" cy="495" rx="19" ry="3"/>
+  <ellipse cx="1020" cy="489" rx="26" ry="3"/>
 </g>
-<g fill="#B9D4C5" opacity=".35">
-  <circle cx="145" cy="364" r="1.1"/><circle cx="169" cy="379" r=".8"/>
-  <circle cx="313" cy="365" r="1.2"/><circle cx="751" cy="375" r="1"/>
-  <circle cx="1045" cy="385" r="1.3"/><circle cx="1080" cy="367" r=".8"/>
+<g fill="#A69BFF" opacity=".5">
+  <circle cx="145" cy="484" r="1.1"/><circle cx="169" cy="499" r=".8"/>
+  <circle cx="313" cy="485" r="1.2"/><circle cx="751" cy="495" r="1"/>
+  <circle cx="1045" cy="505" r="1.3"/><circle cx="1080" cy="487" r=".8"/>
 </g>
 
-<!-- Kelp and coral frame the lower corners without intruding into the calendar. -->
-<g fill="none" stroke-linecap="round">
-  <g stroke="#3B9B83" stroke-width="3" opacity=".56">
-    <path d="M24 358 C30 330 16 317 27 292 C39 318 31 337 39 358">
-      <animate attributeName="d" values="M24 358 C30 330 16 317 27 292 C39 318 31 337 39 358;M24 358 C35 330 25 314 34 292 C43 319 28 338 39 358;M24 358 C30 330 16 317 27 292 C39 318 31 337 39 358" dur="8s" repeatCount="indefinite"/>
+<!-- Neon coral gardens and kelp frame the foreground shelf. -->
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <g stroke="#00E5FF" stroke-width="3.4" opacity=".82">
+    <path d="M25 470 C31 444 17 424 28 384 C41 421 32 447 40 470">
+      <animate attributeName="d" values="M25 470 C31 444 17 424 28 384 C41 421 32 447 40 470;M25 470 C36 444 25 421 35 384 C44 422 29 448 40 470;M25 470 C31 444 17 424 28 384 C41 421 32 447 40 470" dur="9s" repeatCount="indefinite"/>
     </path>
-    <path d="M1085 357 C1077 331 1098 316 1088 291 C1074 316 1082 337 1072 359">
-      <animate attributeName="d" values="M1085 357 C1077 331 1098 316 1088 291 C1074 316 1082 337 1072 359;M1085 357 C1073 331 1089 313 1080 291 C1069 317 1088 338 1072 359;M1085 357 C1077 331 1098 316 1088 291 C1074 316 1082 337 1072 359" dur="9s" repeatCount="indefinite"/>
+    <path d="M1085 470 C1077 443 1098 421 1088 384 C1074 419 1082 448 1072 470">
+      <animate attributeName="d" values="M1085 470 C1077 443 1098 421 1088 384 C1074 419 1082 448 1072 470;M1085 470 C1073 443 1089 419 1080 384 C1069 420 1088 449 1072 470;M1085 470 C1077 443 1098 421 1088 384 C1074 419 1082 448 1072 470" dur="10s" repeatCount="indefinite"/>
     </path>
   </g>
-  <g stroke="#BE8F7A" stroke-width="2" opacity=".45">
-    <path d="M57 358 Q47 337 56 322 M56 342 Q41 332 43 320 M57 349 Q74 337 76 325"/>
-    <path d="M1052 357 Q1065 337 1058 321 M1058 344 Q1075 333 1076 321"/>
+  <g stroke="#FF3BC8" stroke-width="2.6" opacity=".88">
+    <path d="M112 470 Q104 450 113 428 M113 452 Q94 438 98 420 M113 460 Q132 442 136 423 M110 445 Q108 430 119 416"/>
+    <path d="M1007 470 Q1017 450 1008 428 M1008 452 Q1027 438 1023 420 M1008 460 Q989 442 985 423"/>
   </g>
+  <g stroke="#8B5CFF" stroke-width="2.4" opacity=".95">
+    <path d="M72 470 Q73 451 62 437 M72 455 Q87 444 87 429 M72 461 Q58 454 54 443"/>
+    <path d="M1047 470 Q1046 450 1058 435 M1047 455 Q1033 444 1032 429"/>
+  </g>
+</g>
+<g fill="#171638" stroke="#5143A4" stroke-opacity=".78" stroke-width="1">
+  <path d="M0 470 Q30 448 62 455 Q89 444 116 470 L140 590H0Z"/>
+  <path d="M1120 464 Q1090 446 1060 456 Q1036 444 1005 469 L980 590H1120Z"/>
+</g>
+<g fill="none" stroke="#FF3BC8" stroke-width="1.35" stroke-linecap="round" opacity=".82">
+  <path d="M126 470 Q124 455 134 448 Q146 442 144 429 M134 448 Q119 442 117 430 M134 448 Q151 444 158 434"/>
+  <path d="M994 469 Q996 452 985 446 Q974 439 976 427 M985 446 Q999 440 1003 429 M985 446 Q969 440 963 432"/>
 </g>
 
 <!-- A drifting jellyfish in the lower water column. -->
-<g id="reef-jellyfish" transform="translate(150 335)" opacity=".68">
+<g id="reef-jellyfish" transform="translate(190 410)" opacity=".82">
   <animateTransform attributeName="transform" type="translate" additive="sum"
-    values="0 0;8 -12;1 0" dur="14s" repeatCount="indefinite"/>
+    values="0 0;11 -18;2 0" dur="14s" repeatCount="indefinite"/>
   <path d="M-12 1 C-13 -14 -5 -22 0 -22 C7 -22 13 -13 12 1Z"
-        fill="#68CFC3" fill-opacity=".24" stroke="#B8F5E9" stroke-opacity=".7" stroke-width=".9"/>
-  <path d="M-10 1 Q0 7 10 1" fill="none" stroke="#B8F5E9" stroke-width="1"/>
-  <g fill="none" stroke="#A7EBDD" stroke-width="1" stroke-linecap="round">
+        fill="#8B5CFF" fill-opacity=".26" stroke="#D5BCFF" stroke-opacity=".92" stroke-width=".9"/>
+  <path d="M-10 1 Q0 7 10 1" fill="none" stroke="#FF79D8" stroke-width="1.1"/>
+  <g fill="none" stroke="#00E5FF" stroke-width="1.1" stroke-linecap="round">
     <path d="M-8 3 Q-13 13 -9 21"><animate attributeName="d" values="M-8 3 Q-13 13 -9 21;M-8 3 Q-4 13 -9 21;M-8 3 Q-13 13 -9 21" dur="3.2s" repeatCount="indefinite"/></path>
     <path d="M-2 4 Q-5 15 -1 24"><animate attributeName="d" values="M-2 4 Q-5 15 -1 24;M-2 4 Q2 15 -1 24;M-2 4 Q-5 15 -1 24" dur="3.8s" repeatCount="indefinite"/></path>
     <path d="M5 4 Q10 13 7 22"><animate attributeName="d" values="M5 4 Q10 13 7 22;M5 4 Q1 13 7 22;M5 4 Q10 13 7 22" dur="3.4s" repeatCount="indefinite"/></path>
@@ -852,8 +869,8 @@ def render_svg(
 </g>
 
 <!-- Eight relaxed arms, soft suckers, and a color-shifting mantle. -->
-<g id="resting-octopus" transform="translate(560 340)">
-  <ellipse cx="0" cy="31" rx="154" ry="8" fill="#071923" opacity=".36"/>
+<g id="resting-octopus" transform="translate(560 482)">
+  <ellipse cx="0" cy="31" rx="154" ry="8" fill="#030411" opacity=".58"/>
 '''
     )
 
@@ -872,7 +889,7 @@ def render_svg(
             f'''  <g transform="translate({translate})" data-octopus-arm="true">
     <animateTransform attributeName="transform" type="rotate" additive="sum"
       values="{rotation}" dur="{duration}" begin="{begin}" repeatCount="indefinite"/>
-    <path d="{arm_path}" fill="none" stroke="#1A2733" stroke-opacity=".48"
+    <path d="{arm_path}" fill="none" stroke="#140C34" stroke-opacity=".48"
       stroke-width="11" stroke-linecap="round"/>
     <path d="{arm_path}" fill="none" stroke="url(#octopus-arm)"
       stroke-width="8.2" stroke-linecap="round"/>
@@ -884,7 +901,7 @@ def render_svg(
         for index in range(0, len(coordinates), 2):
             sx, sy = coordinates[index], coordinates[index + 1]
             pieces.append(
-                f'    <circle cx="{sx}" cy="{sy}" r="1.35" fill="#F0D5C3" fill-opacity=".68" stroke="#664D5A" stroke-opacity=".38" stroke-width=".4"/>\n'
+                f'    <circle cx="{sx}" cy="{sy}" r="1.35" fill="#E7C8FF" fill-opacity=".88" stroke="#382064" stroke-opacity=".38" stroke-width=".4"/>\n'
             )
         pieces.append("  </g>\n")
 
@@ -894,10 +911,10 @@ def render_svg(
       values="1 1;1.025 .975;1 1" dur="5.8s" repeatCount="indefinite"/>
     <path d="M-30 17 C-43 2 -37 -23 -20 -34 C-7 -43 12 -42 26 -29
       C42 -14 38 10 25 21 C10 31 -17 31 -30 17Z"
-      fill="url(#octopus-skin)" stroke="#F0C4AB" stroke-opacity=".55" stroke-width="1.2"/>
+      fill="url(#octopus-skin)" stroke="#FFB5F0" stroke-opacity=".55" stroke-width="1.2"/>
     <path d="M-24 8 C-24 -15 -10 -30 4 -31 C20 -30 30 -12 26 6
       C16 17 -9 22 -24 8Z" fill="url(#octopus-blush)" opacity=".6"/>
-    <g fill="#F4C2A6" opacity=".46">
+    <g fill="#B5A2FF" opacity=".58">
       <circle cx="-18" cy="-13" r="2.1"><animate attributeName="opacity" values=".25;.65;.25" dur="8s" repeatCount="indefinite"/></circle>
       <circle cx="-8" cy="-25" r="1.5"><animate attributeName="opacity" values=".6;.22;.6" dur="7s" repeatCount="indefinite"/></circle>
       <circle cx="10" cy="-21" r="2"><animate attributeName="opacity" values=".25;.7;.25" dur="9s" repeatCount="indefinite"/></circle>
@@ -905,14 +922,14 @@ def render_svg(
       <circle cx="14" cy="12" r="1.7"><animate attributeName="opacity" values=".2;.6;.2" dur="8.5s" repeatCount="indefinite"/></circle>
     </g>
     <path d="M-17 -23 Q-4 -36 14 -27" fill="none"
-      stroke="#FFF0DF" stroke-opacity=".42" stroke-width="2.2" stroke-linecap="round"/>
-    <ellipse cx="-10" cy="7" rx="4.1" ry="5.1" fill="#F7D5BD" opacity=".82"/>
+      stroke="#E9F7FF" stroke-opacity=".68" stroke-width="2.2" stroke-linecap="round"/>
+    <ellipse cx="-10" cy="7" rx="4.1" ry="5.1" fill="#C9F4FF" opacity=".94"/>
     <ellipse cx="10" cy="7" rx="4.1" ry="5.1" fill="#F7D5BD" opacity=".82"/>
-    <ellipse cx="-9.5" cy="7" rx="2.2" ry="3.4" fill="#172A37"/>
+    <ellipse cx="-9.5" cy="7" rx="2.2" ry="3.4" fill="#080A20"/>
     <ellipse cx="10.5" cy="7" rx="2.2" ry="3.4" fill="#172A37"/>
     <circle cx="-10.1" cy="5.6" r=".8" fill="#FFFFFF"/>
     <circle cx="9.9" cy="5.6" r=".8" fill="#FFFFFF"/>
-    <path d="M-3 17 Q0 20 3 17" fill="none" stroke="#704B5B"
+    <path d="M-3 17 Q0 20 3 17" fill="none" stroke="#00E5FF"
       stroke-width="1" stroke-linecap="round" opacity=".6"/>
   </g>
 </g>
@@ -926,14 +943,14 @@ def render_svg(
 </g>
 
 <!-- The footer is a clear information strip, separate from the seabed. -->
-<path d="M24 389 Q250 382 450 388 T850 387 T1096 389"
-      fill="none" stroke="#83C9BE" stroke-opacity=".2"/>
-<text x="39" y="411" font-family="Trebuchet MS, Arial, sans-serif"
+<path d="M24 558 Q250 550 450 556 T850 555 T1096 558"
+      fill="none" stroke="#00E5FF" stroke-opacity=".36"/>
+<text x="39" y="578" font-family="Trebuchet MS, Arial, sans-serif"
       font-size="9" font-weight="700" letter-spacing=".9"
-      fill="#9BCBC0">{start.strftime("%b %d, %Y").upper()}  /  {end.strftime("%b %d, %Y").upper()}</text>
+      fill="#B9B7FF">{start.strftime("%b %d, %Y").upper()}  /  {end.strftime("%b %d, %Y").upper()}</text>
 <g font-family="Trebuchet MS, Arial, sans-serif" font-size="8"
-   font-weight="700" letter-spacing=".7" fill="#91BFB8">
-  <text x="822" y="411">LESS</text>'''
+   font-weight="700" letter-spacing=".8" fill="#A9A5FF">
+  <text x="820" y="578">LESS</text>'''
     )
 
     for index, level in enumerate(
@@ -941,17 +958,17 @@ def render_svg(
     ):
         fill, stroke, _ = LEVEL_COLORS[level]
         pieces.append(
-            f'<rect x="{858 + index * 20}" y="402" width="12" height="12" rx="4" '
+            f'<rect x="{858 + index * 20}" y="569" width="12" height="12" rx="4" '
             f'fill="{fill}" stroke="{stroke}" stroke-width=".85"/>'
         )
 
     pieces.append(
-        '''<text x="972" y="411">MORE</text>
+        '''<text x="972" y="578">MORE</text>
 </g>
 </g>
-<rect x=".75" y=".75" width="1118.5" height="428.5" rx="19"
-      fill="none" stroke="url(#glass-edge)" stroke-width="1.35"/>
-<rect x="5" y="5" width="1110" height="420" rx="15"
+<rect x=".75" y=".75" width="1118.5" height="588.5" rx="22"
+      fill="none" stroke="url(#glass-edge)" stroke-width="1.6"/>
+<rect x="5" y="5" width="1110" height="580" rx="18"
       fill="none" stroke="#E2FFF5" stroke-opacity=".055"/>
 </svg>'''
     )
