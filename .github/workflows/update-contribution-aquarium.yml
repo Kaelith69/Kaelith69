@@ -1,18 +1,18 @@
-name: Build Neon Contribution Rocket
+name: Build Contribution Aquarium
 
 on:
   push:
     branches:
       - main
     paths:
-      - "scripts/build_contribution_rocket.py"
-      - "tests/test_contribution_rocket.py"
-      - ".github/workflows/update-contribution-maze.yml"
+      - "scripts/build_contribution_aquarium.py"
+      - "tests/test_contribution_aquarium.py"
+      - ".github/workflows/update-contribution-aquarium.yml"
   pull_request:
     paths:
-      - "scripts/build_contribution_rocket.py"
-      - "tests/test_contribution_rocket.py"
-      - ".github/workflows/update-contribution-maze.yml"
+      - "scripts/build_contribution_aquarium.py"
+      - "tests/test_contribution_aquarium.py"
+      - ".github/workflows/update-contribution-aquarium.yml"
   schedule:
     - cron: "23 4 * * *"
   workflow_dispatch:
@@ -39,12 +39,12 @@ jobs:
       - name: Test contribution renderer
         run: python -m unittest discover -s tests -v
 
-      - name: Fetch GitHub contribution calendar and render rocket SVG
+      - name: Fetch GitHub contribution calendar and render aquarium SVG
         if: github.event_name != 'pull_request'
         env:
           GITHUB_TOKEN: ${{ secrets.PROFILE_STATS_TOKEN || github.token }}
           GITHUB_PROFILE_LOGIN: Kaelith69
-        run: python scripts/build_contribution_rocket.py
+        run: python scripts/build_contribution_aquarium.py
 
       - name: Validate generated SVG
         run: |
@@ -52,7 +52,7 @@ jobs:
           import xml.etree.ElementTree as ET
           from pathlib import Path
 
-          path = Path("assets/contributions-rocket.svg")
+          path = Path("assets/contributions-aquarium.svg")
           root = ET.parse(path).getroot()
           if root.tag.rsplit("}", 1)[-1] != "svg":
               raise SystemExit("Generated contribution artwork is not SVG.")
@@ -61,15 +61,15 @@ jobs:
           print(f"Validated {path} ({path.stat().st_size:,} bytes).")
           PY
 
-      - name: Commit updated contribution rocket
+      - name: Commit updated contribution aquarium
         if: github.event_name != 'pull_request'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/contributions-rocket.svg
+          git add assets/contributions-aquarium.svg
           if git diff --cached --quiet; then
             echo "Contribution artwork is already current."
           else
-            git commit -m "Refresh neon contribution rocket"
+            git commit -m "Refresh neon contribution aquarium"
             git push origin HEAD:main
           fi
