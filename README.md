@@ -31,4 +31,9 @@
   <img src="https://komarev.com/ghpvc/?username=Kaelith69&style=pixel" alt="" width="1" height="1" />
 </p>
 
+  <br/>
+  <br/>
+
+  <img src="assets/contributions-pacman.svg" alt="Animated GitHub contribution maze" style="width: 100%; max-width: 860px;" />
+
 </div>

@@ -9,8 +9,8 @@ permissions:
   contents: write
 
 concurrency:
-  group: cosmic-visitor-counter
-  cancel-in-progress: true
+  group: profile-data-refresh
+  cancel-in-progress: false
 
 jobs:
   refresh:
