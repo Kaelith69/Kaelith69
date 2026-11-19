@@ -480,9 +480,9 @@ def render_svg(
  data-date="{date.isoformat()}" data-count="{count}" data-level="{level}"
  opacity="{opacity}" {glow}>
  <title>{date.isoformat()} · {count} contribution{"s" if count != 1 else ""}</title>
- <path d="M-3.0 0 L-5.0 -1.7 Q-6.1 0 -5.0 1.7Z"
+ <path d="M-2.7 0 L-4.8 -1.55 Q-5.7 0 -4.8 1.55Z"
        fill="{stroke}" stroke="{stroke}" stroke-width=".42"/>
- <ellipse cx="-.1" cy="0" rx="3.65" ry="2.25"
+ <ellipse cx="-.1" cy="0" rx="3.35" ry="2.05"
           fill="{fill}" stroke="{stroke}" stroke-width=".68"/>
  <path d="M-1.7 -1.05 Q-.1 -2.0 1.6 -1.0"
        fill="none" stroke="#FFFFFF" stroke-opacity=".72" stroke-width=".46"/>
@@ -492,27 +492,15 @@ def render_svg(
 </g>'''
             )
 
-    # The fish glides through a Manhattan path. Every path segment is horizontal or vertical.
+    # The fish glides on an axis aligned path, turning only at right angles.
     if route:
-        path_markup = (
-            f'<path d="{timeline["path"]}" fill="none" stroke="#56DFFF" '
-            f'stroke-width=".8" stroke-opacity=".12" stroke-dasharray="1.5 5"/>'
-        )
-        pieces.append(path_markup)
         fish_motion = (
             f'<animateMotion path="{timeline["path"]}" '
             f'keyPoints="{timeline["key_points"]}" keyTimes="{timeline["key_times"]}" '
             f'calcMode="linear" dur="{cycle:.6f}s" rotate="auto" '
             f'repeatCount="indefinite"/>'
         )
-        fish_opacity = (
-            f'<animate attributeName="opacity" values="1;1;0;0;1" '
-            f'keyTimes="0;{timeline["fish_fade_start_fraction"]:.8f};'
-            f'{timeline["fish_fade_end_fraction"]:.8f};.999;1" '
-            f'dur="{cycle:.6f}s" repeatCount="indefinite"/>'
-        )
     else:
-        fish_opacity = '<animate attributeName="opacity" values="1;.94;1" dur="2.8s" repeatCount="indefinite"/>'
         fish_motion = '<animateTransform attributeName="transform" type="translate" values="0 0;0 -2;0 0" dur="2.8s" repeatCount="indefinite"/>'
 
     # One detailed fish. Local +X is its nose, so rotate="auto" turns it onto each axis.
@@ -531,6 +519,7 @@ def render_svg(
         jaw_times.append("1")
         jaw_values.append("M17 1 Q21 2.2 24 1")
     if timeline["arrivals"]:
+        if timeline["arrivals"]:
         jaw_markup = (
             f'<animate attributeName="d" calcMode="discrete" '
             f'values="{";".join(jaw_values)}" keyTimes="{";".join(jaw_times)}" '
