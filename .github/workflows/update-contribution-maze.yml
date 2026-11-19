@@ -39,7 +39,7 @@ jobs:
       - name: Test contribution renderer
         run: python -m unittest discover -s tests -v
 
-      - name: Fetch GitHub contribution calendar and render Pac Man SVG
+      - name: Fetch GitHub contribution calendar and render rocket SVG
         if: github.event_name != 'pull_request'
         env:
           GITHUB_TOKEN: ${{ secrets.PROFILE_STATS_TOKEN || github.token }}
@@ -52,7 +52,7 @@ jobs:
           import xml.etree.ElementTree as ET
           from pathlib import Path
 
-          path = Path("assets/contributions-pacman.svg")
+          path = Path("assets/contributions-rocket.svg")
           root = ET.parse(path).getroot()
           if root.tag.rsplit("}", 1)[-1] != "svg":
               raise SystemExit("Generated contribution artwork is not SVG.")
