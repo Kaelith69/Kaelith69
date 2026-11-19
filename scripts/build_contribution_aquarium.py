@@ -1058,7 +1058,7 @@ def render_svg(
 
     for arm_index, (x, y, angle, scale, arm_path, cups, duration, begin) in enumerate(octopus_arms):
         pieces.append(
-            f\\'\\'\\'  <g data-octopus-arm="true" data-arm-index="{arm_index}"
+            f'''  <g data-octopus-arm="true" data-arm-index="{arm_index}"
        transform="translate({x} {y}) rotate({angle}) scale({scale})">
     <g>
       <animateTransform attributeName="transform" type="rotate" additive="sum"
@@ -1075,23 +1075,23 @@ def render_svg(
       <path d="M8 -3 C29 -13 51 -11 73 -3"
         fill="none" stroke="url(#octopus-highlight)"
         stroke-width="2.1" stroke-linecap="round" opacity=".8"/>
-\\'\\'\\'
+'''
         )
         for cup_x, cup_y in cups:
             for row_offset, opacity in ((-3.1, ".72"), (0, "1")):
                 pieces.append(
-                    f\\'\\'\\'      <g data-sucker="true" transform="translate({cup_x} {cup_y + row_offset})">
+                    f'''      <g data-sucker="true" transform="translate({cup_x} {cup_y + row_offset})">
         <ellipse rx="3.0" ry="2.05" fill="#08071A"
           stroke="#FFBE0B" stroke-width=".62" stroke-opacity=".78"/>
         <ellipse rx="1.2" ry=".8" fill="#00F5D4" opacity="{opacity}"/>
         <circle cx="-.55" cy="-.45" r=".42" fill="#FFFFFF" opacity=".92"/>
       </g>
-\\'\\'\\'
+'''
                 )
         pieces.append("    </g>\\n  </g>\\n")
 
     pieces.append(
-        f\\'\\'\\'  <g id="octopus-mantle">
+        f'''  <g id="octopus-mantle">
     <animateTransform attributeName="transform" type="scale"
       values="1 1;1.018 .988;1 1" dur="6.8s"
       calcMode="spline" keySplines=".42 0 .58 1;.42 0 .58 1"
