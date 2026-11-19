@@ -262,8 +262,9 @@ def orthogonal_flight_points(
     add_orthogonal_point(points, (launch_point[0], current[1]))
     add_orthogonal_point(points, launch_point)
 
-    if len(points) == 1:
-        points.append((launch_point[0] + 1, launch_point[1]))
+    if not route:
+        add_orthogonal_point(points, (launch_point[0] + 1, launch_point[1]))
+        add_orthogonal_point(points, launch_point)
 
     return points, stop_indices
 
@@ -310,8 +311,10 @@ def flight_timeline(
     reset_start = returned_at + RESET_HOLD
     cycle = reset_start + RESET_FADE
 
+    # The final path segment already reaches home at returned_at.
+    # Hold at launch, then fade and reset without repeating a key time.
     key_points.append("1")
-    key_times.append(f"{returned_at:.9f}")
+    key_times.append(f"{reset_start:.9f}")
     key_points.append("1")
     key_times.append(f"{cycle:.9f}")
 
@@ -338,7 +341,8 @@ def flight_timeline(
         "reset_start": reset_start,
         "cycle": cycle,
         "reset_start_fraction": reset_start / cycle,
-        "fish_fade_end_fraction": (returned_at + RESET_HOLD) / cycle,
+        "fish_fade_start_fraction": reset_start / cycle,
+        "fish_fade_end_fraction": (reset_start + RESET_FADE * .85) / cycle,
     }
 
 
@@ -501,7 +505,14 @@ def render_svg(
             f'calcMode="linear" dur="{cycle:.6f}s" rotate="auto" '
             f'repeatCount="indefinite"/>'
         )
+        fish_opacity = (
+            f'<animate attributeName="opacity" values="1;1;0;0;1" '
+            f'keyTimes="0;{timeline["fish_fade_start_fraction"]:.8f};'
+            f'{timeline["fish_fade_end_fraction"]:.8f};.999;1" '
+            f'dur="{cycle:.6f}s" repeatCount="indefinite"/>'
+        )
     else:
+        fish_opacity = '<animate attributeName="opacity" values="1;.94;1" dur="2.8s" repeatCount="indefinite"/>'
         fish_motion = '<animateTransform attributeName="transform" type="translate" values="0 0;0 -2;0 0" dur="2.8s" repeatCount="indefinite"/>'
 
     # One detailed fish. Local +X is its nose, so rotate="auto" turns it onto each axis.
