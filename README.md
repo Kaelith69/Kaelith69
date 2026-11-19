@@ -26,8 +26,8 @@
   <br/>
   <br/>
 
-  <img src="assets/visitors.svg" alt="Cosmic Observatory" style="width: 100%; max-width: 860px;" />
-  <br/>
-  <img src="https://komarev.com/ghpvc/?username=Kaelith69&style=for-the-badge&color=6C3D87&label=VISITORS&labelColor=080D1D" alt="Profile visits" />
+  <p align="center">
+  <img src="assets/visitors.svg" alt="Profile" width="620" height="74" align="middle" />&nbsp;<img src="https://komarev.com/ghpvc/?username=Kaelith69&style=for-the-badge&color=6C3D87&label=VISITS&labelColor=101A34" alt="Live profile visits" height="34" align="middle" />
+</p>
 
 </div>
