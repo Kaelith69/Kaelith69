@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1120" height="590"
  viewBox="0 0 1120 590" role="img" aria-labelledby="tank-title tank-desc">
 <title id="tank-title">Kaelith69 contribution reef</title>
-<desc id="tank-desc">873 GitHub contributions from 2025-11-20 to 2026-11-19. A white reef fish follows a rounded, eased route to each active contribution organism. A color shifting octopus rests on the sandy seabed beneath a living reef with drifting plankton, jellyfish, kelp and underwater light.</desc>
+<desc id="tank-desc">875 GitHub contributions from 2025-11-20 to 2026-11-19. A white reef fish follows a rounded, eased route to each active contribution organism. A color shifting octopus rests on the sandy seabed beneath a living reef with drifting plankton, jellyfish, kelp and underwater light.</desc>
 <defs>
   <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
     <stop stop-color="#030411"/><stop offset=".28" stop-color="#080B20"/>
@@ -73,6 +73,22 @@
     <stop offset=".52" stop-color="#8B5CFF" stop-opacity=".3"/>
     <stop offset="1" stop-color="#8B5CFF" stop-opacity="0"/>
   </radialGradient>
+  <!-- Comic-print textures: coarse halftone and Ben-Day dots. -->
+  <pattern id="halftone-cyan" width="9" height="9" patternUnits="userSpaceOnUse">
+    <circle cx="2" cy="2" r="1.35" fill="#00E5FF" fill-opacity=".72"/>
+  </pattern>
+  <pattern id="halftone-violet" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(18)">
+    <circle cx="2" cy="2" r="1.2" fill="#A78BFF" fill-opacity=".72"/>
+  </pattern>
+  <pattern id="halftone-ink" width="7" height="7" patternUnits="userSpaceOnUse">
+    <circle cx="2" cy="2" r="1.05" fill="#030411" fill-opacity=".78"/>
+  </pattern>
+  <filter id="ink-shadow" x="-40%" y="-40%" width="180%" height="180%">
+    <feMorphology in="SourceAlpha" operator="dilate" radius="1.6" result="spread"/>
+    <feFlood flood-color="#030411" result="ink"/>
+    <feComposite in="ink" in2="spread" operator="in" result="outline"/>
+    <feMerge><feMergeNode in="outline"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
   <filter id="fish-glow" x="-100%" y="-100%" width="300%" height="300%">
     <feGaussianBlur stdDeviation="2.3" result="blur"/>
     <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
@@ -91,6 +107,24 @@
 <g clip-path="url(#tank-clip)">
   <rect width="1120" height="590" fill="url(#water)"/>
   <rect width="1120" height="590" fill="url(#water-light)"/>
+
+  <!-- Angular comic panels and restrained halftone shadows. -->
+  <path d="M0 110 L176 110 L286 430 L150 430Z" fill="#263BFF" opacity=".045"/>
+  <path d="M1120 106 L1018 106 L926 423 L1040 423Z" fill="#FF3BC8" opacity=".035"/>
+  <path d="M0 340 L108 340 L140 470 L0 470Z" fill="url(#halftone-violet)" opacity=".22"/>
+  <path d="M1120 336 L1010 336 L978 470 L1120 470Z" fill="url(#halftone-cyan)" opacity=".16"/>
+  <path d="M0 105 L160 105 L198 220 L0 220Z" fill="url(#halftone-ink)" opacity=".1"/>
+  <path d="M1120 105 L1028 105 L992 218 L1120 218Z" fill="url(#halftone-ink)" opacity=".09"/>
+
+  <!-- Comic-book panel header with an offset magenta print shadow. -->
+  <path d="M35 20 L311 20 L295 68 L35 68Z" fill="#FF3BC8" opacity=".78"/>
+  <path d="M28 16 L305 16 L289 63 L28 63Z"
+        fill="#0A0A20" stroke="#030411" stroke-width="4" stroke-linejoin="bevel"/>
+  <path d="M31 19 L299 19 L284 59 L31 59Z"
+        fill="none" stroke="#00E5FF" stroke-width="1.45" stroke-linejoin="bevel"/>
+  <path d="M31 65 L287 65" fill="none" stroke="#8B5CFF" stroke-width="2.2"/>
+  <path d="M304 22 L312 14 L319 22 L312 30Z"
+        fill="#FF3BC8" stroke="#030411" stroke-width="2"/>
 
   <!-- Slow surface glow and moving shafts of water light. -->
   <path d="M0 84 Q170 66 340 80 T680 78 T1120 79 L1120 105 Q920 96 740 100 T360 99 T0 102Z"
@@ -119,6 +153,16 @@
     </path>
   </g>
 
+  <!-- Inked motion marks and small speed streaks. -->
+  <g fill="none" stroke="#030411" stroke-width="3" opacity=".58">
+    <path d="M450 112 l15 -3 M461 119 l18 -2 M650 124 l13 -3"/>
+    <path d="M832 116 l13 -3 M842 122 l18 -2"/>
+  </g>
+  <g fill="none" stroke="#00E5FF" stroke-width="1.1" opacity=".45">
+    <path d="M450 110 l15 -3 M461 117 l18 -2 M650 122 l13 -3"/>
+    <path d="M832 114 l13 -3 M842 120 l18 -2"/>
+  </g>
+
   <!-- Distant fish schools create movement behind the calendar. -->
   <g fill="#A4D8FF" opacity=".3">
     <g transform="translate(175 99)">
@@ -144,7 +188,16 @@
     <circle cx="755" cy="307" r="1" opacity=".38"><animate attributeName="cy" values="307;295;307" dur="8.2s" begin=".8s" repeatCount="indefinite"/></circle>
   </g>
 
-  <!-- Header is intentionally quiet and spacious. -->
+  <!-- Halftone-backed data badge and comic impact rays. -->
+  <path d="M1004 17 L1088 17 L1088 62 L1004 62Z"
+        fill="url(#halftone-cyan)" opacity=".25"/>
+  <path d="M1043 19 L1052 7 L1061 18 L1074 13 L1073 28 L1085 35
+           L1071 42 L1075 55 L1060 51 L1053 63 L1045 52 L1031 57
+           L1034 43 L1020 36 L1033 28 L1029 15Z"
+        fill="#263BFF" opacity=".3" stroke="#030411" stroke-width="2.5"
+        stroke-linejoin="miter"/>
+
+  <!-- Header keeps its comic-book display lettering. -->
   <text x="39" y="52" font-family="Bangers, Impact, 'Arial Black', sans-serif"
         font-size="29" letter-spacing="1.7" fill="#EAF8F3">CONTRIBUTIONS</text>
   <text x="40" y="68" font-family="Trebuchet MS, Arial, sans-serif"
@@ -153,7 +206,7 @@
   <text x="1080" y="51" text-anchor="end"
         font-family="Bangers, Impact, 'Arial Black', sans-serif"
         font-size="37" letter-spacing="1.1" fill="#00E5FF"
-        filter="url(#soft-glow)">873</text>
+        filter="url(#soft-glow)">875</text>
   <text x="1080" y="65" text-anchor="end"
         font-family="Trebuchet MS, Arial, sans-serif"
         font-size="8.5" letter-spacing="1.7" fill="#FF69D4">365 DAY REEF</text>
@@ -187,7 +240,7 @@
  <title>2025-11-20 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -198,7 +251,7 @@
  <title>2025-11-21 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -209,7 +262,7 @@
  <title>2025-11-22 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -220,7 +273,7 @@
  <title>2025-11-23 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -231,7 +284,7 @@
  <title>2025-11-24 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -244,7 +297,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -257,7 +310,7 @@
  <title>2025-11-26 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -268,7 +321,7 @@
  <title>2025-11-27 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -279,7 +332,7 @@
  <title>2025-11-28 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -290,7 +343,7 @@
  <title>2025-11-29 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -301,7 +354,7 @@
  <title>2025-11-30 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -312,7 +365,7 @@
  <title>2025-12-01 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -323,7 +376,7 @@
  <title>2025-12-02 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -334,7 +387,7 @@
  <title>2025-12-03 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -345,7 +398,7 @@
  <title>2025-12-04 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -356,7 +409,7 @@
  <title>2025-12-05 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -367,7 +420,7 @@
  <title>2025-12-06 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -378,7 +431,7 @@
  <title>2025-12-07 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -389,7 +442,7 @@
  <title>2025-12-08 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -400,7 +453,7 @@
  <title>2025-12-09 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -411,7 +464,7 @@
  <title>2025-12-10 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -422,7 +475,7 @@
  <title>2025-12-11 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -433,7 +486,7 @@
  <title>2025-12-12 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -444,7 +497,7 @@
  <title>2025-12-13 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -455,7 +508,7 @@
  <title>2025-12-14 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -466,7 +519,7 @@
  <title>2025-12-15 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -477,7 +530,7 @@
  <title>2025-12-16 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -488,7 +541,7 @@
  <title>2025-12-17 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -499,7 +552,7 @@
  <title>2025-12-18 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -510,7 +563,7 @@
  <title>2025-12-19 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -521,7 +574,7 @@
  <title>2025-12-20 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -532,7 +585,7 @@
  <title>2025-12-21 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -543,7 +596,7 @@
  <title>2025-12-22 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -554,7 +607,7 @@
  <title>2025-12-23 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -565,7 +618,7 @@
  <title>2025-12-24 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -576,7 +629,7 @@
  <title>2025-12-25 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -587,7 +640,7 @@
  <title>2025-12-26 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -598,7 +651,7 @@
  <title>2025-12-27 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -609,7 +662,7 @@
  <title>2025-12-28 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -620,7 +673,7 @@
  <title>2025-12-29 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -631,7 +684,7 @@
  <title>2025-12-30 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -642,7 +695,7 @@
  <title>2025-12-31 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -653,7 +706,7 @@
  <title>2026-01-01 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -664,7 +717,7 @@
  <title>2026-01-02 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -675,7 +728,7 @@
  <title>2026-01-03 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -686,7 +739,7 @@
  <title>2026-01-04 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -697,7 +750,7 @@
  <title>2026-01-05 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -708,7 +761,7 @@
  <title>2026-01-06 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -719,7 +772,7 @@
  <title>2026-01-07 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -730,7 +783,7 @@
  <title>2026-01-08 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -741,7 +794,7 @@
  <title>2026-01-09 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -752,7 +805,7 @@
  <title>2026-01-10 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -763,7 +816,7 @@
  <title>2026-01-11 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -774,7 +827,7 @@
  <title>2026-01-12 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -785,7 +838,7 @@
  <title>2026-01-13 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -796,7 +849,7 @@
  <title>2026-01-14 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -807,7 +860,7 @@
  <title>2026-01-15 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -818,7 +871,7 @@
  <title>2026-01-16 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -831,7 +884,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -844,7 +897,7 @@
  <title>2026-01-18 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -855,7 +908,7 @@
  <title>2026-01-19 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -866,7 +919,7 @@
  <title>2026-01-20 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -877,7 +930,7 @@
  <title>2026-01-21 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -888,7 +941,7 @@
  <title>2026-01-22 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -899,7 +952,7 @@
  <title>2026-01-23 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -910,7 +963,7 @@
  <title>2026-01-24 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -921,7 +974,7 @@
  <title>2026-01-25 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -932,7 +985,7 @@
  <title>2026-01-26 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -943,7 +996,7 @@
  <title>2026-01-27 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -954,7 +1007,7 @@
  <title>2026-01-28 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -967,7 +1020,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -980,7 +1033,7 @@
  <title>2026-01-30 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -991,7 +1044,7 @@
  <title>2026-01-31 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1004,7 +1057,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -1017,7 +1070,7 @@
  <title>2026-02-02 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1028,7 +1081,7 @@
  <title>2026-02-03 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1039,7 +1092,7 @@
  <title>2026-02-04 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1052,7 +1105,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -1065,7 +1118,7 @@
  <title>2026-02-06 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1076,7 +1129,7 @@
  <title>2026-02-07 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1089,7 +1142,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -1104,7 +1157,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -1119,7 +1172,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -1134,7 +1187,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -1149,7 +1202,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -1162,7 +1215,7 @@
  <title>2026-02-13 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1175,7 +1228,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -1190,7 +1243,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -1205,7 +1258,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -1220,7 +1273,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -1233,7 +1286,7 @@
  <title>2026-02-18 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1246,7 +1299,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -1260,11 +1313,11 @@
  
  <path d="M-4.1 0 C-4.3 -3.1 -1.5 -4.2 1 -3.6
        C3.7 -3.1 4.3 -.9 3.5 .3Z"
-       fill="#8C4DFF" stroke="#D5BCFF" stroke-width=".65"/>
+       fill="#8C4DFF" stroke="#030411" stroke-width="1.3" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="-.8" rx="3.2" ry="2.5" fill="#8C4DFF" opacity=".35"/>
  <path d="M-3.1 .5 Q-4.3 2 -3 3.7 M-.8 .8 Q-1.7 2.6 -.4 4
        M1.2 .5 Q2.2 2.5 2 3.8 M3 .3 Q4.2 2.2 4.4 3.3"
-       fill="none" stroke="#D5BCFF" stroke-width=".75" stroke-linecap="round"/>
+       fill="none" stroke="#030411" stroke-width="1.45" stroke-linecap="round"/>
  <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.16174902;0.16492341;0.99278547;1" dur="99.798660s" repeatCount="indefinite"/>
 </g>
 <g transform="translate(323.00 305.00)"
@@ -1274,11 +1327,11 @@
  
  <path d="M-4.1 0 C-4.3 -3.1 -1.5 -4.2 1 -3.6
        C3.7 -3.1 4.3 -.9 3.5 .3Z"
-       fill="#8C4DFF" stroke="#D5BCFF" stroke-width=".65"/>
+       fill="#8C4DFF" stroke="#030411" stroke-width="1.3" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="-.8" rx="3.2" ry="2.5" fill="#8C4DFF" opacity=".35"/>
  <path d="M-3.1 .5 Q-4.3 2 -3 3.7 M-.8 .8 Q-1.7 2.6 -.4 4
        M1.2 .5 Q2.2 2.5 2 3.8 M3 .3 Q4.2 2.2 4.4 3.3"
-       fill="none" stroke="#D5BCFF" stroke-width=".75" stroke-linecap="round"/>
+       fill="none" stroke="#030411" stroke-width="1.45" stroke-linecap="round"/>
  <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.17237040;0.17554479;0.99278547;1" dur="99.798660s" repeatCount="indefinite"/>
 </g>
 <g transform="translate(342.00 161.00)"
@@ -1287,7 +1340,7 @@
  <title>2026-02-22 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1298,7 +1351,7 @@
  <title>2026-02-23 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1310,11 +1363,11 @@
  
  <path d="M-4.1 0 C-4.3 -3.1 -1.5 -4.2 1 -3.6
        C3.7 -3.1 4.3 -.9 3.5 .3Z"
-       fill="#8C4DFF" stroke="#D5BCFF" stroke-width=".65"/>
+       fill="#8C4DFF" stroke="#030411" stroke-width="1.3" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="-.8" rx="3.2" ry="2.5" fill="#8C4DFF" opacity=".35"/>
  <path d="M-3.1 .5 Q-4.3 2 -3 3.7 M-.8 .8 Q-1.7 2.6 -.4 4
        M1.2 .5 Q2.2 2.5 2 3.8 M3 .3 Q4.2 2.2 4.4 3.3"
-       fill="none" stroke="#D5BCFF" stroke-width=".75" stroke-linecap="round"/>
+       fill="none" stroke="#030411" stroke-width="1.45" stroke-linecap="round"/>
  <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.49759182;0.50076621;0.99278547;1" dur="99.798660s" repeatCount="indefinite"/>
 </g>
 <g transform="translate(342.00 233.00)"
@@ -1325,7 +1378,7 @@
  <path d="M0 -4.6 C1.1 -2.5 3.7 -2.8 4.4 -1.2
        C2.6 -.1 3.8 2.3 2.1 3.6 C.8 2.1 -1.3 4.1 -2.4 2.5
        C-1.7 .6 -4.1 -.1 -4.2 -1.8 C-2.1 -1.7 -1.5 -4.1 0 -4.6Z"
-       fill="#FF3BC8" stroke="#FFC4F2" stroke-width=".7"/>
+       fill="#FF3BC8" stroke="#030411" stroke-width="1.35" stroke-linejoin="miter"/>
  <ellipse cx="-.1" cy="-.1" rx="1.3" ry="1.3" fill="#FFF4D7"/>
  <circle cx="0" cy="-.1" r=".55" fill="#A86A42"/>
  <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.10864209;0.11181648;0.99278547;1" dur="99.798660s" repeatCount="indefinite"/>
@@ -1338,7 +1391,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -1353,7 +1406,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -1366,7 +1419,7 @@
  <title>2026-02-28 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1377,7 +1430,7 @@
  <title>2026-03-01 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1388,7 +1441,7 @@
  <title>2026-03-02 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1399,7 +1452,7 @@
  <title>2026-03-03 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1410,7 +1463,7 @@
  <title>2026-03-04 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1423,7 +1476,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -1438,7 +1491,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -1453,7 +1506,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -1466,7 +1519,7 @@
  <title>2026-03-08 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1477,7 +1530,7 @@
  <title>2026-03-09 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1488,7 +1541,7 @@
  <title>2026-03-10 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1499,7 +1552,7 @@
  <title>2026-03-11 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1512,7 +1565,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -1525,7 +1578,7 @@
  <title>2026-03-13 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1536,7 +1589,7 @@
  <title>2026-03-14 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1547,7 +1600,7 @@
  <title>2026-03-15 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1558,7 +1611,7 @@
  <title>2026-03-16 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1569,7 +1622,7 @@
  <title>2026-03-17 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1580,7 +1633,7 @@
  <title>2026-03-18 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1591,7 +1644,7 @@
  <title>2026-03-19 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1604,7 +1657,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -1617,7 +1670,7 @@
  <title>2026-03-21 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1628,7 +1681,7 @@
  <title>2026-03-22 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1639,7 +1692,7 @@
  <title>2026-03-23 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1650,7 +1703,7 @@
  <title>2026-03-24 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1661,7 +1714,7 @@
  <title>2026-03-25 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1672,7 +1725,7 @@
  <title>2026-03-26 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1683,7 +1736,7 @@
  <title>2026-03-27 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1694,7 +1747,7 @@
  <title>2026-03-28 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1705,7 +1758,7 @@
  <title>2026-03-29 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1716,7 +1769,7 @@
  <title>2026-03-30 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1727,7 +1780,7 @@
  <title>2026-03-31 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1738,7 +1791,7 @@
  <title>2026-04-01 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1749,7 +1802,7 @@
  <title>2026-04-02 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1762,7 +1815,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -1775,7 +1828,7 @@
  <title>2026-04-04 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1786,7 +1839,7 @@
  <title>2026-04-05 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1797,7 +1850,7 @@
  <title>2026-04-06 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1808,7 +1861,7 @@
  <title>2026-04-07 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1819,7 +1872,7 @@
  <title>2026-04-08 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1830,7 +1883,7 @@
  <title>2026-04-09 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1841,7 +1894,7 @@
  <title>2026-04-10 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1852,7 +1905,7 @@
  <title>2026-04-11 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1865,7 +1918,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -1878,7 +1931,7 @@
  <title>2026-04-13 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1889,7 +1942,7 @@
  <title>2026-04-14 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1900,7 +1953,7 @@
  <title>2026-04-15 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1911,7 +1964,7 @@
  <title>2026-04-16 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1922,7 +1975,7 @@
  <title>2026-04-17 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1935,7 +1988,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -1950,7 +2003,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -1963,7 +2016,7 @@
  <title>2026-04-20 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1974,7 +2027,7 @@
  <title>2026-04-21 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1985,7 +2038,7 @@
  <title>2026-04-22 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -1998,7 +2051,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -2011,7 +2064,7 @@
  <title>2026-04-24 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2022,7 +2075,7 @@
  <title>2026-04-25 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2033,7 +2086,7 @@
  <title>2026-04-26 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2044,7 +2097,7 @@
  <title>2026-04-27 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2055,7 +2108,7 @@
  <title>2026-04-28 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2066,7 +2119,7 @@
  <title>2026-04-29 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2079,7 +2132,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -2092,7 +2145,7 @@
  <title>2026-05-01 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2103,7 +2156,7 @@
  <title>2026-05-02 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2114,7 +2167,7 @@
  <title>2026-05-03 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2125,7 +2178,7 @@
  <title>2026-05-04 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2136,7 +2189,7 @@
  <title>2026-05-05 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2147,7 +2200,7 @@
  <title>2026-05-06 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2158,7 +2211,7 @@
  <title>2026-05-07 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2171,7 +2224,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -2184,7 +2237,7 @@
  <title>2026-05-09 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2195,7 +2248,7 @@
  <title>2026-05-10 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2206,7 +2259,7 @@
  <title>2026-05-11 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2217,7 +2270,7 @@
  <title>2026-05-12 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2228,7 +2281,7 @@
  <title>2026-05-13 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2241,7 +2294,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -2256,7 +2309,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -2269,7 +2322,7 @@
  <title>2026-05-16 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2282,7 +2335,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -2295,7 +2348,7 @@
  <title>2026-05-18 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2306,7 +2359,7 @@
  <title>2026-05-19 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2317,7 +2370,7 @@
  <title>2026-05-20 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2330,7 +2383,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -2345,7 +2398,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -2360,7 +2413,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -2373,7 +2426,7 @@
  <title>2026-05-24 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2386,7 +2439,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -2401,7 +2454,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -2414,7 +2467,7 @@
  <title>2026-05-27 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2427,7 +2480,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -2440,7 +2493,7 @@
  <title>2026-05-29 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2451,7 +2504,7 @@
  <title>2026-05-30 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2462,7 +2515,7 @@
  <title>2026-05-31 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2473,7 +2526,7 @@
  <title>2026-06-01 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2484,7 +2537,7 @@
  <title>2026-06-02 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2495,7 +2548,7 @@
  <title>2026-06-03 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2506,7 +2559,7 @@
  <title>2026-06-04 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2517,7 +2570,7 @@
  <title>2026-06-05 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2528,7 +2581,7 @@
  <title>2026-06-06 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2539,7 +2592,7 @@
  <title>2026-06-07 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2552,7 +2605,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -2567,7 +2620,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -2580,7 +2633,7 @@
  <title>2026-06-10 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2591,7 +2644,7 @@
  <title>2026-06-11 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2602,7 +2655,7 @@
  <title>2026-06-12 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2613,7 +2666,7 @@
  <title>2026-06-13 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2624,7 +2677,7 @@
  <title>2026-06-14 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2635,7 +2688,7 @@
  <title>2026-06-15 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2646,7 +2699,7 @@
  <title>2026-06-16 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2657,7 +2710,7 @@
  <title>2026-06-17 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2668,7 +2721,7 @@
  <title>2026-06-18 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2679,7 +2732,7 @@
  <title>2026-06-19 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2690,7 +2743,7 @@
  <title>2026-06-20 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2701,7 +2754,7 @@
  <title>2026-06-21 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2712,7 +2765,7 @@
  <title>2026-06-22 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2723,7 +2776,7 @@
  <title>2026-06-23 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2734,7 +2787,7 @@
  <title>2026-06-24 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2747,7 +2800,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -2760,7 +2813,7 @@
  <title>2026-06-26 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2771,7 +2824,7 @@
  <title>2026-06-27 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2782,7 +2835,7 @@
  <title>2026-06-28 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2793,7 +2846,7 @@
  <title>2026-06-29 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2804,7 +2857,7 @@
  <title>2026-06-30 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2815,7 +2868,7 @@
  <title>2026-07-01 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2826,7 +2879,7 @@
  <title>2026-07-02 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2837,7 +2890,7 @@
  <title>2026-07-03 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2848,7 +2901,7 @@
  <title>2026-07-04 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2859,7 +2912,7 @@
  <title>2026-07-05 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2870,7 +2923,7 @@
  <title>2026-07-06 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2881,7 +2934,7 @@
  <title>2026-07-07 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2892,7 +2945,7 @@
  <title>2026-07-08 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2903,7 +2956,7 @@
  <title>2026-07-09 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2914,7 +2967,7 @@
  <title>2026-07-10 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2925,7 +2978,7 @@
  <title>2026-07-11 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2936,7 +2989,7 @@
  <title>2026-07-12 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2947,7 +3000,7 @@
  <title>2026-07-13 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2958,7 +3011,7 @@
  <title>2026-07-14 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2969,7 +3022,7 @@
  <title>2026-07-15 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2980,7 +3033,7 @@
  <title>2026-07-16 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -2991,7 +3044,7 @@
  <title>2026-07-17 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3002,7 +3055,7 @@
  <title>2026-07-18 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3013,7 +3066,7 @@
  <title>2026-07-19 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3024,7 +3077,7 @@
  <title>2026-07-20 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3035,7 +3088,7 @@
  <title>2026-07-21 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3048,7 +3101,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -3061,7 +3114,7 @@
  <title>2026-07-23 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3072,7 +3125,7 @@
  <title>2026-07-24 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3083,7 +3136,7 @@
  <title>2026-07-25 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3094,7 +3147,7 @@
  <title>2026-07-26 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3105,7 +3158,7 @@
  <title>2026-07-27 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3116,7 +3169,7 @@
  <title>2026-07-28 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3129,7 +3182,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -3142,7 +3195,7 @@
  <title>2026-07-30 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3155,7 +3208,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -3168,7 +3221,7 @@
  <title>2026-08-01 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3179,7 +3232,7 @@
  <title>2026-08-02 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3190,7 +3243,7 @@
  <title>2026-08-03 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3201,7 +3254,7 @@
  <title>2026-08-04 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3212,7 +3265,7 @@
  <title>2026-08-05 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3223,7 +3276,7 @@
  <title>2026-08-06 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3234,7 +3287,7 @@
  <title>2026-08-07 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3245,7 +3298,7 @@
  <title>2026-08-08 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3256,7 +3309,7 @@
  <title>2026-08-09 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3269,7 +3322,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -3282,7 +3335,7 @@
  <title>2026-08-11 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3295,7 +3348,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -3308,7 +3361,7 @@
  <title>2026-08-13 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3319,7 +3372,7 @@
  <title>2026-08-14 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3330,7 +3383,7 @@
  <title>2026-08-15 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3343,7 +3396,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -3358,7 +3411,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -3371,7 +3424,7 @@
  <title>2026-08-18 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3382,7 +3435,7 @@
  <title>2026-08-19 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3393,7 +3446,7 @@
  <title>2026-08-20 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3404,7 +3457,7 @@
  <title>2026-08-21 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3415,7 +3468,7 @@
  <title>2026-08-22 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3426,7 +3479,7 @@
  <title>2026-08-23 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3439,7 +3492,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -3452,7 +3505,7 @@
  <title>2026-08-25 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3463,7 +3516,7 @@
  <title>2026-08-26 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3474,7 +3527,7 @@
  <title>2026-08-27 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3485,7 +3538,7 @@
  <title>2026-08-28 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3496,7 +3549,7 @@
  <title>2026-08-29 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3507,7 +3560,7 @@
  <title>2026-08-30 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3518,7 +3571,7 @@
  <title>2026-08-31 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3529,7 +3582,7 @@
  <title>2026-09-01 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3540,7 +3593,7 @@
  <title>2026-09-02 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3551,7 +3604,7 @@
  <title>2026-09-03 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3562,7 +3615,7 @@
  <title>2026-09-04 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3573,7 +3626,7 @@
  <title>2026-09-05 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3584,7 +3637,7 @@
  <title>2026-09-06 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3595,7 +3648,7 @@
  <title>2026-09-07 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3606,7 +3659,7 @@
  <title>2026-09-08 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3617,7 +3670,7 @@
  <title>2026-09-09 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3628,7 +3681,7 @@
  <title>2026-09-10 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3639,7 +3692,7 @@
  <title>2026-09-11 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3650,7 +3703,7 @@
  <title>2026-09-12 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3661,7 +3714,7 @@
  <title>2026-09-13 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3672,7 +3725,7 @@
  <title>2026-09-14 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3683,7 +3736,7 @@
  <title>2026-09-15 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3694,7 +3747,7 @@
  <title>2026-09-16 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3705,7 +3758,7 @@
  <title>2026-09-17 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3716,7 +3769,7 @@
  <title>2026-09-18 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3729,7 +3782,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -3742,7 +3795,7 @@
  <title>2026-09-20 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3753,7 +3806,7 @@
  <title>2026-09-21 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3764,7 +3817,7 @@
  <title>2026-09-22 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3775,7 +3828,7 @@
  <title>2026-09-23 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3786,7 +3839,7 @@
  <title>2026-09-24 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3797,7 +3850,7 @@
  <title>2026-09-25 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3808,7 +3861,7 @@
  <title>2026-09-26 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3819,7 +3872,7 @@
  <title>2026-09-27 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3830,7 +3883,7 @@
  <title>2026-09-28 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3841,7 +3894,7 @@
  <title>2026-09-29 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3852,7 +3905,7 @@
  <title>2026-09-30 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3863,7 +3916,7 @@
  <title>2026-10-01 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3874,7 +3927,7 @@
  <title>2026-10-02 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3885,7 +3938,7 @@
  <title>2026-10-03 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3896,7 +3949,7 @@
  <title>2026-10-04 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3907,7 +3960,7 @@
  <title>2026-10-05 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3920,7 +3973,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -3933,7 +3986,7 @@
  <title>2026-10-07 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3944,7 +3997,7 @@
  <title>2026-10-08 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3955,7 +4008,7 @@
  <title>2026-10-09 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3966,7 +4019,7 @@
  <title>2026-10-10 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3977,7 +4030,7 @@
  <title>2026-10-11 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3988,7 +4041,7 @@
  <title>2026-10-12 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -3999,7 +4052,7 @@
  <title>2026-10-13 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -4012,7 +4065,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -4025,7 +4078,7 @@
  <title>2026-10-15 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -4036,7 +4089,7 @@
  <title>2026-10-16 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -4047,7 +4100,7 @@
  <title>2026-10-17 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -4058,7 +4111,7 @@
  <title>2026-10-18 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -4069,7 +4122,7 @@
  <title>2026-10-19 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -4080,7 +4133,7 @@
  <title>2026-10-20 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -4091,7 +4144,7 @@
  <title>2026-10-21 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -4102,7 +4155,7 @@
  <title>2026-10-22 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -4113,7 +4166,7 @@
  <title>2026-10-23 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -4124,7 +4177,7 @@
  <title>2026-10-24 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -4135,7 +4188,7 @@
  <title>2026-10-25 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -4146,7 +4199,7 @@
  <title>2026-10-26 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -4157,7 +4210,7 @@
  <title>2026-10-27 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -4168,7 +4221,7 @@
  <title>2026-10-28 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -4179,7 +4232,7 @@
  <title>2026-10-29 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -4190,7 +4243,7 @@
  <title>2026-10-30 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -4203,7 +4256,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -4216,7 +4269,7 @@
  <title>2026-11-01 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -4227,7 +4280,7 @@
  <title>2026-11-02 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -4238,7 +4291,7 @@
  <title>2026-11-03 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -4249,7 +4302,7 @@
  <title>2026-11-04 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -4260,7 +4313,7 @@
  <title>2026-11-05 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -4273,7 +4326,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -4301,7 +4354,7 @@
  <path d="M0 -4.6 C1.1 -2.5 3.7 -2.8 4.4 -1.2
        C2.6 -.1 3.8 2.3 2.1 3.6 C.8 2.1 -1.3 4.1 -2.4 2.5
        C-1.7 .6 -4.1 -.1 -4.2 -1.8 C-2.1 -1.7 -1.5 -4.1 0 -4.6Z"
-       fill="#FF3BC8" stroke="#FFC4F2" stroke-width=".7"/>
+       fill="#FF3BC8" stroke="#030411" stroke-width="1.35" stroke-linejoin="miter"/>
  <ellipse cx="-.1" cy="-.1" rx="1.3" ry="1.3" fill="#FFF4D7"/>
  <circle cx="0" cy="-.1" r=".55" fill="#A86A42"/>
  <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.84900864;0.85218304;0.99278547;1" dur="99.798660s" repeatCount="indefinite"/>
@@ -4314,7 +4367,7 @@
  <path d="M0 -4.6 C1.1 -2.5 3.7 -2.8 4.4 -1.2
        C2.6 -.1 3.8 2.3 2.1 3.6 C.8 2.1 -1.3 4.1 -2.4 2.5
        C-1.7 .6 -4.1 -.1 -4.2 -1.8 C-2.1 -1.7 -1.5 -4.1 0 -4.6Z"
-       fill="#FF3BC8" stroke="#FFC4F2" stroke-width=".7"/>
+       fill="#FF3BC8" stroke="#030411" stroke-width="1.35" stroke-linejoin="miter"/>
  <ellipse cx="-.1" cy="-.1" rx="1.3" ry="1.3" fill="#FFF4D7"/>
  <circle cx="0" cy="-.1" r=".55" fill="#A86A42"/>
  <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.83838726;0.84156165;0.99278547;1" dur="99.798660s" repeatCount="indefinite"/>
@@ -4327,7 +4380,7 @@
  <path d="M0 -4.6 C1.1 -2.5 3.7 -2.8 4.4 -1.2
        C2.6 -.1 3.8 2.3 2.1 3.6 C.8 2.1 -1.3 4.1 -2.4 2.5
        C-1.7 .6 -4.1 -.1 -4.2 -1.8 C-2.1 -1.7 -1.5 -4.1 0 -4.6Z"
-       fill="#FF3BC8" stroke="#FFC4F2" stroke-width=".7"/>
+       fill="#FF3BC8" stroke="#030411" stroke-width="1.35" stroke-linejoin="miter"/>
  <ellipse cx="-.1" cy="-.1" rx="1.3" ry="1.3" fill="#FFF4D7"/>
  <circle cx="0" cy="-.1" r=".55" fill="#A86A42"/>
  <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.73568165;0.73885604;0.99278547;1" dur="99.798660s" repeatCount="indefinite"/>
@@ -4353,7 +4406,7 @@
  <path d="M0 -4.6 C1.1 -2.5 3.7 -2.8 4.4 -1.2
        C2.6 -.1 3.8 2.3 2.1 3.6 C.8 2.1 -1.3 4.1 -2.4 2.5
        C-1.7 .6 -4.1 -.1 -4.2 -1.8 C-2.1 -1.7 -1.5 -4.1 0 -4.6Z"
-       fill="#FF3BC8" stroke="#FFC4F2" stroke-width=".7"/>
+       fill="#FF3BC8" stroke="#030411" stroke-width="1.35" stroke-linejoin="miter"/>
  <ellipse cx="-.1" cy="-.1" rx="1.3" ry="1.3" fill="#FFF4D7"/>
  <circle cx="0" cy="-.1" r=".55" fill="#A86A42"/>
  <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.76754581;0.77072020;0.99278547;1" dur="99.798660s" repeatCount="indefinite"/>
@@ -4366,7 +4419,7 @@
  <path d="M0 -4.6 C1.1 -2.5 3.7 -2.8 4.4 -1.2
        C2.6 -.1 3.8 2.3 2.1 3.6 C.8 2.1 -1.3 4.1 -2.4 2.5
        C-1.7 .6 -4.1 -.1 -4.2 -1.8 C-2.1 -1.7 -1.5 -4.1 0 -4.6Z"
-       fill="#FF3BC8" stroke="#FFC4F2" stroke-width=".7"/>
+       fill="#FF3BC8" stroke="#030411" stroke-width="1.35" stroke-linejoin="miter"/>
  <ellipse cx="-.1" cy="-.1" rx="1.3" ry="1.3" fill="#FFF4D7"/>
  <circle cx="0" cy="-.1" r=".55" fill="#A86A42"/>
  <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.77816719;0.78134158;0.99278547;1" dur="99.798660s" repeatCount="indefinite"/>
@@ -4403,7 +4456,7 @@
  <title>2026-11-16 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
@@ -4416,7 +4469,7 @@
  <path d="M-3.2 0 L-5.3 -2.2 Q-6.1 0 -5.3 2.2Z"
        fill="#A8C4FF" stroke="#A8C4FF" stroke-width=".4"/>
  <ellipse cx="-.2" cy="0" rx="4.3" ry="2.65"
-          fill="#275BFF" stroke="#A8C4FF" stroke-width=".65"/>
+          fill="#275BFF" stroke="#030411" stroke-width="1.35" stroke-linejoin="round"/>
  <path d="M-2 -1.3 Q0 -2.1 2 -1.1" fill="none"
        stroke="#F3FFFA" stroke-opacity=".82" stroke-width=".55"/>
  <circle cx="2.75" cy="-.65" r=".48" fill="#08202A"/>
@@ -4429,20 +4482,20 @@
  <title>2026-11-18 · 0 contributions · midnight plankton</title>
  
  <path d="M-3.8 0 Q-1.2 -3.1 2.8 -1.1 Q4 0 2.8 1.1 Q-1.2 3.1 -3.8 0Z"
-       fill="#171D3C" stroke="#46548A" stroke-width=".55"/>
+       fill="#171D3C" stroke="#030411" stroke-width="1.15" stroke-linejoin="round"/>
  <ellipse cx="-.2" cy="0" rx="2.6" ry="1.25" fill="#171D3C" opacity=".75"/>
  <circle cx="1.7" cy="-.35" r=".35" fill="#D6F3E9"/>
  
 </g>
 <g transform="translate(1064.00 257.00)"
- data-date="2026-11-19" data-count="67" data-level="FOURTH_QUARTILE"
+ data-date="2026-11-19" data-count="69" data-level="FOURTH_QUARTILE"
  data-organism="magenta glow star" opacity="1" filter="url(#food-glow)">
- <title>2026-11-19 · 67 contributions · magenta glow star</title>
+ <title>2026-11-19 · 69 contributions · magenta glow star</title>
  
  <path d="M0 -4.6 C1.1 -2.5 3.7 -2.8 4.4 -1.2
        C2.6 -.1 3.8 2.3 2.1 3.6 C.8 2.1 -1.3 4.1 -2.4 2.5
        C-1.7 .6 -4.1 -.1 -4.2 -1.8 C-2.1 -1.7 -1.5 -4.1 0 -4.6Z"
-       fill="#FF3BC8" stroke="#FFC4F2" stroke-width=".7"/>
+       fill="#FF3BC8" stroke="#030411" stroke-width="1.35" stroke-linejoin="miter"/>
  <ellipse cx="-.1" cy="-.1" rx="1.3" ry="1.3" fill="#FFF4D7"/>
  <circle cx="0" cy="-.1" r=".55" fill="#A86A42"/>
  <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.75692442;0.76009881;0.99278547;1" dur="99.798660s" repeatCount="indefinite"/>
@@ -4468,10 +4521,15 @@
     <path d="M-6 10 Q0 18 8 14 L10 9Z"
       fill="url(#fish-fin)" stroke="#DDF7F2" stroke-width=".7"/>
 
+    <!-- Heavy ink contour with a cyan registration edge. -->
     <path d="M-17 0 C-14 -11 -2 -15 10 -11
       C18 -8 22 -3 24 0 C22 3 18 8 10 11
       C-2 15 -14 11 -17 0Z"
-      fill="url(#fish-body)" stroke="#E9F2FF" stroke-width="1.15"/>
+      fill="none" stroke="#030411" stroke-width="4.2" stroke-linejoin="round"/>
+    <path d="M-17 0 C-14 -11 -2 -15 10 -11
+      C18 -8 22 -3 24 0 C22 3 18 8 10 11
+      C-2 15 -14 11 -17 0Z"
+      fill="url(#fish-body)" stroke="#E9F2FF" stroke-width="1.35" stroke-linejoin="round"/>
     <path d="M-8 5 C-1 12 11 10 19 3 C11 12 -2 15 -10 8Z"
       fill="url(#fish-belly)" opacity=".82"/>
     <path d="M-8 -5 Q1 -10 12 -6" fill="none"
@@ -4485,7 +4543,9 @@
         calcMode="spline" keySplines=".42 0 .58 1;.42 0 .58 1"
         repeatCount="indefinite"/>
       <path d="M0 0 Q-5 6 1 11 Q8 7 6 1Z"
-        fill="url(#fish-fin)" stroke="#FFFFFF" stroke-opacity=".75" stroke-width=".7"/>
+        fill="none" stroke="#030411" stroke-width="2.7" stroke-linejoin="round"/>
+      <path d="M0 0 Q-5 6 1 11 Q8 7 6 1Z"
+        fill="url(#fish-fin)" stroke="#FFFFFF" stroke-opacity=".88" stroke-width=".9"/>
     </g>
     <path d="M7 -7 Q3 0 7 7" fill="none"
       stroke="#526DFF" stroke-width="1.1" stroke-linecap="round"/>
@@ -4564,13 +4624,26 @@
 
 <!-- Eight relaxed arms, soft suckers, and a color-shifting mantle. -->
 <g id="resting-octopus" transform="translate(560 482)">
-  <ellipse cx="0" cy="31" rx="154" ry="8" fill="#030411" opacity=".58"/>
+  <ellipse cx="0" cy="31" rx="154" ry="8" fill="#030411" opacity=".68"/>
+  <!-- Eight-point impact burst behind the resting octopus. -->
+  <path d="M0 -128 L18 -62 L66 -105 L57 -48 L126 -53 L75 -10
+           L135 21 L65 32 L91 101 L29 56 L0 126 L-27 57
+           L-93 97 L-62 30 L-132 13 L-73 -20 L-124 -67
+           L-53 -53 L-68 -112 L-15 -64Z"
+        fill="#8B5CFF" fill-opacity=".17" stroke="#030411" stroke-width="4"
+        stroke-linejoin="miter"/>
+  <path d="M0 -119 L13 -63 L60 -96 L52 -44 L115 -47 L68 -8
+           L122 19 L59 26 L80 91 L25 49 L0 112 L-23 48
+           L-81 88 L-52 24 L-119 11 L-66 -18 L-111 -62
+           L-46 -49 L-59 -101 L-12 -58Z"
+        fill="none" stroke="#FF3BC8" stroke-width="2.2" opacity=".72"
+        stroke-linejoin="miter"/>
 
   <g transform="translate(-20 3)" data-octopus-arm="true">
     <animateTransform attributeName="transform" type="rotate" additive="sum"
       values="-1.8 0 0;1.2 0 0;-1.8 0 0" dur="7.6s" begin="0s" repeatCount="indefinite"/>
-    <path d="M0 0 C-25 -13 -49 -8 -72 2 S-112 10 -145 21" fill="none" stroke="#140C34" stroke-opacity=".48"
-      stroke-width="11" stroke-linecap="round"/>
+    <path d="M0 0 C-25 -13 -49 -8 -72 2 S-112 10 -145 21" fill="none" stroke="#030411" stroke-opacity=".92"
+      stroke-width="14" stroke-linecap="round"/>
     <path d="M0 0 C-25 -13 -49 -8 -72 2 S-112 10 -145 21" fill="none" stroke="url(#octopus-arm)"
       stroke-width="8.2" stroke-linecap="round"/>
     <path d="M0 0 C-25 -13 -49 -8 -72 2 S-112 10 -145 21" fill="none" stroke="url(#octopus-highlight)"
@@ -4597,8 +4670,8 @@
   <g transform="translate(-17 8)" data-octopus-arm="true">
     <animateTransform attributeName="transform" type="rotate" additive="sum"
       values="1.4 0 0;-1.1 0 0;1.4 0 0" dur="8.2s" begin=".6s" repeatCount="indefinite"/>
-    <path d="M0 0 C-28 -2 -51 11 -73 18 S-116 20 -143 35" fill="none" stroke="#140C34" stroke-opacity=".48"
-      stroke-width="11" stroke-linecap="round"/>
+    <path d="M0 0 C-28 -2 -51 11 -73 18 S-116 20 -143 35" fill="none" stroke="#030411" stroke-opacity=".92"
+      stroke-width="14" stroke-linecap="round"/>
     <path d="M0 0 C-28 -2 -51 11 -73 18 S-116 20 -143 35" fill="none" stroke="url(#octopus-arm)"
       stroke-width="8.2" stroke-linecap="round"/>
     <path d="M0 0 C-28 -2 -51 11 -73 18 S-116 20 -143 35" fill="none" stroke="url(#octopus-highlight)"
@@ -4623,8 +4696,8 @@
   <g transform="translate(-10 13)" data-octopus-arm="true">
     <animateTransform attributeName="transform" type="rotate" additive="sum"
       values="-1.2 0 0;1.5 0 0;-1.2 0 0" dur="9.1s" begin="1s" repeatCount="indefinite"/>
-    <path d="M0 0 C-24 13 -38 28 -65 31 S-112 38 -128 54" fill="none" stroke="#140C34" stroke-opacity=".48"
-      stroke-width="11" stroke-linecap="round"/>
+    <path d="M0 0 C-24 13 -38 28 -65 31 S-112 38 -128 54" fill="none" stroke="#030411" stroke-opacity=".92"
+      stroke-width="14" stroke-linecap="round"/>
     <path d="M0 0 C-24 13 -38 28 -65 31 S-112 38 -128 54" fill="none" stroke="url(#octopus-arm)"
       stroke-width="8.2" stroke-linecap="round"/>
     <path d="M0 0 C-24 13 -38 28 -65 31 S-112 38 -128 54" fill="none" stroke="url(#octopus-highlight)"
@@ -4649,8 +4722,8 @@
   <g transform="translate(-2 15)" data-octopus-arm="true">
     <animateTransform attributeName="transform" type="rotate" additive="sum"
       values="1.3 0 0;-1.1 0 0;1.3 0 0" dur="8.7s" begin="1.4s" repeatCount="indefinite"/>
-    <path d="M0 0 C-13 20 -28 39 -51 43 S-93 53 -108 68" fill="none" stroke="#140C34" stroke-opacity=".48"
-      stroke-width="11" stroke-linecap="round"/>
+    <path d="M0 0 C-13 20 -28 39 -51 43 S-93 53 -108 68" fill="none" stroke="#030411" stroke-opacity=".92"
+      stroke-width="14" stroke-linecap="round"/>
     <path d="M0 0 C-13 20 -28 39 -51 43 S-93 53 -108 68" fill="none" stroke="url(#octopus-arm)"
       stroke-width="8.2" stroke-linecap="round"/>
     <path d="M0 0 C-13 20 -28 39 -51 43 S-93 53 -108 68" fill="none" stroke="url(#octopus-highlight)"
@@ -4673,8 +4746,8 @@
   <g transform="translate(10 12)" data-octopus-arm="true">
     <animateTransform attributeName="transform" type="rotate" additive="sum"
       values="-1.4 0 0;1.1 0 0;-1.4 0 0" dur="8.4s" begin=".4s" repeatCount="indefinite"/>
-    <path d="M0 0 C22 12 39 29 65 31 S112 39 130 54" fill="none" stroke="#140C34" stroke-opacity=".48"
-      stroke-width="11" stroke-linecap="round"/>
+    <path d="M0 0 C22 12 39 29 65 31 S112 39 130 54" fill="none" stroke="#030411" stroke-opacity=".92"
+      stroke-width="14" stroke-linecap="round"/>
     <path d="M0 0 C22 12 39 29 65 31 S112 39 130 54" fill="none" stroke="url(#octopus-arm)"
       stroke-width="8.2" stroke-linecap="round"/>
     <path d="M0 0 C22 12 39 29 65 31 S112 39 130 54" fill="none" stroke="url(#octopus-highlight)"
@@ -4699,8 +4772,8 @@
   <g transform="translate(17 7)" data-octopus-arm="true">
     <animateTransform attributeName="transform" type="rotate" additive="sum"
       values="1.3 0 0;-1.2 0 0;1.3 0 0" dur="9.3s" begin="1.2s" repeatCount="indefinite"/>
-    <path d="M0 0 C27 0 52 11 74 16 S117 19 146 34" fill="none" stroke="#140C34" stroke-opacity=".48"
-      stroke-width="11" stroke-linecap="round"/>
+    <path d="M0 0 C27 0 52 11 74 16 S117 19 146 34" fill="none" stroke="#030411" stroke-opacity=".92"
+      stroke-width="14" stroke-linecap="round"/>
     <path d="M0 0 C27 0 52 11 74 16 S117 19 146 34" fill="none" stroke="url(#octopus-arm)"
       stroke-width="8.2" stroke-linecap="round"/>
     <path d="M0 0 C27 0 52 11 74 16 S117 19 146 34" fill="none" stroke="url(#octopus-highlight)"
@@ -4725,8 +4798,8 @@
   <g transform="translate(20 2)" data-octopus-arm="true">
     <animateTransform attributeName="transform" type="rotate" additive="sum"
       values="-1.2 0 0;1.5 0 0;-1.2 0 0" dur="8.9s" begin=".8s" repeatCount="indefinite"/>
-    <path d="M0 0 C29 -12 50 -8 76 0 S119 9 147 18" fill="none" stroke="#140C34" stroke-opacity=".48"
-      stroke-width="11" stroke-linecap="round"/>
+    <path d="M0 0 C29 -12 50 -8 76 0 S119 9 147 18" fill="none" stroke="#030411" stroke-opacity=".92"
+      stroke-width="14" stroke-linecap="round"/>
     <path d="M0 0 C29 -12 50 -8 76 0 S119 9 147 18" fill="none" stroke="url(#octopus-arm)"
       stroke-width="8.2" stroke-linecap="round"/>
     <path d="M0 0 C29 -12 50 -8 76 0 S119 9 147 18" fill="none" stroke="url(#octopus-highlight)"
@@ -4751,8 +4824,8 @@
   <g transform="translate(3 17)" data-octopus-arm="true">
     <animateTransform attributeName="transform" type="rotate" additive="sum"
       values="1.1 0 0;-1.4 0 0;1.1 0 0" dur="9.6s" begin="1.7s" repeatCount="indefinite"/>
-    <path d="M0 0 C17 22 33 39 61 45 S105 55 120 71" fill="none" stroke="#140C34" stroke-opacity=".48"
-      stroke-width="11" stroke-linecap="round"/>
+    <path d="M0 0 C17 22 33 39 61 45 S105 55 120 71" fill="none" stroke="#030411" stroke-opacity=".92"
+      stroke-width="14" stroke-linecap="round"/>
     <path d="M0 0 C17 22 33 39 61 45 S105 55 120 71" fill="none" stroke="url(#octopus-arm)"
       stroke-width="8.2" stroke-linecap="round"/>
     <path d="M0 0 C17 22 33 39 61 45 S105 55 120 71" fill="none" stroke="url(#octopus-highlight)"
@@ -4779,7 +4852,11 @@
       values="1 1;1.025 .975;1 1" dur="5.8s" repeatCount="indefinite"/>
     <path d="M-30 17 C-43 2 -37 -23 -20 -34 C-7 -43 12 -42 26 -29
       C42 -14 38 10 25 21 C10 31 -17 31 -30 17Z"
-      fill="url(#octopus-skin)" stroke="#FFB5F0" stroke-opacity=".55" stroke-width="1.2"/>
+      fill="none" stroke="#030411" stroke-width="5.2" stroke-linejoin="miter"/>
+    <path d="M-30 17 C-43 2 -37 -23 -20 -34 C-7 -43 12 -42 26 -29
+      C42 -14 38 10 25 21 C10 31 -17 31 -30 17Z"
+      fill="url(#octopus-skin)" stroke="#FFB5F0" stroke-opacity=".9" stroke-width="1.45"
+      stroke-linejoin="miter"/>
     <path d="M-24 8 C-24 -15 -10 -30 4 -31 C20 -30 30 -12 26 6
       C16 17 -9 22 -24 8Z" fill="url(#octopus-blush)" opacity=".6"/>
     <g fill="#B5A2FF" opacity=".58">
@@ -4827,8 +4904,13 @@
 <text x="972" y="578">MORE</text>
 </g>
 </g>
+<!-- Offset ink frame and registration edges finish the comic panel. -->
+<rect x="3.5" y="3.5" width="1113" height="583" rx="19"
+      fill="none" stroke="#030411" stroke-width="7"/>
 <rect x=".75" y=".75" width="1118.5" height="588.5" rx="22"
-      fill="none" stroke="url(#glass-edge)" stroke-width="1.6"/>
-<rect x="5" y="5" width="1110" height="580" rx="18"
-      fill="none" stroke="#E2FFF5" stroke-opacity=".055"/>
+      fill="none" stroke="url(#glass-edge)" stroke-width="2.4"/>
+<rect x="7" y="7" width="1106" height="576" rx="17"
+      fill="none" stroke="#00E5FF" stroke-opacity=".4" stroke-width=".8"/>
+<path d="M12 19 L12 92 M1108 19 L1108 92 M12 516 L12 570 M1108 516 L1108 570"
+      fill="none" stroke="#FF3BC8" stroke-width="2.2" opacity=".72"/>
 </svg>
