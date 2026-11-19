@@ -506,31 +506,33 @@ def render_svg(
     <stop offset="1" stop-color="#263BFF"/>
   </linearGradient>
   <linearGradient id="octopus-skin" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="#E0A184">
-      <animate attributeName="stop-color" values="#D99B80;#64B9A6;#8298D6;#C38BAA;#D99B80" dur="38s" repeatCount="indefinite"/>
+    <stop offset="0" stop-color="#FF4FD8">
+      <animate attributeName="stop-color" values="#FF4FD8;#9B5CFF;#00E5FF;#A45BFF;#FF4FD8" dur="38s" repeatCount="indefinite"/>
     </stop>
-    <stop offset=".48" stop-color="#A85F68">
-      <animate attributeName="stop-color" values="#A85F68;#347F83;#526EAD;#985D85;#A85F68" dur="38s" repeatCount="indefinite"/>
+    <stop offset=".48" stop-color="#A13EDB">
+      <animate attributeName="stop-color" values="#A13EDB;#485BFF;#00AEEF;#D235C6;#A13EDB" dur="38s" repeatCount="indefinite"/>
     </stop>
-    <stop offset="1" stop-color="#70475A">
-      <animate attributeName="stop-color" values="#70475A;#25565E;#394C83;#69445F;#70475A" dur="38s" repeatCount="indefinite"/>
+    <stop offset="1" stop-color="#39235F">
+      <animate attributeName="stop-color" values="#39235F;#1B2F78;#07506F;#63206C;#39235F" dur="38s" repeatCount="indefinite"/>
     </stop>
   </linearGradient>
   <linearGradient id="octopus-arm" x1="0" y1="0" x2="0" y2="1">
-    <stop stop-color="#E4AA8D">
-      <animate attributeName="stop-color" values="#E4AA8D;#76C9B3;#9AACE7;#D29DBA;#E4AA8D" dur="38s" repeatCount="indefinite"/>
+    <stop stop-color="#FF8BE4">
+      <animate attributeName="stop-color" values="#FF8BE4;#A98BFF;#6CF5FF;#D98BFF;#FF8BE4" dur="38s" repeatCount="indefinite"/>
     </stop>
-    <stop offset="1" stop-color="#744C62">
-      <animate attributeName="stop-color" values="#744C62;#2D6C69;#46558E;#774A72;#744C62" dur="38s" repeatCount="indefinite"/>
+    <stop offset="1" stop-color="#542B8F">
+      <animate attributeName="stop-color" values="#542B8F;#273D9E;#075A86;#812D87;#542B8F" dur="38s" repeatCount="indefinite"/>
     </stop>
   </linearGradient>
   <linearGradient id="octopus-highlight" x1="0" y1="0" x2="1" y2="0">
-    <stop stop-color="#FFE2C9" stop-opacity=".75"/>
-    <stop offset="1" stop-color="#A2E9DB" stop-opacity=".5"/>
+    <stop stop-color="#FFFFFF" stop-opacity=".88"/>
+    <stop offset=".46" stop-color="#00E5FF" stop-opacity=".82"/>
+    <stop offset="1" stop-color="#FF73DF" stop-opacity=".6"/>
   </linearGradient>
   <radialGradient id="octopus-blush">
-    <stop stop-color="#F8C7A9" stop-opacity=".65"/>
-    <stop offset="1" stop-color="#F8C7A9" stop-opacity="0"/>
+    <stop stop-color="#FF8BE4" stop-opacity=".72"/>
+    <stop offset=".52" stop-color="#8B5CFF" stop-opacity=".3"/>
+    <stop offset="1" stop-color="#8B5CFF" stop-opacity="0"/>
   </radialGradient>
   <filter id="fish-glow" x="-100%" y="-100%" width="300%" height="300%">
     <feGaussianBlur stdDeviation="2.3" result="blur"/>
@@ -544,28 +546,28 @@ def render_svg(
     <feGaussianBlur stdDeviation="4" result="blur"/>
     <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
   </filter>
-  <clipPath id="tank-clip"><rect x="1" y="1" width="1118" height="428" rx="19"/></clipPath>
+  <clipPath id="tank-clip"><rect x="1" y="1" width="1118" height="588" rx="22"/></clipPath>
 </defs>
 
 <g clip-path="url(#tank-clip)">
-  <rect width="1120" height="430" fill="url(#water)"/>
-  <rect width="1120" height="430" fill="url(#water-light)"/>
+  <rect width="1120" height="590" fill="url(#water)"/>
+  <rect width="1120" height="590" fill="url(#water-light)"/>
 
   <!-- Slow surface glow and moving shafts of water light. -->
-  <path d="M0 75 Q170 58 340 72 T680 70 T1120 71 L1120 95 Q920 88 740 92 T360 91 T0 94Z"
+  <path d="M0 84 Q170 66 340 80 T680 78 T1120 79 L1120 105 Q920 96 740 100 T360 99 T0 102Z"
         fill="url(#surface-light)" opacity=".64"/>
-  <path d="M18 79 Q200 65 380 77 T760 75 T1100 78"
-        fill="none" stroke="#A9F4EB" stroke-opacity=".32" stroke-width="1.1"/>
-  <path d="M18 84 Q200 70 380 82 T760 80 T1100 83"
-        fill="none" stroke="#FFFFFF" stroke-opacity=".08" stroke-width=".8"/>
+  <path d="M18 88 Q200 71 380 85 T760 83 T1100 86"
+        fill="none" stroke="#00E5FF" stroke-opacity=".48" stroke-width="1.2"/>
+  <path d="M18 94 Q200 77 380 91 T760 89 T1100 92"
+        fill="none" stroke="#A78BFF" stroke-opacity=".18" stroke-width=".9"/>
   <g opacity=".18">
-    <path d="M125 75 L205 75 L295 314 L245 314Z" fill="#8DE5D9" opacity=".11">
+    <path d="M125 84 L205 84 L295 405 L245 405Z" fill="#00E5FF" opacity=".16">
       <animateTransform attributeName="transform" type="translate" values="-28 0;28 0;-28 0" dur="27s" repeatCount="indefinite"/>
     </path>
-    <path d="M470 75 L545 75 L627 303 L572 303Z" fill="#B3F0E7" opacity=".13">
+    <path d="M470 84 L545 84 L627 395 L572 395Z" fill="#8B5CFF" opacity=".17">
       <animateTransform attributeName="transform" type="translate" values="22 0;-22 0;22 0" dur="31s" repeatCount="indefinite"/>
     </path>
-    <path d="M865 75 L930 75 L1010 306 L965 306Z" fill="#74C8D0" opacity=".1">
+    <path d="M865 84 L930 84 L1010 405 L965 405Z" fill="#FF3BC8" opacity=".13">
       <animateTransform attributeName="transform" type="translate" values="-18 0;18 0;-18 0" dur="24s" repeatCount="indefinite"/>
     </path>
   </g>
@@ -579,7 +581,7 @@ def render_svg(
   </g>
 
   <!-- Distant fish schools create movement behind the calendar. -->
-  <g fill="#9ADCD8" opacity=".24">
+  <g fill="#A4D8FF" opacity=".3">
     <g transform="translate(175 99)">
       <path d="M-12 0 Q-5 -5 3 0 Q-5 5 -12 0Z M3 0L9 -5L8 0L9 5Z"/>
       <path d="M10 7 Q16 3 23 7 Q16 11 10 7Z M23 7L28 3L27 7L28 11Z" opacity=".7"/>
@@ -594,7 +596,7 @@ def render_svg(
   </g>
 
   <!-- Soft plankton field. Particles move independently at different depths. -->
-  <g fill="#B9F6E9">
+  <g fill="#9AEFFF">
     <circle cx="64" cy="119" r="1.3" opacity=".42"><animate attributeName="cy" values="119;111;119" dur="7s" repeatCount="indefinite"/></circle>
     <circle cx="1035" cy="119" r="1.5" opacity=".34"><animate attributeName="cy" values="119;106;119" dur="8s" begin="1s" repeatCount="indefinite"/></circle>
     <circle cx="104" cy="292" r="1.1" opacity=".48"><animate attributeName="cy" values="292;278;292" dur="9s" repeatCount="indefinite"/></circle>
@@ -608,17 +610,17 @@ def render_svg(
         font-size="29" letter-spacing="1.7" fill="#EAF8F3">CONTRIBUTIONS</text>
   <text x="40" y="68" font-family="Trebuchet MS, Arial, sans-serif"
         font-size="8" font-weight="700" letter-spacing="1.8"
-        fill="#75AAA9">A YEAR OF BUILDING BELOW THE SURFACE</text>
+        fill="#8F91D8">A YEAR OF BUILDING BELOW THE SURFACE</text>
   <text x="1080" y="51" text-anchor="end"
         font-family="Bangers, Impact, 'Arial Black', sans-serif"
-        font-size="35" letter-spacing=".9" fill="#9CEBE0"
+        font-size="37" letter-spacing="1.1" fill="#00E5FF"
         filter="url(#soft-glow)">{total:,}</text>
   <text x="1080" y="65" text-anchor="end"
         font-family="Trebuchet MS, Arial, sans-serif"
-        font-size="8" letter-spacing="1.5" fill="#83B8B5">365 DAY REEF</text>
+        font-size="8.5" letter-spacing="1.7" fill="#FF69D4">365 DAY REEF</text>
 
-  <g font-family="Trebuchet MS, Arial, sans-serif" font-size="9"
-     font-weight="700" letter-spacing=".85" fill="#8AC2BE">'''
+  <g font-family="Trebuchet MS, Arial, sans-serif" font-size="9.5"
+     font-weight="700" letter-spacing=".95" fill="#A7A8F7">'''
     )
 
     month_positions: list[tuple[int, str]] = []
@@ -634,7 +636,7 @@ def render_svg(
         month_positions.insert(0, (0, start.strftime("%b").upper()))
 
     for column, label in month_positions:
-        pieces.append(f'<text x="{GRID_X + column * PITCH}" y="113">{label}</text>')
+        pieces.append(f'<text x="{GRID_X + column * PITCH}" y="136">{label}</text>')
 
     for row, label in enumerate(("S", "M", "T", "W", "T", "F", "S")):
         pieces.append(
