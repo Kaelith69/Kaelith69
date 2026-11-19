@@ -998,149 +998,218 @@ def render_svg(
   </g>
 </g>
 
-<!-- Eight relaxed arms, soft suckers, and a color-shifting mantle. -->
-<g id="resting-octopus" transform="translate(560 482)">
-  <ellipse cx="0" cy="31" rx="154" ry="8" fill="#030411" opacity=".68"/>
-  <!-- Eight-point impact burst behind the resting octopus. -->
-  <path d="M0 -128 L18 -62 L66 -105 L57 -48 L126 -53 L75 -10
-           L135 21 L65 32 L91 101 L29 56 L0 126 L-27 57
-           L-93 97 L-62 30 L-132 13 L-73 -20 L-124 -67
-           L-53 -53 L-68 -112 L-15 -64Z"
-        fill="#8B5CFF" fill-opacity=".17" stroke="#030411" stroke-width="4"
-        stroke-linejoin="miter"/>
-  <path d="M0 -119 L13 -63 L60 -96 L52 -44 L115 -47 L68 -8
-           L122 19 L59 26 L80 91 L25 49 L0 112 L-23 48
-           L-81 88 L-52 24 L-119 11 L-66 -18 L-111 -62
-           L-46 -49 L-59 -101 L-12 -58Z"
-        fill="none" stroke="#FF3BC8" stroke-width="2.2" opacity=".72"
-        stroke-linejoin="miter"/>
+    pieces.append(
+        '''<g id="resting-octopus" transform="translate(600 514)">
+  <!-- Broad contact shadow anchors the animal to the sand. -->
+  <ellipse cx="0" cy="116" rx="183" ry="13"
+           fill="#030712" opacity=".82"/>
+  <ellipse cx="0" cy="117" rx="136" ry="5"
+           fill="#8B5CFF" opacity=".16"/>
+
+  <!-- Quiet comic impact contour behind the mantle, not a cartoon sunburst. -->
+  <path d="M-8 -151 L12 -126 L46 -144 L42 -110 L78 -98
+           L52 -73 L75 -45 L37 -40 L27 -5 L0 -28
+           L-32 -5 L-38 -42 L-77 -53 L-51 -82 L-76 -111
+           L-39 -115Z"
+        fill="#7B2CBF" opacity=".16" stroke="#030712"
+        stroke-width="4" stroke-linejoin="bevel"/>
+  <path d="M-5 -140 L12 -118 L42 -132 L36 -105 L63 -92
+           L43 -72 L62 -49 L31 -43"
+        fill="none" stroke="#FF2A85" stroke-width="2"
+        stroke-linejoin="bevel" opacity=".72"/>
 '''
     )
 
     octopus_arms = [
-        # Four left and four right arms. Each is a filled, tapered ribbon rather
-        # than a constant width line, with an individually curved silhouette.
-        ("-12 3", "M0 -7 C-17 -19 -38 -20 -59 -12 C-82 -4 -108 8 -137 16 Q-149 20 -160 14 C-151 32 -137 32 -121 25 C-99 16 -81 4 -60 -1 C-38 -7 -17 2 0 7 Q-6 1 0 -7Z", "-22 -12 -42 -12 -62 -8 -82 0 -102 8 -122 14 -140 17", "-1.5 0 0;1.5 0 0;-1.5 0 0", "9.1s", "0s"),
-        ("-17 9", "M0 -6 C-21 -14 -43 -9 -65 4 C-88 17 -110 30 -139 32 Q-151 34 -161 25 C-153 45 -137 46 -120 42 C-97 37 -78 25 -56 13 C-35 2 -16 1 0 7Z", "-22 0 -43 4 -64 13 -84 22 -104 28 -126 33 -146 36", "1.2 0 0;-1.2 0 0;1.2 0 0", "9.8s", ".6s"),
-        ("-14 17", "M0 -5 C-17 -1 -34 15 -49 36 C-65 58 -91 70 -119 73 Q-132 74 -142 65 C-136 87 -119 87 -102 81 C-77 72 -57 59 -39 39 C-23 20 -10 9 0 7Z", "-14 10 -30 26 -47 43 -64 58 -83 68 -104 75 -124 78", "-1.1 0 0;1.4 0 0;-1.1 0 0", "10.4s", "1.2s"),
-        ("-4 22", "M0 -6 C-8 5 -14 17 -17 32 C-20 47 -38 62 -60 70 Q-70 73 -79 66 C-75 84 -60 85 -47 78 C-28 67 -13 54 -7 38 C0 22 6 7 7 4Z", "-5 12 -14 32 -24 52 -35 72 -51 89 -70 102 -84 106", "1.3 0 0;-1.1 0 0;1.3 0 0", "9.6s", "1.7s"),
-        ("12 3", "M0 -7 C17 -19 38 -20 59 -12 C82 -4 108 8 137 16 Q149 20 160 14 C151 32 137 32 121 25 C99 16 81 4 60 -1 C38 -7 17 2 0 7 Q6 1 0 -7Z", "22 -12 42 -12 62 -8 82 0 102 8 122 14 140 17", "1.4 0 0;-1.4 0 0;1.4 0 0", "9.3s", ".3s"),
-        ("17 9", "M0 -6 C21 -14 43 -9 65 4 C88 17 110 30 139 32 Q151 34 161 25 C153 45 137 46 120 42 C97 37 78 25 56 13 C35 2 16 1 0 7Z", "22 0 43 4 64 13 84 22 104 28 126 33 146 36", "-1.1 0 0;1.3 0 0;-1.1 0 0", "10.1s", "1s"),
-        ("14 17", "M0 -5 C17 -1 34 15 49 36 C65 58 91 70 119 73 Q132 74 142 65 C136 87 119 87 102 81 C77 72 57 59 39 39 C23 20 10 9 0 7Z", "14 10 30 26 47 43 64 58 83 68 104 75 124 78", "1.2 0 0;-1.5 0 0;1.2 0 0", "10.6s", "1.5s"),
-        ("4 22", "M0 -6 C8 5 14 17 17 32 C20 47 38 62 60 70 Q70 73 79 66 C75 84 60 85 47 78 C28 67 13 54 7 38 C0 22 -6 7 -7 4Z", "5 12 14 32 24 52 35 72 51 89 70 102 84 106", "-1.2 0 0;1.1 0 0;-1.2 0 0", "9.9s", ".8s"),
+        # Four arms fan out on each side. Broad shoulders taper toward curled tips.
+        (-13, 23, 155, 1.02,
+         "M0 -8 C22 -20 45 -18 68 -8 C95 3 120 17 148 25 C160 29 171 23 173 13 C184 23 178 39 163 45 C146 52 128 42 105 31 C81 18 56 5 34 4 C18 3 8 8 0 8 Q-6 0 0 -8Z",
+         [(20, 2), (36, 3), (52, 5), (68, 8), (84, 12), (100, 17), (116, 22), (132, 27)],
+         "9.1s", "0s"),
+        (-18, 28, 187, 1.00,
+         "M0 -7 C20 -17 42 -12 61 0 C85 14 107 30 132 36 C147 40 158 31 154 20 C169 31 164 48 148 54 C130 60 111 46 92 34 C70 20 45 8 22 10 L0 8Z",
+         [(19, 2), (35, 5), (51, 9), (67, 14), (83, 20), (99, 26), (115, 32)],
+         "10.1s", ".7s"),
+        (-14, 34, 218, .94,
+         "M0 -8 C17 -16 35 -8 50 7 C68 26 84 47 107 53 C121 57 133 47 126 35 C142 44 142 62 127 71 C109 80 91 64 75 47 C57 27 39 12 20 10 L0 8Z",
+         [(18, 3), (33, 7), (48, 13), (63, 21), (78, 30), (93, 39), (108, 48)],
+         "10.4s", "1.4s"),
+        (-7, 39, 246, .88,
+         "M0 -8 C15 -16 29 -6 41 10 C54 27 65 48 82 55 C96 60 106 49 98 38 C114 42 119 60 106 71 C89 81 72 66 59 48 C43 27 29 11 14 10 L0 8Z",
+         [(15, 3), (29, 8), (43, 15), (57, 24), (70, 34), (83, 44), (96, 55)],
+         "9.6s", "2.0s"),
+        (13, 23, 25, 1.00,
+         "M0 -8 C22 -20 45 -18 68 -8 C95 3 120 17 148 25 C160 29 171 23 173 13 C184 23 178 39 163 45 C146 52 128 42 105 31 C81 18 56 5 34 4 C18 3 8 8 0 8 Q-6 0 0 -8Z",
+         [(20, 2), (36, 3), (52, 5), (68, 8), (84, 12), (100, 17), (116, 22), (132, 27)],
+         "9.4s", ".3s"),
+        (18, 28, -8, 1.03,
+         "M0 -7 C20 -17 42 -12 61 0 C85 14 107 30 132 36 C147 40 158 31 154 20 C169 31 164 48 148 54 C130 60 111 46 92 34 C70 20 45 8 22 10 L0 8Z",
+         [(19, 2), (35, 5), (51, 9), (67, 14), (83, 20), (99, 26), (115, 32)],
+         "10.3s", "1.0s"),
+        (14, 34, -38, .96,
+         "M0 -8 C17 -16 35 -8 50 7 C68 26 84 47 107 53 C121 57 133 47 126 35 C142 44 142 62 127 71 C109 80 91 64 75 47 C57 27 39 12 20 10 L0 8Z",
+         [(18, 3), (33, 7), (48, 13), (63, 21), (78, 30), (93, 39), (108, 48)],
+         "10.7s", "1.7s"),
+        (7, 39, -66, .90,
+         "M0 -8 C15 -16 29 -6 41 10 C54 27 65 48 82 55 C96 60 106 49 98 38 C114 42 119 60 106 71 C89 81 72 66 59 48 C43 27 29 11 14 10 L0 8Z",
+         [(15, 3), (29, 8), (43, 15), (57, 24), (70, 34), (83, 44), (96, 55)],
+         "9.8s", ".9s"),
     ]
-    for arm_index, (translate, arm_path, sucker_coords, rotation, duration, begin) in enumerate(octopus_arms):
+
+    for arm_index, (x, y, angle, scale, arm_path, cups, duration, begin) in enumerate(octopus_arms):
         pieces.append(
-            f'''  <g transform="translate({translate})" data-octopus-arm="true"
-       data-arm-index="{arm_index}">
-    <animateTransform attributeName="transform" type="rotate" additive="sum"
-      values="{rotation}" dur="{duration}" begin="{begin}"
-      calcMode="spline" keySplines=".42 0 .58 1;.42 0 .58 1"
-      repeatCount="indefinite"/>
-    <path d="{arm_path}" fill="#030411" stroke="#02030B"
-      stroke-width="4.2" stroke-linejoin="round"/>
-    <path d="{arm_path}" fill="url(#octopus-arm)"
-      stroke="#FFB5F0" stroke-opacity=".76" stroke-width="1.05"
-      stroke-linejoin="round"/>
-    <path d="{arm_path}" fill="none" stroke="url(#octopus-highlight)"
-      stroke-width="1.7" stroke-linecap="round" opacity=".78"/>
-'''
+            f\\'\\'\\'  <g data-octopus-arm="true" data-arm-index="{arm_index}"
+       transform="translate({x} {y}) rotate({angle}) scale({scale})">
+    <g>
+      <animateTransform attributeName="transform" type="rotate" additive="sum"
+        values="-1.1 0 0;1.1 0 0;-1.1 0 0" dur="{duration}"
+        begin="{begin}" calcMode="spline"
+        keySplines=".42 0 .58 1;.42 0 .58 1" repeatCount="indefinite"/>
+      <path d="{arm_path}" fill="#030712" stroke="#02030B"
+        stroke-width="5.2" stroke-linejoin="round"/>
+      <path d="{arm_path}" fill="url(#octopus-arm)"
+        stroke="#FFB5F0" stroke-opacity=".78" stroke-width="1.1"
+        stroke-linejoin="round"/>
+      <path d="{arm_path}" fill="url(#halftone-violet)" opacity=".24"
+        stroke="none"/>
+      <path d="M8 -3 C29 -13 51 -11 73 -3"
+        fill="none" stroke="url(#octopus-highlight)"
+        stroke-width="2.1" stroke-linecap="round" opacity=".8"/>
+\\'\\'\\'
         )
-        coordinates = sucker_coords.split()
-        for index in range(0, len(coordinates), 2):
-            sx, sy = coordinates[index], coordinates[index + 1]
-            pieces.append(
-                f'''    <g data-sucker="true" transform="translate({sx} {sy})">
-      <ellipse rx="3.05" ry="2.3" fill="#08071A"
-        stroke="#FFB5F0" stroke-width=".8"/>
-      <ellipse rx="1.55" ry="1.05" fill="#00E5FF" opacity=".9"/>
-      <circle cx="-.55" cy="-.55" r=".48" fill="#FFFFFF" opacity=".9"/>
-    </g>
-'''
-            )
-        pieces.append("  </g>\n")
+        for cup_x, cup_y in cups:
+            for row_offset, opacity in ((-3.1, ".72"), (0, "1")):
+                pieces.append(
+                    f\\'\\'\\'      <g data-sucker="true" transform="translate({cup_x} {cup_y + row_offset})">
+        <ellipse rx="3.0" ry="2.05" fill="#08071A"
+          stroke="#FFBE0B" stroke-width=".62" stroke-opacity=".78"/>
+        <ellipse rx="1.2" ry=".8" fill="#00F5D4" opacity="{opacity}"/>
+        <circle cx="-.55" cy="-.45" r=".42" fill="#FFFFFF" opacity=".92"/>
+      </g>
+\\'\\'\\'
+                )
+        pieces.append("    </g>\\n  </g>\\n")
 
     pieces.append(
-        f'''  <g id="octopus-mantle">
+        f\\'\\'\\'  <g id="octopus-mantle">
     <animateTransform attributeName="transform" type="scale"
-      values="1 1;1.025 .975;1 1" dur="5.8s" repeatCount="indefinite"/>
-    <path d="M-26 -10 C-50 -24 -48 -60 -28 -82 C-12 -100 16 -99 35 -80
-      C54 -61 50 -25 26 -9 C11 2 -12 4 -26 -10Z"
-      fill="none" stroke="#030411" stroke-width="5.2" stroke-linejoin="miter"/>
-    <path d="M-26 -10 C-50 -24 -48 -60 -28 -82 C-12 -100 16 -99 35 -80
-      C54 -61 50 -25 26 -9 C11 2 -12 4 -26 -10Z"
-      fill="url(#octopus-skin)" stroke="#FFB5F0" stroke-opacity=".96" stroke-width="1.8"
-      stroke-linejoin="miter"/>
-    <path id="octopus-head" d="M-38 -8 C-54 2 -52 28 -34 45 C-18 61 16 61 34 44
-      C52 27 49 3 33 -9 C16 -24 -22 -24 -38 -8Z"
-      fill="url(#octopus-arm)" stroke="#030411" stroke-width="5.2"
+      values="1 1;1.018 .988;1 1" dur="6.8s"
+      calcMode="spline" keySplines=".42 0 .58 1;.42 0 .58 1"
+      repeatCount="indefinite"/>
+
+    <!-- Rear mantle sac: broad dome tapering into the neck. -->
+    <path d="M-37 -20 C-59 -42 -61 -77 -49 -107
+      C-37 -139 -12 -153 17 -147 C48 -141 64 -112 59 -81
+      C55 -52 38 -26 18 -13 C1 -3 -22 -6 -37 -20Z"
+      fill="none" stroke="#030712" stroke-width="6"
       stroke-linejoin="round"/>
-    <path d="M-38 -8 C-54 2 -52 28 -34 45 C-18 61 16 61 34 44
-      C52 27 49 3 33 -9"
-      fill="none" stroke="#FFB5F0" stroke-width="1.6" stroke-opacity=".95"
-      stroke-linecap="round"/>
-    <path d="M-33 1 C-20 -10 10 -15 30 -3 L36 25
-      C19 43 -13 50 -34 28Z"
-      fill="url(#halftone-violet)" opacity=".28"/>
-    <path d="M-31 28 Q-16 42 0 43 Q19 42 33 26"
-      fill="none" stroke="#030411" stroke-width="2.5" stroke-opacity=".55"
-      stroke-linecap="round"/>
-    <path d="M-29 -1 Q-17 -10 -6 -5 M8 -5 Q20 -11 31 -1"
-      fill="none" stroke="#FFFFFF" stroke-opacity=".58" stroke-width="1.4"
-      stroke-linecap="round"/>
-    <path d="M-21 51 Q-10 58 0 56 Q11 58 22 51"
-      fill="none" stroke="#8B5CFF" stroke-width="2" stroke-linecap="round"/>
-    <path d="M-34 -34 C-27 -70 -7 -86 18 -82 C38 -77 45 -48 30 -24
-      C13 -10 -15 -13 -34 -34Z" fill="url(#octopus-blush)" opacity=".6"/>
-    <g fill="#B5A2FF" opacity=".74">
-      <circle cx="-18" cy="-13" r="2.1"><animate attributeName="opacity" values=".25;.65;.25" dur="8s" repeatCount="indefinite"/></circle>
-      <circle cx="-8" cy="-25" r="1.5"><animate attributeName="opacity" values=".6;.22;.6" dur="7s" repeatCount="indefinite"/></circle>
-      <circle cx="10" cy="-21" r="2"><animate attributeName="opacity" values=".25;.7;.25" dur="9s" repeatCount="indefinite"/></circle>
-      <circle cx="22" cy="-8" r="1.4"><animate attributeName="opacity" values=".65;.2;.65" dur="7.8s" repeatCount="indefinite"/></circle>
-      <circle cx="14" cy="12" r="1.7"><animate attributeName="opacity" values=".2;.6;.2" dur="8.5s" repeatCount="indefinite"/></circle>
+    <path d="M-37 -20 C-59 -42 -61 -77 -49 -107
+      C-37 -139 -12 -153 17 -147 C48 -141 64 -112 59 -81
+      C55 -52 38 -26 18 -13 C1 -3 -22 -6 -37 -20Z"
+      fill="url(#octopus-skin)" stroke="#FFB5F0"
+      stroke-opacity=".92" stroke-width="1.7" stroke-linejoin="round"/>
+    <!-- Inked shadow plane and offset halftone print. -->
+    <path d="M8 -144 C42 -137 62 -112 59 -81
+      C55 -51 37 -25 18 -13 L5 -8 C26 -35 39 -67 35 -96
+      C31 -122 19 -137 8 -144Z"
+      fill="#030712" opacity=".48"/>
+    <path d="M-37 -20 C-59 -42 -61 -77 -49 -107
+      C-37 -139 -12 -153 17 -147 C48 -141 64 -112 59 -81
+      C55 -52 38 -26 18 -13 C1 -3 -22 -6 -37 -20Z"
+      fill="url(#halftone-violet)" opacity=".36"/>
+    <path d="M-41 -34 C-55 -63 -53 -100 -32 -126"
+      fill="none" stroke="#00F5D4" stroke-width="4.2"
+      stroke-linecap="round" opacity=".88"/>
+    <path d="M32 -130 Q55 -103 49 -70"
+      fill="none" stroke="#FF2A85" stroke-width="3.2"
+      stroke-linecap="round" opacity=".78"/>
+
+    <!-- Chromatophore spots, including warm amber freckles. -->
+    <g fill="#FFBE0B" opacity=".7">
+      <circle cx="-31" cy="-89" r="2.2"><animate attributeName="opacity" values=".25;.8;.25" dur="7.4s" repeatCount="indefinite"/></circle>
+      <circle cx="-12" cy="-122" r="1.7"><animate attributeName="opacity" values=".8;.28;.8" dur="8.1s" repeatCount="indefinite"/></circle>
+      <circle cx="22" cy="-109" r="2.3"><animate attributeName="opacity" values=".3;.85;.3" dur="6.9s" repeatCount="indefinite"/></circle>
+      <circle cx="39" cy="-73" r="1.8"><animate attributeName="opacity" values=".8;.25;.8" dur="7.8s" repeatCount="indefinite"/></circle>
+      <circle cx="-20" cy="-57" r="1.6"><animate attributeName="opacity" values=".28;.8;.28" dur="9s" repeatCount="indefinite"/></circle>
     </g>
-    <path d="M-28 -67 Q-9 -91 14 -84" fill="none"
-      stroke="#FFFFFF" stroke-opacity=".78" stroke-width="3.1" stroke-linecap="round"/>
-    <path d="M-36 -48 Q-24 -72 -8 -75 M23 -78 Q40 -60 40 -42"
-      fill="none" stroke="#00E5FF" stroke-opacity=".72" stroke-width="1.7"
+    <g fill="#00F5D4" opacity=".62">
+      <circle cx="-22" cy="-103" r="1.5"/>
+      <circle cx="4" cy="-133" r="1.8"/>
+      <circle cx="34" cy="-93" r="1.35"/>
+      <circle cx="10" cy="-63" r="1.5"/>
+    </g>
+    <path d="M-31 -112 Q-15 -143 12 -139"
+      fill="none" stroke="#FFFFFF" stroke-opacity=".82"
+      stroke-width="3.2" stroke-linecap="round"/>
+
+    <!-- Cephalic head beneath the mantle, with lateral eye bulges. -->
+    <path d="M-43 -13 C-59 -3 -60 19 -46 37
+      C-31 55 -12 61 8 59 C30 58 48 47 57 29
+      C65 11 52 -8 35 -16 C16 -26 -25 -25 -43 -13Z"
+      fill="none" stroke="#030712" stroke-width="6"
+      stroke-linejoin="round"/>
+    <path d="M-43 -13 C-59 -3 -60 19 -46 37
+      C-31 55 -12 61 8 59 C30 58 48 47 57 29
+      C65 11 52 -8 35 -16 C16 -26 -25 -25 -43 -13Z"
+      fill="url(#octopus-arm)" stroke="#FFB5F0"
+      stroke-opacity=".92" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="M-49 21 Q-38 47 -13 53"
+      fill="none" stroke="#00F5D4" stroke-width="2"
+      stroke-linecap="round" opacity=".78"/>
+    <path d="M23 -13 Q47 -6 56 14"
+      fill="none" stroke="#FF2A85" stroke-width="2"
+      stroke-linecap="round" opacity=".8"/>
+    <path d="M-38 3 Q-19 -13 0 -9 Q24 -13 44 4
+      L39 34 Q12 52 -20 38Z"
+      fill="url(#halftone-violet)" opacity=".3"/>
+
+    <!-- Lateral eyes with horizontal pupils rather than oversized round cartoon eyes. -->
+    <ellipse cx="-25" cy="10" rx="8.6" ry="10.8"
+      fill="#D8F7FF" stroke="#030712" stroke-width="2.8"/>
+    <ellipse cx="27" cy="10" rx="8.6" ry="10.8"
+      fill="#D8F7FF" stroke="#030712" stroke-width="2.8"/>
+    <ellipse cx="-25" cy="10.4" rx="4.7" ry="2.25" fill="#08091C"/>
+    <ellipse cx="27" cy="10.4" rx="4.7" ry="2.25" fill="#08091C"/>
+    <circle cx="-27" cy="7.3" r="1.7" fill="#FFFFFF"/>
+    <circle cx="25" cy="7.3" r="1.7" fill="#FFFFFF"/>
+    <path d="M-36 -2 Q-25 -10 -14 -4 M16 -4 Q28 -11 39 -2"
+      fill="none" stroke="#030712" stroke-width="3.4"
       stroke-linecap="round"/>
-    <path d="M-34 -22 Q-13 -35 11 -30 Q27 -27 35 -16"
-      fill="none" stroke="#030411" stroke-opacity=".48" stroke-width="2.8"
+
+    <!-- Siphon funnel on the right underside of the head. -->
+    <g id="octopus-siphon">
+      <animateTransform attributeName="transform" type="scale"
+        values="1 1;1 .94;1 1" dur="4.8s" repeatCount="indefinite"/>
+      <path d="M38 16 C53 7 65 19 56 33
+        L45 43 Q43 31 34 25Z"
+        fill="#7B2CBF" stroke="#030712" stroke-width="2.8"
+        stroke-linejoin="round"/>
+      <ellipse cx="55" cy="22" rx="3.3" ry="5.2"
+        fill="#030712" transform="rotate(18 55 22)"/>
+      <path d="M43 18 Q51 12 57 18"
+        fill="none" stroke="#00F5D4" stroke-width="1.5"
+        stroke-linecap="round"/>
+    </g>
+
+    <!-- Beak and oral web sit where all eight arms meet. -->
+    <path d="M-6 43 Q0 35 6 43 L2 52 Q0 55 -3 52Z"
+      fill="#08091C" stroke="#FFBE0B" stroke-width="1.25"
+      stroke-linejoin="round"/>
+    <path d="M-1 43 L1 50" stroke="#FF2A85" stroke-width="1.2"
       stroke-linecap="round"/>
-    <path d="M-33 -55 Q-26 -66 -17 -62 Q-13 -54 -22 -50Z
-             M8 -70 Q18 -79 27 -69 Q28 -59 16 -58Z
-             M29 -39 Q39 -45 42 -33 Q35 -26 28 -30Z"
-      fill="#140B3D" opacity=".6"/>
-    <path d="M-32 -39 Q-28 -47 -21 -42 M-5 -54 Q1 -60 7 -54
-             M22 -48 Q29 -54 35 -48 M-20 -13 Q-13 -19 -7 -13"
-      fill="none" stroke="#FFE3FA" stroke-opacity=".74" stroke-width="1.6"
-      stroke-linecap="round"/>
-    <ellipse cx="-17" cy="12" rx="7.5" ry="9.2" fill="#D8F7FF"
-      stroke="#030411" stroke-width="2.1"/>
-    <ellipse cx="17" cy="12" rx="7.5" ry="9.2" fill="#D8F7FF"
-      stroke="#030411" stroke-width="2.1"/>
-    <ellipse cx="-16" cy="12" rx="2.7" ry="6.6" fill="#08091C"/>
-    <ellipse cx="18" cy="12" rx="2.7" ry="6.6" fill="#08091C"/>
-    <circle cx="-17.2" cy="8.7" r="1.7" fill="#FFFFFF"/>
-    <circle cx="16.8" cy="8.7" r="1.7" fill="#FFFFFF"/>
-    <path d="M-27 1 Q-17 -7 -7 0 M7 0 Q18 -8 28 1"
-      fill="none" stroke="#08091E" stroke-width="3.8" stroke-linecap="round"/>
-    <path d="M-5 34 Q0 27 5 34 L1 42 Q-1 44 -3 41Z"
-      fill="#16102F" stroke="#030411" stroke-width="1.8" stroke-linejoin="round"/>
-    <path d="M-1 34 L1 40" fill="none" stroke="#FFB5F0" stroke-width="1"/>
   </g>
 </g>
 
-<!-- Bubble trails rise from the octopus den. -->
-<g fill="none" stroke="#00E5FF" stroke-opacity=".82" stroke-width=".9">
-  <circle cx="410" cy="458" r="2.3"><animate attributeName="cy" values="458;410;458" dur="8s" repeatCount="indefinite"/></circle>
-  <circle cx="423" cy="466" r="1.3"><animate attributeName="cy" values="466;433;466" dur="9s" begin="1.4s" repeatCount="indefinite"/></circle>
-  <circle cx="430" cy="448" r="1.6"><animate attributeName="cy" values="448;414;448" dur="7.5s" begin=".7s" repeatCount="indefinite"/></circle>
+<!-- Bubbles rise from the octopus den and catch the neon rim light. -->
+<g fill="none" stroke="#00F5D4" stroke-opacity=".85" stroke-width="1.1">
+  <circle cx="375" cy="470" r="2.5"><animate attributeName="cy" values="470;420;470" dur="8s" repeatCount="indefinite"/></circle>
+  <circle cx="388" cy="482" r="1.4"><animate attributeName="cy" values="482;447;482" dur="9s" begin="1.4s" repeatCount="indefinite"/></circle>
+  <circle cx="402" cy="463" r="1.8"><animate attributeName="cy" values="463;424;463" dur="7.5s" begin=".7s" repeatCount="indefinite"/></circle>
 </g>
-<g fill="none" stroke="#FF3BC8" stroke-opacity=".78" stroke-width=".8">
-  <circle cx="706" cy="457" r="2"><animate attributeName="cy" values="457;418;457" dur="7.7s" begin=".8s" repeatCount="indefinite"/></circle>
-  <circle cx="718" cy="465" r="1.2"><animate attributeName="cy" values="465;430;465" dur="8.8s" begin="2s" repeatCount="indefinite"/></circle>
-  <circle cx="694" cy="447" r="1.4"><animate attributeName="cy" values="447;411;447" dur="7.1s" begin="1.2s" repeatCount="indefinite"/></circle>
+<g fill="none" stroke="#FF2A85" stroke-opacity=".86" stroke-width="1">
+  <circle cx="810" cy="468" r="2.2"><animate attributeName="cy" values="468;425;468" dur="7.7s" begin=".8s" repeatCount="indefinite"/></circle>
+  <circle cx="825" cy="482" r="1.35"><animate attributeName="cy" values="482;442;482" dur="8.8s" begin="2s" repeatCount="indefinite"/></circle>
+  <circle cx="795" cy="458" r="1.55"><animate attributeName="cy" values="458;418;458" dur="7.1s" begin="1.2s" repeatCount="indefinite"/></circle>
 </g>
 
 <!-- The footer is a clear information strip, separate from the seabed. -->
