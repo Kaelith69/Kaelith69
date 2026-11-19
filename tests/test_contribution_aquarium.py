@@ -303,7 +303,9 @@ class ContributionAquariumTests(unittest.TestCase):
         svg = render_svg(self.start, self.end, total, self.days)
         root = ET.fromstring(svg)
         ns = {"svg": "http://www.w3.org/2000/svg"}
-        jaw = root.findall(".//svg:path/svg:animate[@attributeName='d']", ns)
+        fish = root.find(".//*[@id='reef-feeding-fish']")
+        self.assertIsNotNone(fish)
+        jaw = fish.findall(".//svg:path/svg:animate[@attributeName='d']", ns)
         self.assertEqual(len(jaw), 1)
         values = jaw[0].attrib["values"].split(";")
         key_times = jaw[0].attrib["keyTimes"].split(";")
