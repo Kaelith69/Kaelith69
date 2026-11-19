@@ -180,7 +180,7 @@ class NeonRocketContributionTests(unittest.TestCase):
 
         self.assertEqual(len(root.findall(".//svg:animateMotion", namespace)), 1)
         fill_animations = root.findall(
-            ".//svg:animate[@attributeName='opacity']",
+            ".//svg:rect/svg:animate[@attributeName='opacity']",
             namespace,
         )
         self.assertEqual(
