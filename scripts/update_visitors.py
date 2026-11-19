@@ -56,7 +56,7 @@ def fetch_count() -> str:
 def update_svg(count: str) -> bool:
     source = SVG_PATH.read_text(encoding="utf-8")
     pattern = re.compile(
-        r'(<text\\b[^>]*\\bid=["\\']visitor-count["\\'][^>]*>)(.*?)(</text>)',
+        r'(<text\b[^>]*\bid=["\\']visitor-count["\\'][^>]*>)(.*?)(</text>)',
         re.DOTALL,
     )
     updated, replacements = pattern.subn(
