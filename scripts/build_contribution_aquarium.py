@@ -23,7 +23,7 @@ API_URL = os.environ.get("GITHUB_GRAPHQL_URL", "https://api.github.com/graphql")
 
 GRID_X = 64
 GRID_Y = 94
-CELL = 11
+CELL = 9
 PITCH = 14
 LAUNCH_POINT = (42.0, 205.0)
 FISH_SPEED = 115.0
@@ -31,7 +31,6 @@ EAT_DWELL = 0.58
 RESET_FADE = 0.42
 RESET_HOLD = 0.22
 
-FISH_BODY_LENGTH = 23.0
 
 QUERY = """
 query ContributionCalendar($login: String!, $from: DateTime!, $to: DateTime!) {
@@ -461,8 +460,8 @@ def render_svg(
 
             if count > 0:
                 arrival, eaten = timeline["arrivals"][date]
-                fade_start = (arrival + EAT_DWELL * .2) / cycle
-                fade_end = (arrival + EAT_DWELL * .62) / cycle
+                fade_start = (arrival + EAT_DWELL * .12) / cycle
+                fade_end = (arrival + EAT_DWELL * .54) / cycle
                 animation = (
                     f'<animate attributeName="opacity" values="1;1;0;0;1" '
                     f'keyTimes="0;{fade_start:.8f};{fade_end:.8f};'
@@ -470,21 +469,21 @@ def render_svg(
                     f'dur="{cycle:.6f}s" repeatCount="indefinite"/>'
                 )
 
-            opacity = "1" if count else ".38"
+            opacity = "1" if count else ".42"
             glow = 'filter="url(#creature-glow)"' if count else ""
             pieces.append(
                 f'''<g transform="translate({x:.2f} {y:.2f})"
  data-date="{date.isoformat()}" data-count="{count}" data-level="{level}"
  opacity="{opacity}" {glow}>
  <title>{date.isoformat()} · {count} contribution{"s" if count != 1 else ""}</title>
- <path d="M-4.2 0 L-6.1 -2.5 Q-8.1 0 -6.1 2.5Z"
-       fill="{stroke}" stroke="{stroke}" stroke-width=".5"/>
- <ellipse cx="-.4" cy="0" rx="4.5" ry="2.65"
-          fill="{fill}" stroke="{stroke}" stroke-width=".75"/>
- <path d="M-2.5 -1.25 Q-.3 -2.5 2 -1.2"
-       fill="none" stroke="#FFFFFF" stroke-opacity=".65" stroke-width=".5"/>
- <circle cx="2.75" cy="-.65" r=".62" fill="#071321"/>
- <circle cx="2.95" cy="-.86" r=".22" fill="#FFFFFF"/>
+ <path d="M-3.0 0 L-5.0 -1.7 Q-6.1 0 -5.0 1.7Z"
+       fill="{stroke}" stroke="{stroke}" stroke-width=".42"/>
+ <ellipse cx="-.1" cy="0" rx="3.65" ry="2.25"
+          fill="{fill}" stroke="{stroke}" stroke-width=".68"/>
+ <path d="M-1.7 -1.05 Q-.1 -2.0 1.6 -1.0"
+       fill="none" stroke="#FFFFFF" stroke-opacity=".72" stroke-width=".46"/>
+ <circle cx="2.45" cy="-.55" r=".46" fill="#061421"/>
+ <circle cx="2.57" cy="-.68" r=".17" fill="#FFFFFF"/>
  {animation}
 </g>'''
             )
@@ -496,12 +495,6 @@ def render_svg(
             f'stroke-width=".8" stroke-opacity=".12" stroke-dasharray="1.5 5"/>'
         )
         pieces.append(path_markup)
-        fish_opacity = (
-            f'<animate attributeName="opacity" values="1;1;0;0;1" '
-            f'keyTimes="0;{timeline["fish_fade_start_fraction"]:.8f};'
-            f'{timeline["reset_start_fraction"]:.8f};1;1" '
-            f'dur="{cycle:.6f}s" repeatCount="indefinite"/>'
-        )
         fish_motion = (
             f'<animateMotion path="{timeline["path"]}" '
             f'keyPoints="{timeline["key_points"]}" keyTimes="{timeline["key_times"]}" '
@@ -526,6 +519,7 @@ def render_svg(
         ])
     if len(jaw_values) > 1:
         jaw_times.append("1")
+        jaw_values.append("M17 1 Q21 2.2 24 1")
     jaw_markup = (
         f'<animate attributeName="d" calcMode="discrete" '
         f'values="{";".join(jaw_values)}" keyTimes="{";".join(jaw_times)}" '
@@ -535,7 +529,6 @@ def render_svg(
     pieces.append(
         f'''<g id="aquarium-fish" filter="url(#fish-glow)">
   {fish_motion}
-  {fish_opacity}
   <g transform="scale(.58)">
     <!-- Tail fin. -->
     <g transform="translate(-15 0)">
