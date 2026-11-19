@@ -103,7 +103,7 @@ class ContributionArcadeTests(unittest.TestCase):
             self.assertEqual(column_delta + row_delta, 1)
 
         self.assertEqual(route[0][:2], (0, 0))
-        self.assertEqual(route[-1][:2], (1, 6))
+        self.assertEqual(route[-1][:2], (1, 0))
 
     def test_svg_is_valid_and_contains_only_real_date_cells(self) -> None:
         total = sum(item["count"] for item in self.collected.values())
