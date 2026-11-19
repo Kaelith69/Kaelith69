@@ -997,6 +997,8 @@ def render_svg(
     <path d="M5 4 Q10 13 7 22"><animate attributeName="d" values="M5 4 Q10 13 7 22;M5 4 Q1 13 7 22;M5 4 Q10 13 7 22" dur="3.4s" repeatCount="indefinite"/></path>
   </g>
 </g>
+'''
+    )
 
     pieces.append(
         '''<g id="resting-octopus" transform="translate(600 514)">
