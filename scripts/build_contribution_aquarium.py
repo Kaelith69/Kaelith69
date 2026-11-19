@@ -952,9 +952,13 @@ def render_svg(
     <path d="M-3 17 Q0 20 3 17" fill="none" stroke="#00E5FF"
       stroke-width="1" stroke-linecap="round" opacity=".6"/>
   </g>
-</g>
-
-<!-- A few bubbles rise from the octopus den and nearby reef crevices. -->
+'''
+    )
+    # The front pair crosses the lower head silhouette, giving the animal
+    # depth and a more convincing eight armed anatomy.
+    for arm_index in (6, 7):
+        render_octopus_arm(arm_index, octopus_arms[arm_index])
+    pieces.append("</g>\n\n<!-- A few bubbles rise from the octopus den and nearby reef crevices. -->")
 <g fill="none" stroke="#BDEEE2" stroke-opacity=".58">
   <circle cx="397" cy="339" r="2.1"><animate attributeName="cy" values="339;302;339" dur="7.5s" repeatCount="indefinite"/></circle>
   <circle cx="405" cy="354" r="1.2"><animate attributeName="cy" values="354;328;354" dur="8.4s" begin="1.4s" repeatCount="indefinite"/></circle>
