@@ -21,12 +21,12 @@ OUTPUT = ROOT / "assets" / "contributions-aquarium.svg"
 LOGIN = os.environ.get("GITHUB_PROFILE_LOGIN", "Kaelith69")
 API_URL = os.environ.get("GITHUB_GRAPHQL_URL", "https://api.github.com/graphql")
 
-GRID_X = 70
-GRID_Y = 155
-CELL = 12
-PITCH = 19
-ROW_PITCH = 24
-LAUNCH_POINT = (48.0, 365.0)
+GRID_X = 112
+GRID_Y = 190
+CELL = 13
+PITCH = 20
+ROW_PITCH = 25
+LAUNCH_POINT = (58.0, 430.0)
 FISH_SPEED = 105.0
 EAT_DWELL = 0.72
 RESET_FADE = 0.72
@@ -54,11 +54,11 @@ query ContributionCalendar($login: String!, $from: DateTime!, $to: DateTime!) {
 """
 
 LEVEL_COLORS = {
-    "NONE": ("#171D3C", "#46548A", "midnight plankton"),
-    "FIRST_QUARTILE": ("#275BFF", "#A8C4FF", "electric reef fish"),
-    "SECOND_QUARTILE": ("#00D7FF", "#A8F5FF", "cyan reef shrimp"),
-    "THIRD_QUARTILE": ("#8C4DFF", "#D5BCFF", "ultraviolet jellyfish"),
-    "FOURTH_QUARTILE": ("#FF3BC8", "#FFC4F2", "magenta glow star"),
+    "NONE": ("#08132B", "#1E3A5F", "abyss"),
+    "FIRST_QUARTILE": ("#1D4ED8", "#93C5FD", "electric blue"),
+    "SECOND_QUARTILE": ("#00BBF9", "#E0FBF7", "bioluminescent cyan"),
+    "THIRD_QUARTILE": ("#7B2CBF", "#DCCBFF", "ultraviolet"),
+    "FOURTH_QUARTILE": ("#FF2A85", "#FFE5F1", "neon magenta"),
 }
 
 
@@ -459,14 +459,14 @@ def render_svg(
 
     pieces: list[str] = []
     pieces.append(
-        f'''<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="590"
- viewBox="0 0 1120 590" role="img" aria-labelledby="tank-title tank-desc">
+        f'''<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650"
+ viewBox="0 0 1200 650" role="img" aria-labelledby="tank-title tank-desc">
 <title id="tank-title">{html.escape(LOGIN)} contribution reef</title>
 <desc id="tank-desc">{total:,} GitHub contributions from {start.isoformat()} to {end.isoformat()}. A white reef fish follows a rounded, eased route to each active contribution organism. A color shifting octopus rests on the sandy seabed beneath a living reef with drifting plankton, jellyfish, kelp and underwater light.</desc>
 <defs>
-  <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
-    <stop stop-color="#030411"/><stop offset=".28" stop-color="#080B20"/>
-    <stop offset=".65" stop-color="#0D0B2C"/><stop offset="1" stop-color="#050611"/>
+  <linearGradient id="water" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#030712"/><stop offset="45%" stop-color="#07132E"/>
+    <stop offset="100%" stop-color="#0D1F46"/>
   </linearGradient>
   <radialGradient id="water-light" cx="48%" cy="28%" r="78%">
     <stop stop-color="#263BFF" stop-opacity=".24"/>
@@ -562,12 +562,12 @@ def render_svg(
     <feGaussianBlur stdDeviation="4" result="blur"/>
     <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
   </filter>
-  <clipPath id="tank-clip"><rect x="1" y="1" width="1118" height="588" rx="22"/></clipPath>
+  <clipPath id="tank-clip"><rect x="1" y="1" width="1198" height="648" rx="20"/></clipPath>
 </defs>
 
 <g clip-path="url(#tank-clip)">
-  <rect width="1120" height="590" fill="url(#water)"/>
-  <rect width="1120" height="590" fill="url(#water-light)"/>
+  <rect width="1200" height="650" fill="url(#water)"/>
+  <rect width="1200" height="650" fill="url(#water-light)"/>
 
   <!-- Angular comic panels and restrained halftone shadows. -->
   <path d="M0 110 L176 110 L286 430 L150 430Z" fill="#263BFF" opacity=".045"/>
@@ -664,11 +664,11 @@ def render_svg(
   <text x="40" y="68" font-family="Trebuchet MS, Arial, sans-serif"
         font-size="8" font-weight="700" letter-spacing="1.8"
         fill="#8F91D8">A YEAR OF BUILDING BELOW THE SURFACE</text>
-  <text x="1080" y="51" text-anchor="end"
+  <text x="1155" y="51" text-anchor="end"
         font-family="Bangers, Impact, 'Arial Black', sans-serif"
         font-size="37" letter-spacing="1.1" fill="#00E5FF"
         filter="url(#soft-glow)">{total:,}</text>
-  <text x="1080" y="65" text-anchor="end"
+  <text x="1155" y="65" text-anchor="end"
         font-family="Trebuchet MS, Arial, sans-serif"
         font-size="8.5" letter-spacing="1.7" fill="#FF69D4">365 DAY REEF</text>
 
@@ -689,11 +689,11 @@ def render_svg(
         month_positions.insert(0, (0, start.strftime("%b").upper()))
 
     for column, label in month_positions:
-        pieces.append(f'<text x="{GRID_X + column * PITCH}" y="136">{label}</text>')
+        pieces.append(f'<text x="{GRID_X + column * PITCH}" y="165">{label}</text>')
 
     for row, label in enumerate(("S", "M", "T", "W", "T", "F", "S")):
         pieces.append(
-            f'<text x="48" y="{GRID_Y + row * ROW_PITCH + 8}" text-anchor="middle">{label}</text>'
+            f'<text x="78" y="{GRID_Y + row * ROW_PITCH + 8}" text-anchor="middle">{label}</text>'
         )
     pieces.append("</g>")
 
