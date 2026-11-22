@@ -34,6 +34,6 @@
   <br/>
   <br/>
 
-  <img src="assets/contributions-neon.svg" alt="GitHub contribution activity: 879 contributions in the last 365 days" style="width: 100%; max-width: 860px;" />
+  <img src="assets/contributions-neon.svg" alt="GitHub contribution activity for the last 365 days" style="width: 100%; max-width: 860px;" />
 
 </div>
