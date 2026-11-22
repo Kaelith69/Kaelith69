@@ -282,7 +282,7 @@ def render_svg(
         )
 
     pieces.append(
-        '''<g clip-path="url(#grid-clip)" opacity=".23" pointer-events="none">
+        f'''<g clip-path="url(#grid-clip)" opacity=".23" pointer-events="none">
   <path d="M0 0V100" transform="translate(66 87)"
         stroke="url(#scan-glow)" stroke-width="18">
     <animateTransform attributeName="transform" type="translate"
