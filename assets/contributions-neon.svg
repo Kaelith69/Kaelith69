@@ -1,0 +1,1512 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="226" viewBox="0 0 860 226" role="img" aria-labelledby="contribution-title contribution-desc" data-total-contributions="879" data-start="2025-11-22" data-end="2026-11-21">
+<title id="contribution-title">Kaelith69 contribution activity</title>
+<desc id="contribution-desc">879 GitHub contributions from 2025-11-22 to 2026-11-21, shown as a 365-day contribution calendar in neon blue, cyan and violet.</desc>
+<defs>
+  <linearGradient id="panel-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#080D1D"/><stop offset=".58" stop-color="#0C1730"/><stop offset="1" stop-color="#111B37"/></linearGradient>
+  <radialGradient id="blue-haze" cx="78%" cy="15%" r="72%"><stop offset="0" stop-color="#255DCE" stop-opacity=".20"/><stop offset=".55" stop-color="#255DCE" stop-opacity=".06"/><stop offset="1" stop-color="#255DCE" stop-opacity="0"/></radialGradient>
+  <radialGradient id="violet-haze" cx="94%" cy="88%" r="62%"><stop offset="0" stop-color="#8057E8" stop-opacity=".17"/><stop offset="1" stop-color="#8057E8" stop-opacity="0"/></radialGradient>
+  <linearGradient id="scan-glow" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7DDCFF" stop-opacity="0"/><stop offset=".5" stop-color="#BCEBFF" stop-opacity=".9"/><stop offset="1" stop-color="#7D8CFF" stop-opacity="0"/></linearGradient>
+  <filter id="cell-glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="1.8" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <clipPath id="grid-clip"><rect x="62" y="85" width="744" height="103" rx="3"/></clipPath>
+</defs>
+<rect width="860" height="226" rx="16" fill="url(#panel-bg)"/>
+<rect width="860" height="226" rx="16" fill="url(#blue-haze)"/>
+<rect width="860" height="226" rx="16" fill="url(#violet-haze)"/>
+<path d="M18 1H842" stroke="#5C91E8" stroke-opacity=".3"/>
+<path d="M18 1H220" stroke="#7DDCFF" stroke-width="1.1" stroke-opacity=".72"/>
+<g font-family="Inter, Segoe UI, Arial, sans-serif">
+  <text x="34" y="37" fill="#EAF3FF" font-size="12" font-weight="700" letter-spacing="1.8">CONTRIBUTION ACTIVITY</text>
+  <text x="34" y="51" fill="#8198BC" font-size="8" letter-spacing="1.2" font-weight="600">LAST 365 DAYS</text>
+  <text x="824" y="36" text-anchor="end" fill="#F6FAFF" font-size="25" font-weight="700">879</text>
+  <text x="824" y="50" text-anchor="end" fill="#8CA9D4" font-size="7.5" font-weight="700" letter-spacing="1.15">TOTAL CONTRIBUTIONS</text>
+</g>
+<path d="M34 61H826" stroke="#36517C" stroke-opacity=".48"/>
+<path d="M34 61H250" stroke="#5D9EFF" stroke-opacity=".48"/>
+<g font-family="Inter, Segoe UI, Arial, sans-serif" fill="#8299BC" font-size="8" font-weight="600" letter-spacing=".7">
+<text x="66" y="78">NOV</text>
+<text x="94" y="78">DEC</text>
+<text x="150" y="78">JAN</text>
+<text x="220" y="78">FEB</text>
+<text x="276" y="78">MAR</text>
+<text x="332" y="78">APR</text>
+<text x="388" y="78">MAY</text>
+<text x="458" y="78">JUN</text>
+<text x="514" y="78">JUL</text>
+<text x="570" y="78">AUG</text>
+<text x="640" y="78">SEP</text>
+<text x="696" y="78">OCT</text>
+<text x="766" y="78">NOV</text>
+</g>
+<g font-family="Inter, Segoe UI, Arial, sans-serif" fill="#7187A9" font-size="7.5" font-weight="600"><text x="39" y="109.5" text-anchor="middle">M</text><text x="39" y="137.5" text-anchor="middle">W</text><text x="39" y="165.5" text-anchor="middle">F</text></g>
+<g data-date="2025-11-22" data-count="0" data-level="NONE">
+  <title>November 22, 2025 · 0 contributions</title>
+  <rect x="66" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2025-11-23" data-count="0" data-level="NONE">
+  <title>November 23, 2025 · 0 contributions</title>
+  <rect x="80" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2025-11-24" data-count="0" data-level="NONE">
+  <title>November 24, 2025 · 0 contributions</title>
+  <rect x="80" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2025-11-25" data-count="1" data-level="FIRST_QUARTILE">
+  <title>November 25, 2025 · 1 contributions</title>
+  <rect x="80" y="117" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2025-11-26" data-count="0" data-level="NONE">
+  <title>November 26, 2025 · 0 contributions</title>
+  <rect x="80" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2025-11-27" data-count="0" data-level="NONE">
+  <title>November 27, 2025 · 0 contributions</title>
+  <rect x="80" y="145" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2025-11-28" data-count="0" data-level="NONE">
+  <title>November 28, 2025 · 0 contributions</title>
+  <rect x="80" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2025-11-29" data-count="0" data-level="NONE">
+  <title>November 29, 2025 · 0 contributions</title>
+  <rect x="80" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2025-11-30" data-count="0" data-level="NONE">
+  <title>November 30, 2025 · 0 contributions</title>
+  <rect x="94" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2025-12-01" data-count="0" data-level="NONE">
+  <title>December 01, 2025 · 0 contributions</title>
+  <rect x="94" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2025-12-02" data-count="0" data-level="NONE">
+  <title>December 02, 2025 · 0 contributions</title>
+  <rect x="94" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2025-12-03" data-count="0" data-level="NONE">
+  <title>December 03, 2025 · 0 contributions</title>
+  <rect x="94" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2025-12-04" data-count="0" data-level="NONE">
+  <title>December 04, 2025 · 0 contributions</title>
+  <rect x="94" y="145" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2025-12-05" data-count="0" data-level="NONE">
+  <title>December 05, 2025 · 0 contributions</title>
+  <rect x="94" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2025-12-06" data-count="0" data-level="NONE">
+  <title>December 06, 2025 · 0 contributions</title>
+  <rect x="94" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2025-12-07" data-count="0" data-level="NONE">
+  <title>December 07, 2025 · 0 contributions</title>
+  <rect x="108" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2025-12-08" data-count="0" data-level="NONE">
+  <title>December 08, 2025 · 0 contributions</title>
+  <rect x="108" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2025-12-09" data-count="0" data-level="NONE">
+  <title>December 09, 2025 · 0 contributions</title>
+  <rect x="108" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2025-12-10" data-count="0" data-level="NONE">
+  <title>December 10, 2025 · 0 contributions</title>
+  <rect x="108" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2025-12-11" data-count="0" data-level="NONE">
+  <title>December 11, 2025 · 0 contributions</title>
+  <rect x="108" y="145" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2025-12-12" data-count="0" data-level="NONE">
+  <title>December 12, 2025 · 0 contributions</title>
+  <rect x="108" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2025-12-13" data-count="0" data-level="NONE">
+  <title>December 13, 2025 · 0 contributions</title>
+  <rect x="108" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2025-12-14" data-count="0" data-level="NONE">
+  <title>December 14, 2025 · 0 contributions</title>
+  <rect x="122" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2025-12-15" data-count="0" data-level="NONE">
+  <title>December 15, 2025 · 0 contributions</title>
+  <rect x="122" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2025-12-16" data-count="0" data-level="NONE">
+  <title>December 16, 2025 · 0 contributions</title>
+  <rect x="122" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2025-12-17" data-count="0" data-level="NONE">
+  <title>December 17, 2025 · 0 contributions</title>
+  <rect x="122" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2025-12-18" data-count="0" data-level="NONE">
+  <title>December 18, 2025 · 0 contributions</title>
+  <rect x="122" y="145" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2025-12-19" data-count="0" data-level="NONE">
+  <title>December 19, 2025 · 0 contributions</title>
+  <rect x="122" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2025-12-20" data-count="0" data-level="NONE">
+  <title>December 20, 2025 · 0 contributions</title>
+  <rect x="122" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2025-12-21" data-count="0" data-level="NONE">
+  <title>December 21, 2025 · 0 contributions</title>
+  <rect x="136" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2025-12-22" data-count="0" data-level="NONE">
+  <title>December 22, 2025 · 0 contributions</title>
+  <rect x="136" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2025-12-23" data-count="0" data-level="NONE">
+  <title>December 23, 2025 · 0 contributions</title>
+  <rect x="136" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2025-12-24" data-count="0" data-level="NONE">
+  <title>December 24, 2025 · 0 contributions</title>
+  <rect x="136" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2025-12-25" data-count="0" data-level="NONE">
+  <title>December 25, 2025 · 0 contributions</title>
+  <rect x="136" y="145" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2025-12-26" data-count="0" data-level="NONE">
+  <title>December 26, 2025 · 0 contributions</title>
+  <rect x="136" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2025-12-27" data-count="0" data-level="NONE">
+  <title>December 27, 2025 · 0 contributions</title>
+  <rect x="136" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2025-12-28" data-count="0" data-level="NONE">
+  <title>December 28, 2025 · 0 contributions</title>
+  <rect x="150" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2025-12-29" data-count="0" data-level="NONE">
+  <title>December 29, 2025 · 0 contributions</title>
+  <rect x="150" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2025-12-30" data-count="0" data-level="NONE">
+  <title>December 30, 2025 · 0 contributions</title>
+  <rect x="150" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2025-12-31" data-count="0" data-level="NONE">
+  <title>December 31, 2025 · 0 contributions</title>
+  <rect x="150" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-01-01" data-count="0" data-level="NONE">
+  <title>January 01, 2026 · 0 contributions</title>
+  <rect x="150" y="145" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-01-02" data-count="0" data-level="NONE">
+  <title>January 02, 2026 · 0 contributions</title>
+  <rect x="150" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-01-03" data-count="0" data-level="NONE">
+  <title>January 03, 2026 · 0 contributions</title>
+  <rect x="150" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-01-04" data-count="0" data-level="NONE">
+  <title>January 04, 2026 · 0 contributions</title>
+  <rect x="164" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-01-05" data-count="0" data-level="NONE">
+  <title>January 05, 2026 · 0 contributions</title>
+  <rect x="164" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-01-06" data-count="0" data-level="NONE">
+  <title>January 06, 2026 · 0 contributions</title>
+  <rect x="164" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-01-07" data-count="0" data-level="NONE">
+  <title>January 07, 2026 · 0 contributions</title>
+  <rect x="164" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-01-08" data-count="0" data-level="NONE">
+  <title>January 08, 2026 · 0 contributions</title>
+  <rect x="164" y="145" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-01-09" data-count="0" data-level="NONE">
+  <title>January 09, 2026 · 0 contributions</title>
+  <rect x="164" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-01-10" data-count="0" data-level="NONE">
+  <title>January 10, 2026 · 0 contributions</title>
+  <rect x="164" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-01-11" data-count="0" data-level="NONE">
+  <title>January 11, 2026 · 0 contributions</title>
+  <rect x="178" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-01-12" data-count="0" data-level="NONE">
+  <title>January 12, 2026 · 0 contributions</title>
+  <rect x="178" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-01-13" data-count="0" data-level="NONE">
+  <title>January 13, 2026 · 0 contributions</title>
+  <rect x="178" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-01-14" data-count="0" data-level="NONE">
+  <title>January 14, 2026 · 0 contributions</title>
+  <rect x="178" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-01-15" data-count="0" data-level="NONE">
+  <title>January 15, 2026 · 0 contributions</title>
+  <rect x="178" y="145" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-01-16" data-count="0" data-level="NONE">
+  <title>January 16, 2026 · 0 contributions</title>
+  <rect x="178" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-01-17" data-count="1" data-level="FIRST_QUARTILE">
+  <title>January 17, 2026 · 1 contributions</title>
+  <rect x="178" y="173" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-01-18" data-count="0" data-level="NONE">
+  <title>January 18, 2026 · 0 contributions</title>
+  <rect x="192" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-01-19" data-count="0" data-level="NONE">
+  <title>January 19, 2026 · 0 contributions</title>
+  <rect x="192" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-01-20" data-count="0" data-level="NONE">
+  <title>January 20, 2026 · 0 contributions</title>
+  <rect x="192" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-01-21" data-count="0" data-level="NONE">
+  <title>January 21, 2026 · 0 contributions</title>
+  <rect x="192" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-01-22" data-count="0" data-level="NONE">
+  <title>January 22, 2026 · 0 contributions</title>
+  <rect x="192" y="145" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-01-23" data-count="0" data-level="NONE">
+  <title>January 23, 2026 · 0 contributions</title>
+  <rect x="192" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-01-24" data-count="0" data-level="NONE">
+  <title>January 24, 2026 · 0 contributions</title>
+  <rect x="192" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-01-25" data-count="0" data-level="NONE">
+  <title>January 25, 2026 · 0 contributions</title>
+  <rect x="206" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-01-26" data-count="0" data-level="NONE">
+  <title>January 26, 2026 · 0 contributions</title>
+  <rect x="206" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-01-27" data-count="0" data-level="NONE">
+  <title>January 27, 2026 · 0 contributions</title>
+  <rect x="206" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-01-28" data-count="0" data-level="NONE">
+  <title>January 28, 2026 · 0 contributions</title>
+  <rect x="206" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-01-29" data-count="1" data-level="FIRST_QUARTILE">
+  <title>January 29, 2026 · 1 contributions</title>
+  <rect x="206" y="145" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-01-30" data-count="0" data-level="NONE">
+  <title>January 30, 2026 · 0 contributions</title>
+  <rect x="206" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-01-31" data-count="0" data-level="NONE">
+  <title>January 31, 2026 · 0 contributions</title>
+  <rect x="206" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-02-01" data-count="1" data-level="FIRST_QUARTILE">
+  <title>February 01, 2026 · 1 contributions</title>
+  <rect x="220" y="89" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-02-02" data-count="0" data-level="NONE">
+  <title>February 02, 2026 · 0 contributions</title>
+  <rect x="220" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-02-03" data-count="0" data-level="NONE">
+  <title>February 03, 2026 · 0 contributions</title>
+  <rect x="220" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-02-04" data-count="0" data-level="NONE">
+  <title>February 04, 2026 · 0 contributions</title>
+  <rect x="220" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-02-05" data-count="1" data-level="FIRST_QUARTILE">
+  <title>February 05, 2026 · 1 contributions</title>
+  <rect x="220" y="145" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-02-06" data-count="0" data-level="NONE">
+  <title>February 06, 2026 · 0 contributions</title>
+  <rect x="220" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-02-07" data-count="0" data-level="NONE">
+  <title>February 07, 2026 · 0 contributions</title>
+  <rect x="220" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-02-08" data-count="2" data-level="FIRST_QUARTILE">
+  <title>February 08, 2026 · 2 contributions</title>
+  <rect x="234" y="89" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-02-09" data-count="1" data-level="FIRST_QUARTILE">
+  <title>February 09, 2026 · 1 contributions</title>
+  <rect x="234" y="103" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-02-10" data-count="1" data-level="FIRST_QUARTILE">
+  <title>February 10, 2026 · 1 contributions</title>
+  <rect x="234" y="117" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-02-11" data-count="2" data-level="FIRST_QUARTILE">
+  <title>February 11, 2026 · 2 contributions</title>
+  <rect x="234" y="131" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-02-12" data-count="12" data-level="FIRST_QUARTILE">
+  <title>February 12, 2026 · 12 contributions</title>
+  <rect x="234" y="145" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-02-13" data-count="0" data-level="NONE">
+  <title>February 13, 2026 · 0 contributions</title>
+  <rect x="234" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-02-14" data-count="4" data-level="FIRST_QUARTILE">
+  <title>February 14, 2026 · 4 contributions</title>
+  <rect x="234" y="173" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-02-15" data-count="3" data-level="FIRST_QUARTILE">
+  <title>February 15, 2026 · 3 contributions</title>
+  <rect x="248" y="89" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-02-16" data-count="1" data-level="FIRST_QUARTILE">
+  <title>February 16, 2026 · 1 contributions</title>
+  <rect x="248" y="103" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-02-17" data-count="1" data-level="FIRST_QUARTILE">
+  <title>February 17, 2026 · 1 contributions</title>
+  <rect x="248" y="117" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-02-18" data-count="0" data-level="NONE">
+  <title>February 18, 2026 · 0 contributions</title>
+  <rect x="248" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-02-19" data-count="2" data-level="FIRST_QUARTILE">
+  <title>February 19, 2026 · 2 contributions</title>
+  <rect x="248" y="145" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-02-20" data-count="47" data-level="THIRD_QUARTILE">
+  <title>February 20, 2026 · 47 contributions</title>
+  <rect x="248" y="159" width="9" height="9" rx="2.8" fill="#18AFCB" stroke="#A2F0FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-02-21" data-count="37" data-level="THIRD_QUARTILE">
+  <title>February 21, 2026 · 37 contributions</title>
+  <rect x="248" y="173" width="9" height="9" rx="2.8" fill="#18AFCB" stroke="#A2F0FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-02-22" data-count="0" data-level="NONE">
+  <title>February 22, 2026 · 0 contributions</title>
+  <rect x="262" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-02-23" data-count="0" data-level="NONE">
+  <title>February 23, 2026 · 0 contributions</title>
+  <rect x="262" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-02-24" data-count="43" data-level="THIRD_QUARTILE">
+  <title>February 24, 2026 · 43 contributions</title>
+  <rect x="262" y="117" width="9" height="9" rx="2.8" fill="#18AFCB" stroke="#A2F0FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-02-25" data-count="82" data-level="FOURTH_QUARTILE" filter="url(#cell-glow)">
+  <title>February 25, 2026 · 82 contributions</title>
+  <rect x="262" y="131" width="9" height="9" rx="2.8" fill="#8B61F6" stroke="#E0D2FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-02-26" data-count="2" data-level="FIRST_QUARTILE">
+  <title>February 26, 2026 · 2 contributions</title>
+  <rect x="262" y="145" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-02-27" data-count="12" data-level="FIRST_QUARTILE">
+  <title>February 27, 2026 · 12 contributions</title>
+  <rect x="262" y="159" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-02-28" data-count="0" data-level="NONE">
+  <title>February 28, 2026 · 0 contributions</title>
+  <rect x="262" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-03-01" data-count="0" data-level="NONE">
+  <title>March 01, 2026 · 0 contributions</title>
+  <rect x="276" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-03-02" data-count="0" data-level="NONE">
+  <title>March 02, 2026 · 0 contributions</title>
+  <rect x="276" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-03-03" data-count="0" data-level="NONE">
+  <title>March 03, 2026 · 0 contributions</title>
+  <rect x="276" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-03-04" data-count="0" data-level="NONE">
+  <title>March 04, 2026 · 0 contributions</title>
+  <rect x="276" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-03-05" data-count="3" data-level="FIRST_QUARTILE">
+  <title>March 05, 2026 · 3 contributions</title>
+  <rect x="276" y="145" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-03-06" data-count="1" data-level="FIRST_QUARTILE">
+  <title>March 06, 2026 · 1 contributions</title>
+  <rect x="276" y="159" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-03-07" data-count="1" data-level="FIRST_QUARTILE">
+  <title>March 07, 2026 · 1 contributions</title>
+  <rect x="276" y="173" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-03-08" data-count="0" data-level="NONE">
+  <title>March 08, 2026 · 0 contributions</title>
+  <rect x="290" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-03-09" data-count="0" data-level="NONE">
+  <title>March 09, 2026 · 0 contributions</title>
+  <rect x="290" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-03-10" data-count="0" data-level="NONE">
+  <title>March 10, 2026 · 0 contributions</title>
+  <rect x="290" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-03-11" data-count="0" data-level="NONE">
+  <title>March 11, 2026 · 0 contributions</title>
+  <rect x="290" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-03-12" data-count="1" data-level="FIRST_QUARTILE">
+  <title>March 12, 2026 · 1 contributions</title>
+  <rect x="290" y="145" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-03-13" data-count="0" data-level="NONE">
+  <title>March 13, 2026 · 0 contributions</title>
+  <rect x="290" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-03-14" data-count="0" data-level="NONE">
+  <title>March 14, 2026 · 0 contributions</title>
+  <rect x="290" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-03-15" data-count="0" data-level="NONE">
+  <title>March 15, 2026 · 0 contributions</title>
+  <rect x="304" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-03-16" data-count="0" data-level="NONE">
+  <title>March 16, 2026 · 0 contributions</title>
+  <rect x="304" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-03-17" data-count="0" data-level="NONE">
+  <title>March 17, 2026 · 0 contributions</title>
+  <rect x="304" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-03-18" data-count="0" data-level="NONE">
+  <title>March 18, 2026 · 0 contributions</title>
+  <rect x="304" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-03-19" data-count="0" data-level="NONE">
+  <title>March 19, 2026 · 0 contributions</title>
+  <rect x="304" y="145" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-03-20" data-count="1" data-level="FIRST_QUARTILE">
+  <title>March 20, 2026 · 1 contributions</title>
+  <rect x="304" y="159" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-03-21" data-count="0" data-level="NONE">
+  <title>March 21, 2026 · 0 contributions</title>
+  <rect x="304" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-03-22" data-count="0" data-level="NONE">
+  <title>March 22, 2026 · 0 contributions</title>
+  <rect x="318" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-03-23" data-count="0" data-level="NONE">
+  <title>March 23, 2026 · 0 contributions</title>
+  <rect x="318" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-03-24" data-count="0" data-level="NONE">
+  <title>March 24, 2026 · 0 contributions</title>
+  <rect x="318" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-03-25" data-count="0" data-level="NONE">
+  <title>March 25, 2026 · 0 contributions</title>
+  <rect x="318" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-03-26" data-count="0" data-level="NONE">
+  <title>March 26, 2026 · 0 contributions</title>
+  <rect x="318" y="145" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-03-27" data-count="0" data-level="NONE">
+  <title>March 27, 2026 · 0 contributions</title>
+  <rect x="318" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-03-28" data-count="0" data-level="NONE">
+  <title>March 28, 2026 · 0 contributions</title>
+  <rect x="318" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-03-29" data-count="0" data-level="NONE">
+  <title>March 29, 2026 · 0 contributions</title>
+  <rect x="332" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-03-30" data-count="0" data-level="NONE">
+  <title>March 30, 2026 · 0 contributions</title>
+  <rect x="332" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-03-31" data-count="0" data-level="NONE">
+  <title>March 31, 2026 · 0 contributions</title>
+  <rect x="332" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-04-01" data-count="0" data-level="NONE">
+  <title>April 01, 2026 · 0 contributions</title>
+  <rect x="332" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-04-02" data-count="0" data-level="NONE">
+  <title>April 02, 2026 · 0 contributions</title>
+  <rect x="332" y="145" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-04-03" data-count="3" data-level="FIRST_QUARTILE">
+  <title>April 03, 2026 · 3 contributions</title>
+  <rect x="332" y="159" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-04-04" data-count="0" data-level="NONE">
+  <title>April 04, 2026 · 0 contributions</title>
+  <rect x="332" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-04-05" data-count="0" data-level="NONE">
+  <title>April 05, 2026 · 0 contributions</title>
+  <rect x="346" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-04-06" data-count="0" data-level="NONE">
+  <title>April 06, 2026 · 0 contributions</title>
+  <rect x="346" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-04-07" data-count="0" data-level="NONE">
+  <title>April 07, 2026 · 0 contributions</title>
+  <rect x="346" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-04-08" data-count="0" data-level="NONE">
+  <title>April 08, 2026 · 0 contributions</title>
+  <rect x="346" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-04-09" data-count="0" data-level="NONE">
+  <title>April 09, 2026 · 0 contributions</title>
+  <rect x="346" y="145" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-04-10" data-count="0" data-level="NONE">
+  <title>April 10, 2026 · 0 contributions</title>
+  <rect x="346" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-04-11" data-count="0" data-level="NONE">
+  <title>April 11, 2026 · 0 contributions</title>
+  <rect x="346" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-04-12" data-count="7" data-level="FIRST_QUARTILE">
+  <title>April 12, 2026 · 7 contributions</title>
+  <rect x="360" y="89" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-04-13" data-count="0" data-level="NONE">
+  <title>April 13, 2026 · 0 contributions</title>
+  <rect x="360" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-04-14" data-count="0" data-level="NONE">
+  <title>April 14, 2026 · 0 contributions</title>
+  <rect x="360" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-04-15" data-count="0" data-level="NONE">
+  <title>April 15, 2026 · 0 contributions</title>
+  <rect x="360" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-04-16" data-count="0" data-level="NONE">
+  <title>April 16, 2026 · 0 contributions</title>
+  <rect x="360" y="145" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-04-17" data-count="0" data-level="NONE">
+  <title>April 17, 2026 · 0 contributions</title>
+  <rect x="360" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-04-18" data-count="1" data-level="FIRST_QUARTILE">
+  <title>April 18, 2026 · 1 contributions</title>
+  <rect x="360" y="173" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-04-19" data-count="1" data-level="FIRST_QUARTILE">
+  <title>April 19, 2026 · 1 contributions</title>
+  <rect x="374" y="89" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-04-20" data-count="0" data-level="NONE">
+  <title>April 20, 2026 · 0 contributions</title>
+  <rect x="374" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-04-21" data-count="0" data-level="NONE">
+  <title>April 21, 2026 · 0 contributions</title>
+  <rect x="374" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-04-22" data-count="0" data-level="NONE">
+  <title>April 22, 2026 · 0 contributions</title>
+  <rect x="374" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-04-23" data-count="13" data-level="FIRST_QUARTILE">
+  <title>April 23, 2026 · 13 contributions</title>
+  <rect x="374" y="145" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-04-24" data-count="0" data-level="NONE">
+  <title>April 24, 2026 · 0 contributions</title>
+  <rect x="374" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-04-25" data-count="0" data-level="NONE">
+  <title>April 25, 2026 · 0 contributions</title>
+  <rect x="374" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-04-26" data-count="0" data-level="NONE">
+  <title>April 26, 2026 · 0 contributions</title>
+  <rect x="388" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-04-27" data-count="0" data-level="NONE">
+  <title>April 27, 2026 · 0 contributions</title>
+  <rect x="388" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-04-28" data-count="0" data-level="NONE">
+  <title>April 28, 2026 · 0 contributions</title>
+  <rect x="388" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-04-29" data-count="0" data-level="NONE">
+  <title>April 29, 2026 · 0 contributions</title>
+  <rect x="388" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-04-30" data-count="1" data-level="FIRST_QUARTILE">
+  <title>April 30, 2026 · 1 contributions</title>
+  <rect x="388" y="145" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-05-01" data-count="0" data-level="NONE">
+  <title>May 01, 2026 · 0 contributions</title>
+  <rect x="388" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-05-02" data-count="0" data-level="NONE">
+  <title>May 02, 2026 · 0 contributions</title>
+  <rect x="388" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-05-03" data-count="0" data-level="NONE">
+  <title>May 03, 2026 · 0 contributions</title>
+  <rect x="402" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-05-04" data-count="0" data-level="NONE">
+  <title>May 04, 2026 · 0 contributions</title>
+  <rect x="402" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-05-05" data-count="0" data-level="NONE">
+  <title>May 05, 2026 · 0 contributions</title>
+  <rect x="402" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-05-06" data-count="0" data-level="NONE">
+  <title>May 06, 2026 · 0 contributions</title>
+  <rect x="402" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-05-07" data-count="0" data-level="NONE">
+  <title>May 07, 2026 · 0 contributions</title>
+  <rect x="402" y="145" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-05-08" data-count="1" data-level="FIRST_QUARTILE">
+  <title>May 08, 2026 · 1 contributions</title>
+  <rect x="402" y="159" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-05-09" data-count="0" data-level="NONE">
+  <title>May 09, 2026 · 0 contributions</title>
+  <rect x="402" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-05-10" data-count="0" data-level="NONE">
+  <title>May 10, 2026 · 0 contributions</title>
+  <rect x="416" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-05-11" data-count="0" data-level="NONE">
+  <title>May 11, 2026 · 0 contributions</title>
+  <rect x="416" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-05-12" data-count="0" data-level="NONE">
+  <title>May 12, 2026 · 0 contributions</title>
+  <rect x="416" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-05-13" data-count="0" data-level="NONE">
+  <title>May 13, 2026 · 0 contributions</title>
+  <rect x="416" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-05-14" data-count="4" data-level="FIRST_QUARTILE">
+  <title>May 14, 2026 · 4 contributions</title>
+  <rect x="416" y="145" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-05-15" data-count="2" data-level="FIRST_QUARTILE">
+  <title>May 15, 2026 · 2 contributions</title>
+  <rect x="416" y="159" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-05-16" data-count="0" data-level="NONE">
+  <title>May 16, 2026 · 0 contributions</title>
+  <rect x="416" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-05-17" data-count="2" data-level="FIRST_QUARTILE">
+  <title>May 17, 2026 · 2 contributions</title>
+  <rect x="430" y="89" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-05-18" data-count="0" data-level="NONE">
+  <title>May 18, 2026 · 0 contributions</title>
+  <rect x="430" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-05-19" data-count="0" data-level="NONE">
+  <title>May 19, 2026 · 0 contributions</title>
+  <rect x="430" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-05-20" data-count="0" data-level="NONE">
+  <title>May 20, 2026 · 0 contributions</title>
+  <rect x="430" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-05-21" data-count="1" data-level="FIRST_QUARTILE">
+  <title>May 21, 2026 · 1 contributions</title>
+  <rect x="430" y="145" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-05-22" data-count="6" data-level="FIRST_QUARTILE">
+  <title>May 22, 2026 · 6 contributions</title>
+  <rect x="430" y="159" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-05-23" data-count="1" data-level="FIRST_QUARTILE">
+  <title>May 23, 2026 · 1 contributions</title>
+  <rect x="430" y="173" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-05-24" data-count="0" data-level="NONE">
+  <title>May 24, 2026 · 0 contributions</title>
+  <rect x="444" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-05-25" data-count="6" data-level="FIRST_QUARTILE">
+  <title>May 25, 2026 · 6 contributions</title>
+  <rect x="444" y="103" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-05-26" data-count="5" data-level="FIRST_QUARTILE">
+  <title>May 26, 2026 · 5 contributions</title>
+  <rect x="444" y="117" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-05-27" data-count="0" data-level="NONE">
+  <title>May 27, 2026 · 0 contributions</title>
+  <rect x="444" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-05-28" data-count="3" data-level="FIRST_QUARTILE">
+  <title>May 28, 2026 · 3 contributions</title>
+  <rect x="444" y="145" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-05-29" data-count="0" data-level="NONE">
+  <title>May 29, 2026 · 0 contributions</title>
+  <rect x="444" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-05-30" data-count="0" data-level="NONE">
+  <title>May 30, 2026 · 0 contributions</title>
+  <rect x="444" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-05-31" data-count="0" data-level="NONE">
+  <title>May 31, 2026 · 0 contributions</title>
+  <rect x="458" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-06-01" data-count="0" data-level="NONE">
+  <title>June 01, 2026 · 0 contributions</title>
+  <rect x="458" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-06-02" data-count="0" data-level="NONE">
+  <title>June 02, 2026 · 0 contributions</title>
+  <rect x="458" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-06-03" data-count="0" data-level="NONE">
+  <title>June 03, 2026 · 0 contributions</title>
+  <rect x="458" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-06-04" data-count="0" data-level="NONE">
+  <title>June 04, 2026 · 0 contributions</title>
+  <rect x="458" y="145" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-06-05" data-count="0" data-level="NONE">
+  <title>June 05, 2026 · 0 contributions</title>
+  <rect x="458" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-06-06" data-count="0" data-level="NONE">
+  <title>June 06, 2026 · 0 contributions</title>
+  <rect x="458" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-06-07" data-count="0" data-level="NONE">
+  <title>June 07, 2026 · 0 contributions</title>
+  <rect x="472" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-06-08" data-count="1" data-level="FIRST_QUARTILE">
+  <title>June 08, 2026 · 1 contributions</title>
+  <rect x="472" y="103" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-06-09" data-count="1" data-level="FIRST_QUARTILE">
+  <title>June 09, 2026 · 1 contributions</title>
+  <rect x="472" y="117" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-06-10" data-count="0" data-level="NONE">
+  <title>June 10, 2026 · 0 contributions</title>
+  <rect x="472" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-06-11" data-count="0" data-level="NONE">
+  <title>June 11, 2026 · 0 contributions</title>
+  <rect x="472" y="145" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-06-12" data-count="0" data-level="NONE">
+  <title>June 12, 2026 · 0 contributions</title>
+  <rect x="472" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-06-13" data-count="0" data-level="NONE">
+  <title>June 13, 2026 · 0 contributions</title>
+  <rect x="472" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-06-14" data-count="0" data-level="NONE">
+  <title>June 14, 2026 · 0 contributions</title>
+  <rect x="486" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-06-15" data-count="0" data-level="NONE">
+  <title>June 15, 2026 · 0 contributions</title>
+  <rect x="486" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-06-16" data-count="0" data-level="NONE">
+  <title>June 16, 2026 · 0 contributions</title>
+  <rect x="486" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-06-17" data-count="0" data-level="NONE">
+  <title>June 17, 2026 · 0 contributions</title>
+  <rect x="486" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-06-18" data-count="0" data-level="NONE">
+  <title>June 18, 2026 · 0 contributions</title>
+  <rect x="486" y="145" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-06-19" data-count="0" data-level="NONE">
+  <title>June 19, 2026 · 0 contributions</title>
+  <rect x="486" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-06-20" data-count="0" data-level="NONE">
+  <title>June 20, 2026 · 0 contributions</title>
+  <rect x="486" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-06-21" data-count="0" data-level="NONE">
+  <title>June 21, 2026 · 0 contributions</title>
+  <rect x="500" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-06-22" data-count="0" data-level="NONE">
+  <title>June 22, 2026 · 0 contributions</title>
+  <rect x="500" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-06-23" data-count="0" data-level="NONE">
+  <title>June 23, 2026 · 0 contributions</title>
+  <rect x="500" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-06-24" data-count="0" data-level="NONE">
+  <title>June 24, 2026 · 0 contributions</title>
+  <rect x="500" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-06-25" data-count="1" data-level="FIRST_QUARTILE">
+  <title>June 25, 2026 · 1 contributions</title>
+  <rect x="500" y="145" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-06-26" data-count="0" data-level="NONE">
+  <title>June 26, 2026 · 0 contributions</title>
+  <rect x="500" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-06-27" data-count="0" data-level="NONE">
+  <title>June 27, 2026 · 0 contributions</title>
+  <rect x="500" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-06-28" data-count="0" data-level="NONE">
+  <title>June 28, 2026 · 0 contributions</title>
+  <rect x="514" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-06-29" data-count="0" data-level="NONE">
+  <title>June 29, 2026 · 0 contributions</title>
+  <rect x="514" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-06-30" data-count="0" data-level="NONE">
+  <title>June 30, 2026 · 0 contributions</title>
+  <rect x="514" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-07-01" data-count="0" data-level="NONE">
+  <title>July 01, 2026 · 0 contributions</title>
+  <rect x="514" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-07-02" data-count="0" data-level="NONE">
+  <title>July 02, 2026 · 0 contributions</title>
+  <rect x="514" y="145" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-07-03" data-count="0" data-level="NONE">
+  <title>July 03, 2026 · 0 contributions</title>
+  <rect x="514" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-07-04" data-count="0" data-level="NONE">
+  <title>July 04, 2026 · 0 contributions</title>
+  <rect x="514" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-07-05" data-count="0" data-level="NONE">
+  <title>July 05, 2026 · 0 contributions</title>
+  <rect x="528" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-07-06" data-count="0" data-level="NONE">
+  <title>July 06, 2026 · 0 contributions</title>
+  <rect x="528" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-07-07" data-count="0" data-level="NONE">
+  <title>July 07, 2026 · 0 contributions</title>
+  <rect x="528" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-07-08" data-count="0" data-level="NONE">
+  <title>July 08, 2026 · 0 contributions</title>
+  <rect x="528" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-07-09" data-count="0" data-level="NONE">
+  <title>July 09, 2026 · 0 contributions</title>
+  <rect x="528" y="145" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-07-10" data-count="0" data-level="NONE">
+  <title>July 10, 2026 · 0 contributions</title>
+  <rect x="528" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-07-11" data-count="0" data-level="NONE">
+  <title>July 11, 2026 · 0 contributions</title>
+  <rect x="528" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-07-12" data-count="0" data-level="NONE">
+  <title>July 12, 2026 · 0 contributions</title>
+  <rect x="542" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-07-13" data-count="0" data-level="NONE">
+  <title>July 13, 2026 · 0 contributions</title>
+  <rect x="542" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-07-14" data-count="0" data-level="NONE">
+  <title>July 14, 2026 · 0 contributions</title>
+  <rect x="542" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-07-15" data-count="0" data-level="NONE">
+  <title>July 15, 2026 · 0 contributions</title>
+  <rect x="542" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-07-16" data-count="0" data-level="NONE">
+  <title>July 16, 2026 · 0 contributions</title>
+  <rect x="542" y="145" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-07-17" data-count="0" data-level="NONE">
+  <title>July 17, 2026 · 0 contributions</title>
+  <rect x="542" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-07-18" data-count="0" data-level="NONE">
+  <title>July 18, 2026 · 0 contributions</title>
+  <rect x="542" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-07-19" data-count="0" data-level="NONE">
+  <title>July 19, 2026 · 0 contributions</title>
+  <rect x="556" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-07-20" data-count="0" data-level="NONE">
+  <title>July 20, 2026 · 0 contributions</title>
+  <rect x="556" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-07-21" data-count="0" data-level="NONE">
+  <title>July 21, 2026 · 0 contributions</title>
+  <rect x="556" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-07-22" data-count="1" data-level="FIRST_QUARTILE">
+  <title>July 22, 2026 · 1 contributions</title>
+  <rect x="556" y="131" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-07-23" data-count="0" data-level="NONE">
+  <title>July 23, 2026 · 0 contributions</title>
+  <rect x="556" y="145" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-07-24" data-count="0" data-level="NONE">
+  <title>July 24, 2026 · 0 contributions</title>
+  <rect x="556" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-07-25" data-count="0" data-level="NONE">
+  <title>July 25, 2026 · 0 contributions</title>
+  <rect x="556" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-07-26" data-count="0" data-level="NONE">
+  <title>July 26, 2026 · 0 contributions</title>
+  <rect x="570" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-07-27" data-count="0" data-level="NONE">
+  <title>July 27, 2026 · 0 contributions</title>
+  <rect x="570" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-07-28" data-count="0" data-level="NONE">
+  <title>July 28, 2026 · 0 contributions</title>
+  <rect x="570" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-07-29" data-count="3" data-level="FIRST_QUARTILE">
+  <title>July 29, 2026 · 3 contributions</title>
+  <rect x="570" y="131" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-07-30" data-count="0" data-level="NONE">
+  <title>July 30, 2026 · 0 contributions</title>
+  <rect x="570" y="145" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-07-31" data-count="1" data-level="FIRST_QUARTILE">
+  <title>July 31, 2026 · 1 contributions</title>
+  <rect x="570" y="159" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-08-01" data-count="0" data-level="NONE">
+  <title>August 01, 2026 · 0 contributions</title>
+  <rect x="570" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-08-02" data-count="0" data-level="NONE">
+  <title>August 02, 2026 · 0 contributions</title>
+  <rect x="584" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-08-03" data-count="0" data-level="NONE">
+  <title>August 03, 2026 · 0 contributions</title>
+  <rect x="584" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-08-04" data-count="0" data-level="NONE">
+  <title>August 04, 2026 · 0 contributions</title>
+  <rect x="584" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-08-05" data-count="0" data-level="NONE">
+  <title>August 05, 2026 · 0 contributions</title>
+  <rect x="584" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-08-06" data-count="0" data-level="NONE">
+  <title>August 06, 2026 · 0 contributions</title>
+  <rect x="584" y="145" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-08-07" data-count="0" data-level="NONE">
+  <title>August 07, 2026 · 0 contributions</title>
+  <rect x="584" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-08-08" data-count="0" data-level="NONE">
+  <title>August 08, 2026 · 0 contributions</title>
+  <rect x="584" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-08-09" data-count="0" data-level="NONE">
+  <title>August 09, 2026 · 0 contributions</title>
+  <rect x="598" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-08-10" data-count="2" data-level="FIRST_QUARTILE">
+  <title>August 10, 2026 · 2 contributions</title>
+  <rect x="598" y="103" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-08-11" data-count="0" data-level="NONE">
+  <title>August 11, 2026 · 0 contributions</title>
+  <rect x="598" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-08-12" data-count="2" data-level="FIRST_QUARTILE">
+  <title>August 12, 2026 · 2 contributions</title>
+  <rect x="598" y="131" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-08-13" data-count="0" data-level="NONE">
+  <title>August 13, 2026 · 0 contributions</title>
+  <rect x="598" y="145" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-08-14" data-count="0" data-level="NONE">
+  <title>August 14, 2026 · 0 contributions</title>
+  <rect x="598" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-08-15" data-count="0" data-level="NONE">
+  <title>August 15, 2026 · 0 contributions</title>
+  <rect x="598" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-08-16" data-count="1" data-level="FIRST_QUARTILE">
+  <title>August 16, 2026 · 1 contributions</title>
+  <rect x="612" y="89" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-08-17" data-count="1" data-level="FIRST_QUARTILE">
+  <title>August 17, 2026 · 1 contributions</title>
+  <rect x="612" y="103" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-08-18" data-count="0" data-level="NONE">
+  <title>August 18, 2026 · 0 contributions</title>
+  <rect x="612" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-08-19" data-count="0" data-level="NONE">
+  <title>August 19, 2026 · 0 contributions</title>
+  <rect x="612" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-08-20" data-count="0" data-level="NONE">
+  <title>August 20, 2026 · 0 contributions</title>
+  <rect x="612" y="145" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-08-21" data-count="0" data-level="NONE">
+  <title>August 21, 2026 · 0 contributions</title>
+  <rect x="612" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-08-22" data-count="0" data-level="NONE">
+  <title>August 22, 2026 · 0 contributions</title>
+  <rect x="612" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-08-23" data-count="0" data-level="NONE">
+  <title>August 23, 2026 · 0 contributions</title>
+  <rect x="626" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-08-24" data-count="1" data-level="FIRST_QUARTILE">
+  <title>August 24, 2026 · 1 contributions</title>
+  <rect x="626" y="103" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-08-25" data-count="0" data-level="NONE">
+  <title>August 25, 2026 · 0 contributions</title>
+  <rect x="626" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-08-26" data-count="0" data-level="NONE">
+  <title>August 26, 2026 · 0 contributions</title>
+  <rect x="626" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-08-27" data-count="0" data-level="NONE">
+  <title>August 27, 2026 · 0 contributions</title>
+  <rect x="626" y="145" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-08-28" data-count="0" data-level="NONE">
+  <title>August 28, 2026 · 0 contributions</title>
+  <rect x="626" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-08-29" data-count="0" data-level="NONE">
+  <title>August 29, 2026 · 0 contributions</title>
+  <rect x="626" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-08-30" data-count="0" data-level="NONE">
+  <title>August 30, 2026 · 0 contributions</title>
+  <rect x="640" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-08-31" data-count="0" data-level="NONE">
+  <title>August 31, 2026 · 0 contributions</title>
+  <rect x="640" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-09-01" data-count="0" data-level="NONE">
+  <title>September 01, 2026 · 0 contributions</title>
+  <rect x="640" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-09-02" data-count="0" data-level="NONE">
+  <title>September 02, 2026 · 0 contributions</title>
+  <rect x="640" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-09-03" data-count="0" data-level="NONE">
+  <title>September 03, 2026 · 0 contributions</title>
+  <rect x="640" y="145" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-09-04" data-count="0" data-level="NONE">
+  <title>September 04, 2026 · 0 contributions</title>
+  <rect x="640" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-09-05" data-count="0" data-level="NONE">
+  <title>September 05, 2026 · 0 contributions</title>
+  <rect x="640" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-09-06" data-count="0" data-level="NONE">
+  <title>September 06, 2026 · 0 contributions</title>
+  <rect x="654" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-09-07" data-count="0" data-level="NONE">
+  <title>September 07, 2026 · 0 contributions</title>
+  <rect x="654" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-09-08" data-count="0" data-level="NONE">
+  <title>September 08, 2026 · 0 contributions</title>
+  <rect x="654" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-09-09" data-count="0" data-level="NONE">
+  <title>September 09, 2026 · 0 contributions</title>
+  <rect x="654" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-09-10" data-count="0" data-level="NONE">
+  <title>September 10, 2026 · 0 contributions</title>
+  <rect x="654" y="145" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-09-11" data-count="0" data-level="NONE">
+  <title>September 11, 2026 · 0 contributions</title>
+  <rect x="654" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-09-12" data-count="0" data-level="NONE">
+  <title>September 12, 2026 · 0 contributions</title>
+  <rect x="654" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-09-13" data-count="0" data-level="NONE">
+  <title>September 13, 2026 · 0 contributions</title>
+  <rect x="668" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-09-14" data-count="0" data-level="NONE">
+  <title>September 14, 2026 · 0 contributions</title>
+  <rect x="668" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-09-15" data-count="0" data-level="NONE">
+  <title>September 15, 2026 · 0 contributions</title>
+  <rect x="668" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-09-16" data-count="0" data-level="NONE">
+  <title>September 16, 2026 · 0 contributions</title>
+  <rect x="668" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-09-17" data-count="0" data-level="NONE">
+  <title>September 17, 2026 · 0 contributions</title>
+  <rect x="668" y="145" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-09-18" data-count="0" data-level="NONE">
+  <title>September 18, 2026 · 0 contributions</title>
+  <rect x="668" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-09-19" data-count="1" data-level="FIRST_QUARTILE">
+  <title>September 19, 2026 · 1 contributions</title>
+  <rect x="668" y="173" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-09-20" data-count="0" data-level="NONE">
+  <title>September 20, 2026 · 0 contributions</title>
+  <rect x="682" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-09-21" data-count="0" data-level="NONE">
+  <title>September 21, 2026 · 0 contributions</title>
+  <rect x="682" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-09-22" data-count="0" data-level="NONE">
+  <title>September 22, 2026 · 0 contributions</title>
+  <rect x="682" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-09-23" data-count="0" data-level="NONE">
+  <title>September 23, 2026 · 0 contributions</title>
+  <rect x="682" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-09-24" data-count="0" data-level="NONE">
+  <title>September 24, 2026 · 0 contributions</title>
+  <rect x="682" y="145" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-09-25" data-count="0" data-level="NONE">
+  <title>September 25, 2026 · 0 contributions</title>
+  <rect x="682" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-09-26" data-count="0" data-level="NONE">
+  <title>September 26, 2026 · 0 contributions</title>
+  <rect x="682" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-09-27" data-count="0" data-level="NONE">
+  <title>September 27, 2026 · 0 contributions</title>
+  <rect x="696" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-09-28" data-count="0" data-level="NONE">
+  <title>September 28, 2026 · 0 contributions</title>
+  <rect x="696" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-09-29" data-count="0" data-level="NONE">
+  <title>September 29, 2026 · 0 contributions</title>
+  <rect x="696" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-09-30" data-count="0" data-level="NONE">
+  <title>September 30, 2026 · 0 contributions</title>
+  <rect x="696" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-10-01" data-count="0" data-level="NONE">
+  <title>October 01, 2026 · 0 contributions</title>
+  <rect x="696" y="145" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-10-02" data-count="0" data-level="NONE">
+  <title>October 02, 2026 · 0 contributions</title>
+  <rect x="696" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-10-03" data-count="0" data-level="NONE">
+  <title>October 03, 2026 · 0 contributions</title>
+  <rect x="696" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-10-04" data-count="0" data-level="NONE">
+  <title>October 04, 2026 · 0 contributions</title>
+  <rect x="710" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-10-05" data-count="0" data-level="NONE">
+  <title>October 05, 2026 · 0 contributions</title>
+  <rect x="710" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-10-06" data-count="1" data-level="FIRST_QUARTILE">
+  <title>October 06, 2026 · 1 contributions</title>
+  <rect x="710" y="117" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-10-07" data-count="0" data-level="NONE">
+  <title>October 07, 2026 · 0 contributions</title>
+  <rect x="710" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-10-08" data-count="0" data-level="NONE">
+  <title>October 08, 2026 · 0 contributions</title>
+  <rect x="710" y="145" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-10-09" data-count="0" data-level="NONE">
+  <title>October 09, 2026 · 0 contributions</title>
+  <rect x="710" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-10-10" data-count="0" data-level="NONE">
+  <title>October 10, 2026 · 0 contributions</title>
+  <rect x="710" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-10-11" data-count="0" data-level="NONE">
+  <title>October 11, 2026 · 0 contributions</title>
+  <rect x="724" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-10-12" data-count="0" data-level="NONE">
+  <title>October 12, 2026 · 0 contributions</title>
+  <rect x="724" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-10-13" data-count="0" data-level="NONE">
+  <title>October 13, 2026 · 0 contributions</title>
+  <rect x="724" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-10-14" data-count="1" data-level="FIRST_QUARTILE">
+  <title>October 14, 2026 · 1 contributions</title>
+  <rect x="724" y="131" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-10-15" data-count="0" data-level="NONE">
+  <title>October 15, 2026 · 0 contributions</title>
+  <rect x="724" y="145" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-10-16" data-count="0" data-level="NONE">
+  <title>October 16, 2026 · 0 contributions</title>
+  <rect x="724" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-10-17" data-count="0" data-level="NONE">
+  <title>October 17, 2026 · 0 contributions</title>
+  <rect x="724" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-10-18" data-count="0" data-level="NONE">
+  <title>October 18, 2026 · 0 contributions</title>
+  <rect x="738" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-10-19" data-count="0" data-level="NONE">
+  <title>October 19, 2026 · 0 contributions</title>
+  <rect x="738" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-10-20" data-count="0" data-level="NONE">
+  <title>October 20, 2026 · 0 contributions</title>
+  <rect x="738" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-10-21" data-count="0" data-level="NONE">
+  <title>October 21, 2026 · 0 contributions</title>
+  <rect x="738" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-10-22" data-count="0" data-level="NONE">
+  <title>October 22, 2026 · 0 contributions</title>
+  <rect x="738" y="145" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-10-23" data-count="0" data-level="NONE">
+  <title>October 23, 2026 · 0 contributions</title>
+  <rect x="738" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-10-24" data-count="0" data-level="NONE">
+  <title>October 24, 2026 · 0 contributions</title>
+  <rect x="738" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-10-25" data-count="0" data-level="NONE">
+  <title>October 25, 2026 · 0 contributions</title>
+  <rect x="752" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-10-26" data-count="0" data-level="NONE">
+  <title>October 26, 2026 · 0 contributions</title>
+  <rect x="752" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-10-27" data-count="0" data-level="NONE">
+  <title>October 27, 2026 · 0 contributions</title>
+  <rect x="752" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-10-28" data-count="0" data-level="NONE">
+  <title>October 28, 2026 · 0 contributions</title>
+  <rect x="752" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-10-29" data-count="0" data-level="NONE">
+  <title>October 29, 2026 · 0 contributions</title>
+  <rect x="752" y="145" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-10-30" data-count="0" data-level="NONE">
+  <title>October 30, 2026 · 0 contributions</title>
+  <rect x="752" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-10-31" data-count="1" data-level="FIRST_QUARTILE">
+  <title>October 31, 2026 · 1 contributions</title>
+  <rect x="752" y="173" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-11-01" data-count="0" data-level="NONE">
+  <title>November 01, 2026 · 0 contributions</title>
+  <rect x="766" y="89" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-11-02" data-count="0" data-level="NONE">
+  <title>November 02, 2026 · 0 contributions</title>
+  <rect x="766" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-11-03" data-count="0" data-level="NONE">
+  <title>November 03, 2026 · 0 contributions</title>
+  <rect x="766" y="117" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-11-04" data-count="0" data-level="NONE">
+  <title>November 04, 2026 · 0 contributions</title>
+  <rect x="766" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-11-05" data-count="0" data-level="NONE">
+  <title>November 05, 2026 · 0 contributions</title>
+  <rect x="766" y="145" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-11-06" data-count="1" data-level="FIRST_QUARTILE">
+  <title>November 06, 2026 · 1 contributions</title>
+  <rect x="766" y="159" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-11-07" data-count="25" data-level="SECOND_QUARTILE">
+  <title>November 07, 2026 · 25 contributions</title>
+  <rect x="766" y="173" width="9" height="9" rx="2.8" fill="#1678D1" stroke="#8CC8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-11-08" data-count="58" data-level="FOURTH_QUARTILE" filter="url(#cell-glow)">
+  <title>November 08, 2026 · 58 contributions</title>
+  <rect x="780" y="89" width="9" height="9" rx="2.8" fill="#8B61F6" stroke="#E0D2FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-11-09" data-count="72" data-level="FOURTH_QUARTILE" filter="url(#cell-glow)">
+  <title>November 09, 2026 · 72 contributions</title>
+  <rect x="780" y="103" width="9" height="9" rx="2.8" fill="#8B61F6" stroke="#E0D2FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-11-10" data-count="64" data-level="FOURTH_QUARTILE" filter="url(#cell-glow)">
+  <title>November 10, 2026 · 64 contributions</title>
+  <rect x="780" y="117" width="9" height="9" rx="2.8" fill="#8B61F6" stroke="#E0D2FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-11-11" data-count="36" data-level="SECOND_QUARTILE">
+  <title>November 11, 2026 · 36 contributions</title>
+  <rect x="780" y="131" width="9" height="9" rx="2.8" fill="#1678D1" stroke="#8CC8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-11-12" data-count="82" data-level="FOURTH_QUARTILE" filter="url(#cell-glow)">
+  <title>November 12, 2026 · 82 contributions</title>
+  <rect x="780" y="145" width="9" height="9" rx="2.8" fill="#8B61F6" stroke="#E0D2FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-11-13" data-count="62" data-level="FOURTH_QUARTILE" filter="url(#cell-glow)">
+  <title>November 13, 2026 · 62 contributions</title>
+  <rect x="780" y="159" width="9" height="9" rx="2.8" fill="#8B61F6" stroke="#E0D2FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-11-14" data-count="22" data-level="SECOND_QUARTILE">
+  <title>November 14, 2026 · 22 contributions</title>
+  <rect x="780" y="173" width="9" height="9" rx="2.8" fill="#1678D1" stroke="#8CC8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-11-15" data-count="31" data-level="SECOND_QUARTILE">
+  <title>November 15, 2026 · 31 contributions</title>
+  <rect x="794" y="89" width="9" height="9" rx="2.8" fill="#1678D1" stroke="#8CC8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-11-16" data-count="0" data-level="NONE">
+  <title>November 16, 2026 · 0 contributions</title>
+  <rect x="794" y="103" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-11-17" data-count="13" data-level="FIRST_QUARTILE">
+  <title>November 17, 2026 · 13 contributions</title>
+  <rect x="794" y="117" width="9" height="9" rx="2.8" fill="#174BAA" stroke="#79A8FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-11-18" data-count="0" data-level="NONE">
+  <title>November 18, 2026 · 0 contributions</title>
+  <rect x="794" y="131" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-11-19" data-count="73" data-level="FOURTH_QUARTILE" filter="url(#cell-glow)">
+  <title>November 19, 2026 · 73 contributions</title>
+  <rect x="794" y="145" width="9" height="9" rx="2.8" fill="#8B61F6" stroke="#E0D2FF" stroke-width=".7"/>
+</g>
+<g data-date="2026-11-20" data-count="0" data-level="NONE">
+  <title>November 20, 2026 · 0 contributions</title>
+  <rect x="794" y="159" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g data-date="2026-11-21" data-count="0" data-level="NONE">
+  <title>November 21, 2026 · 0 contributions</title>
+  <rect x="794" y="173" width="9" height="9" rx="2.8" fill="#101D35" stroke="#263D60" stroke-width=".7"/>
+</g>
+<g clip-path="url(#grid-clip)" opacity=".23" pointer-events="none"><path d="M0 0V100" transform="translate(66 87)" stroke="url(#scan-glow)" stroke-width="18"><animateTransform attributeName="transform" type="translate" values="66 87;806 87;66 87" dur="32s" repeatCount="indefinite"/></path></g>
+<path d="M34 195H826" stroke="#36517C" stroke-opacity=".38"/>
+<g font-family="Inter, Segoe UI, Arial, sans-serif" font-size="7.5" font-weight="600" letter-spacing=".55">
+  <text x="34" y="210" fill="#8198BC">NOV 22, 2025  ·  NOV 21, 2026</text>
+  <text x="612" y="210" fill="#8198BC">LESS</text>
+  <rect x="645" y="201" width="9" height="9" rx="2.6" fill="#101D35" stroke="#263D60" stroke-width=".65"/><rect x="660" y="201" width="9" height="9" rx="2.6" fill="#174BAA" stroke="#79A8FF" stroke-width=".65"/><rect x="675" y="201" width="9" height="9" rx="2.6" fill="#1678D1" stroke="#8CC8FF" stroke-width=".65"/><rect x="690" y="201" width="9" height="9" rx="2.6" fill="#18AFCB" stroke="#A2F0FF" stroke-width=".65"/><rect x="705" y="201" width="9" height="9" rx="2.6" fill="#8B61F6" stroke="#E0D2FF" stroke-width=".65"/>
+  <text x="728" y="210" fill="#8198BC">MORE</text>
+</g>
+<circle cx="826" cy="25" r="2.2" fill="#8BDFFF"><animate attributeName="opacity" values=".35;1;.35" dur="4.8s" repeatCount="indefinite"/></circle>
+<rect x=".7" y=".7" width="858.6" height="224.6" rx="15.5" fill="none" stroke="#3B5882" stroke-opacity=".72" stroke-width="1.1"/>
+<path d="M14 17V43M846 17V43M14 183V209M846 183V209" stroke="#6C8FC5" stroke-opacity=".48" stroke-width="1"/>
+</svg>
