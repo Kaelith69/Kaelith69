@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render a restrained neon contribution calendar for the GitHub profile."""
+"""Build a text-free, M&M-inspired GitHub contribution calendar."""
 
 from __future__ import annotations
 
@@ -39,12 +39,12 @@ query ContributionCalendar($login: String!, $from: DateTime!, $to: DateTime!) {
 }
 """
 
-LEVEL_COLORS = {
-    "NONE": ("#F5E6C8", "#D9BE91"),
-    "FIRST_QUARTILE": ("#E53935", "#FF8A80"),
-    "SECOND_QUARTILE": ("#FF9800", "#FFD180"),
-    "THIRD_QUARTILE": ("#4CAF50", "#B9F6CA"),
-    "FOURTH_QUARTILE": ("#3F51B5", "#C5CAE9"),
+CANDY = {
+    "NONE": "#E8D5B8",
+    "FIRST_QUARTILE": "#F04438",
+    "SECOND_QUARTILE": "#FFB21A",
+    "THIRD_QUARTILE": "#20B66A",
+    "FOURTH_QUARTILE": "#3987F5",
 }
 
 
@@ -58,12 +58,14 @@ def fetch_calendar(start: dt.date, end: dt.date) -> dict[str, Any]:
     if not token:
         raise RuntimeError("PROFILE_STATS_TOKEN or GITHUB_TOKEN is required.")
 
-    variables = {
-        "login": LOGIN,
-        "from": f"{start.isoformat()}T00:00:00Z",
-        "to": f"{end.isoformat()}T23:59:59Z",
-    }
-    body = json.dumps({"query": QUERY, "variables": variables}).encode("utf-8")
+    body = json.dumps({
+        "query": QUERY,
+        "variables": {
+            "login": LOGIN,
+            "from": f"{start.isoformat()}T00:00:00Z",
+            "to": f"{end.isoformat()}T23:59:59Z",
+        },
+    }).encode()
     request = urllib.request.Request(
         API_URL,
         data=body,
@@ -71,7 +73,7 @@ def fetch_calendar(start: dt.date, end: dt.date) -> dict[str, Any]:
             "Authorization": f"Bearer {token}",
             "Accept": "application/vnd.github+json",
             "Content-Type": "application/json",
-            "User-Agent": "Kaelith69-neon-contribution-graph/1.0",
+            "User-Agent": "Kaelith69-candy-contribution-calendar/1.0",
         },
         method="POST",
     )
@@ -80,146 +82,103 @@ def fetch_calendar(start: dt.date, end: dt.date) -> dict[str, Any]:
     for attempt in range(3):
         try:
             with urllib.request.urlopen(request, timeout=45) as response:
-                payload = json.loads(response.read().decode("utf-8"))
+                payload = json.loads(response.read().decode())
             break
         except urllib.error.HTTPError as error:
-            detail = error.read().decode("utf-8", errors="replace")[:800]
-            last_error = RuntimeError(
-                f"GitHub GraphQL returned HTTP {error.code}: {detail}"
-            )
+            detail = error.read().decode(errors="replace")[:800]
+            last_error = RuntimeError(f"GitHub GraphQL HTTP {error.code}: {detail}")
             if error.code not in (429, 500, 502, 503, 504) or attempt == 2:
                 raise last_error from error
         except (urllib.error.URLError, TimeoutError) as error:
             last_error = error
             if attempt == 2:
-                raise RuntimeError(f"Could not reach GitHub GraphQL: {error}") from error
+                raise RuntimeError(f"GitHub GraphQL request failed: {error}") from error
         time.sleep(2 ** attempt)
     else:
         raise RuntimeError(f"GitHub GraphQL request failed: {last_error}")
 
     if payload.get("errors"):
-        messages = "; ".join(
-            item.get("message", "Unknown GraphQL error")
-            for item in payload["errors"]
-        )
-        raise RuntimeError(f"GitHub GraphQL error: {messages}")
+        raise RuntimeError("; ".join(error.get("message", "GraphQL error") for error in payload["errors"]))
 
     user = (payload.get("data") or {}).get("user")
-    if not user:
-        raise RuntimeError(f"GitHub user {LOGIN!r} was not returned by GraphQL.")
-
-    calendar = (user.get("contributionsCollection") or {}).get("contributionCalendar")
+    calendar = ((user or {}).get("contributionsCollection") or {}).get("contributionCalendar")
     if not calendar:
-        raise RuntimeError("GitHub did not return a contribution calendar.")
-
+        raise RuntimeError(f"No contribution calendar returned for {LOGIN}.")
     return calendar
 
 
-def collect_days(
-    calendar: dict[str, Any],
-    start: dt.date,
-    end: dt.date,
-) -> dict[dt.date, dict[str, Any]]:
+def collect_days(calendar: dict[str, Any], start: dt.date, end: dt.date) -> dict[dt.date, dict[str, Any]]:
     result: dict[dt.date, dict[str, Any]] = {}
-
     for week in calendar.get("weeks", []):
         for day in week.get("contributionDays", []):
-            try:
-                date = dt.date.fromisoformat(day["date"])
-                count = int(day["contributionCount"])
-                level = str(day["contributionLevel"])
-            except (KeyError, TypeError, ValueError) as error:
-                raise RuntimeError(f"Malformed contribution day: {day!r}") from error
-
-            if count < 0:
-                raise RuntimeError(f"Negative contribution count for {date}.")
-            if level not in LEVEL_COLORS:
-                raise RuntimeError(f"Unknown contribution level {level!r} for {date}.")
+            date = dt.date.fromisoformat(day["date"])
+            count = int(day["contributionCount"])
+            level = str(day["contributionLevel"])
+            if count < 0 or level not in CANDY:
+                raise RuntimeError(f"Invalid contribution data for {date}.")
             if start <= date <= end:
                 if date in result:
-                    raise RuntimeError(f"Duplicate contribution day returned for {date}.")
-                result[date] = {
-                    "count": count,
-                    "level": level if count else "NONE",
-                }
+                    raise RuntimeError(f"Duplicate date returned: {date}.")
+                result[date] = {"count": count, "level": level if count else "NONE"}
 
     expected = (end - start).days + 1
     if len(result) != expected:
-        missing = [
-            (start + dt.timedelta(days=offset)).isoformat()
-            for offset in range(expected)
-            if start + dt.timedelta(days=offset) not in result
-        ]
-        raise RuntimeError(
-            f"Contribution calendar contains {len(result)} of {expected} days. "
-            f"Missing: {', '.join(missing[:5])}. Refusing to publish incomplete data."
-        )
-
+        raise RuntimeError(f"Expected {expected} dates, received {len(result)}.")
     return result
 
 
-def calendar_columns(start: dt.date, end: dt.date) -> tuple[dt.date, int]:
-    first_sunday = start - dt.timedelta(days=(start.weekday() + 1) % 7)
-    last_sunday = end - dt.timedelta(days=(end.weekday() + 1) % 7)
-    columns = ((last_sunday - first_sunday).days // 7) + 1
-    return first_sunday, columns
-
-
 def render_svg(start: dt.date, end: dt.date, total: int, days: dict[dt.date, dict[str, Any]]) -> str:
-    """Render a text-free, glossy candy-inspired contribution calendar."""
-    width, height = 860, 226
-    grid_x, grid_y, pitch, cell = 42, 50, 14, 9
-    first_sunday, _ = calendar_columns(start, end)
-    pieces = [f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="contribution-title contribution-desc" data-total-contributions="{total}" data-start="{start.isoformat()}" data-end="{end.isoformat()}">
-<title id="contribution-title">{html.escape(LOGIN)} contribution activity</title><desc id="contribution-desc">A text-free, candy-coated 365-day contribution calendar.</desc>
+    width, height = 860, 172
+    grid_x, grid_y, pitch, size = 34, 43, 15, 11
+    first_sunday = start - dt.timedelta(days=(start.weekday() + 1) % 7
+    )
+    parts = [f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-label="Candy colored contribution calendar" data-total-contributions="{total}" data-start="{start.isoformat()}" data-end="{end.isoformat()}">
 <defs>
-<linearGradient id="wrapper-bg" x1="0" y1="0" x2=".9" y2="1"><stop offset="0" stop-color="#FFF8E8"/><stop offset=".48" stop-color="#F7E8C7"/><stop offset="1" stop-color="#E8D3A9"/></linearGradient>
-<radialGradient id="soft-glow" cx="50%" cy="40%" r="70%"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".78"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></radialGradient>
-<linearGradient id="candy-shine" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".9"/><stop offset=".28" stop-color="#FFFFFF" stop-opacity=".32"/><stop offset=".62" stop-color="#FFFFFF" stop-opacity="0"/><stop offset="1" stop-color="#3B1B14" stop-opacity=".24"/></linearGradient>
-<filter id="candy-shadow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur in="SourceAlpha" stdDeviation="1.3" result="blur"/><feOffset in="blur" dx="1.3" dy="1.8" result="offset"/><feComponentTransfer in="offset" result="shadow"><feFuncA type="linear" slope=".34" intercept="0"/></feComponentTransfer><feMerge><feMergeNode in="shadow"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-<pattern id="wrapper-speckle" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="3" cy="4" r=".7" fill="#9B7446" opacity=".11"/><circle cx="13" cy="12" r=".55" fill="#9B7446" opacity=".09"/></pattern>
-<clipPath id="grid-clip"><rect x="34" y="38" width="792" height="150" rx="12"/></clipPath></defs>
-<rect width="860" height="226" rx="18" fill="url(#wrapper-bg)"/><rect width="860" height="226" rx="18" fill="url(#wrapper-speckle)"/><rect x="8" y="8" width="844" height="210" rx="14" fill="none" stroke="#FFFFFF" stroke-opacity=".65" stroke-width="1.4"/><path d="M18 22H842" stroke="#FFFFFF" stroke-opacity=".48"/><path d="M18 204H842" stroke="#B58A50" stroke-opacity=".16"/><rect x="24" y="28" width="812" height="170" rx="12" fill="#E9D7B6" opacity=".28"/><rect x="24" y="28" width="812" height="170" rx="12" fill="url(#soft-glow)" opacity=".45"/>''']
-    for offset in range((end-start).days+1):
-        date=start+dt.timedelta(days=offset); item=days[date]
-        column=(date-first_sunday).days//7; row=(date.weekday()+1)%7
-        x=grid_x+column*pitch; y=grid_y+row*pitch
-        fill,stroke=LEVEL_COLORS[item["level"]]
-        pieces.append(f'''<g data-date="{date.isoformat()}" data-count="{item["count"]}" data-level="{item["level"]}"><title>{html.escape(f'{date.isoformat()} · {item["count"]} contributions')}</title>
-<ellipse cx="{x+cell/2:.1f}" cy="{y+cell/2+1.2:.1f}" rx="5.4" ry="5.2" fill="#7A4C26" opacity=".2"/>
-<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="4.2" fill="{fill}" stroke="{stroke}" stroke-width=".55" filter="url(#candy-shadow)"/>
-<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="4.2" fill="url(#candy-shine)"/>
-<ellipse cx="{x+2.7:.1f}" cy="{y+2.2:.1f}" rx="2.1" ry="1.15" fill="#FFFFFF" opacity=".58"/></g>''')
-    pieces.append('''<g clip-path="url(#grid-clip)" opacity=".14" pointer-events="none"><path d="M0 0V160" stroke="#FFFFFF" stroke-width="22"><animateTransform attributeName="transform" type="translate" values="34 38;826 38;34 38" dur="36s" repeatCount="indefinite"/></path></g><rect x=".7" y=".7" width="858.6" height="224.6" rx="17.3" fill="none" stroke="#FFFFFF" stroke-opacity=".55" stroke-width="1.2"/></svg>''')
-    return "\n".join(pieces)
+  <linearGradient id="chocolate" x1="0" y1="0" x2="0.9" y2="1"><stop offset="0" stop-color="#482719"/><stop offset=".48" stop-color="#32190F"/><stop offset="1" stop-color="#241108"/></linearGradient>
+  <radialGradient id="wrapper-glow"><stop offset="0" stop-color="#8A4A24" stop-opacity=".5"/><stop offset="1" stop-color="#8A4A24" stop-opacity="0"/></radialGradient>
+  <linearGradient id="candy-gloss" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".7"/><stop offset=".32" stop-color="#FFFFFF" stop-opacity=".2"/><stop offset=".7" stop-color="#FFFFFF" stop-opacity="0"/><stop offset="1" stop-color="#220B08" stop-opacity=".22"/></linearGradient>
+  <filter id="drop" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur in="SourceAlpha" stdDeviation="1.6" result="blur"/><feOffset dx="1.1" dy="2" result="offset"/><feComponentTransfer in="offset" result="shadow"><feFuncA type="linear" slope=".42"/></feComponentTransfer><feMerge><feMergeNode in="shadow"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <pattern id="grain" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="3" cy="5" r=".7" fill="#E8C7A2" opacity=".1"/><circle cx="14" cy="14" r=".55" fill="#E8C7A2" opacity=".08"/></pattern>
+</defs>
+<rect width="860" height="172" rx="17" fill="url(#chocolate)"/>
+<rect width="860" height="172" rx="17" fill="url(#wrapper-glow)"/>
+<rect width="860" height="172" rx="17" fill="url(#grain)"/>
+<rect x="7" y="7" width="846" height="158" rx="12" fill="none" stroke="#C58B55" stroke-opacity=".28"/>
+<path d="M17 20H843M17 152H843" stroke="#F1C38A" stroke-opacity=".13"/>
+<g opacity=".2"><path d="M0 0L40 0 0 40ZM860 172L820 172 860 132Z" fill="#F4C16B"/></g>''']
+
+    for offset in range((end - start).days + 1):
+        date = start + dt.timedelta(days=offset)
+        item = days[date]
+        week = (date - first_sunday).days // 7
+        row = (date.weekday() + 1) % 7
+        x, y = grid_x + week * pitch, grid_y + row * pitch
+        color = CANDY[item["level"]]
+        parts.append(f'''<g data-date="{date.isoformat()}" data-count="{item["count"]}" data-level="{item["level"]}">
+<title>{html.escape(date.isoformat())}: {item["count"]} contributions</title>
+<ellipse cx="{x + size/2:.1f}" cy="{y + size/2 + 1.3:.1f}" rx="6.1" ry="5.8" fill="#100704" opacity=".48"/>
+<circle cx="{x + size/2:.1f}" cy="{y + size/2:.1f}" r="5.65" fill="{color}" stroke="#FFFFFF" stroke-opacity=".3" stroke-width=".45" filter="url(#drop)"/>
+<ellipse cx="{x + 3.3:.1f}" cy="{y + 2.5:.1f}" rx="2.55" ry="1.45" fill="#FFFFFF" opacity=".55"/>
+<circle cx="{x + size/2:.1f}" cy="{y + size/2:.1f}" r="5.55" fill="url(#candy-gloss)"/>
+</g>''')
+    parts.append('''<rect x=".7" y=".7" width="858.6" height="170.6" rx="16.3" fill="none" stroke="#FFFFFF" stroke-opacity=".12"/><path d="M-60 0L-30 0 160 172 130 172Z" fill="#FFFFFF" opacity=".025"><animateTransform attributeName="transform" type="translate" values="0 0;760 0;0 0" dur="40s" repeatCount="indefinite"/></path></svg>''')
+    return "\n".join(parts)
+
 
 def main() -> None:
     start, end = date_window()
     calendar = fetch_calendar(start, end)
     total = int(calendar.get("totalContributions", -1))
-    if total < 0:
-        raise RuntimeError("GitHub returned an invalid totalContributions value.")
-
     days = collect_days(calendar, start, end)
-    day_total = sum(item["count"] for item in days.values())
-    if day_total != total:
-        raise RuntimeError(
-            f"Daily contribution sum ({day_total}) does not match "
-            f"GitHub's calendar total ({total}). Refusing to publish inconsistent data."
-        )
-
+    if total < 0 or sum(day["count"] for day in days.values()) != total:
+        raise RuntimeError("Contribution total does not match the daily data. Refusing to publish.")
     svg = render_svg(start, end, total, days)
     root = ET.fromstring(svg)
     if len(root.findall(".//*[@data-date]")) != 365:
-        raise RuntimeError("Generated SVG does not contain exactly 365 contribution days.")
-
+        raise RuntimeError("Generated SVG must contain exactly 365 contribution cells.")
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(svg, encoding="utf-8")
-    active_days = sum(item["count"] > 0 for item in days.values())
-    print(
-        f"Rendered {total:,} contributions across {len(days)} days "
-        f"({active_days} active days) to {OUTPUT.relative_to(ROOT)}."
-    )
+    print(f"Rendered {total:,} contributions to {OUTPUT.relative_to(ROOT)}.")
 
 
 if __name__ == "__main__":
