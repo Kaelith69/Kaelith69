@@ -40,11 +40,11 @@ query ContributionCalendar($login: String!, $from: DateTime!, $to: DateTime!) {
 """
 
 LEVEL_COLORS = {
-    "NONE": ("#101D35", "#263D60"),
-    "FIRST_QUARTILE": ("#174BAA", "#79A8FF"),
-    "SECOND_QUARTILE": ("#1678D1", "#8CC8FF"),
-    "THIRD_QUARTILE": ("#18AFCB", "#A2F0FF"),
-    "FOURTH_QUARTILE": ("#8B61F6", "#E0D2FF"),
+    "NONE": ("#F5E6C8", "#D9BE91"),
+    "FIRST_QUARTILE": ("#E53935", "#FF8A80"),
+    "SECOND_QUARTILE": ("#FF9800", "#FFD180"),
+    "THIRD_QUARTILE": ("#4CAF50", "#B9F6CA"),
+    "FOURTH_QUARTILE": ("#3F51B5", "#C5CAE9"),
 }
 
 
@@ -165,193 +165,33 @@ def calendar_columns(start: dt.date, end: dt.date) -> tuple[dt.date, int]:
     return first_sunday, columns
 
 
-def render_svg(
-    start: dt.date,
-    end: dt.date,
-    total: int,
-    days: dict[dt.date, dict[str, Any]],
-) -> str:
-    """Render a compact, data-accurate 365-day calendar with a subtle light sweep."""
+def render_svg(start: dt.date, end: dt.date, total: int, days: dict[dt.date, dict[str, Any]]) -> str:
+    """Render a text-free, glossy candy-inspired contribution calendar."""
     width, height = 860, 226
-    grid_x, grid_y = 66, 89
-    pitch, cell = 14, 9
-    first_sunday, columns = calendar_columns(start, end)
-
-    pieces = [
-        f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}"
- viewBox="0 0 {width} {height}" role="img"
- aria-labelledby="contribution-title contribution-desc"
- data-total-contributions="{total}" data-start="{start.isoformat()}" data-end="{end.isoformat()}">
-<title id="contribution-title">{html.escape(LOGIN)} contribution activity</title>
-<desc id="contribution-desc">{total:,} GitHub contributions from {start.isoformat()} to {end.isoformat()}, shown as a 365-day contribution calendar in neon blue, cyan and violet.</desc>
+    grid_x, grid_y, pitch, cell = 42, 50, 14, 9
+    first_sunday, _ = calendar_columns(start, end)
+    pieces = [f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="contribution-title contribution-desc" data-total-contributions="{total}" data-start="{start.isoformat()}" data-end="{end.isoformat()}">
+<title id="contribution-title">{html.escape(LOGIN)} contribution activity</title><desc id="contribution-desc">A text-free, candy-coated 365-day contribution calendar.</desc>
 <defs>
-  <linearGradient id="panel-bg" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="#080D1D"/>
-    <stop offset=".58" stop-color="#0C1730"/>
-    <stop offset="1" stop-color="#111B37"/>
-  </linearGradient>
-  <radialGradient id="blue-haze" cx="78%" cy="15%" r="72%">
-    <stop offset="0" stop-color="#255DCE" stop-opacity=".20"/>
-    <stop offset=".55" stop-color="#255DCE" stop-opacity=".06"/>
-    <stop offset="1" stop-color="#255DCE" stop-opacity="0"/>
-  </radialGradient>
-  <radialGradient id="violet-haze" cx="94%" cy="88%" r="62%">
-    <stop offset="0" stop-color="#8057E8" stop-opacity=".17"/>
-    <stop offset="1" stop-color="#8057E8" stop-opacity="0"/>
-  </radialGradient>
-  <linearGradient id="scan-glow" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#7DDCFF" stop-opacity="0"/>
-    <stop offset=".5" stop-color="#BCEBFF" stop-opacity=".9"/>
-    <stop offset="1" stop-color="#7D8CFF" stop-opacity="0"/>
-  </linearGradient>
-  <filter id="cell-glow" x="-80%" y="-80%" width="260%" height="260%">
-    <feGaussianBlur stdDeviation="1.8" result="blur"/>
-    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-  </filter>
-  <filter id="comic-shadow" x="-70%" y="-70%" width="240%" height="240%">
-    <feGaussianBlur in="SourceAlpha" stdDeviation="1.8" result="blur"/>
-    <feOffset in="blur" dx="1.8" dy="2.4" result="offset"/>
-    <feComponentTransfer in="offset" result="shadow"><feFuncA type="linear" slope=".65" intercept="0"/></feComponentTransfer>
-    <feMerge><feMergeNode in="shadow"/><feMergeNode in="SourceGraphic"/></feMerge>
-  </filter>
-  <linearGradient id="cell-light" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="#FFFFFF" stop-opacity=".62"/>
-    <stop offset=".22" stop-color="#FFFFFF" stop-opacity=".15"/>
-    <stop offset=".65" stop-color="#FFFFFF" stop-opacity="0"/>
-    <stop offset="1" stop-color="#020611" stop-opacity=".32"/>
-  </linearGradient>
-  <pattern id="comic-dots" width="8" height="8" patternUnits="userSpaceOnUse">
-    <circle cx="1.2" cy="1.2" r=".65" fill="#93B9FF" opacity=".16"/>
-  </pattern>
-  <linearGradient id="comic-beam" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="#FFFFFF" stop-opacity=".18"/>
-    <stop offset=".35" stop-color="#6FCBFF" stop-opacity=".06"/>
-    <stop offset="1" stop-color="#7B52F6" stop-opacity="0"/>
-  </linearGradient>
-  <clipPath id="grid-clip">
-    <rect x="62" y="85" width="744" height="103" rx="3"/>
-  </clipPath>
-</defs>
-
-<rect width="860" height="226" rx="16" fill="url(#panel-bg)"/>
-<rect width="860" height="226" rx="16" fill="url(#blue-haze)"/>
-<rect width="860" height="226" rx="16" fill="url(#violet-haze)"/>
-<rect width="860" height="226" rx="16" fill="url(#comic-dots)"/>
-<path d="M0 0L480 0L190 226H0Z" fill="url(#comic-beam)" opacity=".42"/>
-<path d="M18 1H842" stroke="#5C91E8" stroke-opacity=".3"/>
-<path d="M18 1H220" stroke="#7DDCFF" stroke-width="1.1" stroke-opacity=".72"/>
-
-<g font-family="Inter, Segoe UI, Arial, sans-serif">
-  <text x="34" y="37" fill="#EAF3FF" font-size="12" font-weight="700"
-        letter-spacing="1.8">CONTRIBUTION ACTIVITY</text>
-  <text x="34" y="51" fill="#8198BC" font-size="8" letter-spacing="1.2"
-        font-weight="600">LAST 365 DAYS</text>
-  <text x="824" y="36" text-anchor="end" fill="#F6FAFF"
-        font-size="25" font-weight="700">{total:,}</text>
-  <text x="824" y="50" text-anchor="end" fill="#8CA9D4"
-        font-size="7.5" font-weight="700" letter-spacing="1.15">TOTAL CONTRIBUTIONS</text>
-</g>
-
-<path d="M34 61H826" stroke="#36517C" stroke-opacity=".48"/>
-<path d="M34 61H250" stroke="#5D9EFF" stroke-opacity=".48"/>
-
-<g font-family="Inter, Segoe UI, Arial, sans-serif" fill="#8299BC"
-   font-size="8" font-weight="600" letter-spacing=".7">'''
-    ]
-
-    last_month: tuple[int, int] | None = None
-    for offset in range((end - start).days + 1):
-        date = start + dt.timedelta(days=offset)
-        month_key = (date.year, date.month)
-        if month_key != last_month:
-            column = (date - first_sunday).days // 7
-            x = grid_x + column * pitch
-            pieces.append(
-                f'<text x="{x}" y="78">{date.strftime("%b").upper()}</text>'
-            )
-            last_month = month_key
-
-    pieces.append(
-        '''</g>
-<g font-family="Inter, Segoe UI, Arial, sans-serif" fill="#7187A9"
-   font-size="7.5" font-weight="600">'''
-    )
-    for row, label in ((1, "M"), (3, "W"), (5, "F")):
-        y = grid_y + row * pitch + 6.5
-        pieces.append(f'<text x="39" y="{y}" text-anchor="middle">{label}</text>')
-    pieces.append("</g>")
-
-    for offset in range((end - start).days + 1):
-        date = start + dt.timedelta(days=offset)
-        item = days[date]
-        column = (date - first_sunday).days // 7
-        row = (date.weekday() + 1) % 7
-        x = grid_x + column * pitch
-        y = grid_y + row * pitch
-        level = item["level"]
-        fill, stroke = LEVEL_COLORS[level]
-        glow = ' filter="url(#cell-glow)"' if level == "FOURTH_QUARTILE" else ""
-        title = html.escape(
-            f'{date.strftime("%B %d, %Y")} · {item["count"]} contributions'
-        )
-        x_plus_1 = x + 1
-        y_plus_1 = y + 1
-        x_plus_5_5 = x + 5.5
-        pieces.append(
-            f'''<g data-date="{date.isoformat()}" data-count="{item["count"]}"
- data-level="{level}"{glow}>
-  <title>{title}</title>
-  <rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="2.4"
-        fill="#020611" opacity=".6" transform="translate(1.4 1.8)"/>
-  <rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="2.4"
-        fill="{fill}" stroke="#020611" stroke-width="1.1" filter="url(#comic-shadow)"/>
-  <rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="2.4"
-        fill="url(#cell-light)" stroke="{stroke}" stroke-width=".65"/>
-  <path d="M{x_plus_1} {y_plus_1}H{x_plus_5_5}" stroke="#FFFFFF" stroke-opacity=".62" stroke-width=".65" stroke-linecap="round"/>
-</g>'''
-        )
-
-    pieces.append(
-        f'''<g clip-path="url(#grid-clip)" opacity=".23" pointer-events="none">
-  <path d="M0 0V100" transform="translate(66 87)"
-        stroke="url(#scan-glow)" stroke-width="18">
-    <animateTransform attributeName="transform" type="translate"
-      values="66 87;806 87;66 87" dur="32s" repeatCount="indefinite"/>
-  </path>
-</g>
-
-<path d="M34 195H826" stroke="#36517C" stroke-opacity=".38"/>
-<g font-family="Inter, Segoe UI, Arial, sans-serif" font-size="7.5"
-   font-weight="600" letter-spacing=".55">
-  <text x="34" y="210" fill="#8198BC">{start.strftime("%b %d, %Y").upper()}  ·  {end.strftime("%b %d, %Y").upper()}</text>
-  <text x="612" y="210" fill="#8198BC">LESS</text>'''
-    )
-
-    legend_levels = ("NONE", "FIRST_QUARTILE", "SECOND_QUARTILE", "THIRD_QUARTILE", "FOURTH_QUARTILE")
-    for index, level in enumerate(legend_levels):
-        fill, stroke = LEVEL_COLORS[level]
-        x = 645 + index * 15
-        pieces.append(
-            f'<rect x="{x}" y="201" width="9" height="9" rx="2.6" '
-            f'fill="{fill}" stroke="{stroke}" stroke-width=".65"/>'
-        )
-
-    pieces.append(
-        '''  <text x="728" y="210" fill="#8198BC">MORE</text>
-</g>
-<circle cx="826" cy="25" r="2.2" fill="#8BDFFF">
-  <animate attributeName="opacity" values=".35;1;.35" dur="4.8s"
-           repeatCount="indefinite"/>
-</circle>
-<rect x=".7" y=".7" width="858.6" height="224.6" rx="15.5"
-      fill="none" stroke="#3B5882" stroke-opacity=".72" stroke-width="1.1"/>
-<path d="M14 17V43M846 17V43M14 183V209M846 183V209"
-      stroke="#6C8FC5" stroke-opacity=".48" stroke-width="1"/>
-</svg>'''
-    )
-
+<linearGradient id="wrapper-bg" x1="0" y1="0" x2=".9" y2="1"><stop offset="0" stop-color="#FFF8E8"/><stop offset=".48" stop-color="#F7E8C7"/><stop offset="1" stop-color="#E8D3A9"/></linearGradient>
+<radialGradient id="soft-glow" cx="50%" cy="40%" r="70%"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".78"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></radialGradient>
+<linearGradient id="candy-shine" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".9"/><stop offset=".28" stop-color="#FFFFFF" stop-opacity=".32"/><stop offset=".62" stop-color="#FFFFFF" stop-opacity="0"/><stop offset="1" stop-color="#3B1B14" stop-opacity=".24"/></linearGradient>
+<filter id="candy-shadow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur in="SourceAlpha" stdDeviation="1.3" result="blur"/><feOffset in="blur" dx="1.3" dy="1.8" result="offset"/><feComponentTransfer in="offset" result="shadow"><feFuncA type="linear" slope=".34" intercept="0"/></feComponentTransfer><feMerge><feMergeNode in="shadow"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<pattern id="wrapper-speckle" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="3" cy="4" r=".7" fill="#9B7446" opacity=".11"/><circle cx="13" cy="12" r=".55" fill="#9B7446" opacity=".09"/></pattern>
+<clipPath id="grid-clip"><rect x="34" y="38" width="792" height="150" rx="12"/></clipPath></defs>
+<rect width="860" height="226" rx="18" fill="url(#wrapper-bg)"/><rect width="860" height="226" rx="18" fill="url(#wrapper-speckle)"/><rect x="8" y="8" width="844" height="210" rx="14" fill="none" stroke="#FFFFFF" stroke-opacity=".65" stroke-width="1.4"/><path d="M18 22H842" stroke="#FFFFFF" stroke-opacity=".48"/><path d="M18 204H842" stroke="#B58A50" stroke-opacity=".16"/><rect x="24" y="28" width="812" height="170" rx="12" fill="#E9D7B6" opacity=".28"/><rect x="24" y="28" width="812" height="170" rx="12" fill="url(#soft-glow)" opacity=".45"/>''']
+    for offset in range((end-start).days+1):
+        date=start+dt.timedelta(days=offset); item=days[date]
+        column=(date-first_sunday).days//7; row=(date.weekday()+1)%7
+        x=grid_x+column*pitch; y=grid_y+row*pitch
+        fill,stroke=LEVEL_COLORS[item["level"]]
+        pieces.append(f'''<g data-date="{date.isoformat()}" data-count="{item["count"]}" data-level="{item["level"]}"><title>{html.escape(f'{date.isoformat()} · {item["count"]} contributions')}</title>
+<ellipse cx="{x+cell/2:.1f}" cy="{y+cell/2+1.2:.1f}" rx="5.4" ry="5.2" fill="#7A4C26" opacity=".2"/>
+<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="4.2" fill="{fill}" stroke="{stroke}" stroke-width=".55" filter="url(#candy-shadow)"/>
+<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="4.2" fill="url(#candy-shine)"/>
+<ellipse cx="{x+2.7:.1f}" cy="{y+2.2:.1f}" rx="2.1" ry="1.15" fill="#FFFFFF" opacity=".58"/></g>''')
+    pieces.append('''<g clip-path="url(#grid-clip)" opacity=".14" pointer-events="none"><path d="M0 0V160" stroke="#FFFFFF" stroke-width="22"><animateTransform attributeName="transform" type="translate" values="34 38;826 38;34 38" dur="36s" repeatCount="indefinite"/></path></g><rect x=".7" y=".7" width="858.6" height="224.6" rx="17.3" fill="none" stroke="#FFFFFF" stroke-opacity=".55" stroke-width="1.2"/></svg>''')
     return "\n".join(pieces)
-
 
 def main() -> None:
     start, end = date_window()
