@@ -208,6 +208,26 @@ def render_svg(
     <feGaussianBlur stdDeviation="1.8" result="blur"/>
     <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
   </filter>
+  <filter id="comic-shadow" x="-70%" y="-70%" width="240%" height="240%">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="1.8" result="blur"/>
+    <feOffset in="blur" dx="1.8" dy="2.4" result="offset"/>
+    <feComponentTransfer in="offset" result="shadow"><feFuncA type="linear" slope=".65" intercept="0"/></feComponentTransfer>
+    <feMerge><feMergeNode in="shadow"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <linearGradient id="cell-light" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#FFFFFF" stop-opacity=".62"/>
+    <stop offset=".22" stop-color="#FFFFFF" stop-opacity=".15"/>
+    <stop offset=".65" stop-color="#FFFFFF" stop-opacity="0"/>
+    <stop offset="1" stop-color="#020611" stop-opacity=".32"/>
+  </linearGradient>
+  <pattern id="comic-dots" width="8" height="8" patternUnits="userSpaceOnUse">
+    <circle cx="1.2" cy="1.2" r=".65" fill="#93B9FF" opacity=".16"/>
+  </pattern>
+  <linearGradient id="comic-beam" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#FFFFFF" stop-opacity=".18"/>
+    <stop offset=".35" stop-color="#6FCBFF" stop-opacity=".06"/>
+    <stop offset="1" stop-color="#7B52F6" stop-opacity="0"/>
+  </linearGradient>
   <clipPath id="grid-clip">
     <rect x="62" y="85" width="744" height="103" rx="3"/>
   </clipPath>
@@ -216,6 +236,8 @@ def render_svg(
 <rect width="860" height="226" rx="16" fill="url(#panel-bg)"/>
 <rect width="860" height="226" rx="16" fill="url(#blue-haze)"/>
 <rect width="860" height="226" rx="16" fill="url(#violet-haze)"/>
+<rect width="860" height="226" rx="16" fill="url(#comic-dots)"/>
+<path d="M0 0L480 0L190 226H0Z" fill="url(#comic-beam)" opacity=".42"/>
 <path d="M18 1H842" stroke="#5C91E8" stroke-opacity=".3"/>
 <path d="M18 1H220" stroke="#7DDCFF" stroke-width="1.1" stroke-opacity=".72"/>
 
@@ -273,11 +295,19 @@ def render_svg(
             f'{date.strftime("%B %d, %Y")} · {item["count"]} contributions'
         )
         pieces.append(
-            f'''<g data-date="{date.isoformat()}" data-count="{item["count"]}"
+            x_plus_1 = x + 1
+        y_plus_1 = y + 1
+        x_plus_5_5 = x + 5.5
+        f'''<g data-date="{date.isoformat()}" data-count="{item["count"]}"
  data-level="{level}"{glow}>
   <title>{title}</title>
-  <rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="2.8"
-        fill="{fill}" stroke="{stroke}" stroke-width=".7"/>
+  <rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="2.4"
+        fill="#020611" opacity=".6" transform="translate(1.4 1.8)"/>
+  <rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="2.4"
+        fill="{fill}" stroke="#020611" stroke-width="1.1" filter="url(#comic-shadow)"/>
+  <rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="2.4"
+        fill="url(#cell-light)" stroke="{stroke}" stroke-width=".65"/>
+  <path d="M{x_plus_1} {y_plus_1}H{x_plus_5_5}" stroke="#FFFFFF" stroke-opacity=".62" stroke-width=".65" stroke-linecap="round"/>
 </g>'''
         )
 
