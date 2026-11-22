@@ -70,6 +70,10 @@ jobs:
           if root.attrib.get("viewBox") != "0 0 860 226":
               raise SystemExit(f"Unexpected contribution graph viewBox: {root.attrib.get('viewBox')!r}.")
 
+          text_content = " ".join(node.text or "" for node in root.findall(".//{http://www.w3.org/2000/svg}text"))
+          if "{start." in text_content or "{end." in text_content:
+              raise SystemExit("Footer contains unevaluated date placeholders.")
+
           print(
               f"Validated {path}: {len(days)} days, {total:,} contributions, "
               f"{path.stat().st_size:,} bytes."
