@@ -294,11 +294,11 @@ def render_svg(
         title = html.escape(
             f'{date.strftime("%B %d, %Y")} · {item["count"]} contributions'
         )
-        pieces.append(
-            x_plus_1 = x + 1
+        x_plus_1 = x + 1
         y_plus_1 = y + 1
         x_plus_5_5 = x + 5.5
-        f'''<g data-date="{date.isoformat()}" data-count="{item["count"]}"
+        pieces.append(
+            f'''<g data-date="{date.isoformat()}" data-count="{item["count"]}"
  data-level="{level}"{glow}>
   <title>{title}</title>
   <rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="2.4"
