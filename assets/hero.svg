@@ -1,42 +1,42 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="860" height="216" viewBox="0 0 860 216" role="img" aria-labelledby="hero-title hero-desc">
 <title id="hero-title">Kaelith69</title>
-<desc id="hero-desc">Neo brutalist identity banner with bold typography and an abstract orbital instrument.</desc>
+<desc id="hero-desc">Neo brutalist identity banner with oversized typography and a compact geometric orbital emblem.</desc>
 <defs>
-  <pattern id="dots" width="14" height="14" patternUnits="userSpaceOnUse">
-    <circle cx="2" cy="2" r="1" fill="#D8DCE8" opacity=".28"/>
+  <pattern id="grain-dots" width="16" height="16" patternUnits="userSpaceOnUse">
+    <circle cx="2" cy="2" r="1" fill="#D8DCE8" opacity=".22"/>
   </pattern>
-  <clipPath id="frame"><rect width="860" height="216"/></clipPath>
-  <clipPath id="instrument"><rect x="610" y="0" width="250" height="216"/></clipPath>
+  <pattern id="lime-hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <path d="M0 0V8" stroke="#080D1D" stroke-width="2" opacity=".2"/>
+  </pattern>
 </defs>
-<g clip-path="url(#frame)">
-  <rect width="860" height="216" fill="#080D1D"/>
-  <path d="M0 0H860V216H0Z" fill="#101A34"/>
-  <path d="M0 0H860V10H0Z" fill="#C6F432"/>
-  <path d="M0 206H860V216H0Z" fill="#A855F7"/>
-  <path d="M0 0H600L560 216H0Z" fill="#080D1D"/>
-  <path d="M0 0H590L550 216H0Z" fill="url(#dots)"/>
-  <path d="M24 24H574V192H24Z" fill="none" stroke="#D8DCE8" stroke-width="2" opacity=".72"/>
-  <path d="M24 24H42V192H24Z" fill="#35D9E6"/>
-  <path d="M53 49H78V174H53Z" fill="#C6F432"/>
-  <text x="91" y="139" fill="#D8DCE8" font-family="Impact,'Arial Black',Arial,sans-serif" font-size="76" font-weight="900" letter-spacing="-4.5">KAELITH69</text>
-  <path d="M91 158H486" stroke="#35D9E6" stroke-width="5"/>
-  <path d="M91 169H288" stroke="#A855F7" stroke-width="3"/>
-  <path d="M603 24H837V192H603Z" fill="#C6F432" stroke="#080D1D" stroke-width="4"/>
-  <path d="M615 36H825V180H615Z" fill="#101A34" stroke="#080D1D" stroke-width="4"/>
-  <g clip-path="url(#instrument)" transform="translate(720 108)">
-    <path d="M-132 0H132M0 -112V112" stroke="#D8DCE8" stroke-width="1" opacity=".28"/>
-    <circle r="83" fill="none" stroke="#A855F7" stroke-width="17"/>
-    <circle r="59" fill="none" stroke="#35D9E6" stroke-width="7"/>
-    <circle r="35" fill="#080D1D" stroke="#D8DCE8" stroke-width="3"/>
-    <path d="M-104 -69L-31 -21L-12 -7L-64 83L-87 70Z" fill="#C6F432" stroke="#080D1D" stroke-width="4"/>
-    <path d="M-31 -21L62 -84L89 -59L-12 -7Z" fill="#35D9E6" stroke="#080D1D" stroke-width="4"/>
-    <path d="M-12 -7L92 40L78 76L-31 21Z" fill="#A855F7" stroke="#080D1D" stroke-width="4"/>
-    <circle r="12" fill="#D8DCE8" stroke="#080D1D" stroke-width="4"/>
-    <path d="M-116 -94L-92 -94M-104 -106V-82M105 91H127M116 80V102" stroke="#080D1D" stroke-width="5"/>
-  </g>
-  <path d="M594 0L610 0L570 216H554Z" fill="#35D9E6"/>
-  <path d="M837 24H860V192H837Z" fill="#A855F7"/>
-  <path d="M24 24L42 24L42 42Z" fill="#C6F432"/>
-  <path d="M818 174L837 174L837 192Z" fill="#35D9E6"/>
+<rect width="860" height="216" fill="#080D1D"/>
+<path d="M0 0H860V9H0Z" fill="#C6F432"/>
+<path d="M0 207H860V216H0Z" fill="#A855F7"/>
+<path d="M0 9H574L548 207H0Z" fill="#101A34"/>
+<path d="M0 9H574L548 207H0Z" fill="url(#grain-dots)"/>
+<path d="M24 28H536V188H24Z" fill="none" stroke="#D8DCE8" stroke-width="1.5" opacity=".48"/>
+<path d="M24 28H36V188H24Z" fill="#35D9E6"/>
+<path d="M48 48H70V168H48Z" fill="#C6F432"/>
+<path d="M48 48H70V168H48Z" fill="url(#lime-hatch)"/>
+<text x="91" y="137" fill="#D8DCE8" font-family="Impact,'Arial Black',Arial,sans-serif" font-size="72" font-weight="900" letter-spacing="-4">KAELITH69</text>
+<path d="M92 157H444" stroke="#35D9E6" stroke-width="5"/>
+<path d="M92 169H280" stroke="#A855F7" stroke-width="3"/>
+<path d="M570 9L590 9L550 207H530Z" fill="#35D9E6"/>
+<path d="M606 28H836V188H606Z" fill="#C6F432"/>
+<path d="M618 40H824V176H618Z" fill="#101A34"/>
+<path d="M618 40H824V176H618Z" fill="url(#grain-dots)"/>
+<path d="M606 28H650V40H618V72H606Z" fill="#A855F7"/>
+<path d="M792 176H824V144H836V188H792Z" fill="#35D9E6"/>
+<g transform="translate(721 108)">
+  <circle r="65" fill="none" stroke="#080D1D" stroke-width="19"/>
+  <circle r="65" fill="none" stroke="#A855F7" stroke-width="11" stroke-dasharray="74 22 34 18 90 170" transform="rotate(-24)"/>
+  <circle r="43" fill="none" stroke="#35D9E6" stroke-width="6" stroke-dasharray="92 18 42 118" transform="rotate(32)"/>
+  <path d="M-7 -75L13 -24L66 -9L20 15L8 70L-17 22L-69 7L-20 -17Z" fill="#C6F432" stroke="#080D1D" stroke-width="5" stroke-linejoin="miter"/>
+  <path d="M-7 -75L13 -24L66 -9L20 15L8 70L-17 22L-69 7L-20 -17Z" fill="url(#lime-hatch)"/>
+  <circle r="14" fill="#101A34" stroke="#D8DCE8" stroke-width="4"/>
+  <circle r="4" fill="#35D9E6"/>
+  <path d="M-88 -72H-68M-78 -82V-62M73 70H93M83 60V80" stroke="#D8DCE8" stroke-width="3"/>
 </g>
+<path d="M842 28H860V188H842Z" fill="#A855F7"/>
+<path d="M24 28L36 28L36 40Z" fill="#C6F432"/>
 </svg>
