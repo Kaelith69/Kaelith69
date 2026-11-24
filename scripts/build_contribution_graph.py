@@ -134,8 +134,8 @@ def render_svg(
     total: int,
     days: dict[dt.date, tuple[int, str]],
 ) -> str:
-    width, height = 860, 180
-    left, top, pitch, cell = 35, 37, 15, 10
+    width, height = 860, 154
+    left, top, pitch, cell = 35, 24, 15, 10
     first_sunday = start - dt.timedelta(days=(start.weekday() + 1) % 7)
     columns = ((end - first_sunday).days // 7) + 1
     if columns > 53:
@@ -171,10 +171,10 @@ def render_svg(
 <rect width="860" height="180" fill="url(#surface)"/>
 <rect width="860" height="180" fill="url(#ambient)"/>
 <rect width="860" height="180" fill="url(#micro-grid)"/>
-<path d="M18 22H842V158H18Z" fill="none" stroke="#D8DCE8" stroke-opacity=".12"/>
-<path d="M18 22H92M768 22H842M18 158H92M768 158H842" fill="none" stroke="url(#frame)" stroke-width="1.5"/>
-<path d="M18 34V22H30M830 22H842V34M18 146V158H30M830 158H842V146" fill="none" stroke="#35D9E6" stroke-opacity=".5"/>
-<path d="M24 90H29M831 90H836" stroke="#A855F7" stroke-width="1.5" stroke-opacity=".75"/>
+<path d="M18 10H842V144H18Z" fill="none" stroke="#D8DCE8" stroke-opacity=".12"/>
+<path d="M18 10H92M768 10H842M18 144H92M768 144H842" fill="none" stroke="url(#frame)" stroke-width="1.5"/>
+<path d="M18 22V10H30M830 10H842V22M18 132V144H30M830 144H842V132" fill="none" stroke="#35D9E6" stroke-opacity=".5"/>
+<path d="M24 77H29M831 77H836" stroke="#A855F7" stroke-width="1.5" stroke-opacity=".75"/>
 <g id="calendar">''']
 
     for offset in range((end - start).days + 1):
@@ -213,7 +213,7 @@ def validate_svg(svg: str, start: dt.date, end: dt.date, total: int) -> None:
     daily_total = sum(int(cell.attrib["data-count"]) for cell in cells)
     if daily_total != total:
         raise RuntimeError(f"Daily total {daily_total} does not match calendar total {total}.")
-    if root.attrib.get("viewBox") != "0 0 860 180":
+    if root.attrib.get("viewBox") != "0 0 860 154":
         raise RuntimeError("Unexpected SVG viewBox.")
     if root.findall(f".//{{{SVG_NS}}}text"):
         raise RuntimeError("The contribution graph must remain free of visible text.")
