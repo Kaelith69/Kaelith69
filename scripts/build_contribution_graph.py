@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render a compact, textless brutalist contribution calendar from GitHub GraphQL."""
+"""Render a minimal Neo Rogue contribution calendar from GitHub GraphQL."""
 
 from __future__ import annotations
 
@@ -18,6 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "assets" / "contributions-neon.svg"
 LOGIN = os.environ.get("GITHUB_PROFILE_LOGIN", "Kaelith69")
 API_URL = os.environ.get("GITHUB_GRAPHQL_URL", "https://api.github.com/graphql")
+SVG_NS = "http://www.w3.org/2000/svg"
 
 QUERY = """
 query ContributionCalendar($login: String!, $from: DateTime!, $to: DateTime!) {
@@ -38,7 +39,6 @@ query ContributionCalendar($login: String!, $from: DateTime!, $to: DateTime!) {
 }
 """
 
-# One shared palette: navy surfaces, violet to cyan to acid-lime intensity.
 LEVEL_COLORS = {
     "NONE": "#17213E",
     "FIRST_QUARTILE": "#6B3FA0",
@@ -49,7 +49,7 @@ LEVEL_COLORS = {
 
 
 def contribution_window(today: dt.date | None = None) -> tuple[dt.date, dt.date]:
-    """Return the latest 365 complete UTC dates, including today."""
+    """Return the latest 365 dates, including the current UTC date."""
     end = today or dt.datetime.now(dt.timezone.utc).date()
     return end - dt.timedelta(days=364), end
 
@@ -74,7 +74,7 @@ def fetch_calendar(start: dt.date, end: dt.date) -> dict[str, Any]:
             "Authorization": f"Bearer {token}",
             "Accept": "application/vnd.github+json",
             "Content-Type": "application/json",
-            "User-Agent": "Kaelith69-profile-contribution-graph/2.0",
+            "User-Agent": "Kaelith69-profile-contribution-graph/3.0",
         },
         method="POST",
     )
@@ -134,42 +134,47 @@ def render_svg(
     total: int,
     days: dict[dt.date, tuple[int, str]],
 ) -> str:
-    width, height = 860, 154
-    left, top, pitch, cell = 17, 24, 12, 8
+    width, height = 860, 180
+    left, top, pitch, cell = 35, 37, 15, 10
     first_sunday = start - dt.timedelta(days=(start.weekday() + 1) % 7)
-    # 365 days span 53 calendar columns when aligned to Sunday.
     columns = ((end - first_sunday).days // 7) + 1
-    if columns > 69:
+    if columns > 53:
         raise RuntimeError(f"Unexpected calendar width: {columns} columns.")
 
     parts = [f'''<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}"
+<svg xmlns="{SVG_NS}" width="{width}" height="{height}"
  viewBox="0 0 {width} {height}" role="img"
- aria-label="GitHub contribution activity"
+ aria-label="365 day GitHub contribution calendar"
  data-total-contributions="{total}" data-start="{start.isoformat()}" data-end="{end.isoformat()}">
 <defs>
  <linearGradient id="surface" x1="0" y1="0" x2="1" y2="1">
   <stop stop-color="#101A34"/><stop offset="1" stop-color="#080D1D"/>
  </linearGradient>
- <linearGradient id="edge" x1="0" y1="0" x2="1" y2="0">
-  <stop stop-color="#A855F7"/><stop offset=".52" stop-color="#35D9E6"/><stop offset="1" stop-color="#C6F432"/>
+ <linearGradient id="frame" x1="0" y1="0" x2="1" y2="0">
+  <stop stop-color="#A855F7" stop-opacity=".8"/>
+  <stop offset=".52" stop-color="#35D9E6" stop-opacity=".65"/>
+  <stop offset="1" stop-color="#C6F432" stop-opacity=".8"/>
  </linearGradient>
- <filter id="cell-glow" x="-80%" y="-80%" width="260%" height="260%">
-  <feGaussianBlur stdDeviation="1.5" result="blur"/>
+ <linearGradient id="ambient" x1="0" y1="0" x2="1" y2="0">
+  <stop stop-color="#A855F7" stop-opacity=".08"/>
+  <stop offset=".55" stop-color="#35D9E6" stop-opacity=".035"/>
+  <stop offset="1" stop-color="#C6F432" stop-opacity=".06"/>
+ </linearGradient>
+ <filter id="peak-glow" x="-80%" y="-80%" width="260%" height="260%">
+  <feGaussianBlur stdDeviation="1.4" result="blur"/>
   <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
  </filter>
- <pattern id="grain" width="18" height="18" patternUnits="userSpaceOnUse">
-  <circle cx="2" cy="3" r=".55" fill="#D8DCE8" opacity=".1"/>
-  <circle cx="12" cy="13" r=".45" fill="#35D9E6" opacity=".07"/>
+ <pattern id="micro-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+  <path d="M20 0H0V20" fill="none" stroke="#D8DCE8" stroke-opacity=".025" stroke-width=".6"/>
  </pattern>
 </defs>
-<rect width="860" height="154" rx="2" fill="url(#surface)"/>
-<rect width="860" height="154" rx="2" fill="url(#grain)"/>
-<path d="M0 1H860M0 153H860" stroke="url(#edge)" stroke-width="2"/>
-<path d="M17 17H843" stroke="#D8DCE8" stroke-opacity=".13"/>
-<path d="M17 137H843" stroke="#D8DCE8" stroke-opacity=".13"/>
-<path d="M17 9H83" stroke="#A855F7" stroke-width="3"/>
-<path d="M777 9H843" stroke="#C6F432" stroke-width="3"/>
+<rect width="860" height="180" fill="url(#surface)"/>
+<rect width="860" height="180" fill="url(#ambient)"/>
+<rect width="860" height="180" fill="url(#micro-grid)"/>
+<path d="M18 22H842V158H18Z" fill="none" stroke="#D8DCE8" stroke-opacity=".12"/>
+<path d="M18 22H92M768 22H842M18 158H92M768 158H842" fill="none" stroke="url(#frame)" stroke-width="1.5"/>
+<path d="M18 34V22H30M830 22H842V34M18 146V158H30M830 158H842V146" fill="none" stroke="#35D9E6" stroke-opacity=".5"/>
+<path d="M24 90H29M831 90H836" stroke="#A855F7" stroke-width="1.5" stroke-opacity=".75"/>
 <g id="calendar">''']
 
     for offset in range((end - start).days + 1):
@@ -179,14 +184,14 @@ def render_svg(
         row = (date.weekday() + 1) % 7
         x, y = left + column * pitch, top + row * pitch
         color = LEVEL_COLORS[level]
-        filter_attr = 'filter="url(#cell-glow)"' if count and level == "FOURTH_QUARTILE" else ""
-        # SVG title keeps per-day detail accessible without adding visible labels.
+        filter_attr = ' filter="url(#peak-glow)"' if level == "FOURTH_QUARTILE" and count else ""
+        latest_attr = ' stroke="#D8DCE8" stroke-width="1.2"' if date == end else ""
+        title = f"{date.isoformat()}: {count} contribution" + ("" if count == 1 else "s")
         parts.append(
-            f'<g data-date="{date.isoformat()}" data-count="{count}" '
-            f'data-level="{level}"><title>{date.isoformat()}: {count} contributions</title>'
-            f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="0.7" '
-            f'{filter_attr}/>'
-            f'{"filter=\"url(#cell-glow)\"" if count and level == "FOURTH_QUARTILE" else ""}/>'
+            f'<g data-date="{date.isoformat()}" data-count="{count}" data-level="{level}">'
+            f'<title>{title}</title>'
+            f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="1" '
+            f'fill="{color}"{filter_attr}{latest_attr}/>'
             f'</g>'
         )
 
@@ -208,10 +213,14 @@ def validate_svg(svg: str, start: dt.date, end: dt.date, total: int) -> None:
     daily_total = sum(int(cell.attrib["data-count"]) for cell in cells)
     if daily_total != total:
         raise RuntimeError(f"Daily total {daily_total} does not match calendar total {total}.")
-    if root.attrib.get("viewBox") != "0 0 860 154":
+    if root.attrib.get("viewBox") != "0 0 860 180":
         raise RuntimeError("Unexpected SVG viewBox.")
-    if root.findall(".//{http://www.w3.org/2000/svg}text"):
-        raise RuntimeError("The contribution graph must remain textless.")
+    if root.findall(f".//{{{SVG_NS}}}text"):
+        raise RuntimeError("The contribution graph must remain free of visible text.")
+    for cell in cells:
+        rect = cell.find(f"{{{SVG_NS}}}rect")
+        if rect is None or rect.attrib.get("fill") != LEVEL_COLORS[cell.attrib["data-level"]]:
+            raise RuntimeError("A contribution cell has an invalid intensity colour.")
 
 
 def main() -> None:
