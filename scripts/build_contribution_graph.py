@@ -41,17 +41,17 @@ query ContributionCalendar($login: String!, $from: DateTime!, $to: DateTime!) {
 """
 
 PAPER = "#E9E3D6"
-PAPER_SHADE = "#D8D1C2"
 INK = "#20282D"
 MUTED = "#6F756F"
 RUST = "#C7553D"
 SAGE = "#B8C36A"
 SLATE = "#627F95"
+VIOLET = "#766C8B"
 LEVEL_COLORS = {
     "NONE": "#D8D1C2",
     "FIRST_QUARTILE": SAGE,
     "SECOND_QUARTILE": SLATE,
-    "THIRD_QUARTILE": RUST,
+    "THIRD_QUARTILE": VIOLET,
     "FOURTH_QUARTILE": INK,
 }
 
@@ -147,7 +147,12 @@ def streak_metrics(days: dict[dt.date, tuple[int, str]]) -> tuple[int, int, int]
             longest = max(longest, run)
         else:
             run = 0
-    for count in reversed(counts):
+    recent = list(reversed(counts))
+    # A GitHub streak remains active through the current UTC day when
+    # yesterday had contributions but today has not yet been updated.
+    if recent and recent[0] == 0:
+        recent = recent[1:]
+    for count in recent:
         if not count:
             break
         current += 1
