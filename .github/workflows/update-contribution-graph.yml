@@ -1,13 +1,8 @@
-name: Build Neon Contribution Graph
+name: Update contribution graph
 
 on:
   push:
-    branches:
-      - main
-    paths:
-      - "scripts/build_contribution_graph.py"
-      - ".github/workflows/update-contribution-graph.yml"
-  pull_request:
+    branches: [main]
     paths:
       - "scripts/build_contribution_graph.py"
       - ".github/workflows/update-contribution-graph.yml"
@@ -19,76 +14,60 @@ permissions:
   contents: write
 
 concurrency:
-  group: profile-data-refresh
+  group: profile-artwork-refresh
   cancel-in-progress: false
 
 jobs:
   render:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
-      - name: Check out profile repository
+      - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+          cache: pip
 
-      - name: Fetch GitHub contribution calendar and render neon SVG
+      - name: Render contribution SVG
         env:
-          GITHUB_TOKEN: \${{ secrets.PROFILE_STATS_TOKEN || github.token }}
+          GITHUB_TOKEN: ${{ secrets.PROFILE_STATS_TOKEN || github.token }}
           GITHUB_PROFILE_LOGIN: Kaelith69
         run: python scripts/build_contribution_graph.py
 
-      - name: Validate generated contribution graph
+      - name: Validate SVG
         run: |
           python - <<'PY'
+          import datetime as dt
           import xml.etree.ElementTree as ET
-          from datetime import date
           from pathlib import Path
 
           path = Path("assets/contributions-neon.svg")
           root = ET.parse(path).getroot()
-          if root.tag.rsplit("}", 1)[-1] != "svg":
-              raise SystemExit("Generated contribution artwork is not SVG.")
-
-          days = root.findall(".//*[@data-date]")
-          if len(days) != 365:
-              raise SystemExit(f"Expected 365 contribution days, found {len(days)}.")
-
-          dates = [date.fromisoformat(day.attrib["data-date"]) for day in days]
-          if dates != sorted(dates) or len(set(dates)) != 365:
-              raise SystemExit("Contribution dates are missing, duplicated or out of order.")
-
-          total = int(root.attrib["data-total-contributions"])
-          daily_total = sum(int(day.attrib["data-count"]) for day in days)
-          if daily_total != total:
-              raise SystemExit(
-                  f"Daily total ({daily_total}) does not match displayed total ({total})."
-              )
-
-          if root.attrib.get("viewBox") != "0 0 860 226":
-              raise SystemExit(f"Unexpected contribution graph viewBox: {root.attrib.get('viewBox')!r}.")
-
-          text_content = " ".join(node.text or "" for node in root.findall(".//{http://www.w3.org/2000/svg}text"))
-          if "{start." in text_content or "{end." in text_content:
-              raise SystemExit("Footer contains unevaluated date placeholders.")
-
-          print(
-              f"Validated {path}: {len(days)} days, {total:,} contributions, "
-              f"{path.stat().st_size:,} bytes."
+          cells = root.findall(".//*[@data-date]")
+          assert root.attrib["viewBox"] == "0 0 860 154"
+          assert len(cells) == 365, len(cells)
+          dates = [dt.date.fromisoformat(cell.attrib["data-date"]) for cell in cells]
+          assert dates == sorted(dates) and len(set(dates)) == 365
+          assert sum(int(cell.attrib["data-count"]) for cell in cells) == int(
+              root.attrib["data-total-contributions"]
           )
+          assert not root.findall(".//{http://www.w3.org/2000/svg}text")
+          print(f"Validated {len(cells)} daily cells.")
           PY
 
-      - name: Commit updated neon contribution graph
-        if: github.event_name != 'pull_request'
+      - name: Commit graph
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add assets/contributions-neon.svg
           if git diff --cached --quiet; then
-            echo "Contribution graph is already current."
+            echo "Graph is already current."
           else
-            git commit -m "Refresh neon contribution graph"
+            git commit -m "Refresh contribution graph"
             git push origin HEAD:main
           fi

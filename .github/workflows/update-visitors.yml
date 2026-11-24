@@ -1,4 +1,4 @@
-name: Refresh cosmic visitor count
+name: Refresh profile visitor count
 
 on:
   schedule:
@@ -9,22 +9,30 @@ permissions:
   contents: write
 
 concurrency:
-  group: profile-data-refresh
+  group: profile-artwork-refresh
   cancel-in-progress: false
 
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    timeout-minutes: 3
     steps:
-      - name: Check out profile repository
+      - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: main
 
-      - name: Refresh the count embedded in the visitor SVG
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Refresh visitor count
         env:
           VISITOR_BADGE_URL: https://komarev.com/ghpvc/?username=Kaelith69&style=flat&label=VISITS&color=6C3D87
-        run: python3 scripts/update_visitors.py
+        run: python scripts/update_visitors.py
 
-      - name: Commit updated visitor artwork
+      - name: Commit visitor artwork
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -32,6 +40,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "Visitor count is already current."
           else
-            git commit -m "Refresh cosmic profile visitor count"
-            git push
+            git commit -m "Refresh visitor count"
+            git push origin HEAD:main
           fi
