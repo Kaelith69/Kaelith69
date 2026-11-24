@@ -32,41 +32,46 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Render contribution SVG
+      - name: Render contribution SVGs
         env:
-          GITHUB_TOKEN: ${{ secrets.PROFILE_STATS_TOKEN || github.token }}
+          GITHUB_TOKEN: \${{ secrets.PROFILE_STATS_TOKEN || github.token }}
           GITHUB_PROFILE_LOGIN: Kaelith69
         run: python scripts/build_contribution_graph.py
 
-      - name: Validate SVG
+      - name: Validate generated artwork
         run: |
           python - <<'PY'
           import datetime as dt
           import xml.etree.ElementTree as ET
           from pathlib import Path
 
-          path = Path("assets/contributions-neon.svg")
-          root = ET.parse(path).getroot()
-          cells = root.findall(".//*[@data-date]")
-          assert root.attrib["viewBox"] == "0 0 860 154"
+          graph = ET.parse(Path("assets/contributions-neon.svg")).getroot()
+          cells = graph.findall(".//*[@data-date]")
+          assert graph.attrib["viewBox"] == "0 0 860 190"
           assert len(cells) == 365, len(cells)
           dates = [dt.date.fromisoformat(cell.attrib["data-date"]) for cell in cells]
           assert dates == sorted(dates) and len(set(dates)) == 365
           assert sum(int(cell.attrib["data-count"]) for cell in cells) == int(
-              root.attrib["data-total-contributions"]
+              graph.attrib["data-total-contributions"]
           )
-          assert not root.findall(".//{http://www.w3.org/2000/svg}text")
-          print(f"Validated {len(cells)} daily cells.")
+
+          summary = ET.parse(Path("assets/streak.svg")).getroot()
+          assert summary.attrib["data-total"] == graph.attrib["data-total-contributions"]
+          assert summary.attrib["data-updated"] == graph.attrib["data-end"]
+          assert int(summary.attrib["data-longest-streak"]) >= int(
+              summary.attrib["data-current-streak"]
+          )
+          print("Validated 365 contribution cells and synchronized activity metrics.")
           PY
 
-      - name: Commit graph
+      - name: Commit profile activity
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/contributions-neon.svg
+          git add assets/contributions-neon.svg assets/streak.svg
           if git diff --cached --quiet; then
-            echo "Graph is already current."
+            echo "Profile activity is already current."
           else
-            git commit -m "Refresh contribution graph"
+            git commit -m "Refresh profile activity artwork"
             git push origin HEAD:main
           fi
