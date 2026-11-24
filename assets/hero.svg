@@ -1,42 +1,60 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="860" height="216" viewBox="0 0 860 216" role="img" aria-labelledby="hero-title hero-desc">
-<title id="hero-title">Kaelith69</title>
-<desc id="hero-desc">Neo brutalist identity banner with oversized typography and a compact geometric orbital emblem.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="216" viewBox="0 0 860 216" role="img" aria-labelledby="title desc">
+<title id="title">Kaelith69</title>
+<desc id="desc">Electric blue poster style identity banner with bold geometric typography, overlapping colour fields and a continuously spinning vinyl record.</desc>
 <defs>
-  <pattern id="grain-dots" width="16" height="16" patternUnits="userSpaceOnUse">
-    <circle cx="2" cy="2" r="1" fill="#D8DCE8" opacity=".22"/>
+  <linearGradient id="blueField" x1="0" y1="0" x2="1" y2="1">
+    <stop stop-color="#102B91"/>
+    <stop offset=".58" stop-color="#1746D8"/>
+    <stop offset="1" stop-color="#2457FF"/>
+  </linearGradient>
+  <pattern id="posterDots" width="12" height="12" patternUnits="userSpaceOnUse">
+    <circle cx="2" cy="2" r="1" fill="#DCE8FF" opacity=".48"/>
   </pattern>
-  <pattern id="lime-hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-    <path d="M0 0V8" stroke="#080D1D" stroke-width="2" opacity=".2"/>
-  </pattern>
+  <clipPath id="posterClip"><rect width="860" height="216"/></clipPath>
+  <clipPath id="recordClip"><circle cx="714" cy="127" r="91"/></clipPath>
 </defs>
-<rect width="860" height="216" fill="#080D1D"/>
-<path d="M0 0H860V9H0Z" fill="#C6F432"/>
-<path d="M0 207H860V216H0Z" fill="#A855F7"/>
-<path d="M0 9H574L548 207H0Z" fill="#101A34"/>
-<path d="M0 9H574L548 207H0Z" fill="url(#grain-dots)"/>
-<path d="M24 28H536V188H24Z" fill="none" stroke="#D8DCE8" stroke-width="1.5" opacity=".48"/>
-<path d="M24 28H36V188H24Z" fill="#35D9E6"/>
-<path d="M48 48H70V168H48Z" fill="#C6F432"/>
-<path d="M48 48H70V168H48Z" fill="url(#lime-hatch)"/>
-<text x="91" y="137" fill="#D8DCE8" font-family="Impact,'Arial Black',Arial,sans-serif" font-size="72" font-weight="900" letter-spacing="-4">KAELITH69</text>
-<path d="M92 157H444" stroke="#35D9E6" stroke-width="5"/>
-<path d="M92 169H280" stroke="#A855F7" stroke-width="3"/>
-<path d="M570 9L590 9L550 207H530Z" fill="#35D9E6"/>
-<path d="M606 28H836V188H606Z" fill="#C6F432"/>
-<path d="M618 40H824V176H618Z" fill="#101A34"/>
-<path d="M618 40H824V176H618Z" fill="url(#grain-dots)"/>
-<path d="M606 28H650V40H618V72H606Z" fill="#A855F7"/>
-<path d="M792 176H824V144H836V188H792Z" fill="#35D9E6"/>
-<g transform="translate(721 108)">
-  <circle r="65" fill="none" stroke="#080D1D" stroke-width="19"/>
-  <circle r="65" fill="none" stroke="#A855F7" stroke-width="11" stroke-dasharray="74 22 34 18 90 170" transform="rotate(-24)"/>
-  <circle r="43" fill="none" stroke="#35D9E6" stroke-width="6" stroke-dasharray="92 18 42 118" transform="rotate(32)"/>
-  <path d="M-7 -75L13 -24L66 -9L20 15L8 70L-17 22L-69 7L-20 -17Z" fill="#C6F432" stroke="#080D1D" stroke-width="5" stroke-linejoin="miter"/>
-  <path d="M-7 -75L13 -24L66 -9L20 15L8 70L-17 22L-69 7L-20 -17Z" fill="url(#lime-hatch)"/>
-  <circle r="14" fill="#101A34" stroke="#D8DCE8" stroke-width="4"/>
-  <circle r="4" fill="#35D9E6"/>
-  <path d="M-88 -72H-68M-78 -82V-62M73 70H93M83 60V80" stroke="#D8DCE8" stroke-width="3"/>
+<g clip-path="url(#posterClip)">
+  <rect width="860" height="216" fill="url(#blueField)"/>
+  <path d="M0 0H860V13H0Z" fill="#F0F3FF"/>
+  <path d="M0 15H860V146H0Z" fill="#102B91" opacity=".62"/>
+  <path d="M0 146H860V216H0Z" fill="#2457FF"/>
+  <path d="M0 146H860V216H0Z" fill="url(#posterDots)" opacity=".55"/>
+  <path d="M0 0H520L470 216H0Z" fill="#102B91" opacity=".3"/>
+  <circle cx="696" cy="54" r="53" fill="#D7F51D"/>
+  <circle cx="657" cy="85" r="60" fill="#08D6D0" opacity=".92"/>
+  <path d="M460 216L565 107L678 216Z" fill="#D3266E" opacity=".75"/>
+  <circle cx="714" cy="127" r="96" fill="#1643D8" stroke="#0B2480" stroke-width="5"/>
+  <g clip-path="url(#recordClip)">
+    <g>
+      <circle cx="714" cy="127" r="91" fill="#1238B5"/>
+      <circle cx="714" cy="127" r="86" fill="none" stroke="#356BFF" stroke-width="2"/>
+      <circle cx="714" cy="127" r="78" fill="none" stroke="#071D77" stroke-width="1.5"/>
+      <circle cx="714" cy="127" r="72" fill="none" stroke="#4677FF" stroke-width="1"/>
+      <circle cx="714" cy="127" r="65" fill="none" stroke="#071D77" stroke-width="1.4"/>
+      <circle cx="714" cy="127" r="58" fill="none" stroke="#4677FF" stroke-width="1"/>
+      <circle cx="714" cy="127" r="50" fill="none" stroke="#071D77" stroke-width="1.3"/>
+      <circle cx="714" cy="127" r="43" fill="none" stroke="#4677FF" stroke-width="1"/>
+      <path d="M714 36A91 91 0 0 1 805 127L714 127Z" fill="#FFFFFF" opacity=".07"/>
+      <path d="M714 127L798 92A91 91 0 0 1 768 195Z" fill="#08D6D0" opacity=".13"/>
+      <circle cx="714" cy="127" r="28" fill="#08D6D0" stroke="#F0F3FF" stroke-width="2"/>
+      <circle cx="714" cy="127" r="9" fill="#102B91" stroke="#F0F3FF" stroke-width="2"/>
+      <circle cx="714" cy="127" r="3" fill="#D7F51D"/>
+      <path d="M714 37L722 49L714 61L706 49Z" fill="#D7F51D"/>
+      <path d="M804 127L792 135L780 127L792 119Z" fill="#F0F3FF"/>
+      <path d="M714 217L706 205L714 193L722 205Z" fill="#08D6D0"/>
+      <path d="M623 127L635 119L647 127L635 135Z" fill="#F0F3FF"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 714 127" to="360 714 127" dur="12s" repeatCount="indefinite"/>
+    </g>
+  </g>
+  <circle cx="714" cy="127" r="96" fill="none" stroke="#D7F51D" stroke-width="4"/>
+  <path d="M611 27L625 27L625 41L611 41Z" fill="#F0F3FF"/>
+  <path d="M814 180H860V194H814Z" fill="#D3266E"/>
+  <path d="M24 24H836V192" fill="none" stroke="#F0F3FF" stroke-width="1.2" opacity=".35"/>
+  <path d="M28 29V187" stroke="#08D6D0" stroke-width="7"/>
+  <text x="51" y="132" fill="#F4F5FF" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="68" font-weight="900" letter-spacing="-4.5">KAELITH69</text>
+  <path d="M53 148H483" stroke="#08D6D0" stroke-width="4"/>
+  <path d="M53 157H291" stroke="#D3266E" stroke-width="2.5"/>
+  <path d="M25 24H43V42Z" fill="#D7F51D"/>
+  <path d="M824 174L842 192H824Z" fill="#08D6D0"/>
 </g>
-<path d="M842 28H860V188H842Z" fill="#A855F7"/>
-<path d="M24 28L36 28L36 40Z" fill="#C6F432"/>
 </svg>
