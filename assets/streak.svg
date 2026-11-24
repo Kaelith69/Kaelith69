@@ -1,36 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="860" height="116" viewBox="0 0 860 116" role="img" aria-label="Contribution summary: 906 contributions, longest streak 10 days, current streak 1 day" data-total="906" data-longest-streak="10" data-current-streak="1" data-updated="2026-11-24">
 <defs>
-  <pattern id="streak-dots" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.1" fill="#D8DCE8" opacity=".32"/></pattern>
-  <pattern id="streak-lines" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0V8" stroke="#080D1D" stroke-width="2" opacity=".25"/></pattern>
-  <clipPath id="streak-frame"><rect width="860" height="116"/></clipPath>
+  <pattern id="streak-halftone" width="10" height="10" patternUnits="userSpaceOnUse">
+    <circle cx="2" cy="2" r="1" fill="#F0F3FF" opacity=".42"/>
+  </pattern>
+  <pattern id="streak-lines" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <path d="M0 0V7" stroke="#071D77" stroke-width="2" opacity=".34"/>
+  </pattern>
+  <clipPath id="streak-clip"><rect width="860" height="116"/></clipPath>
 </defs>
-<g clip-path="url(#streak-frame)">
-  <rect width="860" height="116" fill="#080D1D"/>
-  <path d="M0 0H860V7H0Z" fill="#C6F432"/>
-  <path d="M0 109H860V116H0Z" fill="#A855F7"/>
-  <path d="M12 16H283L271 100H12Z" fill="#C6F432" stroke="#D8DCE8" stroke-width="2"/>
-  <path d="M22 25H273L263 91H22Z" fill="#101A34" stroke="#080D1D" stroke-width="3"/>
-  <path d="M22 25H91V91H22Z" fill="url(#streak-dots)"/>
-  <path d="M36 31L48 31L48 85L36 85Z" fill="#35D9E6"/>
-  <text x="61" y="76" fill="#D8DCE8" font-family="Impact,'Arial Black',Arial,sans-serif" font-size="49" font-weight="900" letter-spacing="-2">906</text>
-  <text x="169" y="73" fill="#C6F432" font-family="Arial,sans-serif" font-size="10" font-weight="900" letter-spacing="1.2">CONTRIBUTIONS</text>
-  <path d="M286 16L559 16L575 100H276Z" fill="#A855F7" stroke="#D8DCE8" stroke-width="2"/>
-  <path d="M298 25H550L563 91H289Z" fill="#101A34" stroke="#080D1D" stroke-width="3"/>
-  <path d="M298 25H550L563 91H289Z" fill="url(#streak-lines)"/>
-  <path d="M313 30L330 30L330 86L313 86Z" fill="#A855F7"/>
-  <text x="344" y="76" fill="#D8DCE8" font-family="Impact,'Arial Black',Arial,sans-serif" font-size="49" font-weight="900">10</text>
-  <text x="414" y="73" fill="#35D9E6" font-family="Arial,sans-serif" font-size="10" font-weight="900" letter-spacing="1.2">BEST STREAK</text>
-  <path d="M579 16H848V100H594Z" fill="#35D9E6" stroke="#D8DCE8" stroke-width="2"/>
-  <path d="M591 25H837V91H606Z" fill="#101A34" stroke="#080D1D" stroke-width="3"/>
-  <path d="M786 25H837V91H786Z" fill="url(#streak-dots)"/>
-  <path d="M610 30L627 30L627 86L610 86Z" fill="#C6F432"/>
-  <text x="642" y="76" fill="#D8DCE8" font-family="Impact,'Arial Black',Arial,sans-serif" font-size="49" font-weight="900">1</text>
-  <text x="686" y="73" fill="#C6F432" font-family="Arial,sans-serif" font-size="10" font-weight="900" letter-spacing="1.05">CURRENT STREAK</text>
-  <path d="M0 16H8V100H0Z" fill="#A855F7"/>
-  <path d="M850 16H860V100H850Z" fill="#C6F432"/>
-  <path d="M267 9L279 9L273 20Z" fill="#35D9E6"/>
-  <path d="M568 96L580 96L574 107Z" fill="#C6F432"/>
-  <path d="M833 9L845 9L839 20Z" fill="#A855F7"/>
+<g clip-path="url(#streak-clip)">
+  <rect width="860" height="116" fill="#102B91"/>
+  <path d="M0 0H860V6H0Z" fill="#D7F51D"/>
+  <path d="M0 110H860V116H0Z" fill="#D3266E"/>
+  <path d="M0 7H860V109H0Z" fill="#1746D8"/>
+
+  <path d="M12 17H278L268 99H12Z" fill="#D7F51D"/>
+  <path d="M19 23H269L260 93H19Z" fill="#0B247F"/>
+  <path d="M19 23H85V93H19Z" fill="url(#streak-halftone)"/>
+  <path d="M29 31H43V85H29Z" fill="#08D6D0"/>
+  <text x="54" y="76" fill="#F4F5FF" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="48" font-weight="900" letter-spacing="-2.4">906</text>
+  <text x="157" y="70" fill="#D7F51D" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="900" letter-spacing="1.1">CONTRIBUTIONS</text>
+  <path d="M157 79H245" stroke="#08D6D0" stroke-width="2.5"/>
+
+  <path d="M291 17H568L580 99H280Z" fill="#D3266E"/>
+  <path d="M300 23H558L568 93H290Z" fill="#0B247F"/>
+  <path d="M300 23H558L568 93H290Z" fill="url(#streak-lines)"/>
+  <path d="M310 31H324V85H310Z" fill="#A855F7"/>
+  <text x="338" y="76" fill="#F4F5FF" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="48" font-weight="900" letter-spacing="-2">10</text>
+  <text x="411" y="70" fill="#08D6D0" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="900" letter-spacing="1.1">BEST STREAK</text>
+  <path d="M411 79H497" stroke="#D7F51D" stroke-width="2.5"/>
+
+  <path d="M591 17H848V99H603Z" fill="#08D6D0"/>
+  <path d="M601 23H840V93H612Z" fill="#0B247F"/>
+  <path d="M763 23H840V93H763Z" fill="url(#streak-halftone)"/>
+  <path d="M620 31H634V85H620Z" fill="#D7F51D"/>
+  <text x="648" y="76" fill="#F4F5FF" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="48" font-weight="900">1</text>
+  <text x="697" y="70" fill="#D7F51D" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="900" letter-spacing="1">CURRENT STREAK</text>
+  <path d="M697 79H803" stroke="#D3266E" stroke-width="2.5"/>
+
+  <path d="M0 17H7V99H0Z" fill="#A855F7"/>
+  <path d="M853 17H860V99H853Z" fill="#D7F51D"/>
+  <path d="M271 8L284 8L277 21Z" fill="#08D6D0"/>
+  <path d="M575 95L588 95L581 108Z" fill="#D7F51D"/>
+  <circle cx="845" cy="12" r="3" fill="#D3266E"/>
+  <circle cx="15" cy="104" r="3" fill="#08D6D0"/>
 </g>
 </svg>
