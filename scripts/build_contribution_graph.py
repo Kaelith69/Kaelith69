@@ -179,12 +179,13 @@ def render_svg(
         row = (date.weekday() + 1) % 7
         x, y = left + column * pitch, top + row * pitch
         color = LEVEL_COLORS[level]
+        filter_attr = 'filter="url(#cell-glow)"' if count and level == "FOURTH_QUARTILE" else ""
         # SVG title keeps per-day detail accessible without adding visible labels.
         parts.append(
             f'<g data-date="{date.isoformat()}" data-count="{count}" '
             f'data-level="{level}"><title>{date.isoformat()}: {count} contributions</title>'
             f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="0.7" '
-            f'fill="{color}" stroke="#D8DCE8" stroke-opacity=".12" stroke-width=".45" '
+            f'{filter_attr}/>'
             f'{"filter=\"url(#cell-glow)\"" if count and level == "FOURTH_QUARTILE" else ""}/>'
             f'</g>'
         )
