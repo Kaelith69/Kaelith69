@@ -34,7 +34,7 @@ jobs:
 
       - name: Render contribution SVGs
         env:
-          GITHUB_TOKEN: \${{ secrets.PROFILE_STATS_TOKEN || github.token }}
+          GITHUB_TOKEN: ${{ secrets.PROFILE_STATS_TOKEN || github.token }}
           GITHUB_PROFILE_LOGIN: Kaelith69
         run: python scripts/build_contribution_graph.py
 
