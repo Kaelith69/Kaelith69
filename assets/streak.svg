@@ -1,24 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="860" height="132" viewBox="0 0 860 132"
- role="img" aria-label="Contribution summary: 902 contributions in 365 days, longest streak 10 days, current streak 1 day"
- data-total="902" data-longest-streak="10" data-current-streak="1" data-updated="2026-11-24">
-<rect width="860" height="132" fill="#E9E3D6"/>
-<path d="M0 0H860V132H0Z" fill="none" stroke="#B8B1A3"/>
-<rect x="0" y="0" width="8" height="132" fill="#20282D"/>
-<text x="34" y="23" fill="#6F756F" font-family="'Courier New',monospace" font-size="9" letter-spacing="2">ACTIVITY / ROLLING YEAR</text>
-<text x="826" y="23" fill="#6F756F" text-anchor="end" font-family="'Courier New',monospace" font-size="9" letter-spacing="1">UPDATED 24 NOV 2026</text>
-<path d="M34 32H826" stroke="#B8B1A3"/>
-<g>
- <text x="36" y="88" fill="#20282D" font-family="Georgia,'Times New Roman',serif" font-size="43">902</text>
- <text x="38" y="111" fill="#6F756F" font-family="'Courier New',monospace" font-size="9" letter-spacing="1.2">CONTRIBUTIONS</text>
- <path d="M282 43V116" stroke="#B8B1A3"/>
- <rect x="282" y="43" width="3" height="73" fill="#C7553D"/>
- <text x="316" y="88" fill="#20282D" font-family="Georgia,'Times New Roman',serif" font-size="43">10</text>
- <text x="318" y="111" fill="#6F756F" font-family="'Courier New',monospace" font-size="9" letter-spacing="1.2">LONGEST RUN / DAYS</text>
- <path d="M560 43V116" stroke="#B8B1A3"/>
- <rect x="560" y="43" width="3" height="73" fill="#B8C36A"/>
- <text x="594" y="88" fill="#20282D" font-family="Georgia,'Times New Roman',serif" font-size="43">1</text>
- <text x="596" y="111" fill="#6F756F" font-family="'Courier New',monospace" font-size="9" letter-spacing="1.2">CURRENT RUN / DAYS</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="132" viewBox="0 0 860 132" role="img" aria-label="Contribution summary: 906 contributions in 365 days, longest streak 10 days, current streak 1 day" data-total="906" data-longest-streak="10" data-current-streak="1" data-updated="2026-11-24">
+<defs>
+  <linearGradient id="streak-bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#080D1D"/><stop offset="1" stop-color="#17213E"/></linearGradient>
+  <radialGradient id="streak-nebula" cx="78%" cy="50%" r="55%"><stop stop-color="#6C3D87" stop-opacity=".25"/><stop offset="1" stop-color="#55366F" stop-opacity="0"/></radialGradient>
+  <clipPath id="streak-clip"><rect width="860" height="132" rx="16"/></clipPath>
+</defs>
+<g clip-path="url(#streak-clip)">
+ <rect width="860" height="132" fill="url(#streak-bg)"/>
+ <rect width="860" height="132" fill="url(#streak-nebula)"/>
+ <path d="M0 6H860" stroke="#55C9C0" stroke-width="2"/>
+ <path d="M28 32H832" stroke="#8DA6BC" stroke-opacity=".32"/>
+ <text x="30" y="23" fill="#8DA6BC" font-family="'Courier New',monospace" font-size="9" letter-spacing="1.8">ACTIVITY LOG / 365 DAYS</text>
+ <text x="830" y="23" text-anchor="end" fill="#8DA6BC" font-family="'Courier New',monospace" font-size="9" letter-spacing="1.2">UPDATED 24 NOV 2026</text>
+ <g>
+  <path d="M284 45V112M565 45V112" stroke="#8DA6BC" stroke-opacity=".3"/>
+  <path d="M30 44H830" stroke="#8DA6BC" stroke-opacity=".12"/>
+  <rect x="30" y="45" width="3" height="66" fill="#55C9C0"/>
+  <text x="48" y="89" fill="#FFF0D1" font-family="Georgia,'Times New Roman',serif" font-size="42">906</text>
+  <text x="50" y="106" fill="#8DA6BC" font-family="'Courier New',monospace" font-size="9" letter-spacing="1.2">CONTRIBUTIONS</text>
+  <rect x="309" y="45" width="3" height="66" fill="#F4C653"/>
+  <text x="327" y="89" fill="#FFF0D1" font-family="Georgia,'Times New Roman',serif" font-size="42">10</text>
+  <text x="329" y="106" fill="#8DA6BC" font-family="'Courier New',monospace" font-size="9" letter-spacing="1.2">LONGEST STREAK / DAYS</text>
+  <rect x="590" y="45" width="3" height="66" fill="#A855F7"/>
+  <text x="608" y="89" fill="#FFF0D1" font-family="Georgia,'Times New Roman',serif" font-size="42">1</text>
+  <text x="610" y="106" fill="#8DA6BC" font-family="'Courier New',monospace" font-size="9" letter-spacing="1.2">CURRENT STREAK / DAYS</text>
+ </g>
+ <path d="M830 45V111" stroke="#55C9C0" stroke-width="2"/>
 </g>
-<path d="M826 43V116" stroke="#627F95" stroke-width="3"/>
 </svg>
