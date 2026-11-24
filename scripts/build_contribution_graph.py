@@ -229,9 +229,10 @@ def render_summary(
     end: dt.date, total: int, longest: int, current: int
 ) -> str:
     width, height = 860, 132
+    current_unit = "day" if current == 1 else "days"
     return f'''<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="{SVG_NS}" width="{width}" height="{height}" viewBox="0 0 {width} {height}"
- role="img" aria-label="Contribution summary: {total} contributions in 365 days, longest streak {longest} days, current streak {current} days"
+ role="img" aria-label="Contribution summary: {total} contributions in 365 days, longest streak {longest} days, current streak {current} {current_unit}"
  data-total="{total}" data-longest-streak="{longest}" data-current-streak="{current}" data-updated="{end.isoformat()}">
 <rect width="{width}" height="{height}" fill="{PAPER}"/>
 <path d="M0 0H860V132H0Z" fill="none" stroke="#B8B1A3"/>
