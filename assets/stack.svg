@@ -22,7 +22,6 @@
 </g>
 <path d="M715 46L824 46M715 122L824 122" stroke="#59636A"/>
 <path d="M715 46V122" stroke="#C7553D" stroke-width="2"/>
-<text x="732" y="70" fill="#B9C0B8" font-family="'Courier New',monospace" font-size="8" letter-spacing="1">LEARNING</text>
-<text x="732" y="89" fill="#E9E3D6" font-family="Georgia,'Times New Roman',serif" font-size="15">Always</text>
-<text x="732" y="106" fill="#E9E3D6" font-family="Georgia,'Times New Roman',serif" font-size="15">in progress.</text>
+<text x="732" y="89" fill="#E9E3D6" font-family="Georgia,'Times New Roman',serif" font-size="31">10</text>
+<text x="733" y="108" fill="#B9C0B8" font-family="'Courier New',monospace" font-size="8" letter-spacing="1.2">TOOLS</text>
 </svg>
