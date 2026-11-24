@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the profile's paper and ink contribution calendar and activity summary."""
+"""Render a minimal Neo Rogue contribution calendar from GitHub GraphQL."""
 
 from __future__ import annotations
 
@@ -15,8 +15,7 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
-GRAPH_OUTPUT = ROOT / "assets" / "contributions-neon.svg"
-SUMMARY_OUTPUT = ROOT / "assets" / "streak.svg"
+OUTPUT = ROOT / "assets" / "contributions-neon.svg"
 LOGIN = os.environ.get("GITHUB_PROFILE_LOGIN", "Kaelith69")
 API_URL = os.environ.get("GITHUB_GRAPHQL_URL", "https://api.github.com/graphql")
 SVG_NS = "http://www.w3.org/2000/svg"
@@ -40,19 +39,12 @@ query ContributionCalendar($login: String!, $from: DateTime!, $to: DateTime!) {
 }
 """
 
-PAPER = "#E9E3D6"
-INK = "#20282D"
-MUTED = "#6F756F"
-RUST = "#C7553D"
-SAGE = "#B8C36A"
-SLATE = "#627F95"
-VIOLET = "#766C8B"
 LEVEL_COLORS = {
-    "NONE": "#D8D1C2",
-    "FIRST_QUARTILE": SAGE,
-    "SECOND_QUARTILE": SLATE,
-    "THIRD_QUARTILE": VIOLET,
-    "FOURTH_QUARTILE": INK,
+    "NONE": "#17213E",
+    "FIRST_QUARTILE": "#6B3FA0",
+    "SECOND_QUARTILE": "#A855F7",
+    "THIRD_QUARTILE": "#35D9E6",
+    "FOURTH_QUARTILE": "#C6F432",
 }
 
 
@@ -82,7 +74,7 @@ def fetch_calendar(start: dt.date, end: dt.date) -> dict[str, Any]:
             "Authorization": f"Bearer {token}",
             "Accept": "application/vnd.github+json",
             "Content-Type": "application/json",
-            "User-Agent": "Kaelith69-profile-field-notes/4.0",
+            "User-Agent": "Kaelith69-profile-contribution-graph/3.0",
         },
         method="POST",
     )
@@ -136,63 +128,54 @@ def collect_days(
     return days
 
 
-def streak_metrics(days: dict[dt.date, tuple[int, str]]) -> tuple[int, int, int]:
-    ordered = sorted(days)
-    counts = [days[date][0] for date in ordered]
-    total = sum(counts)
-    longest = current = run = 0
-    for count in counts:
-        if count:
-            run += 1
-            longest = max(longest, run)
-        else:
-            run = 0
-    recent = list(reversed(counts))
-    # A GitHub streak remains active through the current UTC day when
-    # yesterday had contributions but today has not yet been updated.
-    if recent and recent[0] == 0:
-        recent = recent[1:]
-    for count in recent:
-        if not count:
-            break
-        current += 1
-    return total, longest, current
-
-
-def render_graph(
+def render_svg(
     start: dt.date,
     end: dt.date,
     total: int,
     days: dict[dt.date, tuple[int, str]],
 ) -> str:
-    width, height = 860, 190
-    left, top, pitch, cell = 36, 65, 14, 9
+    width, height = 860, 154
+    left, top, pitch, cell = 35, 24, 15, 10
     first_sunday = start - dt.timedelta(days=(start.weekday() + 1) % 7)
     columns = ((end - first_sunday).days // 7) + 1
     if columns > 53:
         raise RuntimeError(f"Unexpected calendar width: {columns} columns.")
 
     parts = [f'''<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="{SVG_NS}" width="{width}" height="{height}" viewBox="0 0 {width} {height}"
- role="img" aria-label="GitHub contribution calendar for the latest 365 days"
+<svg xmlns="{SVG_NS}" width="{width}" height="{height}"
+ viewBox="0 0 {width} {height}" role="img"
+ aria-label="365 day GitHub contribution calendar"
  data-total-contributions="{total}" data-start="{start.isoformat()}" data-end="{end.isoformat()}">
-<rect width="{width}" height="{height}" fill="{PAPER}"/>
-<rect x="0" y="0" width="8" height="{height}" fill="{RUST}"/>
-<text x="36" y="25" fill="{INK}" font-family="'Courier New',monospace" font-size="10" letter-spacing="2">CONTRIBUTION HISTORY</text>
-<text x="824" y="25" fill="{MUTED}" text-anchor="end" font-family="'Courier New',monospace" font-size="9" letter-spacing="1.4">365 DAYS / {end.strftime("%d %b %Y").upper()}</text>
-<text x="824" y="47" fill="{INK}" text-anchor="end" font-family="Georgia,'Times New Roman',serif" font-size="17">{total:,} contributions</text>
-<path d="M36 36H824" stroke="#B8B1A3" stroke-width="1"/>
-<path d="M36 36H148" stroke="{RUST}" stroke-width="2.5"/>
-<g id="months" fill="{MUTED}" font-family="'Courier New',monospace" font-size="8" letter-spacing=".6">''']
-
-    month_positions: list[tuple[int, str]] = []
-    for date in sorted(days):
-        if date.day == 1 or date == start:
-            column = (date - first_sunday).days // 7
-            month_positions.append((left + column * pitch, date.strftime("%b").upper()))
-    for x, label in month_positions:
-        parts.append(f'<text x="{x}" y="56">{label}</text>')
-    parts.append("</g><g id=\"calendar\">")
+<defs>
+ <linearGradient id="surface" x1="0" y1="0" x2="1" y2="1">
+  <stop stop-color="#101A34"/><stop offset="1" stop-color="#080D1D"/>
+ </linearGradient>
+ <linearGradient id="frame" x1="0" y1="0" x2="1" y2="0">
+  <stop stop-color="#A855F7" stop-opacity=".8"/>
+  <stop offset=".52" stop-color="#35D9E6" stop-opacity=".65"/>
+  <stop offset="1" stop-color="#C6F432" stop-opacity=".8"/>
+ </linearGradient>
+ <linearGradient id="ambient" x1="0" y1="0" x2="1" y2="0">
+  <stop stop-color="#A855F7" stop-opacity=".08"/>
+  <stop offset=".55" stop-color="#35D9E6" stop-opacity=".035"/>
+  <stop offset="1" stop-color="#C6F432" stop-opacity=".06"/>
+ </linearGradient>
+ <filter id="peak-glow" x="-80%" y="-80%" width="260%" height="260%">
+  <feGaussianBlur stdDeviation="1.4" result="blur"/>
+  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+ </filter>
+ <pattern id="micro-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+  <path d="M20 0H0V20" fill="none" stroke="#D8DCE8" stroke-opacity=".025" stroke-width=".6"/>
+ </pattern>
+</defs>
+<rect width="860" height="180" fill="url(#surface)"/>
+<rect width="860" height="180" fill="url(#ambient)"/>
+<rect width="860" height="180" fill="url(#micro-grid)"/>
+<path d="M18 10H842V144H18Z" fill="none" stroke="#D8DCE8" stroke-opacity=".12"/>
+<path d="M18 10H92M768 10H842M18 144H92M768 144H842" fill="none" stroke="url(#frame)" stroke-width="1.5"/>
+<path d="M18 22V10H30M830 10H842V22M18 132V144H30M830 144H842V132" fill="none" stroke="#35D9E6" stroke-opacity=".5"/>
+<path d="M24 77H29M831 77H836" stroke="#A855F7" stroke-width="1.5" stroke-opacity=".75"/>
+<g id="calendar">''']
 
     for offset in range((end - start).days + 1):
         date = start + dt.timedelta(days=offset)
@@ -201,122 +184,62 @@ def render_graph(
         row = (date.weekday() + 1) % 7
         x, y = left + column * pitch, top + row * pitch
         color = LEVEL_COLORS[level]
+        filter_attr = ' filter="url(#peak-glow)"' if level == "FOURTH_QUARTILE" and count else ""
+        latest_attr = ' stroke="#D8DCE8" stroke-width="1.2"' if date == end else ""
         title = f"{date.isoformat()}: {count} contribution" + ("" if count == 1 else "s")
-        stroke = f' stroke="{INK}" stroke-width=".8"' if date == end else ""
         parts.append(
             f'<g data-date="{date.isoformat()}" data-count="{count}" data-level="{level}">'
             f'<title>{title}</title>'
-            f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" '
-            f'fill="{color}"{stroke}/></g>'
+            f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="1" '
+            f'fill="{color}"{filter_attr}{latest_attr}/>'
+            f'</g>'
         )
 
-    parts.append(f'''</g>
-<path d="M36 174H824" stroke="#B8B1A3" stroke-width=".8"/>
-<text x="690" y="185" fill="{MUTED}" font-family="'Courier New',monospace" font-size="8">LESS</text>''')
-    legend_x = 727
-    for index, color in enumerate(LEVEL_COLORS.values()):
-        parts.append(
-            f'<rect x="{legend_x + index * 15}" y="178" width="9" height="7" fill="{color}"/>'
-        )
-    parts.append(
-        f'<text x="824" y="185" text-anchor="end" fill="{MUTED}" '
-        f'font-family="Courier New,monospace" font-size="8">MORE</text></svg>'
-    )
+    parts.append("</g></svg>")
     return "\n".join(parts) + "\n"
 
 
-def render_summary(
-    end: dt.date, total: int, longest: int, current: int
-) -> str:
-    width, height = 860, 132
-    current_unit = "day" if current == 1 else "days"
-    return f'''<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="{SVG_NS}" width="{width}" height="{height}" viewBox="0 0 {width} {height}"
- role="img" aria-label="Contribution summary: {total} contributions in 365 days, longest streak {longest} days, current streak {current} {current_unit}"
- data-total="{total}" data-longest-streak="{longest}" data-current-streak="{current}" data-updated="{end.isoformat()}">
-<rect width="{width}" height="{height}" fill="{PAPER}"/>
-<path d="M0 0H860V132H0Z" fill="none" stroke="#B8B1A3"/>
-<rect x="0" y="0" width="8" height="132" fill="{INK}"/>
-<text x="34" y="23" fill="{MUTED}" font-family="'Courier New',monospace" font-size="9" letter-spacing="2">ACTIVITY / ROLLING YEAR</text>
-<text x="826" y="23" fill="{MUTED}" text-anchor="end" font-family="'Courier New',monospace" font-size="9" letter-spacing="1">UPDATED {end.strftime("%d %b %Y").upper()}</text>
-<path d="M34 32H826" stroke="#B8B1A3"/>
-<g>
- <text x="36" y="88" fill="{INK}" font-family="Georgia,'Times New Roman',serif" font-size="43">{total:,}</text>
- <text x="38" y="111" fill="{MUTED}" font-family="'Courier New',monospace" font-size="9" letter-spacing="1.2">CONTRIBUTIONS</text>
- <path d="M282 43V116" stroke="#B8B1A3"/>
- <rect x="282" y="43" width="3" height="73" fill="{RUST}"/>
- <text x="316" y="88" fill="{INK}" font-family="Georgia,'Times New Roman',serif" font-size="43">{longest}</text>
- <text x="318" y="111" fill="{MUTED}" font-family="'Courier New',monospace" font-size="9" letter-spacing="1.2">LONGEST RUN / DAYS</text>
- <path d="M560 43V116" stroke="#B8B1A3"/>
- <rect x="560" y="43" width="3" height="73" fill="{SAGE}"/>
- <text x="594" y="88" fill="{INK}" font-family="Georgia,'Times New Roman',serif" font-size="43">{current}</text>
- <text x="596" y="111" fill="{MUTED}" font-family="'Courier New',monospace" font-size="9" letter-spacing="1.2">CURRENT RUN / DAYS</text>
-</g>
-<path d="M826 43V116" stroke="{SLATE}" stroke-width="3"/>
-</svg>
-'''
-
-
-def validate_graph(svg: str, start: dt.date, end: dt.date, total: int) -> None:
+def validate_svg(svg: str, start: dt.date, end: dt.date, total: int) -> None:
     root = ET.fromstring(svg)
     if root.tag.rsplit("}", 1)[-1] != "svg":
-        raise RuntimeError("Contribution output is not SVG.")
+        raise RuntimeError("Output root is not SVG.")
     cells = root.findall(".//*[@data-date]")
     expected = (end - start).days + 1
     if len(cells) != expected:
-        raise RuntimeError(f"Expected {expected} daily cells, found {len(cells)}.")
+        raise RuntimeError(f"Expected {expected} cells, found {len(cells)}.")
     dates = [dt.date.fromisoformat(cell.attrib["data-date"]) for cell in cells]
     if dates != sorted(dates) or len(set(dates)) != expected:
-        raise RuntimeError("Contribution dates are missing, duplicated, or out of order.")
+        raise RuntimeError("Dates are missing, duplicated, or out of order.")
     daily_total = sum(int(cell.attrib["data-count"]) for cell in cells)
     if daily_total != total:
         raise RuntimeError(f"Daily total {daily_total} does not match calendar total {total}.")
-    if root.attrib.get("viewBox") != "0 0 860 190":
-        raise RuntimeError("Unexpected contribution graph dimensions.")
-    if not root.findall(f".//{{{SVG_NS}}}title"):
-        raise RuntimeError("Contribution graph is missing its accessible title.")
-
-
-def validate_summary(svg: str, total: int, longest: int, current: int) -> None:
-    root = ET.fromstring(svg)
-    expected = {
-        "data-total": str(total),
-        "data-longest-streak": str(longest),
-        "data-current-streak": str(current),
-    }
-    for key, value in expected.items():
-        if root.attrib.get(key) != value:
-            raise RuntimeError(f"Activity summary {key} does not match computed data.")
+    if root.attrib.get("viewBox") != "0 0 860 154":
+        raise RuntimeError("Unexpected SVG viewBox.")
+    if root.findall(f".//{{{SVG_NS}}}text"):
+        raise RuntimeError("The contribution graph must remain free of visible text.")
+    for cell in cells:
+        rect = cell.find(f"{{{SVG_NS}}}rect")
+        if rect is None or rect.attrib.get("fill") != LEVEL_COLORS[cell.attrib["data-level"]]:
+            raise RuntimeError("A contribution cell has an invalid intensity colour.")
 
 
 def main() -> None:
     start, end = contribution_window()
     calendar = fetch_calendar(start, end)
-    declared_total = int(calendar.get("totalContributions", -1))
+    total = int(calendar.get("totalContributions", -1))
     days = collect_days(calendar, start, end)
-    total, longest, current = streak_metrics(days)
-    if declared_total != total:
-        raise RuntimeError(
-            f"GitHub calendar total {declared_total} does not match daily total {total}."
-        )
-
-    graph = render_graph(start, end, total, days)
-    summary = render_summary(end, total, longest, current)
-    validate_graph(graph, start, end, total)
-    validate_summary(summary, total, longest, current)
-
-    GRAPH_OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    GRAPH_OUTPUT.write_text(graph, encoding="utf-8")
-    SUMMARY_OUTPUT.write_text(summary, encoding="utf-8")
-    print(
-        f"Rendered {total:,} contributions, a {longest}-day longest run, "
-        f"and a {current}-day current run across 365 days."
-    )
+    if total < 0 or sum(count for count, _ in days.values()) != total:
+        raise RuntimeError("Contribution total does not match daily data. Refusing to publish.")
+    svg = render_svg(start, end, total, days)
+    validate_svg(svg, start, end, total)
+    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+    OUTPUT.write_text(svg, encoding="utf-8")
+    print(f"Rendered {total:,} contributions across 365 days to {OUTPUT.relative_to(ROOT)}.")
 
 
 if __name__ == "__main__":
     try:
         main()
     except Exception as exc:
-        print(f"Profile artwork update failed: {exc}", file=sys.stderr)
+        print(f"Contribution graph update failed: {exc}", file=sys.stderr)
         raise
