@@ -1,52 +1,251 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="860" height="156" viewBox="0 0 860 156" role="img" aria-labelledby="t d">
-<title id="t">Vintage steam locomotive</title><desc id="d">A right facing steam locomotive with coal tender, turning spoked wheels, moving railway sleepers, distant landscape, drifting clouds and chimney steam.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2048" height="688" viewBox="0 0 2048 688" role="img" aria-labelledby="title desc">
+<title id="title">Vintage steam locomotive with articulated tender bogies</title>
+<desc id="desc">A detailed left facing vintage steam locomotive with a flared smokestack, red driving wheels, front pilot truck and a coal tender supported by two separate four wheel bogies. Wheels rotate as the railway track and distant landscape scroll past.</desc>
 <defs>
-<linearGradient id="sky" x2="0" y2="1"><stop stop-color="#102B91"/><stop offset="1" stop-color="#1746D8"/></linearGradient>
-<linearGradient id="iron" x2="0" y2="1"><stop stop-color="#52617A"/><stop offset=".35" stop-color="#263650"/><stop offset="1" stop-color="#080D22"/></linearGradient>
-<linearGradient id="gold" x2="0" y2="1"><stop stop-color="#FFF68A"/><stop offset=".5" stop-color="#D9A832"/><stop offset="1" stop-color="#98601A"/></linearGradient>
-<linearGradient id="glass" x2="0" y2="1"><stop stop-color="#385783"/><stop offset="1" stop-color="#081329"/></linearGradient>
-<pattern id="stars" width="19" height="17" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1" fill="#C6D7FF" opacity=".2"/></pattern>
-<clipPath id="frame"><rect width="860" height="156"/></clipPath>
-<g id="cloud" fill="#B9CEFF"><path d="M0 30C0 20 9 14 19 17C22 5 36 1 47 9C57 3 72 9 74 20C87 19 96 25 96 34H0Z"/></g>
-<g id="wheel"><circle r="17" fill="#050914" stroke="#E9F0FF" stroke-width="2.3"/><circle r="13" fill="#1A2940" stroke="#D6A83B" stroke-width="2"/><circle r="10.5" fill="none" stroke="#68778E"/><path d="M0 -10V10M-10 0H10M-7 -7L7 7M7 -7L-7 7" fill="none" stroke="#D7F51D" stroke-width="2"/><circle r="4" fill="#D6A83B" stroke="#080D22" stroke-width="1.3"/><circle r="1.6" fill="#08D6D0"/></g>
+ <linearGradient id="night" x2="0" y2="1"><stop stop-color="#07132F"/><stop offset=".55" stop-color="#102B70"/><stop offset="1" stop-color="#080D20"/></linearGradient>
+ <linearGradient id="steel" x2="0" y2="1"><stop stop-color="#46546B"/><stop offset=".16" stop-color="#27364E"/><stop offset=".55" stop-color="#121D31"/><stop offset="1" stop-color="#080D19"/></linearGradient>
+ <linearGradient id="boiler" x2="0" y2="1"><stop stop-color="#46566D"/><stop offset=".25" stop-color="#29384F"/><stop offset=".7" stop-color="#101B2F"/><stop offset="1" stop-color="#080D1B"/></linearGradient>
+ <linearGradient id="brass" x2="0" y2="1"><stop stop-color="#FFF19A"/><stop offset=".38" stop-color="#D9B63D"/><stop offset="1" stop-color="#806019"/></linearGradient>
+ <linearGradient id="red" x2="0" y2="1"><stop stop-color="#D92320"/><stop offset=".45" stop-color="#980D12"/><stop offset="1" stop-color="#4D080D"/></linearGradient>
+ <linearGradient id="glass" x2="0" y2="1"><stop stop-color="#B9D6F4"/><stop offset=".35" stop-color="#718FB7"/><stop offset="1" stop-color="#1A2B49"/></linearGradient>
+ <pattern id="stars" width="38" height="32" patternUnits="userSpaceOnUse"><circle cx="7" cy="8" r="2" fill="#B8D1FF" opacity=".22"/></pattern>
+ <clipPath id="scene"><rect width="2048" height="688"/></clipPath>
+ <g id="cloud" fill="#9BB5E3" opacity=".7"><path d="M0 70C0 45 20 29 46 35C56 5 92 -4 117 17C144 1 180 17 184 48C215 45 236 61 236 82H0Z"/></g>
+ <g id="smallWheel">
+  <circle r="82" fill="#090C12" stroke="#596173" stroke-width="12"/>
+  <circle r="68" fill="#11151D" stroke="#A7A8A5" stroke-width="5"/>
+  <circle r="55" fill="none" stroke="#3A414D" stroke-width="5"/>
+  <g stroke="#A20E13" stroke-width="13" stroke-linecap="round"><path d="M0 -57V57M-57 0H57M-40 -40L40 40M40 -40L-40 40"/></g>
+  <circle r="23" fill="url(#red)" stroke="#D4B45B" stroke-width="5"/>
+  <circle r="10" fill="#4D5667" stroke="#A8A9A7" stroke-width="4"/>
+ </g>
+ <g id="driveWheel">
+  <circle r="101" fill="#080A10" stroke="#8B8173" stroke-width="13"/>
+  <circle r="86" fill="#11151D" stroke="#A70D12" stroke-width="9"/>
+  <g stroke="#B20F14" stroke-width="15" stroke-linecap="round"><path d="M0 -78V78M-78 0H78M-55 -55L55 55M55 -55L-55 55M-30 -72L30 72M30 -72L-30 72"/></g>
+  <circle r="45" fill="url(#red)" stroke="#080A10" stroke-width="7"/>
+  <circle r="21" fill="#74716B" stroke="#AFA18A" stroke-width="7"/>
+ </g>
+ <g id="tenderWheel">
+  <circle r="72" fill="#090C12" stroke="#354057" stroke-width="11"/>
+  <circle r="57" fill="#121720" stroke="#77736B" stroke-width="5"/>
+  <circle r="43" fill="none" stroke="#303A4C" stroke-width="7"/>
+  <path d="M0 -39V39M-39 0H39M-28 -28L28 28M28 -28L-28 28" stroke="#3B4658" stroke-width="7"/>
+  <circle r="22" fill="#263449" stroke="#8B7650" stroke-width="5"/>
+  <circle r="9" fill="#9A9B99"/>
+ </g>
 </defs>
-<g clip-path="url(#frame)">
-<rect width="860" height="156" fill="#080D2A"/><path d="M0 0H860V5H0Z" fill="#D7F51D"/><rect y="5" width="860" height="115" fill="url(#sky)"/><rect y="5" width="860" height="115" fill="url(#stars)"/>
-<!-- distant hills and tree line -->
-<g opacity=".7"><animateTransform attributeName="transform" type="translate" from="0 0" to="-860 0" dur="24s" repeatCount="indefinite"/><path d="M0 101L45 70L90 92L135 62L180 94L230 68L280 94L330 65L380 94L430 68L480 94L530 65L580 93L630 64L680 93L730 67L780 94L860 65V122H0Z" fill="#0B1B4A"/><path d="M25 103L45 62L65 103M72 103L94 55L116 103M143 103L163 64L183 103M300 103L325 58L350 103M395 103L414 67L433 103M570 103L595 56L620 103M650 103L675 63L700 103M785 103L810 54L835 103" fill="#091633"/><path d="M860 101L905 70L950 92L995 62L1040 94L1090 68L1140 94L1190 65L1240 94L1290 68L1340 94L1390 65L1440 93L1490 67L1540 94L1590 65L1640 93L1720 65V122H860Z" fill="#0B1B4A"/></g>
-<!-- cloud bank -->
-<g opacity=".72"><animateTransform attributeName="transform" type="translate" from="0 0" to="-860 0" dur="21s" repeatCount="indefinite"/><use xlink:href="#cloud" x="25" y="20"/><use xlink:href="#cloud" x="280" y="8"/><use xlink:href="#cloud" x="555" y="19"/><use xlink:href="#cloud" x="770" y="4"/><use xlink:href="#cloud" x="885" y="20"/><use xlink:href="#cloud" x="1140" y="8"/><use xlink:href="#cloud" x="1415" y="19"/><use xlink:href="#cloud" x="1630" y="4"/></g>
-<!-- distant signal posts -->
-<g stroke="#D6A83B" fill="none" stroke-width="2" opacity=".5"><animateTransform attributeName="transform" type="translate" from="0 0" to="-860 0" dur="13s" repeatCount="indefinite"/><path d="M90 101V65M78 72H102M78 72L90 59L102 72M245 101V73M234 80H256M234 80L245 67L256 80M500 101V63M487 70H513M487 70L500 57L513 70M735 101V70M723 77H747M723 77L735 64L747 77M950 101V65M938 72H962M938 72L950 59L962 72M1105 101V73M1094 80H1116M1094 80L1105 67L1116 80M1360 101V63M1347 70H1373M1347 70L1360 57L1373 70M1595 101V70M1583 77H1607M1583 77L1595 64L1607 77"/></g>
-<!-- ballast, wooden sleepers and two continuous steel rails -->
-<path d="M0 119H860V156H0Z" fill="#17243B"/><g><animateTransform attributeName="transform" type="translate" from="0 0" to="-76 0" dur="1.05s" repeatCount="indefinite"/><g fill="#98702E" stroke="#493A29" stroke-width="1"><path d="M18 119H25V153H18ZM94 119H101V153H94ZM170 119H177V153H170ZM246 119H253V153H246ZM322 119H329V153H322ZM398 119H405V153H398ZM474 119H481V153H474ZM550 119H557V153H550ZM626 119H633V153H626ZM702 119H709V153H702ZM778 119H785V153H778ZM854 119H861V153H854ZM878 119H885V153H878ZM954 119H961V153H954ZM1030 119H1037V153H1030ZM1106 119H1113V153H1106ZM1182 119H1189V153H1182ZM1258 119H1265V153H1258ZM1334 119H1341V153H1334ZM1410 119H1417V153H1410ZM1486 119H1493V153H1486ZM1562 119H1569V153H1562ZM1638 119H1645V153H1638ZM1714 119H1721V153H1714Z"/></g></g>
-<path d="M0 126H860" stroke="#101A2D" stroke-width="9"/><path d="M0 126H860" stroke="#AAB8CB" stroke-width="4"/><path d="M0 123H860" stroke="#F2F5FF" stroke-width="1.4"/><path d="M0 130H860" stroke="#52647E" stroke-width="2"/><path d="M0 147H860" stroke="#101A2D" stroke-width="9"/><path d="M0 147H860" stroke="#AAB8CB" stroke-width="4"/><path d="M0 144H860" stroke="#F2F5FF" stroke-width="1.2"/><path d="M0 151H860" stroke="#52647E" stroke-width="2"/><path d="M0 155H860" stroke="#D3266E" stroke-width="2.5"/>
-<!-- exhaust -->
-<g fill="#D9E6FF"><g><animateTransform attributeName="transform" type="translate" values="0 0;-24 -18;-53 -36" dur="3.2s" repeatCount="indefinite"/><animate attributeName="opacity" values=".58;.32;0" dur="3.2s" repeatCount="indefinite"/><circle cx="717" cy="20" r="7"/><circle cx="727" cy="13" r="10"/><circle cx="739" cy="18" r="7"/></g><g><animateTransform attributeName="transform" type="translate" values="0 0;-21 -16;-47 -32" dur="3.8s" begin="1.1s" repeatCount="indefinite"/><animate attributeName="opacity" values=".5;.28;0" dur="3.8s" begin="1.1s" repeatCount="indefinite"/><circle cx="720" cy="23" r="6"/><circle cx="730" cy="17" r="8"/><circle cx="741" cy="22" r="6"/></g></g>
-<!-- locomotive and tender, facing right -->
-<g id="train">
-<!-- tender -->
-<path d="M91 69Q96 60 111 60H300L325 76V111H88V83Z" fill="url(#iron)" stroke="#080D22" stroke-width="3.5"/><path d="M105 65H295L312 78H105Z" fill="#263650" stroke="#D6A83B" stroke-width="2"/><path d="M101 83H315" stroke="#D6A83B" stroke-width="3"/><path d="M104 91H315" stroke="#080D22" stroke-width="4"/><path d="M112 65L142 49L173 58L203 46L236 58L268 49L300 64Z" fill="#080D22" stroke="#B18A3C" stroke-width="2"/><path d="M116 64L143 53L173 62L203 50L236 62L268 53L296 65" fill="none" stroke="#65738A" stroke-width="2"/><path d="M112 71V98M297 71V98M125 86V101M180 86V101M235 86V101M290 86V101" stroke="#D6A83B" stroke-width="2"/><path d="M91 109H329" stroke="#080D22" stroke-width="5"/><path d="M323 100H355" stroke="#B9C5D6" stroke-width="4"/>
-<!-- cab -->
-<path d="M342 48Q342 37 355 37H472V108H333V62Q333 52 342 48Z" fill="url(#iron)" stroke="#080D22" stroke-width="4"/><path d="M352 48H389V82H352Z M397 48H438V82H397Z M445 47H461V82H445Z" fill="url(#glass)" stroke="#D6A83B" stroke-width="2.5"/><path d="M392 44V85M441 44V85" stroke="#080D22" stroke-width="4"/><path d="M348 43H470V49H348Z" fill="url(#gold)" stroke="#080D22" stroke-width="1.5"/><path d="M339 85H473V91H339Z" fill="#D6A83B"/><path d="M346 94H469V107H346Z" fill="#101A30" stroke="#080D22" stroke-width="2"/><path d="M336 40Q341 31 355 31H471L480 39H336Z" fill="#111D35" stroke="#080D22" stroke-width="2"/>
-<!-- boiler -->
-<path d="M459 57Q459 43 476 43H690Q714 43 729 63L746 84V106H454V72Q454 61 459 57Z" fill="url(#iron)" stroke="#080D22" stroke-width="4"/><path d="M474 48H686Q708 48 720 67L733 81H465V60Q465 48 474 48Z" fill="#34445E" opacity=".55"/><path d="M463 50H706M457 88H745" stroke="#D6A83B" stroke-width="4"/><path d="M457 96H746" stroke="#080D22" stroke-width="4"/><path d="M493 51V86M528 50V86M563 50V86M598 50V86M633 50V86M668 50V86M703 56V86" stroke="#718098" stroke-width="2" opacity=".55"/><path d="M469 62H704" stroke="#D6A83B" stroke-width="1.8"/>
-<!-- steam dome and whistle -->
-<path d="M560 45Q560 31 573 31Q586 31 586 45Z M638 45Q638 34 649 34Q660 34 660 45Z" fill="url(#gold)" stroke="#080D22" stroke-width="2.5"/><path d="M600 45V30H607V45M607 30H619L623 35H607Z" fill="url(#gold)" stroke="#080D22" stroke-width="1.5"/>
-<!-- smokebox, front door, chimney -->
-<path d="M687 47Q717 43 735 65L751 88V106H683V69Q683 54 687 47Z" fill="#111B31" stroke="#080D22" stroke-width="4"/><path d="M694 52Q718 50 733 69L744 87H691V68Q691 57 694 52Z" fill="#293750" stroke="#D6A83B" stroke-width="1.5"/><circle cx="720" cy="76" r="16" fill="#18263E" stroke="#D6A83B" stroke-width="3"/><circle cx="720" cy="76" r="10.5" fill="#0A142A" stroke="#74839A" stroke-width="1.5"/><path d="M720 66V86M710 76H730M713 69L727 83M727 69L713 83" stroke="#D6A83B" stroke-width="1.5"/><circle cx="720" cy="76" r="3" fill="#D7F51D"/>
-<path d="M699 49L705 21H730L736 49Z" fill="#101A30" stroke="#D6A83B" stroke-width="3"/><path d="M696 21H739L744 27H692Z" fill="url(#gold)" stroke="#080D22" stroke-width="2"/>
-<!-- lamp and cowcatcher -->
-<path d="M748 61H763V78H748Z" fill="#D7F51D" stroke="#080D22" stroke-width="2.5"/><path d="M741 100H783L806 113H739Z" fill="#D3266E" stroke="#080D22" stroke-width="3"/><path d="M749 102L762 111M766 102L779 111M783 102L796 111" stroke="#FFF0F5" stroke-width="2.5"/><path d="M785 88L806 109" stroke="#080D22" stroke-width="4"/>
-<!-- cylinder and running board -->
-<path d="M448 94H493V110H448Z" fill="#1B2941" stroke="#080D22" stroke-width="2"/><path d="M455 98H488" stroke="#D6A83B" stroke-width="2"/><path d="M463 107H729" stroke="#080D22" stroke-width="5"/>
-<!-- rotating spoked wheels -->
-<g transform="translate(153 111)"><g><use xlink:href="#wheel"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur=".85s" repeatCount="indefinite"/></g></g>
-<g transform="translate(275 111)"><g><use xlink:href="#wheel"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur=".85s" repeatCount="indefinite"/></g></g>
-<g transform="translate(515 111)"><g><use xlink:href="#wheel"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur=".85s" repeatCount="indefinite"/></g></g>
-<g transform="translate(625 111)"><g><use xlink:href="#wheel"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur=".85s" repeatCount="indefinite"/></g></g>
-<g transform="translate(716 111) scale(.78)"><g><use xlink:href="#wheel"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur=".7s" repeatCount="indefinite"/></g></g>
-<!-- connecting rod and piston -->
-<path d="M515 111H625" stroke="#B9C5D6" stroke-width="3" stroke-linecap="round"/><path d="M515 111H625" stroke="#D6A83B" stroke-width="1.1"/><circle cx="515" cy="111" r="3" fill="#E9F0FF"/><circle cx="625" cy="111" r="3" fill="#E9F0FF"/><g><animateTransform attributeName="transform" type="translate" values="0 0;5 0;0 0;-5 0;0 0" dur=".85s" repeatCount="indefinite"/><path d="M471 101H500" stroke="#DDE6F4" stroke-width="2.2"/><circle cx="500" cy="101" r="2.5" fill="#D6A83B"/></g>
-</g></g></svg>
+<g clip-path="url(#scene)">
+ <!-- midnight railway landscape -->
+ <rect width="2048" height="688" fill="#080D20"/>
+ <rect y="0" width="2048" height="595" fill="url(#night)"/>
+ <rect y="0" width="2048" height="595" fill="url(#stars)"/>
+ <path d="M0 8H2048" stroke="#D7F51D" stroke-width="11"/>
+ <path d="M0 18H2048" stroke="#D3266E" stroke-width="3" opacity=".9"/>
+ <!-- distant mountain silhouettes -->
+ <g opacity=".78">
+  <animateTransform attributeName="transform" type="translate" from="0 0" to="-2048 0" dur="34s" repeatCount="indefinite"/>
+  <path d="M0 405L95 330L180 384L270 290L365 386L475 310L580 390L690 278L810 390L910 314L1030 395L1150 285L1260 391L1380 310L1500 392L1610 285L1740 395L1850 305L1960 389L2048 325V594H0Z" fill="#10214A"/>
+  <path d="M0 450L130 370L240 428L360 350L480 437L610 360L740 440L860 370L990 445L1120 352L1250 440L1380 366L1510 442L1640 355L1770 441L1900 370L2048 430V595H0Z" fill="#0A1837"/>
+  <path d="M2100 405L2195 330L2280 384L2370 290L2465 386L2575 310L2680 390L2790 278L2910 390L3010 314L3130 395L3250 285L3360 391L3480 310L3600 392L3710 285L3840 395L3950 305L4060 389L4148 325V594H2100Z" fill="#10214A"/>
+ </g>
+ <!-- tree line and signal silhouettes -->
+ <g opacity=".62" fill="#07132C">
+  <animateTransform attributeName="transform" type="translate" from="0 0" to="-2048 0" dur="19s" repeatCount="indefinite"/>
+  <path d="M35 490L75 385L115 490ZM95 490L140 360L185 490ZM310 492L352 390L394 492ZM510 490L555 360L600 490ZM780 490L820 380L860 490ZM1030 490L1075 360L1120 490ZM1300 490L1345 385L1390 490ZM1570 490L1615 360L1660 490ZM1840 490L1885 380L1930 490ZM2083 490L2123 385L2163 490ZM2143 490L2188 360L2233 490ZM2358 492L2400 390L2442 492ZM2558 490L2603 360L2648 490ZM2828 490L2868 380L2908 490ZM3078 490L3123 360L3168 490ZM3348 490L3393 385L3438 490ZM3618 490L3663 360L3708 490ZM3888 490L3933 380L3978 490Z"/>
+ </g>
+ <!-- layered clouds drifting left -->
+ <g opacity=".7">
+  <animateTransform attributeName="transform" type="translate" from="0 0" to="-2048 0" dur="27s" repeatCount="indefinite"/>
+  <use xlink:href="#cloud" x="80" y="52"/><use xlink:href="#cloud" x="470" y="20" opacity=".65"/><use xlink:href="#cloud" x="890" y="65" opacity=".75"/><use xlink:href="#cloud" x="1320" y="18" opacity=".65"/><use xlink:href="#cloud" x="1740" y="48" opacity=".7"/>
+  <use xlink:href="#cloud" x="2128" y="52"/><use xlink:href="#cloud" x="2518" y="20" opacity=".65"/><use xlink:href="#cloud" x="2938" y="65" opacity=".75"/><use xlink:href="#cloud" x="3368" y="18" opacity=".65"/><use xlink:href="#cloud" x="3788" y="48" opacity=".7"/>
+ </g>
+ <!-- distant telegraph poles -->
+ <g stroke="#B08B3C" stroke-width="8" fill="none" opacity=".55">
+  <animateTransform attributeName="transform" type="translate" from="0 0" to="-2048 0" dur="15s" repeatCount="indefinite"/>
+  <path d="M120 500V290M80 320H160M80 320L120 280L160 320M430 500V310M390 340H470M390 340L430 300L470 340M760 500V280M720 310H800M720 310L760 270L800 310M1120 500V300M1080 330H1160M1080 330L1120 290L1160 330M1480 500V280M1440 310H1520M1440 310L1480 270L1520 310M1840 500V300M1800 330H1880M1800 330L1840 290L1880 330M2168 500V290M2128 320H2208M2128 320L2168 280L2208 320M2478 500V310M2438 340H2518M2438 340L2478 300L2518 340M2808 500V280M2768 310H2848M2768 310L2808 270L2848 310M3168 500V300M3128 330H3208M3128 330L3168 290L3208 330M3528 500V280M3488 310H3568M3488 310L3528 270L3568 310M3888 500V300M3848 330H3928M3848 330L3888 290L3928 330"/>
+ </g>
+ <!-- track bed and moving timber sleepers -->
+ <path d="M0 574H2048V688H0Z" fill="#10182B"/>
+ <path d="M0 586H2048V688H0Z" fill="#263047" opacity=".5"/>
+ <g>
+  <animateTransform attributeName="transform" type="translate" from="0 0" to="-190 0" dur="1.35s" repeatCount="indefinite"/>
+  <g fill="#72552E" stroke="#332A22" stroke-width="5">
+   <path d="M10 570H55V681H10ZM200 570H245V681H200ZM390 570H435V681H390ZM580 570H625V681H580ZM770 570H815V681H770ZM960 570H1005V681H960ZM1150 570H1195V681H1150ZM1340 570H1385V681H1340ZM1530 570H1575V681H1530ZM1720 570H1765V681H1720ZM1910 570H1955V681H1910ZM2100 570H2145V681H2100ZM2290 570H2335V681H2290ZM2480 570H2525V681H2480ZM2670 570H2715V681H2670ZM2860 570H2905V681H2860ZM3050 570H3095V681H3050ZM3240 570H3285V681H3240ZM3430 570H3475V681H3430ZM3620 570H3665V681H3620ZM3810 570H3855V681H3810ZM4000 570H4045V681H4000Z"/>
+  </g>
+ </g>
+ <!-- twin steel rails, continuous through the frame -->
+ <path d="M0 592H2048" stroke="#050914" stroke-width="28"/>
+ <path d="M0 586H2048" stroke="#9DAFC6" stroke-width="12"/>
+ <path d="M0 580H2048" stroke="#F1F3F5" stroke-width="4" opacity=".85"/>
+ <path d="M0 604H2048" stroke="#39465D" stroke-width="8"/>
+ <path d="M0 652H2048" stroke="#050914" stroke-width="28"/>
+ <path d="M0 646H2048" stroke="#9DAFC6" stroke-width="12"/>
+ <path d="M0 640H2048" stroke="#F1F3F5" stroke-width="4" opacity=".75"/>
+ <path d="M0 664H2048" stroke="#39465D" stroke-width="8"/>
+ <!-- rail fasteners travel with sleepers -->
+ <g fill="#D7F51D" opacity=".8"><animateTransform attributeName="transform" type="translate" from="0 0" to="-190 0" dur="1.35s" repeatCount="indefinite"/>
+  <path d="M25 578H52V586H25ZM215 578H242V586H215ZM405 578H432V586H405ZM595 578H622V586H595ZM785 578H812V586H785ZM975 578H1002V586H975ZM1165 578H1192V586H1165ZM1355 578H1382V586H1355ZM1545 578H1572V586H1545ZM1735 578H1762V586H1735ZM1925 578H1952V586H1925ZM25 638H52V646H25ZM215 638H242V646H215ZM405 638H432V646H405ZM595 638H622V646H595ZM785 638H812V646H785ZM975 638H1002V646H975ZM1165 638H1192V646H1165ZM1355 638H1382V646H1355ZM1545 638H1572V646H1545ZM1735 638H1762V646H1735ZM1925 638H1952V646H1925Z"/>
+ </g>
+ <!-- train shadow -->
+ <ellipse cx="1015" cy="580" rx="990" ry="20" fill="#00030A" opacity=".72"/>
+
+ <!-- steam locomotive, facing left -->
+ <g id="locomotive">
+  <!-- front cowcatcher and pilot beam -->
+  <path d="M18 647L18 632L157 494L170 504L170 647Z" fill="#8E0D12" stroke="#3B080B" stroke-width="10"/>
+  <path d="M30 633L157 506M55 642L164 532M82 644L164 557M109 644L164 582" stroke="#D22A25" stroke-width="8" opacity=".8"/>
+  <path d="M157 515H198V572H157Z" fill="#B30E12" stroke="#39080B" stroke-width="8"/>
+  <path d="M162 504H190V516H162Z" fill="#E21A1D"/><path d="M169 489H181V508H169Z" fill="#B90F15"/>
+  <!-- front pilot truck frame -->
+  <path d="M180 548H474V573H180Z" fill="#090D17" stroke="#05070D" stroke-width="7"/>
+  <path d="M185 602H482V626H185Z" fill="#111A2A" stroke="#05070D" stroke-width="7"/>
+  <path d="M205 570H465M205 615H465" stroke="#D6B43E" stroke-width="7"/>
+  <!-- front lamp and headstock -->
+  <path d="M190 520H215V567H190Z" fill="#18243A" stroke="#080C14" stroke-width="8"/>
+  <path d="M180 530H194V564H180Z" fill="#D6B43E"/>
+  <!-- boiler lower frame -->
+  <path d="M220 300Q240 282 285 282H935V493H248Q218 472 218 431V346Q218 318 220 300Z" fill="url(#boiler)" stroke="#070B13" stroke-width="10"/>
+  <path d="M245 312H905V350H245Z" fill="#53627A" opacity=".45"/>
+  <path d="M240 440H930V474H240Z" fill="#080D19" opacity=".72"/>
+  <!-- front smokebox and round face -->
+  <path d="M228 296Q210 326 210 377V428Q210 467 248 482H278V286H251Q236 286 228 296Z" fill="url(#steel)" stroke="#090E18" stroke-width="10"/>
+  <path d="M228 331Q204 351 204 391Q204 433 232 450" fill="none" stroke="#58677E" stroke-width="10"/>
+  <path d="M218 356H203V409H218" fill="none" stroke="#D5B33C" stroke-width="8"/>
+  <circle cx="218" cy="383" r="9" fill="#D8B83F"/>
+  <!-- boiler rings -->
+  <g stroke="#080B12" stroke-width="13" fill="none"><path d="M401 298V476M598 298V476M727 292V478M894 289V475"/></g>
+  <g stroke="#C5A43B" stroke-width="6" fill="none"><path d="M401 299V476M598 299V476M727 293V478M894 290V475"/></g>
+  <g fill="#F1D66B"><circle cx="401" cy="312" r="5"/><circle cx="401" cy="461" r="5"/><circle cx="598" cy="312" r="5"/><circle cx="598" cy="461" r="5"/><circle cx="727" cy="306" r="5"/><circle cx="727" cy="462" r="5"/></g>
+  <!-- chimney base and tall flared funnel -->
+  <path d="M299 294H362V306H299Z" fill="#111B2C" stroke="#070B13" stroke-width="7"/>
+  <path d="M306 225H359V301H306Z" fill="url(#steel)" stroke="#070B13" stroke-width="8"/>
+  <path d="M290 116L378 116L432 174L432 185L366 286H302L236 185V174Z" fill="url(#steel)" stroke="#070B13" stroke-width="9"/>
+  <path d="M289 119H377L427 174H239Z" fill="#65768E" opacity=".72"/>
+  <path d="M236 174H432V187H236Z" fill="#A9B5C6" stroke="#111A2A" stroke-width="7"/>
+  <path d="M290 116H377" stroke="#05080E" stroke-width="8"/>
+  <path d="M258 180L311 180L354 282H304Z" fill="#17263C" opacity=".65"/>
+  <g fill="#0B111D"><circle cx="251" cy="181" r="4"/><circle cx="276" cy="181" r="4"/><circle cx="301" cy="181" r="4"/><circle cx="326" cy="181" r="4"/><circle cx="351" cy="181" r="4"/><circle cx="376" cy="181" r="4"/><circle cx="401" cy="181" r="4"/><circle cx="421" cy="181" r="4"/></g>
+  <!-- rear lamp on front of smokebox -->
+  <path d="M190 205H264V295H190Z" fill="#17243B" stroke="#080D18" stroke-width="9"/>
+  <path d="M205 220H253V277H205Z" fill="none" stroke="#A88A2D" stroke-width="6"/>
+  <path d="M181 230H190V276H181Z" fill="#D4B13C"/>
+  <circle cx="226" cy="169" r="12" fill="#080D18" stroke="#A9B8D1" stroke-width="7"/>
+  <!-- domes and safety valve -->
+  <path d="M430 250Q430 222 476 217Q522 222 522 250V292H430Z" fill="url(#steel)" stroke="#080D18" stroke-width="8"/>
+  <path d="M423 251Q430 220 477 215Q526 220 533 251Z" fill="#8797AC" stroke="#26344A" stroke-width="7"/>
+  <path d="M456 216Q461 198 493 198Q522 200 529 216Z" fill="url(#brass)" stroke="#5E4B18" stroke-width="6"/>
+  <path d="M467 197H516V211H467Z" fill="#9B7A20"/>
+  <circle cx="494" cy="205" r="10" fill="#D9B63D"/>
+  <path d="M770 248Q770 218 807 215Q849 219 849 250V291H770Z" fill="url(#steel)" stroke="#080D18" stroke-width="8"/>
+  <path d="M761 250Q770 216 808 212Q850 216 859 250Z" fill="#9AA8B8" stroke="#26344A" stroke-width="7"/>
+  <path d="M790 211Q803 194 829 194Q850 198 858 211Z" fill="url(#brass)" stroke="#6A561B" stroke-width="6"/>
+  <path d="M820 194V144H838V212H820Z" fill="url(#brass)" stroke="#6A561B" stroke-width="5"/>
+  <path d="M815 151H842V160H815Z" fill="#7A651B"/>
+  <!-- whistle and red signal valve -->
+  <path d="M621 205V190H637V204H648V214H621Z" fill="#D6B43F" stroke="#655019" stroke-width="5"/>
+  <path d="M632 192V160H644V192" fill="#A70D12" stroke="#5A0A0C" stroke-width="5"/>
+  <path d="M616 160H653V171H616Z" fill="#B50D13"/>
+  <path d="M620 276H646V300H620Z" fill="#080C14"/><path d="M626 292H642V318H626Z" fill="#070B12"/>
+  <!-- handrails and piping -->
+  <path d="M310 342H582Q620 342 651 372L691 408Q710 425 743 425H900" fill="none" stroke="#060A12" stroke-width="15"/>
+  <path d="M310 342H582Q620 342 651 372L691 408Q710 425 743 425H900" fill="none" stroke="#B59A2D" stroke-width="7"/>
+  <path d="M670 306H738Q765 306 793 324L840 352H905" fill="none" stroke="#080C14" stroke-width="13"/>
+  <path d="M670 306H738Q765 306 793 324L840 352H905" fill="none" stroke="#D0AE34" stroke-width="6"/>
+  <path d="M310 394H902" stroke="#05090F" stroke-width="13"/><path d="M310 394H902" stroke="#C5A73B" stroke-width="5"/>
+  <g fill="#F0D76A"><rect x="310" y="334" width="11" height="17"/><rect x="431" y="335" width="11" height="17"/><rect x="572" y="335" width="11" height="17"/><rect x="665" y="399" width="12" height="18"/><rect x="798" y="343" width="12" height="18"/><rect x="895" y="386" width="12" height="17"/></g>
+  <!-- lower cylinders and front pipework -->
+  <path d="M268 452H348V523H268Z" fill="url(#steel)" stroke="#080D18" stroke-width="9"/>
+  <path d="M253 455H365V469H253Z" fill="#59677A"/><path d="M253 510H365V525H253Z" fill="#080D18"/>
+  <path d="M251 463V518M365 463V518" stroke="#D3B13D" stroke-width="9"/>
+  <path d="M178 476Q194 443 230 409L271 393" fill="none" stroke="#C5A73B" stroke-width="7"/>
+  <path d="M178 476V525" stroke="#C5A73B" stroke-width="7"/>
+  <path d="M368 550H405" stroke="#A58C36" stroke-width="15"/>
+  <!-- running board and footplate -->
+  <path d="M463 440H1102V466H463Z" fill="#3A4253" stroke="#0A0E17" stroke-width="7"/>
+  <path d="M463 440H1102" stroke="#8B91A0" stroke-width="6"/>
+  <g fill="#D3B33F"><circle cx="482" cy="451" r="3"/><circle cx="525" cy="451" r="3"/><circle cx="568" cy="451" r="3"/><circle cx="611" cy="451" r="3"/><circle cx="654" cy="451" r="3"/><circle cx="697" cy="451" r="3"/><circle cx="740" cy="451" r="3"/><circle cx="783" cy="451" r="3"/><circle cx="826" cy="451" r="3"/><circle cx="869" cy="451" r="3"/><circle cx="912" cy="451" r="3"/><circle cx="955" cy="451" r="3"/><circle cx="998" cy="451" r="3"/><circle cx="1041" cy="451" r="3"/><circle cx="1084" cy="451" r="3"/></g>
+  <!-- cab body and roof -->
+  <path d="M905 243H1094V444H900V267Q900 248 905 243Z" fill="url(#steel)" stroke="#070B14" stroke-width="10"/>
+  <path d="M883 210H1246V225Q1246 243 1228 243H1150Q1127 243 1106 261H902Q884 261 883 241Z" fill="#8E2025" stroke="#5A1018" stroke-width="8"/>
+  <path d="M883 210H1246V220H883Z" fill="#C13B37"/>
+  <path d="M912 260H1000V350H912Z" fill="url(#glass)" stroke="#070A11" stroke-width="10"/>
+  <path d="M1012 260H1078V350H1012Z" fill="#F5F5F0" stroke="#070A11" stroke-width="10"/>
+  <path d="M955 261V349M912 305H1000" stroke="#283D5C" stroke-width="8"/>
+  <path d="M917 265H952V302H917Z M959 265H995V302H959Z M917 309H952V345H917Z M959 309H995V345H959Z" fill="#B9D2EC" opacity=".7"/>
+  <path d="M1019 266H1073V344H1019Z" fill="#FBFBF7"/>
+  <path d="M1019 317H1030V346H1019Z" fill="#0B1019"/>
+  <path d="M919 371H1047L1061 390V411L1047 426H919L905 411V390Z" fill="#17233B" stroke="#B69A23" stroke-width="6"/>
+  <g fill="#D4B438"><rect x="947" y="389" width="8" height="19"/><rect x="961" y="389" width="8" height="19"/><rect x="975" y="389" width="8" height="19"/><rect x="989" y="389" width="8" height="19"/><rect x="1003" y="389" width="8" height="19"/><rect x="1017" y="389" width="8" height="19"/><rect x="1031" y="389" width="8" height="19"/></g>
+  <!-- coupling corridor between cab and tender -->
+  <path d="M1097 359H1197V503H1097Z" fill="#080C14" stroke="#070A11" stroke-width="8"/>
+  <g stroke="#D4D7D9" stroke-width="10"><path d="M1112 365V499M1135 365V499M1158 365V499M1181 365V499"/></g>
+  <path d="M1099 353H1198V365H1099ZM1099 499H1198V511H1099Z" fill="#101722" stroke="#080B11" stroke-width="5"/>
+  <!-- tender chassis -->
+  <path d="M1195 366H1944V560H1195Z" fill="#0A0E17" stroke="#05080D" stroke-width="9"/>
+  <path d="M1201 365H1940V550H1201Z" fill="url(#steel)" stroke="#080C14" stroke-width="9"/>
+  <!-- tender upper coal bunker silhouette -->
+  <path d="M1202 365H1296Q1310 365 1318 347L1326 331Q1338 322 1354 322H1840Q1860 322 1872 343L1886 363Q1895 374 1915 374H1940V401H1202Z" fill="#253247" stroke="#080C17" stroke-width="8"/>
+  <path d="M1208 385H1935" stroke="#111B2D" stroke-width="5"/>
+  <path d="M1256 418H1874L1890 435V485L1874 501H1256L1240 485V435Z" fill="#121C2F" stroke="#A99520" stroke-width="6"/>
+  <path d="M1260 426H1870L1882 438V481L1870 493H1260L1248 481V438Z" fill="#18263B"/>
+  <path d="M1270 468Q1400 441 1515 467T1755 464T1867 462" fill="none" stroke="#40506A" stroke-width="4" opacity=".45"/>
+  <g fill="#0A0E17" stroke="#4C596D" stroke-width="3"><circle cx="1224" cy="386" r="5"/><circle cx="1264" cy="386" r="5"/><circle cx="1304" cy="386" r="5"/><circle cx="1344" cy="386" r="5"/><circle cx="1384" cy="386" r="5"/><circle cx="1424" cy="386" r="5"/><circle cx="1464" cy="386" r="5"/><circle cx="1504" cy="386" r="5"/><circle cx="1544" cy="386" r="5"/><circle cx="1584" cy="386" r="5"/><circle cx="1624" cy="386" r="5"/><circle cx="1664" cy="386" r="5"/><circle cx="1704" cy="386" r="5"/><circle cx="1744" cy="386" r="5"/><circle cx="1784" cy="386" r="5"/><circle cx="1824" cy="386" r="5"/><circle cx="1864" cy="386" r="5"/><circle cx="1904" cy="386" r="5"/></g>
+  <!-- tender side rivets -->
+  <g fill="#A8B1C0"><circle cx="1218" cy="405" r="4"/><circle cx="1218" cy="530" r="4"/><circle cx="1922" cy="405" r="4"/><circle cx="1922" cy="530" r="4"/><circle cx="1260" cy="545" r="4"/><circle cx="1320" cy="545" r="4"/><circle cx="1380" cy="545" r="4"/><circle cx="1440" cy="545" r="4"/><circle cx="1500" cy="545" r="4"/><circle cx="1560" cy="545" r="4"/><circle cx="1620" cy="545" r="4"/><circle cx="1680" cy="545" r="4"/><circle cx="1740" cy="545" r="4"/><circle cx="1800" cy="545" r="4"/><circle cx="1860" cy="545" r="4"/></g>
+  <!-- tender rear buffers -->
+  <path d="M1940 530H2015V564H1940Z" fill="#171E2C" stroke="#05080D" stroke-width="7"/><path d="M2015 539H2040V556H2015Z" fill="#737E8B" stroke="#111722" stroke-width="5"/><path d="M2040 529V568" stroke="#D6B33C" stroke-width="7"/>
+  <!-- pilot truck two axles -->
+  <g transform="translate(222 632)"><g><use xlink:href="#smallWheel"/><animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="1.1s" repeatCount="indefinite"/></g></g>
+  <g transform="translate(414 632)"><g><use xlink:href="#smallWheel"/><animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="1.1s" repeatCount="indefinite"/></g></g>
+  <path d="M222 579H414M222 579V594M414 579V594" fill="none" stroke="#121A28" stroke-width="18"/>
+  <!-- large driving wheels -->
+  <g transform="translate(700 572)"><g><use xlink:href="#driveWheel"/><animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="1.45s" repeatCount="indefinite"/></g></g>
+  <g transform="translate(970 572)"><g><use xlink:href="#driveWheel"/><animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="1.45s" repeatCount="indefinite"/></g></g>
+  <!-- locomotive connecting rod and crank pins -->
+  <path d="M700 572L970 572" stroke="#514A43" stroke-width="22" stroke-linecap="round"/>
+  <path d="M700 572L970 572" stroke="#B9B0A1" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="700" cy="572" r="20" fill="#8C8173" stroke="#D1C2A6" stroke-width="8"/><circle cx="970" cy="572" r="20" fill="#8C8173" stroke="#D1C2A6" stroke-width="8"/>
+  <!-- underframe and spring detail -->
+  <path d="M520 487H1096V510H520Z" fill="#080C14"/><path d="M520 510H1096" stroke="#303A4B" stroke-width="10"/>
+  <path d="M790 486H870L856 496H805Z" fill="url(#brass)"/><circle cx="831" cy="506" r="40" fill="#332B16" stroke="#78631E" stroke-width="8"/><circle cx="831" cy="506" r="24" fill="#7D681D"/>
+  <!-- tender has TWO distinct two axle bogies, each with its own frame and springs -->
+  <g id="rearTenderBogie">
+   <path d="M1210 572H1538" stroke="#10151F" stroke-width="24" stroke-linecap="round"/>
+   <path d="M1218 580H1530" stroke="#6B6D6B" stroke-width="10"/>
+   <path d="M1240 565H1508" stroke="#222C3D" stroke-width="18"/>
+   <path d="M1260 555V584M1480 555V584" stroke="#6E7177" stroke-width="12"/>
+   <path d="M1280 565Q1350 636 1420 565" fill="none" stroke="#494A4A" stroke-width="17"/>
+   <path d="M1280 565Q1350 626 1420 565" fill="none" stroke="#A09A8E" stroke-width="6"/>
+   <path d="M1290 578H1410M1295 590H1405" stroke="#252D3C" stroke-width="8"/>
+   <path d="M1335 551V580M1360 551V580" stroke="#77746F" stroke-width="8"/>
+   <g transform="translate(1270 614)"><g><use xlink:href="#tenderWheel"/><animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="1.25s" repeatCount="indefinite"/></g></g>
+   <g transform="translate(1478 614)"><g><use xlink:href="#tenderWheel"/><animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="1.25s" repeatCount="indefinite"/></g></g>
+  </g>
+  <g id="frontTenderBogie">
+   <path d="M1615 572H1950" stroke="#10151F" stroke-width="24" stroke-linecap="round"/>
+   <path d="M1623 580H1942" stroke="#6B6D6B" stroke-width="10"/>
+   <path d="M1645 565H1920" stroke="#222C3D" stroke-width="18"/>
+   <path d="M1660 555V584M1900 555V584" stroke="#6E7177" stroke-width="12"/>
+   <path d="M1680 565Q1750 636 1820 565" fill="none" stroke="#494A4A" stroke-width="17"/>
+   <path d="M1680 565Q1750 626 1820 565" fill="none" stroke="#A09A8E" stroke-width="6"/>
+   <path d="M1690 578H1810M1695 590H1805" stroke="#252D3C" stroke-width="8"/>
+   <path d="M1735 551V580M1760 551V580" stroke="#77746F" stroke-width="8"/>
+   <g transform="translate(1670 614)"><g><use xlink:href="#tenderWheel"/><animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="1.25s" repeatCount="indefinite"/></g></g>
+   <g transform="translate(1878 614)"><g><use xlink:href="#tenderWheel"/><animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="1.25s" repeatCount="indefinite"/></g></g>
+  </g>
+  <!-- bogie pivot plates and tender suspension -->
+  <path d="M1350 548H1400V570H1350Z M1750 548H1800V570H1750Z" fill="#182238" stroke="#8B7440" stroke-width="5"/>
+  <path d="M1360 540H1390M1760 540H1790" stroke="#D2B03C" stroke-width="7"/>
+  <!-- piston rod reciprocates while locomotive body stays fixed -->
+  <g><animateTransform attributeName="transform" type="translate" values="0 0;14 0;0 0;-14 0;0 0" dur="1.45s" repeatCount="indefinite"/><path d="M480 536H695" stroke="#A7A49A" stroke-width="13"/><path d="M480 536H695" stroke="#343A46" stroke-width="4"/></g>
+ </g>
+ <!-- chimney exhaust curls up and trails to the right -->
+ <g fill="#DCE8FF" opacity=".65">
+  <g><animateTransform attributeName="transform" type="translate" values="0 0;25 -35;65 -75" dur="4s" repeatCount="indefinite"/><animate attributeName="opacity" values=".62;.35;0" dur="4s" repeatCount="indefinite"/><circle cx="325" cy="105" r="23"/><circle cx="365" cy="84" r="34"/><circle cx="408" cy="96" r="24"/></g>
+  <g><animateTransform attributeName="transform" type="translate" values="0 0;22 -32;57 -68" dur="4.4s" begin="1.4s" repeatCount="indefinite"/><animate attributeName="opacity" values=".5;.3;0" dur="4.4s" begin="1.4s" repeatCount="indefinite"/><circle cx="319" cy="105" r="18"/><circle cx="355" cy="91" r="27"/><circle cx="392" cy="99" r="19"/></g>
+ </g>
+ <path d="M0 684H2048" stroke="#D3266E" stroke-width="5"/>
+</g>
+</svg>
