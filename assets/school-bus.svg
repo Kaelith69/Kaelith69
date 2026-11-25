@@ -1,62 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="860" height="156" viewBox="0 0 860 156" role="img" aria-labelledby="bus-title bus-desc">
-<title id="bus-title">Animated school bus</title>
-<desc id="bus-desc">A bright yellow school bus drives along a dark blue road, with rotating wheels and moving road markings.</desc>
+<title id="bus-title">School bus on a moving road</title>
+<desc id="bus-desc">A classic long yellow school bus remains fixed in place while its wheels rotate clockwise and the road and scenery move backwards.</desc>
 <defs>
-  <linearGradient id="busSky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#102B91"/><stop offset="1" stop-color="#1746D8"/></linearGradient>
-  <linearGradient id="busYellow" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#FFF15A"/><stop offset=".55" stop-color="#F4C928"/><stop offset="1" stop-color="#E6A915"/></linearGradient>
-  <pattern id="busDots" width="12" height="12" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#F4F5FF" opacity=".2"/></pattern>
-  <clipPath id="busClip"><rect width="860" height="156"/></clipPath>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#102B91"/><stop offset="1" stop-color="#1746D8"/></linearGradient>
+  <linearGradient id="yellow" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#FFF36A"/><stop offset=".28" stop-color="#FFD83D"/><stop offset=".78" stop-color="#F0B923"/><stop offset="1" stop-color="#D99516"/></linearGradient>
+  <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#25385B"/><stop offset="1" stop-color="#080D2A"/></linearGradient>
+  <pattern id="dots" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#F4F5FF" opacity=".22"/></pattern>
+  <clipPath id="frame"><rect width="860" height="156"/></clipPath>
+  <clipPath id="windows"><path d="M170 38H785Q797 38 807 52L816 67H170Z"/></clipPath>
 </defs>
-<g clip-path="url(#busClip)">
+<g clip-path="url(#frame)">
   <rect width="860" height="156" fill="#080D2A"/>
   <path d="M0 0H860V5H0Z" fill="#D7F51D"/>
-  <path d="M0 5H860V111H0Z" fill="url(#busSky)"/>
-  <path d="M0 5H860V111H0Z" fill="url(#busDots)"/>
-  <path d="M0 106H860V156H0Z" fill="#080D2A"/>
-  <path d="M0 106H860V110H0Z" fill="#08D6D0"/>
-  <path d="M0 130H860" stroke="#F4F5FF" stroke-width="2" opacity=".18"/>
-  <path d="M0 139H860" stroke="#1746D8" stroke-width="1.5" opacity=".7"/>
-  <g fill="#D7F51D" opacity=".8"><circle cx="94" cy="31" r="2"/><circle cx="135" cy="53" r="1.5"/><circle cx="732" cy="27" r="2"/><circle cx="777" cy="62" r="1.5"/></g>
-  <path d="M42 91H818" stroke="#08D6D0" stroke-width="1" stroke-dasharray="2 9" opacity=".45"/>
-  <path d="M0 122H860" stroke="#F4F5FF" stroke-width="2" stroke-dasharray="48 42" opacity=".85"><animate attributeName="stroke-dashoffset" from="0" to="-180" dur="1.7s" repeatCount="indefinite"/></path>
-  <path d="M0 147H860" stroke="#D3266E" stroke-width="2" opacity=".8"/>
-  <g>
-    <animateTransform attributeName="transform" type="translate" values="-9 0;9 0;-9 0" dur="2.4s" repeatCount="indefinite"/>
-    <path d="M250 48Q250 35 265 35H550Q574 35 592 54L620 82Q627 89 627 98V105H244V65Q244 48 250 48Z" fill="#080D2A" opacity=".48" transform="translate(0 5)"/>
-    <path d="M252 43Q252 30 267 30H548Q570 30 587 48L615 77Q623 85 623 96V103H245V60Q245 43 252 43Z" fill="url(#busYellow)" stroke="#080D2A" stroke-width="4" stroke-linejoin="round"/>
-    <path d="M269 34H546Q565 34 579 50L594 66H263V42Q263 34 269 34Z" fill="#F5C52A"/>
-    <path d="M273 39H320V65H265V47Q265 39 273 39Z" fill="#102B91" stroke="#080D2A" stroke-width="3"/>
-    <path d="M326 39H375V65H326Z" fill="#102B91" stroke="#080D2A" stroke-width="3"/>
-    <path d="M381 39H430V65H381Z" fill="#102B91" stroke="#080D2A" stroke-width="3"/>
-    <path d="M436 39H485V65H436Z" fill="#102B91" stroke="#080D2A" stroke-width="3"/>
-    <path d="M491 39H542Q557 39 568 52L580 65H491Z" fill="#102B91" stroke="#080D2A" stroke-width="3"/>
-    <path d="M264 70H595" stroke="#080D2A" stroke-width="7"/>
-    <path d="M264 79H590" stroke="#F4F5FF" stroke-width="2" opacity=".5"/>
-    <path d="M252 87H613V101H252Z" fill="#E5AC1A" stroke="#080D2A" stroke-width="2"/>
-    <path d="M263 87H590" stroke="#080D2A" stroke-width="4"/>
-    <path d="M599 76L615 92V102H599Z" fill="#F5C52A" stroke="#080D2A" stroke-width="3"/>
-    <path d="M608 88L620 91V99H608Z" fill="#F4F5FF" stroke="#080D2A" stroke-width="2"/>
-    <path d="M247 57H255V77H247Z" fill="#D3266E" stroke="#080D2A" stroke-width="2"/>
-    <path d="M263 27H278V33H263Z M286 27H301V33H286Z M539 27H554V33H539Z M562 27H577V37H562Z" fill="#D3266E" stroke="#080D2A" stroke-width="1.5"/>
-    <path d="M246 100H620V108H246Z" fill="#080D2A"/>
-    <path d="M243 103H629V110H243Z" fill="#D3266E"/>
-    <path d="M620 98L633 100V108H620Z" fill="#F4F5FF" stroke="#080D2A" stroke-width="2"/>
-    <path d="M242 96H250V106H242Z" fill="#D3266E" stroke="#080D2A" stroke-width="2"/>
-    <path d="M265 67V85M319 67V85M375 67V85M431 67V85M487 67V85M543 67V85" stroke="#080D2A" stroke-width="1.5" opacity=".45"/>
+  <rect y="5" width="860" height="101" fill="url(#sky)"/>
+  <rect y="5" width="860" height="101" fill="url(#dots)"/>
+  <g opacity=".72">
+    <path d="M0 87L78 64L145 79L220 53L306 78L382 55L462 76L542 50L620 72L703 52L790 75L860 57" fill="none" stroke="#08D6D0" stroke-width="1.2" opacity=".55"/>
     <g>
-      <circle cx="327" cy="105" r="25" fill="#080D2A" stroke="#F4F5FF" stroke-width="2"/><circle cx="327" cy="105" r="18" fill="#202A45" stroke="#08D6D0" stroke-width="2"/>
-      <g transform="translate(327 105)"><g><path d="M0 -15L4 -5L14 -2L5 4L2 14L-4 5L-14 2L-5 -4Z" fill="#D7F51D" stroke="#080D2A" stroke-width="1"/><circle r="4" fill="#F4F5FF" stroke="#080D2A" stroke-width="1"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur=".65s" repeatCount="indefinite"/></g></g>
-      <circle cx="327" cy="105" r="2" fill="#D3266E"/>
-    </g>
-    <g>
-      <circle cx="548" cy="105" r="25" fill="#080D2A" stroke="#F4F5FF" stroke-width="2"/><circle cx="548" cy="105" r="18" fill="#202A45" stroke="#08D6D0" stroke-width="2"/>
-      <g transform="translate(548 105)"><g><path d="M0 -15L4 -5L14 -2L5 4L2 14L-4 5L-14 2L-5 -4Z" fill="#D7F51D" stroke="#080D2A" stroke-width="1"/><circle r="4" fill="#F4F5FF" stroke="#080D2A" stroke-width="1"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur=".65s" repeatCount="indefinite"/></g></g>
-      <circle cx="548" cy="105" r="2" fill="#D3266E"/>
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="-860 0" dur="8s" repeatCount="indefinite"/>
+      <path d="M30 75l12 -18 12 18M100 78l17 -28 17 28M185 73l13 -20 13 20M280 78l18 -31 18 31M390 72l13 -22 13 22M505 78l17 -30 17 30M620 73l13 -23 13 23M740 78l18 -32 18 32M840 75l12 -18 12 18" fill="none" stroke="#D7F51D" stroke-width="2" opacity=".42"/>
+      <path d="M890 75l12 -18 12 18M960 78l17 -28 17 28M1045 73l13 -20 13 20M1140 78l18 -31 18 31M1250 72l13 -22 13 22M1365 78l17 -30 17 30M1480 73l13 -23 13 23M1600 78l18 -32 18 32" fill="none" stroke="#D7F51D" stroke-width="2" opacity=".42"/>
     </g>
   </g>
-  <path d="M30 18H830" stroke="#F4F5FF" stroke-width="1" opacity=".2"/>
-  <path d="M20 18V28M840 18V28" stroke="#08D6D0" stroke-width="2"/>
-  <path d="M16 149H844" stroke="#D7F51D" stroke-width="1.5" opacity=".45"/>
+  <path d="M0 105H860V156H0Z" fill="#080D2A"/>
+  <path d="M0 105H860V109H0Z" fill="#08D6D0"/>
+  <path d="M0 145H860" stroke="#D3266E" stroke-width="3"/>
+  <path d="M0 127H860" stroke="#F4F5FF" stroke-width="2" stroke-dasharray="62 52" opacity=".8">
+    <animate attributeName="stroke-dashoffset" from="0" to="114" dur="1.15s" repeatCount="indefinite"/>
+  </path>
+  <path d="M0 117H860" stroke="#1746D8" stroke-width="1" opacity=".9"/>
+  <path d="M0 151H860" stroke="#D7F51D" stroke-width="1.5" opacity=".65"/>
+  <g opacity=".7">
+    <path d="M0 99H860" stroke="#08D6D0" stroke-width="1" stroke-dasharray="3 10">
+      <animate attributeName="stroke-dashoffset" from="0" to="130" dur="2.2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Fixed bus shadow -->
+  <ellipse cx="449" cy="111" rx="394" ry="7" fill="#00030D" opacity=".72"/>
+
+  <!-- Fixed classic full length school bus -->
+  <g id="school-bus">
+    <!-- roof and long body -->
+    <path d="M128 31Q128 22 142 22H775Q799 22 815 42L837 72Q842 79 842 91V105H94V77Q94 61 107 51L128 31Z" fill="url(#yellow)" stroke="#080D2A" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M141 26H775Q796 26 809 44L826 66H125V42Q125 26 141 26Z" fill="#FFE45A" opacity=".55"/>
+    <!-- front hood and grille, left facing front -->
+    <path d="M95 68L145 58V102H73Q55 102 50 91L38 83Q34 78 41 73L95 68Z" fill="url(#yellow)" stroke="#080D2A" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M42 80Q49 67 68 63L111 56L120 68L70 79Z" fill="#FFD83D" stroke="#080D2A" stroke-width="3"/>
+    <path d="M42 83L61 83V94H43Q36 91 42 83Z" fill="#F4F5FF" stroke="#080D2A" stroke-width="2"/>
+    <path d="M75 91H101V101H75Z" fill="#202A45" stroke="#080D2A" stroke-width="2"/>
+    <path d="M113 61V102" stroke="#080D2A" stroke-width="4"/>
+    <!-- windshield -->
+    <path d="M132 35H163V68H119L124 49Q126 39 132 35Z" fill="url(#glass)" stroke="#080D2A" stroke-width="3"/>
+    <path d="M127 42L154 39" stroke="#8FA8C9" stroke-width="2" opacity=".6"/>
+    <!-- passenger windows -->
+    <g clip-path="url(#windows)">
+      <path d="M170 37H816V69H170Z" fill="url(#glass)"/>
+      <path d="M180 38L208 38L184 68H170Z M267 38L294 38L270 68H243Z M354 38L381 38L357 68H330Z M441 38L468 38L444 68H417Z M528 38L555 38L531 68H504Z M615 38L642 38L618 68H591Z M702 38L729 38L705 68H678Z" fill="#8FA8C9" opacity=".12"/>
+      <path d="M170 67H818" stroke="#08D6D0" stroke-width="1.5" opacity=".25"/>
+    </g>
+    <path d="M170 35H812" stroke="#080D2A" stroke-width="4"/>
+    <path d="M170 70H823" stroke="#080D2A" stroke-width="4"/>
+    <path d="M170 35V70M248 35V70M326 35V70M404 35V70M482 35V70M560 35V70M638 35V70M716 35V70M794 35V70M822 47V70" stroke="#080D2A" stroke-width="4"/>
+    <path d="M170 37H812" stroke="#D7F51D" stroke-width="1.5" opacity=".85"/>
+    <!-- iconic black side stripes -->
+    <path d="M113 75H829V83H113Z" fill="#080D2A"/>
+    <path d="M111 87H832V91H111Z" fill="#080D2A" opacity=".9"/>
+    <!-- body panels and wheel arches -->
+    <path d="M110 94H820V104H110Z" fill="#E3A91E"/>
+    <path d="M119 94H156V103H119Z M226 94H270V103H226Z M320 94H366V103H320Z M424 94H468V103H424Z M576 94H622V103H576Z M724 94H772V103H724Z" fill="#C98D18" opacity=".75"/>
+    <path d="M140 101Q140 76 165 76Q190 76 190 101" fill="#080D2A"/>
+    <path d="M632 101Q632 76 658 76Q684 76 684 101" fill="#080D2A"/>
+    <!-- front and rear lights -->
+    <rect x="99" y="72" width="8" height="6" rx="1" fill="#D3266E" stroke="#080D2A" stroke-width="1.5"/>
+    <rect x="830" y="76" width="7" height="7" rx="1" fill="#D3266E" stroke="#080D2A" stroke-width="1.5"/>
+    <rect x="830" y="88" width="7" height="6" rx="1" fill="#F4F5FF" stroke="#080D2A" stroke-width="1.5"/>
+    <!-- folded stop arm and side mirror -->
+    <path d="M288 82V94" stroke="#080D2A" stroke-width="2"/>
+    <path d="M279 83H298V94H279Z" fill="#D3266E" stroke="#080D2A" stroke-width="2"/>
+    <path d="M112 46L99 39L96 47" fill="none" stroke="#080D2A" stroke-width="3"/>
+    <path d="M93 39L101 35L106 40L99 44Z" fill="#202A45" stroke="#080D2A" stroke-width="2"/>
+    <!-- roof warning lights -->
+    <g fill="#D3266E" stroke="#080D2A" stroke-width="1.5">
+      <rect x="144" y="17" width="12" height="6" rx="1"/><rect x="167" y="17" width="12" height="6" rx="1"/>
+      <rect x="766" y="17" width="12" height="6" rx="1"/><rect x="789" y="17" width="12" height="6" rx="1"/>
+    </g>
+    <path d="M145 105H818" stroke="#080D2A" stroke-width="4"/>
+    <!-- wheels stay at fixed positions; only the inner wheel assemblies rotate -->
+    <g>
+      <circle cx="165" cy="105" r="27" fill="#050812" stroke="#F4F5FF" stroke-width="2"/>
+      <circle cx="165" cy="105" r="20" fill="#242C3E" stroke="#080D2A" stroke-width="3"/>
+      <g transform="translate(165 105)">
+        <g>
+          <path d="M0 -17L4 -8L13 -12L9 -3L18 0L9 4L13 13L4 9L0 18L-4 9L-13 13L-9 4L-18 0L-9 -4L-13 -13L-4 -9Z" fill="#D7F51D" stroke="#080D2A" stroke-width="1.5"/>
+          <circle r="8" fill="#C98D18" stroke="#080D2A" stroke-width="2"/>
+          <circle r="3" fill="#08D6D0"/>
+          <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur=".72s" repeatCount="indefinite"/>
+        </g>
+      </g>
+    </g>
+    <g>
+      <circle cx="658" cy="105" r="27" fill="#050812" stroke="#F4F5FF" stroke-width="2"/>
+      <circle cx="658" cy="105" r="20" fill="#242C3E" stroke="#080D2A" stroke-width="3"/>
+      <g transform="translate(658 105)">
+        <g>
+          <path d="M0 -17L4 -8L13 -12L9 -3L18 0L9 4L13 13L4 9L0 18L-4 9L-13 13L-9 4L-18 0L-9 -4L-13 -13L-4 -9Z" fill="#D7F51D" stroke="#080D2A" stroke-width="1.5"/>
+          <circle r="8" fill="#C98D18" stroke="#080D2A" stroke-width="2"/>
+          <circle r="3" fill="#08D6D0"/>
+          <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur=".72s" repeatCount="indefinite"/>
+        </g>
+      </g>
+    </g>
+  </g>
 </g>
 </svg>
