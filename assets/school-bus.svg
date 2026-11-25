@@ -15,6 +15,23 @@
   <path d="M0 0H860V5H0Z" fill="#D7F51D"/>
   <rect y="5" width="860" height="101" fill="url(#sky)"/>
   <rect y="5" width="860" height="101" fill="url(#dots)"/>
+  <g opacity=".78">
+    <animateTransform attributeName="transform" type="translate" from="0 0" to="-860 0" dur="18s" repeatCount="indefinite"/>
+    <g fill="#DCEBFF">
+      <path d="M42 34C42 27 48 22 55 22C58 12 68 8 78 12C84 4 98 5 103 15C113 13 121 20 121 29C129 30 133 34 133 40H42Z" opacity=".72"/>
+      <path d="M220 22C220 16 226 12 232 13C237 3 250 1 258 9C267 5 278 10 279 20C287 20 293 25 293 31H220Z" opacity=".56"/>
+      <path d="M414 39C414 31 421 26 429 27C433 16 446 13 455 21C465 17 477 23 478 33C487 34 492 39 492 45H414Z" opacity=".68"/>
+      <path d="M640 25C640 17 647 12 655 14C660 4 674 2 682 11C692 7 704 13 705 23C714 23 720 29 720 35H640Z" opacity=".62"/>
+      <path d="M785 51C785 44 791 40 798 41C803 31 816 29 824 37C834 34 844 40 845 50C853 50 858 55 858 61H785Z" opacity=".5"/>
+    </g>
+    <g transform="translate(860 0)" fill="#DCEBFF">
+      <path d="M42 34C42 27 48 22 55 22C58 12 68 8 78 12C84 4 98 5 103 15C113 13 121 20 121 29C129 30 133 34 133 40H42Z" opacity=".72"/>
+      <path d="M220 22C220 16 226 12 232 13C237 3 250 1 258 9C267 5 278 10 279 20C287 20 293 25 293 31H220Z" opacity=".56"/>
+      <path d="M414 39C414 31 421 26 429 27C433 16 446 13 455 21C465 17 477 23 478 33C487 34 492 39 492 45H414Z" opacity=".68"/>
+      <path d="M640 25C640 17 647 12 655 14C660 4 674 2 682 11C692 7 704 13 705 23C714 23 720 29 720 35H640Z" opacity=".62"/>
+      <path d="M785 51C785 44 791 40 798 41C803 31 816 29 824 37C834 34 844 40 845 50C853 50 858 55 858 61H785Z" opacity=".5"/>
+    </g>
+  </g>
   <g opacity=".72">
     <path d="M0 87L78 64L145 79L220 53L306 78L382 55L462 76L542 50L620 72L703 52L790 75L860 57" fill="none" stroke="#08D6D0" stroke-width="1.2" opacity=".55"/>
     <g>
