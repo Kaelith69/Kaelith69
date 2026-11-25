@@ -193,12 +193,12 @@
   <!-- tender rear buffers -->
   <path d="M1940 530H2015V564H1940Z" fill="#171E2C" stroke="#05080D" stroke-width="7"/><path d="M2015 539H2040V556H2015Z" fill="#737E8B" stroke="#111722" stroke-width="5"/><path d="M2040 529V568" stroke="#D6B33C" stroke-width="7"/>
   <!-- pilot truck two axles -->
-  <g transform="translate(222 632)"><g><use xlink:href="#smallWheel"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="1.1s" repeatCount="indefinite"/></g></g>
-  <g transform="translate(414 632)"><g><use xlink:href="#smallWheel"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="1.1s" repeatCount="indefinite"/></g></g>
+  <g transform="translate(222 632)"><g><use xlink:href="#smallWheel"/><animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="1.1s" repeatCount="indefinite"/></g></g>
+  <g transform="translate(414 632)"><g><use xlink:href="#smallWheel"/><animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="1.1s" repeatCount="indefinite"/></g></g>
   <path d="M222 579H414M222 579V594M414 579V594" fill="none" stroke="#121A28" stroke-width="18"/>
   <!-- large driving wheels -->
-  <g transform="translate(700 572)"><g><use xlink:href="#driveWheel"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="1.45s" repeatCount="indefinite"/></g></g>
-  <g transform="translate(970 572)"><g><use xlink:href="#driveWheel"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="1.45s" repeatCount="indefinite"/></g></g>
+  <g transform="translate(700 572)"><g><use xlink:href="#driveWheel"/><animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="1.45s" repeatCount="indefinite"/></g></g>
+  <g transform="translate(970 572)"><g><use xlink:href="#driveWheel"/><animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="1.45s" repeatCount="indefinite"/></g></g>
   <!-- synchronized crank pins and animated coupling rod -->
   <g>
    <animateTransform attributeName="transform" type="translate" values="0 0;0 48;0 0;0 -48;0 0" dur="1.45s" repeatCount="indefinite"/>
@@ -220,8 +220,8 @@
    <path d="M1280 565Q1350 626 1420 565" fill="none" stroke="#A09A8E" stroke-width="6"/>
    <path d="M1290 578H1410M1295 590H1405" stroke="#252D3C" stroke-width="8"/>
    <path d="M1335 551V580M1360 551V580" stroke="#77746F" stroke-width="8"/>
-   <g transform="translate(1270 614)"><g><use xlink:href="#tenderWheel"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="1.25s" repeatCount="indefinite"/></g></g>
-   <g transform="translate(1478 614)"><g><use xlink:href="#tenderWheel"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="1.25s" repeatCount="indefinite"/></g></g>
+   <g transform="translate(1270 614)"><g><use xlink:href="#tenderWheel"/><animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="1.25s" repeatCount="indefinite"/></g></g>
+   <g transform="translate(1478 614)"><g><use xlink:href="#tenderWheel"/><animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="1.25s" repeatCount="indefinite"/></g></g>
   </g>
   <g id="frontTenderBogie">
    <path d="M1615 572H1950" stroke="#10151F" stroke-width="24" stroke-linecap="round"/>
@@ -232,8 +232,8 @@
    <path d="M1680 565Q1750 626 1820 565" fill="none" stroke="#A09A8E" stroke-width="6"/>
    <path d="M1690 578H1810M1695 590H1805" stroke="#252D3C" stroke-width="8"/>
    <path d="M1735 551V580M1760 551V580" stroke="#77746F" stroke-width="8"/>
-   <g transform="translate(1670 614)"><g><use xlink:href="#tenderWheel"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="1.25s" repeatCount="indefinite"/></g></g>
-   <g transform="translate(1878 614)"><g><use xlink:href="#tenderWheel"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="1.25s" repeatCount="indefinite"/></g></g>
+   <g transform="translate(1670 614)"><g><use xlink:href="#tenderWheel"/><animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="1.25s" repeatCount="indefinite"/></g></g>
+   <g transform="translate(1878 614)"><g><use xlink:href="#tenderWheel"/><animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="1.25s" repeatCount="indefinite"/></g></g>
   </g>
   <!-- bogie pivot plates and tender suspension -->
   <path d="M1350 548H1400V570H1350Z M1750 548H1800V570H1750Z" fill="#182238" stroke="#8B7440" stroke-width="5"/>
