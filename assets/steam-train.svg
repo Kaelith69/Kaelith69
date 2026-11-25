@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="156" viewBox="0 0 860 156" role="img" aria-labelledby="train-title train-desc">
+<title id="train-title">Vintage steam locomotive</title>
+<desc id="train-desc">A classic dark navy steam locomotive with brass details, a coal tender and rotating spoked wheels. The train stays in place as the railway, scenery and clouds move backwards.</desc>
+<defs>
+  <linearGradient id="trainSky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#102B91"/><stop offset="1" stop-color="#1746D8"/></linearGradient>
+  <linearGradient id="iron" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#34445F"/><stop offset=".4" stop-color="#121D37"/><stop offset="1" stop-color="#080D2A"/></linearGradient>
+  <linearGradient id="brass" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#FFF36A"/><stop offset=".5" stop-color="#D9A832"/><stop offset="1" stop-color="#98621B"/></linearGradient>
+  <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#203D70"/><stop offset="1" stop-color="#080D2A"/></linearGradient>
+  <pattern id="trainDots" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#F4F5FF" opacity=".2"/></pattern>
+  <clipPath id="trainFrame"><rect width="860" height="156"/></clipPath>
+  <g id="cloudShapes" fill="#DCEBFF">
+    <path d="M42 34C42 27 48 22 55 22C58 12 68 8 78 12C84 4 98 5 103 15C113 13 121 20 121 29C129 30 133 34 133 40H42Z" opacity=".72"/>
+    <path d="M220 22C220 16 226 12 232 13C237 3 250 1 258 9C267 5 278 10 279 20C287 20 293 25 293 31H220Z" opacity=".56"/>
+    <path d="M414 39C414 31 421 26 429 27C433 16 446 13 455 21C465 17 477 23 478 33C487 34 492 39 492 45H414Z" opacity=".68"/>
+    <path d="M640 25C640 17 647 12 655 14C660 4 674 2 682 11C692 7 704 13 705 23C714 23 720 29 720 35H640Z" opacity=".62"/>
+    <path d="M785 51C785 44 791 40 798 41C803 31 816 29 824 37C834 34 844 40 845 50C853 50 858 55 858 61H785Z" opacity=".5"/>
+  </g>
+</defs>
+<g clip-path="url(#trainFrame)">
+  <rect width="860" height="156" fill="#080D2A"/>
+  <path d="M0 0H860V5H0Z" fill="#D7F51D"/>
+  <rect y="5" width="860" height="103" fill="url(#trainSky)"/>
+  <rect y="5" width="860" height="103" fill="url(#trainDots)"/>
+  <g opacity=".78">
+    <animateTransform attributeName="transform" type="translate" from="0 0" to="-860 0" dur="18s" repeatCount="indefinite"/>
+    <use href="#cloudShapes"/>
+    <use href="#cloudShapes" transform="translate(860 0)"/>
+  </g>
+  <g opacity=".42" fill="none" stroke="#D7F51D" stroke-width="2">
+    <animateTransform attributeName="transform" type="translate" from="0 0" to="-860 0" dur="9s" repeatCount="indefinite"/>
+    <path d="M30 88l18 -24 18 24M180 92l14 -20 14 20M340 86l20 -28 20 28M520 91l15 -22 15 22M700 86l20 -28 20 28M850 90l16 -23 16 23M890 88l18 -24 18 24M1040 92l14 -20 14 20M1200 86l20 -28 20 28M1380 91l15 -22 15 22M1560 86l20 -28 20 28"/>
+  </g>
+
+  <path d="M0 108H860V156H0Z" fill="#080D2A"/>
+  <path d="M0 108H860" stroke="#08D6D0" stroke-width="3"/>
+  <path d="M0 146H860" stroke="#D3266E" stroke-width="3"/>
+  <path d="M0 153H860" stroke="#D7F51D" stroke-width="1.5" opacity=".7"/>
+  <path d="M0 116H860" stroke="#B9C9F2" stroke-width="2" opacity=".6"/>
+  <path d="M0 139H860" stroke="#B9C9F2" stroke-width="2" opacity=".6"/>
+  <g stroke="#A8792A" stroke-width="5" opacity=".9">
+    <animateTransform attributeName="transform" type="translate" from="0 0" to="-72 0" dur="1.15s" repeatCount="indefinite"/>
+    <path d="M18 112V143M90 112V143M162 112V143M234 112V143M306 112V143M378 112V143M450 112V143M522 112V143M594 112V143M666 112V143M738 112V143M810 112V143M882 112V143"/>
+  </g>
+  <path d="M0 127H860" stroke="#08D6D0" stroke-width="1" stroke-dasharray="3 12" opacity=".6">
+    <animate attributeName="stroke-dashoffset" from="0" to="120" dur="1.8s" repeatCount="indefinite"/>
+  </path>
+
+  <ellipse cx="452" cy="111" rx="330" ry="5" fill="#00030D" opacity=".7"/>
+
+  <!-- Steam drifting up and back -->
+  <g fill="#DCEBFF" opacity=".48">
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;-24 -31;-52 -56" dur="3.4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values=".55;.34;0" dur="3.4s" repeatCount="indefinite"/>
+      <circle cx="700" cy="30" r="9"/><circle cx="711" cy="24" r="12"/><circle cx="724" cy="30" r="8"/>
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;-18 -25;-43 -46" dur="4.1s" begin="1.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values=".5;.3;0" dur="4.1s" begin="1.2s" repeatCount="indefinite"/>
+      <circle cx="704" cy="35" r="7"/><circle cx="715" cy="29" r="10"/><circle cx="727" cy="34" r="7"/>
+    </g>
+  </g>
+
+  <!-- Stationary vintage locomotive and tender -->
+  <g id="steam-locomotive">
+    <!-- tender -->
+    <path d="M160 56H355L371 70V103H151V70Z" fill="url(#iron)" stroke="#080D2A" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M165 61H347L357 73H165Z" fill="#25334D" stroke="#D9A832" stroke-width="2"/>
+    <path d="M174 57L195 43L224 50L247 40L270 51L300 43L330 55L348 60Z" fill="#080D2A" stroke="#A8792A" stroke-width="2"/>
+    <path d="M178 60L201 47L221 54L244 44L266 55L292 47L323 58" fill="none" stroke="#526078" stroke-width="3"/>
+    <path d="M160 78H357" stroke="#D9A832" stroke-width="3"/>
+    <path d="M160 91H357" stroke="#080D2A" stroke-width="4"/>
+    <rect x="176" y="65" width="12" height="27" fill="#101A30" stroke="#D9A832" stroke-width="1.5"/>
+    <rect x="335" y="65" width="12" height="27" fill="#101A30" stroke="#D9A832" stroke-width="1.5"/>
+
+    <!-- coupling -->
+    <path d="M367 91H405" stroke="#A9B6C9" stroke-width="5"/>
+    <circle cx="369" cy="91" r="4" fill="#D9A832"/><circle cx="405" cy="91" r="4" fill="#D9A832"/>
+
+    <!-- cab -->
+    <path d="M393 39H522V101H383V58Q383 39 393 39Z" fill="url(#iron)" stroke="#080D2A" stroke-width="4"/>
+    <path d="M404 46H449V78H404Z" fill="url(#glass)" stroke="#D9A832" stroke-width="3"/>
+    <path d="M461 46H509V78H461Z" fill="url(#glass)" stroke="#D9A832" stroke-width="3"/>
+    <path d="M454 43V81" stroke="#080D2A" stroke-width="5"/>
+    <path d="M393 34H522V41H393Z" fill="url(#brass)" stroke="#080D2A" stroke-width="2"/>
+    <path d="M389 81H522V88H389Z" fill="#D9A832"/>
+    <path d="M400 89H511V101H400Z" fill="#101A30" stroke="#080D2A" stroke-width="2"/>
+    <path d="M414 48V76M498 48V76" stroke="#8FA8C9" stroke-width="1.5" opacity=".45"/>
+
+    <!-- boiler -->
+    <path d="M502 53Q502 38 520 38H699Q722 38 736 55L749 75V96H497V67Q497 53 502 53Z" fill="url(#iron)" stroke="#080D2A" stroke-width="4"/>
+    <path d="M517 43H696Q717 43 729 59L738 73H510V53Q510 43 517 43Z" fill="#25334D" opacity=".85"/>
+    <path d="M500 48H712" stroke="#D9A832" stroke-width="4"/>
+    <path d="M501 85H745" stroke="#D9A832" stroke-width="5"/>
+    <path d="M503 94H746" stroke="#080D2A" stroke-width="5"/>
+    <path d="M520 39V32H542V39M565 39V32H585V39M611 39V32H631V39" fill="#D9A832" stroke="#080D2A" stroke-width="2"/>
+    <path d="M541 53V84M570 53V84M600 53V84M630 53V84M660 53V84M690 53V84" stroke="#526078" stroke-width="2" opacity=".65"/>
+
+    <!-- front smokebox and circular door -->
+    <path d="M706 45Q741 43 754 66L763 87V100H716V62Z" fill="#111B31" stroke="#080D2A" stroke-width="4"/>
+    <circle cx="739" cy="72" r="17" fill="#202A45" stroke="#D9A832" stroke-width="3"/>
+    <circle cx="739" cy="72" r="11" fill="#101A30" stroke="#8FA8C9" stroke-width="1.5"/>
+    <path d="M739 61V83M728 72H750M731 64L747 80M747 64L731 80" stroke="#D9A832" stroke-width="1.5"/>
+    <circle cx="739" cy="72" r="3" fill="#D7F51D"/>
+
+    <!-- chimney, dome and whistle -->
+    <path d="M701 43L706 18H725L731 43Z" fill="#080D2A" stroke="#D9A832" stroke-width="3"/>
+    <path d="M700 18H731L736 24H696Z" fill="url(#brass)" stroke="#080D2A" stroke-width="2"/>
+    <path d="M642 38Q642 24 654 24Q666 24 666 38Z" fill="url(#brass)" stroke="#080D2A" stroke-width="2"/>
+    <path d="M677 37V25H683V37" fill="#D9A832" stroke="#080D2A" stroke-width="1.5"/>
+    <path d="M684 25H691L694 29H684Z" fill="#D9A832" stroke="#080D2A" stroke-width="1.5"/>
+
+    <!-- front lamp and cowcatcher -->
+    <path d="M752 53L766 62L778 88" fill="none" stroke="#080D2A" stroke-width="5"/>
+    <rect x="755" y="48" width="15" height="13" rx="2" fill="#D7F51D" stroke="#080D2A" stroke-width="2"/>
+    <path d="M750 96H784L803 108H741Z" fill="#D3266E" stroke="#080D2A" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M755 98L766 106M768 98L779 106M781 98L792 106" stroke="#F4F5FF" stroke-width="2"/>
+    <path d="M786 87L803 101" stroke="#080D2A" stroke-width="4"/>
+    <path d="M745 106H805" stroke="#D9A832" stroke-width="4"/>
+
+    <!-- running board and undercarriage -->
+    <path d="M373 99H754V107H373Z" fill="#080D2A" stroke="#D9A832" stroke-width="1.5"/>
+    <path d="M392 101V109M515 101V109M642 101V109M733 101V109" stroke="#A9B6C9" stroke-width="3"/>
+    <path d="M384 108H782" stroke="#080D2A" stroke-width="4"/>
+
+    <!-- Three large spoked driving wheels and small tender wheel -->
+    <g>
+      <circle cx="222" cy="105" r="16" fill="#050812" stroke="#F4F5FF" stroke-width="2"/>
+      <circle cx="222" cy="105" r="12" fill="#242C3E" stroke="#D9A832" stroke-width="2"/>
+      <g transform="translate(222 105)">
+        <g stroke="#D7F51D" stroke-width="2.2" stroke-linecap="round">
+          <path d="M0 -10V10M-10 0H10M-7 -7L7 7M7 -7L-7 7"/>
+          <circle r="4.5" fill="#D9A832" stroke="#080D2A" stroke-width="1.5"/>
+          <circle r="2" fill="#08D6D0" stroke="none"/>
+          <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur=".9s" repeatCount="indefinite"/>
+        </g>
+      </g>
+    </g>
+    <g>
+      <circle cx="432" cy="105" r="18" fill="#050812" stroke="#F4F5FF" stroke-width="2"/>
+      <circle cx="432" cy="105" r="13.5" fill="#242C3E" stroke="#D9A832" stroke-width="2"/>
+      <g transform="translate(432 105)">
+        <g stroke="#D7F51D" stroke-width="2.3" stroke-linecap="round">
+          <path d="M0 -12V12M-12 0H12M-8.5 -8.5L8.5 8.5M8.5 -8.5L-8.5 8.5"/>
+          <circle r="5" fill="#D9A832" stroke="#080D2A" stroke-width="1.5"/>
+          <circle r="2" fill="#08D6D0" stroke="none"/>
+          <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur=".9s" repeatCount="indefinite"/>
+        </g>
+      </g>
+    </g>
+    <g>
+      <circle cx="552" cy="105" r="18" fill="#050812" stroke="#F4F5FF" stroke-width="2"/>
+      <circle cx="552" cy="105" r="13.5" fill="#242C3E" stroke="#D9A832" stroke-width="2"/>
+      <g transform="translate(552 105)">
+        <g stroke="#D7F51D" stroke-width="2.3" stroke-linecap="round">
+          <path d="M0 -12V12M-12 0H12M-8.5 -8.5L8.5 8.5M8.5 -8.5L-8.5 8.5"/>
+          <circle r="5" fill="#D9A832" stroke="#080D2A" stroke-width="1.5"/>
+          <circle r="2" fill="#08D6D0" stroke="none"/>
+          <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur=".9s" repeatCount="indefinite"/>
+        </g>
+      </g>
+    </g>
+    <g>
+      <circle cx="700" cy="105" r="13" fill="#050812" stroke="#F4F5FF" stroke-width="2"/>
+      <circle cx="700" cy="105" r="9" fill="#242C3E" stroke="#D9A832" stroke-width="2"/>
+      <g transform="translate(700 105)">
+        <g stroke="#D7F51D" stroke-width="1.8" stroke-linecap="round">
+          <path d="M0 -7V7M-7 0H7M-5 -5L5 5M5 -5L-5 5"/>
+          <circle r="3" fill="#D9A832" stroke="#080D2A" stroke-width="1"/>
+          <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur=".7s" repeatCount="indefinite"/>
+        </g>
+      </g>
+    </g>
+    <!-- connecting rods -->
+    <path d="M222 105L432 105L552 105" fill="none" stroke="#A9B6C9" stroke-width="2.5" opacity=".9"/>
+    <path d="M222 105L432 105" fill="none" stroke="#D9A832" stroke-width="1"/>
+    <circle cx="222" cy="105" r="2.5" fill="#F4F5FF"/><circle cx="432" cy="105" r="2.5" fill="#F4F5FF"/><circle cx="552" cy="105" r="2.5" fill="#F4F5FF"/>
+  </g>
+</g>
+</svg>

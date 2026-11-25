@@ -13,6 +13,6 @@
 <img src="assets/contact.svg" alt="Contact" width="100%" />
 </a>
 
-<img src="assets/school-bus.svg" alt="Animated school bus driving along a road" width="100%" />
+<img src="assets/steam-train.svg" alt="Animated vintage steam locomotive" width="100%" />
 
 </div>
