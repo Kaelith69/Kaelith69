@@ -58,7 +58,7 @@
   <ellipse cx="449" cy="111" rx="394" ry="7" fill="#00030D" opacity=".72"/>
 
   <!-- Fixed classic full length school bus -->
-  <g id="school-bus">
+  <g id="school-bus" transform="translate(860 0) scale(-1 1)">
     <!-- roof and long body -->
     <path d="M128 31Q128 22 142 22H775Q799 22 815 42L837 72Q842 79 842 91V105H94V77Q94 61 107 51L128 31Z" fill="url(#yellow)" stroke="#080D2A" stroke-width="4" stroke-linejoin="round"/>
     <path d="M141 26H775Q796 26 809 44L826 66H125V42Q125 26 141 26Z" fill="#FFE45A" opacity=".55"/>
@@ -113,7 +113,7 @@
           <path d="M0 -17L4 -8L13 -12L9 -3L18 0L9 4L13 13L4 9L0 18L-4 9L-13 13L-9 4L-18 0L-9 -4L-13 -13L-4 -9Z" fill="#D7F51D" stroke="#080D2A" stroke-width="1.5"/>
           <circle r="8" fill="#C98D18" stroke="#080D2A" stroke-width="2"/>
           <circle r="3" fill="#08D6D0"/>
-          <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur=".72s" repeatCount="indefinite"/>
+          <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur=".72s" repeatCount="indefinite"/>
         </g>
       </g>
     </g>
@@ -125,7 +125,7 @@
           <path d="M0 -17L4 -8L13 -12L9 -3L18 0L9 4L13 13L4 9L0 18L-4 9L-13 13L-9 4L-18 0L-9 -4L-13 -13L-4 -9Z" fill="#D7F51D" stroke="#080D2A" stroke-width="1.5"/>
           <circle r="8" fill="#C98D18" stroke="#080D2A" stroke-width="2"/>
           <circle r="3" fill="#08D6D0"/>
-          <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur=".72s" repeatCount="indefinite"/>
+          <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur=".72s" repeatCount="indefinite"/>
         </g>
       </g>
     </g>
