@@ -58,7 +58,7 @@
   <ellipse cx="449" cy="111" rx="394" ry="7" fill="#00030D" opacity=".72"/>
 
   <!-- Fixed classic full length school bus -->
-  <g id="school-bus" transform="translate(860 0) scale(-1 1)">
+  <g id="school-bus" transform="translate(860 0) scale(-1 1) translate(430 0) scale(.92 1) translate(-430 0)">
     <!-- roof and long body -->
     <path d="M128 31Q128 22 142 22H775Q799 22 815 42L837 72Q842 79 842 91V105H94V77Q94 61 107 51L128 31Z" fill="url(#yellow)" stroke="#080D2A" stroke-width="4" stroke-linejoin="round"/>
     <path d="M141 26H775Q796 26 809 44L826 66H125V42Q125 26 141 26Z" fill="#FFE45A" opacity=".55"/>
@@ -106,25 +106,25 @@
     <path d="M145 105H818" stroke="#080D2A" stroke-width="4"/>
     <!-- wheels stay at fixed positions; only the inner wheel assemblies rotate -->
     <g>
-      <circle cx="165" cy="105" r="23" fill="#050812" stroke="#F4F5FF" stroke-width="2"/>
-      <circle cx="165" cy="105" r="17" fill="#242C3E" stroke="#080D2A" stroke-width="3"/>
+      <circle cx="165" cy="105" r="18" fill="#050812" stroke="#F4F5FF" stroke-width="2"/>
+      <circle cx="165" cy="105" r="13.5" fill="#242C3E" stroke="#080D2A" stroke-width="3"/>
       <g transform="translate(165 105)">
         <g>
-          <path d="M0 -14L3 -7L11 -10L7 -2L14 0L7 3L10 11L3 7L0 14L-3 7L-11 10L-7 3L-14 0L-7 -3L-10 -11L-3 -7Z" fill="#D7F51D" stroke="#080D2A" stroke-width="1.5"/>
-          <circle r="7" fill="#C98D18" stroke="#080D2A" stroke-width="2"/>
-          <circle r="2.5" fill="#08D6D0"/>
+          <path d="M0 -10L2.5 -5L8 -7L5 -1.5L10 0L5 2.5L7 8L2.5 5L0 10L-2.5 5L-8 7L-5 2.5L-10 0L-5 -2.5L-7 -8L-2.5 -5Z" fill="#D7F51D" stroke="#080D2A" stroke-width="1.5"/>
+          <circle r="5.5" fill="#C98D18" stroke="#080D2A" stroke-width="2"/>
+          <circle r="2" fill="#08D6D0"/>
           <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur=".72s" repeatCount="indefinite"/>
         </g>
       </g>
     </g>
     <g>
-      <circle cx="658" cy="105" r="23" fill="#050812" stroke="#F4F5FF" stroke-width="2"/>
-      <circle cx="658" cy="105" r="17" fill="#242C3E" stroke="#080D2A" stroke-width="3"/>
+      <circle cx="658" cy="105" r="18" fill="#050812" stroke="#F4F5FF" stroke-width="2"/>
+      <circle cx="658" cy="105" r="13.5" fill="#242C3E" stroke="#080D2A" stroke-width="3"/>
       <g transform="translate(658 105)">
         <g>
-          <path d="M0 -14L3 -7L11 -10L7 -2L14 0L7 3L10 11L3 7L0 14L-3 7L-11 10L-7 3L-14 0L-7 -3L-10 -11L-3 -7Z" fill="#D7F51D" stroke="#080D2A" stroke-width="1.5"/>
-          <circle r="7" fill="#C98D18" stroke="#080D2A" stroke-width="2"/>
-          <circle r="2.5" fill="#08D6D0"/>
+          <path d="M0 -10L2.5 -5L8 -7L5 -1.5L10 0L5 2.5L7 8L2.5 5L0 10L-2.5 5L-8 7L-5 2.5L-10 0L-5 -2.5L-7 -8L-2.5 -5Z" fill="#D7F51D" stroke="#080D2A" stroke-width="1.5"/>
+          <circle r="5.5" fill="#C98D18" stroke="#080D2A" stroke-width="2"/>
+          <circle r="2" fill="#08D6D0"/>
           <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur=".72s" repeatCount="indefinite"/>
         </g>
       </g>
