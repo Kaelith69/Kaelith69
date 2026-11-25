@@ -11,6 +11,8 @@
 
 <a href="https://instagram.com/kaelith6.9">
 <img src="assets/contact.svg" alt="Contact" width="100%" />
+
+<img src="assets/school-bus.svg" alt="Animated school bus driving along a road" width="100%" />
 </a>
 
 </div>
