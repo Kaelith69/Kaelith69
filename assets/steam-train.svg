@@ -88,7 +88,7 @@
  <ellipse cx="1015" cy="580" rx="990" ry="20" fill="#00030A" opacity=".72"/>
 
  <!-- steam locomotive, facing left -->
- <g id="locomotive">
+ <g id="locomotive" transform="translate(2048 0) scale(-1 1)">
   <!-- front cowcatcher and pilot beam -->
   <path d="M18 647L18 632L157 494L170 504L170 647Z" fill="#8E0D12" stroke="#3B080B" stroke-width="10"/>
   <path d="M30 633L157 506M55 642L164 532M82 644L164 557M109 644L164 582" stroke="#D22A25" stroke-width="8" opacity=".8"/>
@@ -242,7 +242,7 @@
   <g><animateTransform attributeName="transform" type="translate" values="0 0;14 0;0 0;-14 0;0 0" dur="1.45s" repeatCount="indefinite"/><path d="M480 536H695" stroke="#A7A49A" stroke-width="13"/><path d="M480 536H695" stroke="#343A46" stroke-width="4"/></g>
  </g>
  <!-- chimney exhaust curls up and trails to the right -->
- <g fill="#DCE8FF" opacity=".65">
+ <g fill="#DCE8FF" opacity=".65" transform="translate(2048 0) scale(-1 1)">
   <g><animateTransform attributeName="transform" type="translate" values="0 0;25 -35;65 -75" dur="4s" repeatCount="indefinite"/><animate attributeName="opacity" values=".62;.35;0" dur="4s" repeatCount="indefinite"/><circle cx="325" cy="105" r="23"/><circle cx="365" cy="84" r="34"/><circle cx="408" cy="96" r="24"/></g>
   <g><animateTransform attributeName="transform" type="translate" values="0 0;22 -32;57 -68" dur="4.4s" begin="1.4s" repeatCount="indefinite"/><animate attributeName="opacity" values=".5;.3;0" dur="4.4s" begin="1.4s" repeatCount="indefinite"/><circle cx="319" cy="105" r="18"/><circle cx="355" cy="91" r="27"/><circle cx="392" cy="99" r="19"/></g>
  </g>
