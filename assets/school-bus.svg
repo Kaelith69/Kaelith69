@@ -106,25 +106,25 @@
     <path d="M145 105H818" stroke="#080D2A" stroke-width="4"/>
     <!-- wheels stay at fixed positions; only the inner wheel assemblies rotate -->
     <g>
-      <circle cx="165" cy="105" r="27" fill="#050812" stroke="#F4F5FF" stroke-width="2"/>
-      <circle cx="165" cy="105" r="20" fill="#242C3E" stroke="#080D2A" stroke-width="3"/>
+      <circle cx="165" cy="105" r="23" fill="#050812" stroke="#F4F5FF" stroke-width="2"/>
+      <circle cx="165" cy="105" r="17" fill="#242C3E" stroke="#080D2A" stroke-width="3"/>
       <g transform="translate(165 105)">
         <g>
-          <path d="M0 -17L4 -8L13 -12L9 -3L18 0L9 4L13 13L4 9L0 18L-4 9L-13 13L-9 4L-18 0L-9 -4L-13 -13L-4 -9Z" fill="#D7F51D" stroke="#080D2A" stroke-width="1.5"/>
-          <circle r="8" fill="#C98D18" stroke="#080D2A" stroke-width="2"/>
-          <circle r="3" fill="#08D6D0"/>
+          <path d="M0 -14L3 -7L11 -10L7 -2L14 0L7 3L10 11L3 7L0 14L-3 7L-11 10L-7 3L-14 0L-7 -3L-10 -11L-3 -7Z" fill="#D7F51D" stroke="#080D2A" stroke-width="1.5"/>
+          <circle r="7" fill="#C98D18" stroke="#080D2A" stroke-width="2"/>
+          <circle r="2.5" fill="#08D6D0"/>
           <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur=".72s" repeatCount="indefinite"/>
         </g>
       </g>
     </g>
     <g>
-      <circle cx="658" cy="105" r="27" fill="#050812" stroke="#F4F5FF" stroke-width="2"/>
-      <circle cx="658" cy="105" r="20" fill="#242C3E" stroke="#080D2A" stroke-width="3"/>
+      <circle cx="658" cy="105" r="23" fill="#050812" stroke="#F4F5FF" stroke-width="2"/>
+      <circle cx="658" cy="105" r="17" fill="#242C3E" stroke="#080D2A" stroke-width="3"/>
       <g transform="translate(658 105)">
         <g>
-          <path d="M0 -17L4 -8L13 -12L9 -3L18 0L9 4L13 13L4 9L0 18L-4 9L-13 13L-9 4L-18 0L-9 -4L-13 -13L-4 -9Z" fill="#D7F51D" stroke="#080D2A" stroke-width="1.5"/>
-          <circle r="8" fill="#C98D18" stroke="#080D2A" stroke-width="2"/>
-          <circle r="3" fill="#08D6D0"/>
+          <path d="M0 -14L3 -7L11 -10L7 -2L14 0L7 3L10 11L3 7L0 14L-3 7L-11 10L-7 3L-14 0L-7 -3L-10 -11L-3 -7Z" fill="#D7F51D" stroke="#080D2A" stroke-width="1.5"/>
+          <circle r="7" fill="#C98D18" stroke="#080D2A" stroke-width="2"/>
+          <circle r="2.5" fill="#08D6D0"/>
           <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur=".72s" repeatCount="indefinite"/>
         </g>
       </g>
