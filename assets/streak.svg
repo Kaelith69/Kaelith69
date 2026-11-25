@@ -30,7 +30,7 @@
     </g>
   </g>
   <text x="91" y="70" fill="#F4F5FF" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="43" font-weight="900" letter-spacing="-2.2">906</text>
-  <text x="174" y="66" fill="#D7F51D" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="900" letter-spacing="1">CONTRIBUTIONS</text>
+  <text x="166" y="66" fill="#D7F51D" font-family="Arial,Helvetica,sans-serif" font-size="8.5" font-weight="900" letter-spacing=".55">CONTRIBUTIONS</text>
   <path d="M174 75H252" stroke="#08D6D0" stroke-width="3"/>
   <path d="M248 24L259 24L253 35Z" fill="#D3266E"/>
 
@@ -50,7 +50,7 @@
     </g>
   </g>
   <text x="367" y="70" fill="#F4F5FF" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="43" font-weight="900" letter-spacing="-2">10</text>
-  <text x="434" y="66" fill="#08D6D0" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="900" letter-spacing="1">BEST STREAK</text>
+  <text x="430" y="66" fill="#08D6D0" font-family="Arial,Helvetica,sans-serif" font-size="8.5" font-weight="900" letter-spacing=".55">BEST STREAK</text>
   <path d="M434 75H516" stroke="#D7F51D" stroke-width="3"/>
   <path d="M539 16L553 16L546 29Z" fill="#08D6D0"/>
   <path d="M288 83L299 83L293 96Z" fill="#D7F51D"/>
@@ -71,7 +71,7 @@
     </g>
   </g>
   <text x="668" y="70" fill="#F4F5FF" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="43" font-weight="900">1</text>
-  <text x="711" y="66" fill="#D7F51D" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="900" letter-spacing=".9">CURRENT STREAK</text>
+  <text x="705" y="66" fill="#D7F51D" font-family="Arial,Helvetica,sans-serif" font-size="8.5" font-weight="900" letter-spacing=".5">CURRENT STREAK</text>
   <path d="M711 75H811" stroke="#D3266E" stroke-width="3"/>
 
   <g fill="#F4F5FF">
