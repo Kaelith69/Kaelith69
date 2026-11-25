@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="156" viewBox="0 0 860 156" role="img" aria-labelledby="bus-title bus-desc">
+<title id="bus-title">Animated school bus</title>
+<desc id="bus-desc">A bright yellow school bus drives along a dark blue road, with rotating wheels and moving road markings.</desc>
+<defs>
+  <linearGradient id="busSky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#102B91"/><stop offset="1" stop-color="#1746D8"/></linearGradient>
+  <linearGradient id="busYellow" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#FFF15A"/><stop offset=".55" stop-color="#F4C928"/><stop offset="1" stop-color="#E6A915"/></linearGradient>
+  <pattern id="busDots" width="12" height="12" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#F4F5FF" opacity=".2"/></pattern>
+  <clipPath id="busClip"><rect width="860" height="156"/></clipPath>
+</defs>
+<g clip-path="url(#busClip)">
+  <rect width="860" height="156" fill="#080D2A"/>
+  <path d="M0 0H860V5H0Z" fill="#D7F51D"/>
+  <path d="M0 5H860V111H0Z" fill="url(#busSky)"/>
+  <path d="M0 5H860V111H0Z" fill="url(#busDots)"/>
+  <path d="M0 106H860V156H0Z" fill="#080D2A"/>
+  <path d="M0 106H860V110H0Z" fill="#08D6D0"/>
+  <path d="M0 130H860" stroke="#F4F5FF" stroke-width="2" opacity=".18"/>
+  <path d="M0 139H860" stroke="#1746D8" stroke-width="1.5" opacity=".7"/>
+  <g fill="#D7F51D" opacity=".8"><circle cx="94" cy="31" r="2"/><circle cx="135" cy="53" r="1.5"/><circle cx="732" cy="27" r="2"/><circle cx="777" cy="62" r="1.5"/></g>
+  <path d="M42 91H818" stroke="#08D6D0" stroke-width="1" stroke-dasharray="2 9" opacity=".45"/>
+  <path d="M0 122H860" stroke="#F4F5FF" stroke-width="2" stroke-dasharray="48 42" opacity=".85"><animate attributeName="stroke-dashoffset" from="0" to="-180" dur="1.7s" repeatCount="indefinite"/></path>
+  <path d="M0 147H860" stroke="#D3266E" stroke-width="2" opacity=".8"/>
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="-9 0;9 0;-9 0" dur="2.4s" repeatCount="indefinite"/>
+    <path d="M250 48Q250 35 265 35H550Q574 35 592 54L620 82Q627 89 627 98V105H244V65Q244 48 250 48Z" fill="#080D2A" opacity=".48" transform="translate(0 5)"/>
+    <path d="M252 43Q252 30 267 30H548Q570 30 587 48L615 77Q623 85 623 96V103H245V60Q245 43 252 43Z" fill="url(#busYellow)" stroke="#080D2A" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M269 34H546Q565 34 579 50L594 66H263V42Q263 34 269 34Z" fill="#F5C52A"/>
+    <path d="M273 39H320V65H265V47Q265 39 273 39Z" fill="#102B91" stroke="#080D2A" stroke-width="3"/>
+    <path d="M326 39H375V65H326Z" fill="#102B91" stroke="#080D2A" stroke-width="3"/>
+    <path d="M381 39H430V65H381Z" fill="#102B91" stroke="#080D2A" stroke-width="3"/>
+    <path d="M436 39H485V65H436Z" fill="#102B91" stroke="#080D2A" stroke-width="3"/>
+    <path d="M491 39H542Q557 39 568 52L580 65H491Z" fill="#102B91" stroke="#080D2A" stroke-width="3"/>
+    <path d="M264 70H595" stroke="#080D2A" stroke-width="7"/>
+    <path d="M264 79H590" stroke="#F4F5FF" stroke-width="2" opacity=".5"/>
+    <path d="M252 87H613V101H252Z" fill="#E5AC1A" stroke="#080D2A" stroke-width="2"/>
+    <path d="M263 87H590" stroke="#080D2A" stroke-width="4"/>
+    <path d="M599 76L615 92V102H599Z" fill="#F5C52A" stroke="#080D2A" stroke-width="3"/>
+    <path d="M608 88L620 91V99H608Z" fill="#F4F5FF" stroke="#080D2A" stroke-width="2"/>
+    <path d="M247 57H255V77H247Z" fill="#D3266E" stroke="#080D2A" stroke-width="2"/>
+    <path d="M263 27H278V33H263Z M286 27H301V33H286Z M539 27H554V33H539Z M562 27H577V37H562Z" fill="#D3266E" stroke="#080D2A" stroke-width="1.5"/>
+    <path d="M246 100H620V108H246Z" fill="#080D2A"/>
+    <path d="M243 103H629V110H243Z" fill="#D3266E"/>
+    <path d="M620 98L633 100V108H620Z" fill="#F4F5FF" stroke="#080D2A" stroke-width="2"/>
+    <path d="M242 96H250V106H242Z" fill="#D3266E" stroke="#080D2A" stroke-width="2"/>
+    <path d="M265 67V85M319 67V85M375 67V85M431 67V85M487 67V85M543 67V85" stroke="#080D2A" stroke-width="1.5" opacity=".45"/>
+    <g>
+      <circle cx="327" cy="105" r="25" fill="#080D2A" stroke="#F4F5FF" stroke-width="2"/><circle cx="327" cy="105" r="18" fill="#202A45" stroke="#08D6D0" stroke-width="2"/>
+      <g transform="translate(327 105)"><g><path d="M0 -15L4 -5L14 -2L5 4L2 14L-4 5L-14 2L-5 -4Z" fill="#D7F51D" stroke="#080D2A" stroke-width="1"/><circle r="4" fill="#F4F5FF" stroke="#080D2A" stroke-width="1"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur=".65s" repeatCount="indefinite"/></g></g>
+      <circle cx="327" cy="105" r="2" fill="#D3266E"/>
+    </g>
+    <g>
+      <circle cx="548" cy="105" r="25" fill="#080D2A" stroke="#F4F5FF" stroke-width="2"/><circle cx="548" cy="105" r="18" fill="#202A45" stroke="#08D6D0" stroke-width="2"/>
+      <g transform="translate(548 105)"><g><path d="M0 -15L4 -5L14 -2L5 4L2 14L-4 5L-14 2L-5 -4Z" fill="#D7F51D" stroke="#080D2A" stroke-width="1"/><circle r="4" fill="#F4F5FF" stroke="#080D2A" stroke-width="1"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur=".65s" repeatCount="indefinite"/></g></g>
+      <circle cx="548" cy="105" r="2" fill="#D3266E"/>
+    </g>
+  </g>
+  <path d="M30 18H830" stroke="#F4F5FF" stroke-width="1" opacity=".2"/>
+  <path d="M20 18V28M840 18V28" stroke="#08D6D0" stroke-width="2"/>
+  <path d="M16 149H844" stroke="#D7F51D" stroke-width="1.5" opacity=".45"/>
+</g>
+</svg>
