@@ -2,7 +2,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="860" height="154"
  viewBox="0 0 860 154" role="img"
  aria-label="365 day GitHub contribution calendar"
- data-total-contributions="1014" data-start="2025-11-26" data-end="2026-11-25">
+ data-total-contributions="1056" data-start="2025-11-27" data-end="2026-11-26">
 <defs>
  <linearGradient id="surface" x1="0" y1="0" x2="1" y2="1">
   <stop stop-color="#101A34"/><stop offset="1" stop-color="#080D1D"/>
@@ -33,7 +33,6 @@
 <path d="M18 22V10H30M830 10H842V22M18 132V144H30M830 144H842V132" fill="none" stroke="#35D9E6" stroke-opacity=".5"/>
 <path d="M24 77H29M831 77H836" stroke="#A855F7" stroke-width="1.5" stroke-opacity=".75"/>
 <g id="calendar">
-<g data-date="2025-11-26" data-count="0" data-level="NONE"><title>2025-11-26: 0 contributions</title><rect x="35" y="69" width="10" height="10" rx="1" fill="#17213E"/></g>
 <g data-date="2025-11-27" data-count="0" data-level="NONE"><title>2025-11-27: 0 contributions</title><rect x="35" y="84" width="10" height="10" rx="1" fill="#17213E"/></g>
 <g data-date="2025-11-28" data-count="0" data-level="NONE"><title>2025-11-28: 0 contributions</title><rect x="35" y="99" width="10" height="10" rx="1" fill="#17213E"/></g>
 <g data-date="2025-11-29" data-count="0" data-level="NONE"><title>2025-11-29: 0 contributions</title><rect x="35" y="114" width="10" height="10" rx="1" fill="#17213E"/></g>
@@ -119,12 +118,12 @@
 <g data-date="2026-02-17" data-count="1" data-level="FIRST_QUARTILE"><title>2026-02-17: 1 contribution</title><rect x="215" y="54" width="10" height="10" rx="1" fill="#6B3FA0"/></g>
 <g data-date="2026-02-18" data-count="0" data-level="NONE"><title>2026-02-18: 0 contributions</title><rect x="215" y="69" width="10" height="10" rx="1" fill="#17213E"/></g>
 <g data-date="2026-02-19" data-count="2" data-level="FIRST_QUARTILE"><title>2026-02-19: 2 contributions</title><rect x="215" y="84" width="10" height="10" rx="1" fill="#6B3FA0"/></g>
-<g data-date="2026-02-20" data-count="47" data-level="THIRD_QUARTILE"><title>2026-02-20: 47 contributions</title><rect x="215" y="99" width="10" height="10" rx="1" fill="#35D9E6"/></g>
+<g data-date="2026-02-20" data-count="47" data-level="SECOND_QUARTILE"><title>2026-02-20: 47 contributions</title><rect x="215" y="99" width="10" height="10" rx="1" fill="#A855F7"/></g>
 <g data-date="2026-02-21" data-count="37" data-level="SECOND_QUARTILE"><title>2026-02-21: 37 contributions</title><rect x="215" y="114" width="10" height="10" rx="1" fill="#A855F7"/></g>
 <g data-date="2026-02-22" data-count="0" data-level="NONE"><title>2026-02-22: 0 contributions</title><rect x="230" y="24" width="10" height="10" rx="1" fill="#17213E"/></g>
 <g data-date="2026-02-23" data-count="0" data-level="NONE"><title>2026-02-23: 0 contributions</title><rect x="230" y="39" width="10" height="10" rx="1" fill="#17213E"/></g>
 <g data-date="2026-02-24" data-count="43" data-level="SECOND_QUARTILE"><title>2026-02-24: 43 contributions</title><rect x="230" y="54" width="10" height="10" rx="1" fill="#A855F7"/></g>
-<g data-date="2026-02-25" data-count="82" data-level="FOURTH_QUARTILE"><title>2026-02-25: 82 contributions</title><rect x="230" y="69" width="10" height="10" rx="1" fill="#C6F432" filter="url(#peak-glow)"/></g>
+<g data-date="2026-02-25" data-count="82" data-level="THIRD_QUARTILE"><title>2026-02-25: 82 contributions</title><rect x="230" y="69" width="10" height="10" rx="1" fill="#35D9E6"/></g>
 <g data-date="2026-02-26" data-count="2" data-level="FIRST_QUARTILE"><title>2026-02-26: 2 contributions</title><rect x="230" y="84" width="10" height="10" rx="1" fill="#6B3FA0"/></g>
 <g data-date="2026-02-27" data-count="12" data-level="FIRST_QUARTILE"><title>2026-02-27: 12 contributions</title><rect x="230" y="99" width="10" height="10" rx="1" fill="#6B3FA0"/></g>
 <g data-date="2026-02-28" data-count="0" data-level="NONE"><title>2026-02-28: 0 contributions</title><rect x="230" y="114" width="10" height="10" rx="1" fill="#17213E"/></g>
@@ -379,23 +378,24 @@
 <g data-date="2026-11-04" data-count="0" data-level="NONE"><title>2026-11-04: 0 contributions</title><rect x="770" y="69" width="10" height="10" rx="1" fill="#17213E"/></g>
 <g data-date="2026-11-05" data-count="0" data-level="NONE"><title>2026-11-05: 0 contributions</title><rect x="770" y="84" width="10" height="10" rx="1" fill="#17213E"/></g>
 <g data-date="2026-11-06" data-count="1" data-level="FIRST_QUARTILE"><title>2026-11-06: 1 contribution</title><rect x="770" y="99" width="10" height="10" rx="1" fill="#6B3FA0"/></g>
-<g data-date="2026-11-07" data-count="25" data-level="SECOND_QUARTILE"><title>2026-11-07: 25 contributions</title><rect x="770" y="114" width="10" height="10" rx="1" fill="#A855F7"/></g>
-<g data-date="2026-11-08" data-count="58" data-level="THIRD_QUARTILE"><title>2026-11-08: 58 contributions</title><rect x="785" y="24" width="10" height="10" rx="1" fill="#35D9E6"/></g>
-<g data-date="2026-11-09" data-count="72" data-level="FOURTH_QUARTILE"><title>2026-11-09: 72 contributions</title><rect x="785" y="39" width="10" height="10" rx="1" fill="#C6F432" filter="url(#peak-glow)"/></g>
+<g data-date="2026-11-07" data-count="25" data-level="FIRST_QUARTILE"><title>2026-11-07: 25 contributions</title><rect x="770" y="114" width="10" height="10" rx="1" fill="#6B3FA0"/></g>
+<g data-date="2026-11-08" data-count="58" data-level="SECOND_QUARTILE"><title>2026-11-08: 58 contributions</title><rect x="785" y="24" width="10" height="10" rx="1" fill="#A855F7"/></g>
+<g data-date="2026-11-09" data-count="72" data-level="THIRD_QUARTILE"><title>2026-11-09: 72 contributions</title><rect x="785" y="39" width="10" height="10" rx="1" fill="#35D9E6"/></g>
 <g data-date="2026-11-10" data-count="64" data-level="THIRD_QUARTILE"><title>2026-11-10: 64 contributions</title><rect x="785" y="54" width="10" height="10" rx="1" fill="#35D9E6"/></g>
 <g data-date="2026-11-11" data-count="36" data-level="SECOND_QUARTILE"><title>2026-11-11: 36 contributions</title><rect x="785" y="69" width="10" height="10" rx="1" fill="#A855F7"/></g>
-<g data-date="2026-11-12" data-count="81" data-level="FOURTH_QUARTILE"><title>2026-11-12: 81 contributions</title><rect x="785" y="84" width="10" height="10" rx="1" fill="#C6F432" filter="url(#peak-glow)"/></g>
-<g data-date="2026-11-13" data-count="62" data-level="THIRD_QUARTILE"><title>2026-11-13: 62 contributions</title><rect x="785" y="99" width="10" height="10" rx="1" fill="#35D9E6"/></g>
+<g data-date="2026-11-12" data-count="81" data-level="THIRD_QUARTILE"><title>2026-11-12: 81 contributions</title><rect x="785" y="84" width="10" height="10" rx="1" fill="#35D9E6"/></g>
+<g data-date="2026-11-13" data-count="62" data-level="SECOND_QUARTILE"><title>2026-11-13: 62 contributions</title><rect x="785" y="99" width="10" height="10" rx="1" fill="#A855F7"/></g>
 <g data-date="2026-11-14" data-count="22" data-level="FIRST_QUARTILE"><title>2026-11-14: 22 contributions</title><rect x="785" y="114" width="10" height="10" rx="1" fill="#6B3FA0"/></g>
-<g data-date="2026-11-15" data-count="31" data-level="SECOND_QUARTILE"><title>2026-11-15: 31 contributions</title><rect x="800" y="24" width="10" height="10" rx="1" fill="#A855F7"/></g>
+<g data-date="2026-11-15" data-count="31" data-level="FIRST_QUARTILE"><title>2026-11-15: 31 contributions</title><rect x="800" y="24" width="10" height="10" rx="1" fill="#6B3FA0"/></g>
 <g data-date="2026-11-16" data-count="0" data-level="NONE"><title>2026-11-16: 0 contributions</title><rect x="800" y="39" width="10" height="10" rx="1" fill="#17213E"/></g>
 <g data-date="2026-11-17" data-count="13" data-level="FIRST_QUARTILE"><title>2026-11-17: 13 contributions</title><rect x="800" y="54" width="10" height="10" rx="1" fill="#6B3FA0"/></g>
 <g data-date="2026-11-18" data-count="0" data-level="NONE"><title>2026-11-18: 0 contributions</title><rect x="800" y="69" width="10" height="10" rx="1" fill="#17213E"/></g>
-<g data-date="2026-11-19" data-count="73" data-level="FOURTH_QUARTILE"><title>2026-11-19: 73 contributions</title><rect x="800" y="84" width="10" height="10" rx="1" fill="#C6F432" filter="url(#peak-glow)"/></g>
+<g data-date="2026-11-19" data-count="73" data-level="THIRD_QUARTILE"><title>2026-11-19: 73 contributions</title><rect x="800" y="84" width="10" height="10" rx="1" fill="#35D9E6"/></g>
 <g data-date="2026-11-20" data-count="0" data-level="NONE"><title>2026-11-20: 0 contributions</title><rect x="800" y="99" width="10" height="10" rx="1" fill="#17213E"/></g>
 <g data-date="2026-11-21" data-count="0" data-level="NONE"><title>2026-11-21: 0 contributions</title><rect x="800" y="114" width="10" height="10" rx="1" fill="#17213E"/></g>
 <g data-date="2026-11-22" data-count="17" data-level="FIRST_QUARTILE"><title>2026-11-22: 17 contributions</title><rect x="815" y="24" width="10" height="10" rx="1" fill="#6B3FA0"/></g>
 <g data-date="2026-11-23" data-count="0" data-level="NONE"><title>2026-11-23: 0 contributions</title><rect x="815" y="39" width="10" height="10" rx="1" fill="#17213E"/></g>
-<g data-date="2026-11-24" data-count="29" data-level="SECOND_QUARTILE"><title>2026-11-24: 29 contributions</title><rect x="815" y="54" width="10" height="10" rx="1" fill="#A855F7"/></g>
-<g data-date="2026-11-25" data-count="91" data-level="FOURTH_QUARTILE"><title>2026-11-25: 91 contributions</title><rect x="815" y="69" width="10" height="10" rx="1" fill="#C6F432" filter="url(#peak-glow)" stroke="#D8DCE8" stroke-width="1.2"/></g>
+<g data-date="2026-11-24" data-count="29" data-level="FIRST_QUARTILE"><title>2026-11-24: 29 contributions</title><rect x="815" y="54" width="10" height="10" rx="1" fill="#6B3FA0"/></g>
+<g data-date="2026-11-25" data-count="127" data-level="FOURTH_QUARTILE"><title>2026-11-25: 127 contributions</title><rect x="815" y="69" width="10" height="10" rx="1" fill="#C6F432" filter="url(#peak-glow)"/></g>
+<g data-date="2026-11-26" data-count="6" data-level="FIRST_QUARTILE"><title>2026-11-26: 6 contributions</title><rect x="815" y="84" width="10" height="10" rx="1" fill="#6B3FA0" stroke="#D8DCE8" stroke-width="1.2"/></g>
 </g></svg>
