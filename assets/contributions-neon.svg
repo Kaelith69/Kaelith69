@@ -2,7 +2,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="860" height="154"
  viewBox="0 0 860 154" role="img"
  aria-label="365 day GitHub contribution calendar"
- data-total-contributions="1056" data-start="2025-11-27" data-end="2026-11-26">
+ data-total-contributions="1104" data-start="2025-11-28" data-end="2026-11-27">
 <defs>
  <linearGradient id="surface" x1="0" y1="0" x2="1" y2="1">
   <stop stop-color="#101A34"/><stop offset="1" stop-color="#080D1D"/>
@@ -33,7 +33,6 @@
 <path d="M18 22V10H30M830 10H842V22M18 132V144H30M830 144H842V132" fill="none" stroke="#35D9E6" stroke-opacity=".5"/>
 <path d="M24 77H29M831 77H836" stroke="#A855F7" stroke-width="1.5" stroke-opacity=".75"/>
 <g id="calendar">
-<g data-date="2025-11-27" data-count="0" data-level="NONE"><title>2025-11-27: 0 contributions</title><rect x="35" y="84" width="10" height="10" rx="1" fill="#17213E"/></g>
 <g data-date="2025-11-28" data-count="0" data-level="NONE"><title>2025-11-28: 0 contributions</title><rect x="35" y="99" width="10" height="10" rx="1" fill="#17213E"/></g>
 <g data-date="2025-11-29" data-count="0" data-level="NONE"><title>2025-11-29: 0 contributions</title><rect x="35" y="114" width="10" height="10" rx="1" fill="#17213E"/></g>
 <g data-date="2025-11-30" data-count="0" data-level="NONE"><title>2025-11-30: 0 contributions</title><rect x="50" y="24" width="10" height="10" rx="1" fill="#17213E"/></g>
@@ -397,5 +396,6 @@
 <g data-date="2026-11-23" data-count="0" data-level="NONE"><title>2026-11-23: 0 contributions</title><rect x="815" y="39" width="10" height="10" rx="1" fill="#17213E"/></g>
 <g data-date="2026-11-24" data-count="29" data-level="FIRST_QUARTILE"><title>2026-11-24: 29 contributions</title><rect x="815" y="54" width="10" height="10" rx="1" fill="#6B3FA0"/></g>
 <g data-date="2026-11-25" data-count="127" data-level="FOURTH_QUARTILE"><title>2026-11-25: 127 contributions</title><rect x="815" y="69" width="10" height="10" rx="1" fill="#C6F432" filter="url(#peak-glow)"/></g>
-<g data-date="2026-11-26" data-count="6" data-level="FIRST_QUARTILE"><title>2026-11-26: 6 contributions</title><rect x="815" y="84" width="10" height="10" rx="1" fill="#6B3FA0" stroke="#D8DCE8" stroke-width="1.2"/></g>
+<g data-date="2026-11-26" data-count="6" data-level="FIRST_QUARTILE"><title>2026-11-26: 6 contributions</title><rect x="815" y="84" width="10" height="10" rx="1" fill="#6B3FA0"/></g>
+<g data-date="2026-11-27" data-count="48" data-level="SECOND_QUARTILE"><title>2026-11-27: 48 contributions</title><rect x="815" y="99" width="10" height="10" rx="1" fill="#A855F7" stroke="#D8DCE8" stroke-width="1.2"/></g>
 </g></svg>
